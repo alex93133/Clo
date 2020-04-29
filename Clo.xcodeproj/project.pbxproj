@@ -16,11 +16,14 @@
 		A82AC9852458404F00C0DC3D /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A82AC9832458404F00C0DC3D /* SignIn.storyboard */; };
 		A82AC9872458405100C0DC3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A82AC9862458405100C0DC3D /* Assets.xcassets */; };
 		A82AC98A2458405100C0DC3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A82AC9882458405100C0DC3D /* LaunchScreen.storyboard */; };
+		A851BEE424588B4F00ABF4DC /* SignInViewControllerAppleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A851BEE324588B4F00ABF4DC /* SignInViewControllerAppleExtension.swift */; };
+		A856135724595F1A006555F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A856135624595F19006555F2 /* GoogleService-Info.plist */; };
 		A85B37DF24584723001833FD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A85B37DE24584723001833FD /* .gitignore */; };
 		A876C5292458590900B08C94 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A876C5282458590900B08C94 /* ErrorHandler.swift */; };
 		A876C52B24585B0900B08C94 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A876C52A24585B0900B08C94 /* String.swift */; };
 		A876C52D24586A3900B08C94 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A876C52C24586A3900B08C94 /* AlertManager.swift */; };
-		A883EE4124584D2B00049F82 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A883EE4024584D2B00049F82 /* GoogleService-Info.plist */; };
+		A876C52F2458701E00B08C94 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A876C52E2458701E00B08C94 /* Podfile */; };
+		A87EE82D24587C0900B2639C /* SignInViewControllerGoogleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EE82C24587C0900B2639C /* SignInViewControllerGoogleExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,11 +40,15 @@
 		A82AC9862458405100C0DC3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A82AC9892458405100C0DC3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A82AC98B2458405100C0DC3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A851BEE324588B4F00ABF4DC /* SignInViewControllerAppleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControllerAppleExtension.swift; sourceTree = "<group>"; };
+		A856135524594B64006555F2 /* Clo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Clo.entitlements; sourceTree = "<group>"; };
+		A856135624595F19006555F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A85B37DE24584723001833FD /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A876C5282458590900B08C94 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		A876C52A24585B0900B08C94 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A876C52C24586A3900B08C94 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
-		A883EE4024584D2B00049F82 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A876C52E2458701E00B08C94 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		A87EE82C24587C0900B2639C /* SignInViewControllerGoogleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControllerGoogleExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +111,7 @@
 		A82AC97C2458404F00C0DC3D /* Clo */ = {
 			isa = PBXGroup;
 			children = (
+				A856135524594B64006555F2 /* Clo.entitlements */,
 				A82AC9962458414800C0DC3D /* Storyboards */,
 				A82AC9942458412700C0DC3D /* Design */,
 				A82AC9912458410100C0DC3D /* Models */,
@@ -126,6 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				A82AC9812458404F00C0DC3D /* SignInViewController.swift */,
+				A87EE82C24587C0900B2639C /* SignInViewControllerGoogleExtension.swift */,
+				A851BEE324588B4F00ABF4DC /* SignInViewControllerAppleExtension.swift */,
 				A81D0B0F245850E6003CA6B6 /* SignUpViewController.swift */,
 			);
 			path = Controllers;
@@ -152,8 +162,9 @@
 				A82AC97D2458404F00C0DC3D /* AppDelegate.swift */,
 				A82AC97F2458404F00C0DC3D /* SceneDelegate.swift */,
 				A82AC9862458405100C0DC3D /* Assets.xcassets */,
+				A876C52E2458701E00B08C94 /* Podfile */,
 				A82AC98B2458405100C0DC3D /* Info.plist */,
-				A883EE4024584D2B00049F82 /* GoogleService-Info.plist */,
+				A856135624595F19006555F2 /* GoogleService-Info.plist */,
 				A85B37DE24584723001833FD /* .gitignore */,
 			);
 			path = "Supporting files";
@@ -180,6 +191,7 @@
 				A82AC9772458404F00C0DC3D /* Frameworks */,
 				A82AC9782458404F00C0DC3D /* Resources */,
 				D35DC622A32C90C46EBBCC27 /* [CP] Embed Pods Frameworks */,
+				8A67985926714CB5CF2D2BA6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -228,17 +240,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A876C52F2458701E00B08C94 /* Podfile in Resources */,
 				A85B37DF24584723001833FD /* .gitignore in Resources */,
 				A82AC98A2458405100C0DC3D /* LaunchScreen.storyboard in Resources */,
-				A883EE4124584D2B00049F82 /* GoogleService-Info.plist in Resources */,
 				A82AC9872458405100C0DC3D /* Assets.xcassets in Resources */,
 				A82AC9852458404F00C0DC3D /* SignIn.storyboard in Resources */,
+				A856135724595F1A006555F2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		8A67985926714CB5CF2D2BA6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Clo/Pods-Clo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Clo/Pods-Clo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Clo/Pods-Clo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D35DC622A32C90C46EBBCC27 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -291,8 +321,10 @@
 				A81D0B13245851A6003CA6B6 /* FirebaseManager.swift in Sources */,
 				A876C5292458590900B08C94 /* ErrorHandler.swift in Sources */,
 				A876C52B24585B0900B08C94 /* String.swift in Sources */,
+				A87EE82D24587C0900B2639C /* SignInViewControllerGoogleExtension.swift in Sources */,
 				A81D0B10245850E7003CA6B6 /* SignUpViewController.swift in Sources */,
 				A82AC9802458404F00C0DC3D /* SceneDelegate.swift in Sources */,
+				A851BEE424588B4F00ABF4DC /* SignInViewControllerAppleExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,15 +471,16 @@
 			baseConfigurationReference = 7F4903D218EF839C0FC15428 /* Pods-Clo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Clo/Clo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AQL4937GS7;
 				INFOPLIST_FILE = "$(SRCROOT)/Clo/Supporting files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Alexandr-Lazarev.Clo";
+				PRODUCT_BUNDLE_IDENTIFIER = "Alexandr-Lazarev.CloApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -459,15 +492,16 @@
 			baseConfigurationReference = 1E5A39CE76BE4E7124AF2DCB /* Pods-Clo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Clo/Clo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AQL4937GS7;
 				INFOPLIST_FILE = "$(SRCROOT)/Clo/Supporting files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Alexandr-Lazarev.Clo";
+				PRODUCT_BUNDLE_IDENTIFIER = "Alexandr-Lazarev.CloApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
