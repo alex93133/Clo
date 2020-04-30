@@ -1,34 +1,33 @@
 import UIKit
 import GoogleSignIn
 import AuthenticationServices
+import FacebookLogin
 
 class SignInViewController: UIViewController {
-    
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    
-    
+
+    // MARK: - Properties
     var currentNonce: String?
-    private lazy var appleLogInButton : ASAuthorizationAppleIDButton = {
-        let button = ASAuthorizationAppleIDButton()
-        button.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
-        button.center = CGPoint(x: view.frame.width / 2, y: view.frame.height / 2 + 100)
-        button.addTarget(self, action: #selector(handleLogInWithAppleID), for: .touchUpInside)
-        return button
-    }()
-  
-    
+
+    var logoLabel: UILabel!
+    var loginLabel: UILabel!
+    var messageLabel: UILabel!
+    var emailTextField: UITextField!
+    var passwordTextField: UITextField!
+    var appleLoginButton: ASAuthorizationAppleIDButton!
+    var googleLoginButton: UIButton!
+    var fbLoginButton: UIButton!
+    var forgotPasswordButton: UIButton!
+    var signInButton: UIButton!
+    var signUpButton: UIButton!
+    var activityIndicator: UIActivityIndicatorView!
+
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
-    
-    private func setup() {
-        GIDSignIn.sharedInstance().delegate                  = self
-        GIDSignIn.sharedInstance()?.presentingViewController = self
-        view.addSubview(appleLogInButton)
-    }
-    
+
+    // MARK: - Functions
     private func signInWithEmail() throws {
         guard let email = emailTextField.text,
             let password = passwordTextField.text,
@@ -38,30 +37,26 @@ class SignInViewController: UIViewController {
                 throw ErrorHandler.emptyFields
         }
         guard email.isValidEmail else { throw ErrorHandler.invalidEmail }
-        FirebaseManager.shared.signIn(email: email, password: password) { (error) in
+
+        activityIndicator.startAnimating()
+        signInButton.isEnabled = false
+        signInButton.alpha = 1.0
+
+        FirebaseManager.shared.signIn(email: email, password: password) { [unowned self] (error) in
+            self.activityIndicator.stopAnimating()
+            self.signInButton.isEnabled = true
+            self.signInButton.alpha = 1
             print(error.localizedDescription)
         }
     }
-    
-    private func forgotPassword() throws {
-        guard let email = emailTextField.text,
-            !email.isEmpty
-            else {
-                throw ErrorHandler.emptyFields
-        }
-        FirebaseManager.shared.forgotPassword(email: email, targetVC: self)
+
+    // MARK: - Actions
+    @objc func forgotPasswordButtonPressed() {
+        let forgotPasswordViewController = ForgotPasswordViewController()
+        navigationController?.pushViewController(forgotPasswordViewController, animated: true)
     }
-    
-    
-    @IBAction func forgotPasswordButtonPressed(_ sender: UIButton) {
-        do {
-            try forgotPassword()
-        } catch let error {
-            print(error.localizedDescription)
-        }
-    }
-    
-    @IBAction func signInWithEmailButtonPressed(_ sender: UIButton) {
+
+    @objc func signInWithEmailButtonPressed() {
         do {
             try signInWithEmail()
         } catch let error {
@@ -69,10 +64,30 @@ class SignInViewController: UIViewController {
         }
     }
 
-    @IBAction func signInWithGoogleButtonPressed(_ sender: UIButton) {
+    @objc func signInWithGoogleButtonPressed() {
         GIDSignIn.sharedInstance()?.signIn()
     }
+
+    @objc func signInWithFacebookButtonPressed() {
+        LoginManager().logIn(permissions: ["email", "public_profile"], from: self) { (result, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            guard let result = result else { return }
+
+            if result.isCancelled { return } else {
+                print("Login in Facebook")
+            }
+        }
+    }
+
+    @objc func signUp() {
+        do {
+            try signInWithEmail()
+            print("Next")
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
 }
-
-
-

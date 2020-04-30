@@ -3,19 +3,25 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		21D94A5B432B71402DFD2DFB /* Pods_Clo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A228FC09CAD5AF1927CF95B /* Pods_Clo.framework */; };
+		A807DB972459A317006BE209 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = A807DB962459A317006BE209 /* .swiftlint.yml */; };
 		A81D0B10245850E7003CA6B6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81D0B0F245850E6003CA6B6 /* SignUpViewController.swift */; };
 		A81D0B13245851A6003CA6B6 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81D0B12245851A6003CA6B6 /* FirebaseManager.swift */; };
 		A82AC97E2458404F00C0DC3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82AC97D2458404F00C0DC3D /* AppDelegate.swift */; };
 		A82AC9802458404F00C0DC3D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82AC97F2458404F00C0DC3D /* SceneDelegate.swift */; };
 		A82AC9822458404F00C0DC3D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82AC9812458404F00C0DC3D /* SignInViewController.swift */; };
-		A82AC9852458404F00C0DC3D /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A82AC9832458404F00C0DC3D /* SignIn.storyboard */; };
 		A82AC9872458405100C0DC3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A82AC9862458405100C0DC3D /* Assets.xcassets */; };
 		A82AC98A2458405100C0DC3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A82AC9882458405100C0DC3D /* LaunchScreen.storyboard */; };
+		A84DB6F12459DBC600A101B1 /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84DB6F02459DBC600A101B1 /* Segues.swift */; };
+		A84DB6F32459DBD900A101B1 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84DB6F22459DBD900A101B1 /* Fonts.swift */; };
+		A84DB6F62459E34800A101B1 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = A84DB6F52459E34800A101B1 /* FacebookLogin */; };
+		A84DB6F82459E7F200A101B1 /* SignInViewControllerFacebookExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84DB6F72459E7F200A101B1 /* SignInViewControllerFacebookExtension.swift */; };
+		A84DB6FB245AB84800A101B1 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84DB6FA245AB84800A101B1 /* SignInView.swift */; };
+		A84DB6FF245AC8F200A101B1 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84DB6FE245AC8F200A101B1 /* Design.swift */; };
 		A851BEE424588B4F00ABF4DC /* SignInViewControllerAppleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A851BEE324588B4F00ABF4DC /* SignInViewControllerAppleExtension.swift */; };
 		A856135724595F1A006555F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A856135624595F19006555F2 /* GoogleService-Info.plist */; };
 		A85B37DF24584723001833FD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A85B37DE24584723001833FD /* .gitignore */; };
@@ -24,22 +30,30 @@
 		A876C52D24586A3900B08C94 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A876C52C24586A3900B08C94 /* AlertManager.swift */; };
 		A876C52F2458701E00B08C94 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A876C52E2458701E00B08C94 /* Podfile */; };
 		A87EE82D24587C0900B2639C /* SignInViewControllerGoogleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EE82C24587C0900B2639C /* SignInViewControllerGoogleExtension.swift */; };
+		A8A2D877245B019300C265F3 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A2D876245B019300C265F3 /* TextField.swift */; };
+		A8A2D879245B152F00C265F3 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A2D878245B152F00C265F3 /* ForgotPasswordViewController.swift */; };
+		A8A2D87B245B166200C265F3 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A2D87A245B166200C265F3 /* ForgotPasswordView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1A228FC09CAD5AF1927CF95B /* Pods_Clo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E5A39CE76BE4E7124AF2DCB /* Pods-Clo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clo.release.xcconfig"; path = "Target Support Files/Pods-Clo/Pods-Clo.release.xcconfig"; sourceTree = "<group>"; };
 		7F4903D218EF839C0FC15428 /* Pods-Clo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clo.debug.xcconfig"; path = "Target Support Files/Pods-Clo/Pods-Clo.debug.xcconfig"; sourceTree = "<group>"; };
+		A807DB962459A317006BE209 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		A81D0B0F245850E6003CA6B6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A81D0B12245851A6003CA6B6 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		A82AC97A2458404F00C0DC3D /* Clo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A82AC97D2458404F00C0DC3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A82AC97F2458404F00C0DC3D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A82AC9812458404F00C0DC3D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		A82AC9842458404F00C0DC3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignIn.storyboard; sourceTree = "<group>"; };
 		A82AC9862458405100C0DC3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A82AC9892458405100C0DC3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A82AC98B2458405100C0DC3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A84DB6F02459DBC600A101B1 /* Segues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
+		A84DB6F22459DBD900A101B1 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		A84DB6F72459E7F200A101B1 /* SignInViewControllerFacebookExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControllerFacebookExtension.swift; sourceTree = "<group>"; };
+		A84DB6FA245AB84800A101B1 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		A84DB6FE245AC8F200A101B1 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		A851BEE324588B4F00ABF4DC /* SignInViewControllerAppleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControllerAppleExtension.swift; sourceTree = "<group>"; };
 		A856135524594B64006555F2 /* Clo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Clo.entitlements; sourceTree = "<group>"; };
 		A856135624595F19006555F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -47,8 +61,11 @@
 		A876C5282458590900B08C94 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		A876C52A24585B0900B08C94 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A876C52C24586A3900B08C94 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
-		A876C52E2458701E00B08C94 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		A876C52E2458701E00B08C94 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A87EE82C24587C0900B2639C /* SignInViewControllerGoogleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControllerGoogleExtension.swift; sourceTree = "<group>"; };
+		A8A2D876245B019300C265F3 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		A8A2D878245B152F00C265F3 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		A8A2D87A245B166200C265F3 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A84DB6F62459E34800A101B1 /* FacebookLogin in Frameworks */,
 				21D94A5B432B71402DFD2DFB /* Pods_Clo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,9 +131,10 @@
 			children = (
 				A856135524594B64006555F2 /* Clo.entitlements */,
 				A82AC9962458414800C0DC3D /* Storyboards */,
-				A82AC9942458412700C0DC3D /* Design */,
 				A82AC9912458410100C0DC3D /* Models */,
+				A84DB6F9245AB62800A101B1 /* Views */,
 				A82AC9922458411200C0DC3D /* Controllers */,
+				A82AC9942458412700C0DC3D /* Sources */,
 				A81D0B1124585172003CA6B6 /* Managers */,
 				A82AC9932458411A00C0DC3D /* Extensions */,
 				A82AC9952458413600C0DC3D /* Supporting files */,
@@ -136,6 +155,8 @@
 				A82AC9812458404F00C0DC3D /* SignInViewController.swift */,
 				A87EE82C24587C0900B2639C /* SignInViewControllerGoogleExtension.swift */,
 				A851BEE324588B4F00ABF4DC /* SignInViewControllerAppleExtension.swift */,
+				A84DB6F72459E7F200A101B1 /* SignInViewControllerFacebookExtension.swift */,
+				A8A2D878245B152F00C265F3 /* ForgotPasswordViewController.swift */,
 				A81D0B0F245850E6003CA6B6 /* SignUpViewController.swift */,
 			);
 			path = Controllers;
@@ -145,15 +166,18 @@
 			isa = PBXGroup;
 			children = (
 				A876C52A24585B0900B08C94 /* String.swift */,
+				A8A2D876245B019300C265F3 /* TextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		A82AC9942458412700C0DC3D /* Design */ = {
+		A82AC9942458412700C0DC3D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				A84DB6F02459DBC600A101B1 /* Segues.swift */,
+				A84DB6F22459DBD900A101B1 /* Fonts.swift */,
 			);
-			path = Design;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		A82AC9952458413600C0DC3D /* Supporting files */ = {
@@ -166,6 +190,7 @@
 				A82AC98B2458405100C0DC3D /* Info.plist */,
 				A856135624595F19006555F2 /* GoogleService-Info.plist */,
 				A85B37DE24584723001833FD /* .gitignore */,
+				A807DB962459A317006BE209 /* .swiftlint.yml */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
@@ -174,9 +199,18 @@
 			isa = PBXGroup;
 			children = (
 				A82AC9882458405100C0DC3D /* LaunchScreen.storyboard */,
-				A82AC9832458404F00C0DC3D /* SignIn.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		A84DB6F9245AB62800A101B1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A84DB6FE245AC8F200A101B1 /* Design.swift */,
+				A84DB6FA245AB84800A101B1 /* SignInView.swift */,
+				A8A2D87A245B166200C265F3 /* ForgotPasswordView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +220,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A82AC98E2458405100C0DC3D /* Build configuration list for PBXNativeTarget "Clo" */;
 			buildPhases = (
+				A82BEC59245B255000478C8B /* ShellScript */,
 				F881CD4CCF412E64BDECC764 /* [CP] Check Pods Manifest.lock */,
 				A82AC9762458404F00C0DC3D /* Sources */,
 				A82AC9772458404F00C0DC3D /* Frameworks */,
@@ -198,6 +233,9 @@
 			dependencies = (
 			);
 			name = Clo;
+			packageProductDependencies = (
+				A84DB6F52459E34800A101B1 /* FacebookLogin */,
+			);
 			productName = Clo;
 			productReference = A82AC97A2458404F00C0DC3D /* Clo.app */;
 			productType = "com.apple.product-type.application";
@@ -226,6 +264,9 @@
 				Base,
 			);
 			mainGroup = A82AC9712458404F00C0DC3D;
+			packageReferences = (
+				A84DB6F42459E34800A101B1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+			);
 			productRefGroup = A82AC97B2458404F00C0DC3D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -243,8 +284,8 @@
 				A876C52F2458701E00B08C94 /* Podfile in Resources */,
 				A85B37DF24584723001833FD /* .gitignore in Resources */,
 				A82AC98A2458405100C0DC3D /* LaunchScreen.storyboard in Resources */,
+				A807DB972459A317006BE209 /* .swiftlint.yml in Resources */,
 				A82AC9872458405100C0DC3D /* Assets.xcassets in Resources */,
-				A82AC9852458404F00C0DC3D /* SignIn.storyboard in Resources */,
 				A856135724595F1A006555F2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,6 +309,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Clo/Pods-Clo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		A82BEC59245B255000478C8B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		D35DC622A32C90C46EBBCC27 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -316,13 +374,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				A876C52D24586A3900B08C94 /* AlertManager.swift in Sources */,
+				A84DB6FF245AC8F200A101B1 /* Design.swift in Sources */,
 				A82AC9822458404F00C0DC3D /* SignInViewController.swift in Sources */,
 				A82AC97E2458404F00C0DC3D /* AppDelegate.swift in Sources */,
 				A81D0B13245851A6003CA6B6 /* FirebaseManager.swift in Sources */,
+				A84DB6F32459DBD900A101B1 /* Fonts.swift in Sources */,
+				A8A2D877245B019300C265F3 /* TextField.swift in Sources */,
 				A876C5292458590900B08C94 /* ErrorHandler.swift in Sources */,
+				A84DB6F82459E7F200A101B1 /* SignInViewControllerFacebookExtension.swift in Sources */,
 				A876C52B24585B0900B08C94 /* String.swift in Sources */,
+				A84DB6FB245AB84800A101B1 /* SignInView.swift in Sources */,
 				A87EE82D24587C0900B2639C /* SignInViewControllerGoogleExtension.swift in Sources */,
 				A81D0B10245850E7003CA6B6 /* SignUpViewController.swift in Sources */,
+				A84DB6F12459DBC600A101B1 /* Segues.swift in Sources */,
+				A8A2D87B245B166200C265F3 /* ForgotPasswordView.swift in Sources */,
+				A8A2D879245B152F00C265F3 /* ForgotPasswordViewController.swift in Sources */,
 				A82AC9802458404F00C0DC3D /* SceneDelegate.swift in Sources */,
 				A851BEE424588B4F00ABF4DC /* SignInViewControllerAppleExtension.swift in Sources */,
 			);
@@ -331,14 +397,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A82AC9832458404F00C0DC3D /* SignIn.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A82AC9842458404F00C0DC3D /* Base */,
-			);
-			name = SignIn.storyboard;
-			sourceTree = "<group>";
-		};
 		A82AC9882458405100C0DC3D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -530,6 +588,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A84DB6F42459E34800A101B1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A84DB6F52459E34800A101B1 /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A84DB6F42459E34800A101B1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A82AC9722458404F00C0DC3D /* Project object */;
 }

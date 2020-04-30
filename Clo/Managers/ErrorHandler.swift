@@ -1,6 +1,5 @@
 import Foundation
 
-
 enum ErrorHandler: Error {
     case emptyFields
     case passwordAreNotSimilar
