@@ -1,13 +1,12 @@
 import Foundation
 
-enum ErrorHandler: Error {
+enum TextFieldErrorHandler: Error {
     case emptyFields
     case passwordAreNotSimilar
     case invalidEmail
-    case shortPassword
 }
 
-extension ErrorHandler: LocalizedError {
+extension TextFieldErrorHandler: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .emptyFields:
@@ -16,8 +15,11 @@ extension ErrorHandler: LocalizedError {
             return NSLocalizedString("Passwords should be similar", comment: "")
         case .invalidEmail:
             return NSLocalizedString("Wrong email type", comment: "")
-        case .shortPassword:
-            return NSLocalizedString("Too short password", comment: "")
         }
     }
+}
+
+enum Response {
+    case success
+    case failure (errorString: String)
 }

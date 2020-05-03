@@ -5,21 +5,25 @@ import Firebase
 extension SignInViewController: LoginButtonDelegate {
     func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
         if let error = error {
-            print("Failed to login into Facebook:", error.localizedDescription)
+            customView.displayError(errorText: error.localizedDescription)
             return
         }
+        signInWithFBToken()
+    }
+    
+    func signInWithFBToken() {
         guard AccessToken.isCurrentAccessTokenActive else { return }
-        print("Successfully logged in Facebook")
         let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
-        Auth.auth().signIn(with: credential) { (_, error) in
+        
+        Auth.auth().signIn(with: credential) { [unowned self] (_, error) in
             if let error = error {
-                print(error.localizedDescription)
+                self.customView.displayError(errorText: error.localizedDescription)
                 return
             }
-            print("Successfully logged in Firebase via Facebook")
+            Router.signIn(from: self)
         }
     }
-
+    
     func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
         print("Logout from Facebook")
     }

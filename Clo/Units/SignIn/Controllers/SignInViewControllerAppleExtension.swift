@@ -31,7 +31,7 @@ extension SignInViewController {
         }
         return result
     }
-
+    
     private func sha256(_ input: String) -> String {
         let inputData = Data(input.utf8)
         let hashedData = SHA256.hash(data: inputData)
@@ -40,7 +40,7 @@ extension SignInViewController {
         }.joined()
         return hashString
     }
-
+    
     @objc func handleLogInWithAppleID() {
         let nonce = generateRandomNonceString()
         currentNonce = nonce
@@ -53,7 +53,7 @@ extension SignInViewController {
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
     }
-
+    
 }
 
 extension SignInViewController: ASAuthorizationControllerDelegate {
@@ -73,20 +73,20 @@ extension SignInViewController: ASAuthorizationControllerDelegate {
             let credential = OAuthProvider.credential(withProviderID: "apple.com",
                                                       idToken: idTokenString,
                                                       rawNonce: nonce)
-            Auth.auth().signIn(with: credential) { (_, error) in
+            
+            Auth.auth().signIn(with: credential) { [unowned self] (_, error) in
                 if let error = error {
-                    print(error.localizedDescription)
+                    self.customView.displayError(errorText: error.localizedDescription)
                     return
                 }
-                print("Successfully logged in Firebase via Apple")
+                Router.signIn(from: self)
             }
         }
     }
-
+    
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
         print("Failed to login into:", error.localizedDescription)
     }
-
 }
 
 extension SignInViewController: ASAuthorizationControllerPresentationContextProviding {

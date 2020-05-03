@@ -6,13 +6,14 @@ class FirebaseManager {
     static let shared = FirebaseManager()
     private init() {}
 
-    func signIn(email: String, password: String, completion: @escaping (Error) -> Void) {
+    func signIn(email: String, password: String, completion: @escaping (Response) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if let error = error {
-                completion(error)
+                completion(.failure(errorString: error.localizedDescription))
             }
-            guard let user = user?.user else { return }
-            print("Log In", user.uid)
+            if user != nil {
+                completion(.success)
+            }
         }
     }
 
@@ -33,13 +34,14 @@ class FirebaseManager {
         }
     }
 
-    func createUserWithEmail(email: String, password: String, completion: @escaping (Error) -> Void) {
+    func createUserWithEmail(email: String, password: String, completion: @escaping (Response) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if let error = error {
-                completion(error)
+                completion(.failure(errorString: error.localizedDescription))
             }
-            guard let user = user?.user else { return }
-            print("Success", user.uid)
+            if user != nil {
+                completion(.success)
+            }
         }
     }
 }
