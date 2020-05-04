@@ -5,21 +5,21 @@ import FacebookLogin
 import Firebase
 
 class SignInViewController: UIViewController {
-    
+
     // MARK: - Properties
     var currentNonce: String?
     let customView = AuthView(frame: UIScreen.main.bounds)
-    
+
     // MARK: - Lifecycle
     override func loadView() {
         setupView()
     }
-    
+
     // MARK: - Functions
     private func view() -> AuthView {
         return view as! AuthView
     }
-    
+
     private func setupView() {
         view                                                 =  customView
         view().reEnterPasswordTextField.isHidden             = true
@@ -30,7 +30,7 @@ class SignInViewController: UIViewController {
             self.signInWithEmailButtonPressed()
         }
     }
-    
+
     private func checkFields() throws {
         guard let email = view().emailTextField.text,
             let password = view().passwordTextField.text,
@@ -45,12 +45,12 @@ class SignInViewController: UIViewController {
 
 // MARK: - Actions
 extension SignInViewController: AuthViewDelegate {
-    
+
     func forgotPasswordButtonPressed() {
         let forgotPasswordViewController = ForgotPasswordViewController()
         navigationController?.pushViewController(forgotPasswordViewController, animated: true)
     }
-    
+
     func signInWithEmailButtonPressed() {
         view().errorLabel.alpha = 0
         do {
@@ -70,11 +70,11 @@ extension SignInViewController: AuthViewDelegate {
             view().displayError(errorText: error.localizedDescription)
         }
     }
-    
+
     func signInWithGoogleButtonPressed() {
         GIDSignIn.sharedInstance()?.signIn()
     }
-    
+
     func signInWithFacebookButtonPressed() {
         LoginManager().logIn(permissions: ["email", "public_profile"], from: self) { [unowned self] (result, error) in
             if let error = error {
@@ -86,7 +86,7 @@ extension SignInViewController: AuthViewDelegate {
             self.signInWithFBToken()
         }
     }
-    
+
     func signUpButtonPressed() {
         let signUpViewController = SignUpViewController()
         navigationController?.pushViewController(signUpViewController, animated: true)

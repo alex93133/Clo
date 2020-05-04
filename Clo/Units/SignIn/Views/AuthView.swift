@@ -14,11 +14,11 @@ protocol AuthViewDelegate: class {
 }
 
 class AuthView: UIView {
-    
+
     // MARK: - Properties
     weak var delegate: AuthViewDelegate?
-    var buttonHandler: (() -> (Void))?
-    
+    var buttonHandler: (() -> Void)?
+
     var logoLabel: UILabel!
     var headLabel: UILabel!
     var messageLabel: UILabel!
@@ -34,11 +34,11 @@ class AuthView: UIView {
     var errorLabel: UILabel!
     var signUpButton: UIButton!
     var activityIndicator: UIActivityIndicatorView!
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setLogoLabel()
-        setupLoginLabel()
+        setupHeadLabel()
         setupMessageLabel()
         setupCustomLoginButtonsStackView()
         setupEmailTextField()
@@ -49,14 +49,14 @@ class AuthView: UIView {
         setupNextButton()
         setupActivityIndicator()
         setupErrorLabel()
-        
+
         backgroundColor = Colors.viewBGColor
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+
     // MARK: - Create TextField
     static func createTextField(placeholder: String) -> UITextField {
         let textField                    = UITextField()
@@ -70,7 +70,7 @@ class AuthView: UIView {
         textField.setLeftPaddingPoints(Sizes.textFieldPadding)
         return textField
     }
-    
+
     // MARK: - DisplayError
     func displayError(errorText: String) {
         UIView.animate(withDuration: Constants.animationTimeInterval) { [unowned self] in
@@ -78,7 +78,7 @@ class AuthView: UIView {
             self.errorLabel.alpha = 1
         }
     }
-    
+
     // MARK: - Processing
     func processing(isProcessing: Bool) {
         UIView.animate(withDuration: Constants.animationTimeInterval) { [unowned self] in
@@ -92,7 +92,7 @@ class AuthView: UIView {
             }
         }
     }
-    
+
     // MARK: - LogoLabel
     private func setLogoLabel() {
         logoLabel               = UILabel()
@@ -101,9 +101,9 @@ class AuthView: UIView {
         logoLabel.isHidden      = true
         setupLogoLabelConstraints()
     }
-    
+
     // MARK: - LoginLabel
-    private func setupLoginLabel() {
+    private func setupHeadLabel() {
         headLabel               = UILabel()
         headLabel.text          = "Login"
         headLabel.font          = .systemFont(ofSize: Sizes.headTextSize, weight: .bold)
@@ -111,7 +111,7 @@ class AuthView: UIView {
         headLabel.textAlignment = .center
         setupLoginLabelConstraints()
     }
-    
+
     // MARK: - MessageLabel
     private func setupMessageLabel() {
         messageLabel               = UILabel()
@@ -121,14 +121,14 @@ class AuthView: UIView {
         messageLabel.textAlignment = .center
         setupMessageLabelConstraints()
     }
-    
+
     // MARK: - EmailTextField
     private func setupEmailTextField() {
         emailTextField                 = AuthView.createTextField(placeholder: "Email")
         emailTextField.textContentType = .emailAddress
         setupEmailTextFieldConstraints()
     }
-    
+
     // MARK: - PasswordTextField
     private func setupPasswordTextField() {
         passwordTextField                       = AuthView.createTextField(placeholder: "Password")
@@ -136,7 +136,7 @@ class AuthView: UIView {
         passwordTextField.setLeftPaddingPoints(Sizes.textFieldPadding)
         setupPasswordTextFieldConstraints()
     }
-    
+
     // MARK: - ReEnterPasswordTextField
     private func setupReEnterPassword() {
         reEnterPasswordTextField                       = AuthView.createTextField(placeholder: "Re-enter password")
@@ -144,7 +144,7 @@ class AuthView: UIView {
         reEnterPasswordTextField.setLeftPaddingPoints(Sizes.textFieldPadding)
         setupReEnterPasswordConstraints()
     }
-    
+
     // MARK: - ForgotButton
     private func setupForgotButton() {
         forgotPasswordButton                            = UIButton()
@@ -155,14 +155,14 @@ class AuthView: UIView {
         forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonPressed), for: .touchUpInside)
         setupForgotButtonConstraints()
     }
-    
+
     // MARK: - AppleLogInButton
     private func setupAppleLogInButton() {
         appleLoginButton       = ASAuthorizationAppleIDButton(authorizationButtonType: .signIn, authorizationButtonStyle: .white)
         appleLoginButton.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         appleLoginButton.addTarget(self, action: #selector(handleLogInWithAppleID), for: .touchUpInside)
     }
-    
+
     // MARK: - GoogleLoginButton
     private func setupGoogleLoginButton() {
         googleLoginButton                                                       = UIButton()
@@ -174,7 +174,7 @@ class AuthView: UIView {
         googleLoginButton.addTarget(self, action: #selector(signInWithGoogleButtonPressed), for: .touchUpInside)
         setupGoogleLoginButtonContraints()
     }
-    
+
     // MARK: - FbLoginButton
     private func setupFbLoginButton() {
         fbLoginButton                                                       = UIButton()
@@ -186,23 +186,23 @@ class AuthView: UIView {
         fbLoginButton.addTarget(self, action: #selector(signInWithFacebookButtonPressed), for: .touchUpInside)
         setupFbLoginButtonContraints()
     }
-    
+
     // MARK: - CustomLoginButtonsStackView
     private func setupCustomLoginButtonsStackView() {
         setupAppleLogInButton()
         setupGoogleLoginButton()
         setupFbLoginButton()
-        
+
         let customViewForAppleButton = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         customViewForAppleButton.widthAnchor.constraint(equalToConstant: 72).isActive = true
         customViewForAppleButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
         appleLoginButton.center = CGPoint(x: 72 / 2,
                                           y: 56 / 2)
-        
+
         customViewForAppleButton.layer.cornerRadius = Sizes.customLoginButtonCornerRadius
         customViewForAppleButton.addSubview(appleLoginButton)
         customViewForAppleButton.clipsToBounds      = true
-        
+
         customLoginButtonsStackView              = UIStackView(arrangedSubviews: [customViewForAppleButton, googleLoginButton, fbLoginButton])
         customLoginButtonsStackView.axis         = .horizontal
         customLoginButtonsStackView.distribution = .equalSpacing
@@ -210,7 +210,7 @@ class AuthView: UIView {
         customLoginButtonsStackView.spacing      = 30
         setupCustomLoginButtonsStackViewConstraints()
     }
-    
+
     // MARK: - ErrorLabel
     private func setupErrorLabel() {
         errorLabel               = UILabel()
@@ -221,7 +221,7 @@ class AuthView: UIView {
         errorLabel.numberOfLines = 0
         setupErrorLabelConstraints()
     }
-    
+
     // MARK: - NextButton
     private func setupNextButton() {
         nextButton                    = UIButton()
@@ -233,8 +233,7 @@ class AuthView: UIView {
         nextButton.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
         setupNextButtonConstraints()
     }
-    
-    
+
     // MARK: - SignUpButton
     private func setupSignUpButton() {
         signUpButton                  = UIButton()
@@ -244,7 +243,7 @@ class AuthView: UIView {
         signUpButton.addTarget(self, action: #selector(signUpButtonPressed), for: .touchUpInside)
         setupSignUpButtonConstraints()
     }
-    
+
     // MARK: - ActivityIndicator
     private func setupActivityIndicator() {
         activityIndicator                  = UIActivityIndicatorView()
@@ -256,26 +255,27 @@ class AuthView: UIView {
 
 // MARK: - Actions
 extension AuthView {
+
     @objc func handleLogInWithAppleID() {
         delegate?.handleLogInWithAppleID()
     }
-    
+
     @objc func signInWithGoogleButtonPressed() {
         delegate?.signInWithGoogleButtonPressed()
     }
-    
+
     @objc func signInWithFacebookButtonPressed() {
         delegate?.signInWithFacebookButtonPressed()
     }
-    
+
     @objc func nextButtonPressed() {
         buttonHandler?()
     }
-    
+
     @objc func forgotPasswordButtonPressed() {
         delegate?.forgotPasswordButtonPressed()
     }
-    
+
     @objc func signUpButtonPressed() {
         delegate?.signUpButtonPressed()
     }

@@ -2,11 +2,11 @@ import UIKit
 
 struct Router {
 
-    static func signIn(from vc: UIViewController) {
+    static func signIn(from viewController: UIViewController) {
         DispatchQueue.main.async {
-            let listOfClothesViewController = ListOfClothesViewController()
+            let listOfClothesViewController = TabBarController()
             listOfClothesViewController.modalPresentationStyle = .fullScreen
-            vc.present(listOfClothesViewController, animated: true, completion: nil)
+            viewController.present(listOfClothesViewController, animated: true, completion: nil)
         }
     }
 }

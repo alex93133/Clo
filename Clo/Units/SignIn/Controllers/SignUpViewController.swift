@@ -1,20 +1,20 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
-    
+
     // MARK: - Properties
     private let customView = AuthView(frame: UIScreen.main.bounds)
-    
+
     // MARK: - Lifecycle
     override func loadView() {
         setupView()
     }
-    
+
     // MARK: - Functions
     private func view() -> AuthView {
         return view as! AuthView
     }
-    
+
     private func setupView() {
         view                                 = customView
         view().headLabel.text                = "Create account"
@@ -26,7 +26,7 @@ class SignUpViewController: UIViewController {
             self.createAccountButtonPressed()
         }
     }
-    
+
     private func checkFields() throws {
         guard let email = view().emailTextField.text,
             let password = view().passwordTextField.text,
@@ -42,6 +42,7 @@ class SignUpViewController: UIViewController {
 
 // MARK: - Actions
 extension SignUpViewController {
+
     func createAccountButtonPressed() {
         view().errorLabel.alpha = 0
         do {
@@ -50,7 +51,7 @@ extension SignUpViewController {
             FirebaseManager.shared.createUserWithEmail(email: view().emailTextField.text!,
                                                        password: view().passwordTextField.text!) { [unowned self] (response) in
                                                         self.view().processing(isProcessing: false)
-                                                        
+
                                                         switch response {
                                                         case .success:
                                                             Router.signIn(from: self)

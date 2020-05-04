@@ -1,21 +1,21 @@
 import UIKit
 
 class ForgotPasswordViewController: UIViewController {
-    
+
     // MARK: - Properties
     private let customView = AuthView(frame: UIScreen.main.bounds)
     private var topAnchor: NSLayoutConstraint!
-    
+
     // MARK: - Lifecycle
     override func loadView() {
         setupView()
     }
-    
+
     // MARK: - Functions
     private func view() -> AuthView {
         return view as! AuthView
     }
-    
+
     private func setupView() {
         view                                        =  customView
         view().headLabel.text                       = "Forgot password?"
@@ -30,7 +30,7 @@ class ForgotPasswordViewController: UIViewController {
             self.forgotPasswordButtonPressed()
         }
     }
-    
+
     private func checkFields() throws {
         guard let email = view().emailTextField.text,
             !email.isEmpty
@@ -40,7 +40,8 @@ class ForgotPasswordViewController: UIViewController {
 }
 
 // MARK: - Actions
-extension ForgotPasswordViewController{
+extension ForgotPasswordViewController {
+
     func forgotPasswordButtonPressed() {
         view().errorLabel.alpha = 0
         do {

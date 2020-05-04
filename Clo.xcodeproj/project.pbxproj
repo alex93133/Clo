@@ -16,6 +16,9 @@
 		A82AC9822458404F00C0DC3D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82AC9812458404F00C0DC3D /* SignInViewController.swift */; };
 		A82AC9872458405100C0DC3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A82AC9862458405100C0DC3D /* Assets.xcassets */; };
 		A82AC98A2458405100C0DC3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A82AC9882458405100C0DC3D /* LaunchScreen.storyboard */; };
+		A84ADDF5245F3851008F3425 /* LaundrySymbolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84ADDF4245F3851008F3425 /* LaundrySymbolsViewController.swift */; };
+		A84ADDF7245F3AF0008F3425 /* ClothesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84ADDF6245F3AF0008F3425 /* ClothesListViewController.swift */; };
+		A84ADDFB245F5143008F3425 /* LaundrySymbolsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84ADDFA245F5143008F3425 /* LaundrySymbolsCollectionViewCell.swift */; };
 		A84DB6F62459E34800A101B1 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = A84DB6F52459E34800A101B1 /* FacebookLogin */; };
 		A84DB6F82459E7F200A101B1 /* SignInViewControllerFacebookExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84DB6F72459E7F200A101B1 /* SignInViewControllerFacebookExtension.swift */; };
 		A84DB6FB245AB84800A101B1 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84DB6FA245AB84800A101B1 /* AuthView.swift */; };
@@ -23,6 +26,8 @@
 		A851BEE424588B4F00ABF4DC /* SignInViewControllerAppleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A851BEE324588B4F00ABF4DC /* SignInViewControllerAppleExtension.swift */; };
 		A856135724595F1A006555F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A856135624595F19006555F2 /* GoogleService-Info.plist */; };
 		A85B37DF24584723001833FD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A85B37DE24584723001833FD /* .gitignore */; };
+		A8751F14245FFA7300B62589 /* LaundrySymbolsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8751F13245FFA7300B62589 /* LaundrySymbolsHeader.swift */; };
+		A8751F1624601E5B00B62589 /* LaundrySymbolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8751F1524601E5B00B62589 /* LaundrySymbolsView.swift */; };
 		A876C5292458590900B08C94 /* TextFieldErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A876C5282458590900B08C94 /* TextFieldErrorHandler.swift */; };
 		A876C52B24585B0900B08C94 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A876C52A24585B0900B08C94 /* String.swift */; };
 		A876C52D24586A3900B08C94 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A876C52C24586A3900B08C94 /* AlertManager.swift */; };
@@ -36,8 +41,7 @@
 		A8BC7476245C2E9D00106097 /* ViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC7475245C2E9D00106097 /* ViewContoller.swift */; };
 		A8BC7479245C427400106097 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC7478245C427400106097 /* Images.swift */; };
 		A8BC747B245C429300106097 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC747A245C429300106097 /* Colors.swift */; };
-		A8BC7484245C95CF00106097 /* ListOfClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC7483245C95CF00106097 /* ListOfClothesViewController.swift */; };
-		A8BC7486245C95ED00106097 /* ListOfClothesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC7485245C95ED00106097 /* ListOfClothesView.swift */; };
+		A8BC7484245C95CF00106097 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC7483245C95CF00106097 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,9 @@
 		A82AC9862458405100C0DC3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A82AC9892458405100C0DC3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A82AC98B2458405100C0DC3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A84ADDF4245F3851008F3425 /* LaundrySymbolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundrySymbolsViewController.swift; sourceTree = "<group>"; };
+		A84ADDF6245F3AF0008F3425 /* ClothesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesListViewController.swift; sourceTree = "<group>"; };
+		A84ADDFA245F5143008F3425 /* LaundrySymbolsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundrySymbolsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A84DB6F72459E7F200A101B1 /* SignInViewControllerFacebookExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControllerFacebookExtension.swift; sourceTree = "<group>"; };
 		A84DB6FA245AB84800A101B1 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		A84DB6FE245AC8F200A101B1 /* Sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
@@ -61,6 +68,8 @@
 		A856135524594B64006555F2 /* Clo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Clo.entitlements; sourceTree = "<group>"; };
 		A856135624595F19006555F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A85B37DE24584723001833FD /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A8751F13245FFA7300B62589 /* LaundrySymbolsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundrySymbolsHeader.swift; sourceTree = "<group>"; };
+		A8751F1524601E5B00B62589 /* LaundrySymbolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundrySymbolsView.swift; sourceTree = "<group>"; };
 		A876C5282458590900B08C94 /* TextFieldErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldErrorHandler.swift; sourceTree = "<group>"; };
 		A876C52A24585B0900B08C94 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A876C52C24586A3900B08C94 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
@@ -74,8 +83,7 @@
 		A8BC7475245C2E9D00106097 /* ViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewContoller.swift; sourceTree = "<group>"; };
 		A8BC7478245C427400106097 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		A8BC747A245C429300106097 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		A8BC7483245C95CF00106097 /* ListOfClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfClothesViewController.swift; sourceTree = "<group>"; };
-		A8BC7485245C95ED00106097 /* ListOfClothesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfClothesView.swift; sourceTree = "<group>"; };
+		A8BC7483245C95CF00106097 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,7 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				A8BC747D245C441900106097 /* SignIn */,
-				A8BC7480245C955E00106097 /* ListOfClothes */,
+				A8BC7480245C955E00106097 /* Main interface */,
 			);
 			path = Units;
 			sourceTree = "<group>";
@@ -243,19 +251,21 @@
 			path = SignIn;
 			sourceTree = "<group>";
 		};
-		A8BC7480245C955E00106097 /* ListOfClothes */ = {
+		A8BC7480245C955E00106097 /* Main interface */ = {
 			isa = PBXGroup;
 			children = (
 				A8BC7481245C959300106097 /* Views */,
 				A8BC7482245C959C00106097 /* Controllers */,
 			);
-			path = ListOfClothes;
+			path = "Main interface";
 			sourceTree = "<group>";
 		};
 		A8BC7481245C959300106097 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A8BC7485245C95ED00106097 /* ListOfClothesView.swift */,
+				A8751F1524601E5B00B62589 /* LaundrySymbolsView.swift */,
+				A84ADDFA245F5143008F3425 /* LaundrySymbolsCollectionViewCell.swift */,
+				A8751F13245FFA7300B62589 /* LaundrySymbolsHeader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -263,7 +273,9 @@
 		A8BC7482245C959C00106097 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A8BC7483245C95CF00106097 /* ListOfClothesViewController.swift */,
+				A8BC7483245C95CF00106097 /* TabBarController.swift */,
+				A84ADDF4245F3851008F3425 /* LaundrySymbolsViewController.swift */,
+				A84ADDF6245F3AF0008F3425 /* ClothesListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -428,6 +440,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A84ADDF5245F3851008F3425 /* LaundrySymbolsViewController.swift in Sources */,
+				A84ADDFB245F5143008F3425 /* LaundrySymbolsCollectionViewCell.swift in Sources */,
 				A8B5FFB8245DF3FB00860B61 /* Router.swift in Sources */,
 				A876C52D24586A3900B08C94 /* AlertManager.swift in Sources */,
 				A84DB6FF245AC8F200A101B1 /* Sizes.swift in Sources */,
@@ -438,16 +452,18 @@
 				A8A2D877245B019300C265F3 /* TextField.swift in Sources */,
 				A876C5292458590900B08C94 /* TextFieldErrorHandler.swift in Sources */,
 				A8B5FFC2245EC15000860B61 /* AuthViewConstraints.swift in Sources */,
+				A8751F14245FFA7300B62589 /* LaundrySymbolsHeader.swift in Sources */,
 				A84DB6F82459E7F200A101B1 /* SignInViewControllerFacebookExtension.swift in Sources */,
 				A8BC7476245C2E9D00106097 /* ViewContoller.swift in Sources */,
 				A876C52B24585B0900B08C94 /* String.swift in Sources */,
 				A84DB6FB245AB84800A101B1 /* AuthView.swift in Sources */,
+				A84ADDF7245F3AF0008F3425 /* ClothesListViewController.swift in Sources */,
 				A87EE82D24587C0900B2639C /* SignInViewControllerGoogleExtension.swift in Sources */,
 				A8BC747B245C429300106097 /* Colors.swift in Sources */,
+				A8751F1624601E5B00B62589 /* LaundrySymbolsView.swift in Sources */,
 				A81D0B10245850E7003CA6B6 /* SignUpViewController.swift in Sources */,
-				A8BC7484245C95CF00106097 /* ListOfClothesViewController.swift in Sources */,
+				A8BC7484245C95CF00106097 /* TabBarController.swift in Sources */,
 				A8BC7479245C427400106097 /* Images.swift in Sources */,
-				A8BC7486245C95ED00106097 /* ListOfClothesView.swift in Sources */,
 				A8A2D879245B152F00C265F3 /* ForgotPasswordViewController.swift in Sources */,
 				A82AC9802458404F00C0DC3D /* SceneDelegate.swift in Sources */,
 				A851BEE424588B4F00ABF4DC /* SignInViewControllerAppleExtension.swift in Sources */,

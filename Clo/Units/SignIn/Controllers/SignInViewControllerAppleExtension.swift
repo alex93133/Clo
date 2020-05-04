@@ -4,6 +4,7 @@ import AuthenticationServices
 import CryptoKit
 
 extension SignInViewController {
+
     private func generateRandomNonceString(length: Int = 32) -> String {
         precondition(length > 0)
         let charset: [Character] =
@@ -31,7 +32,7 @@ extension SignInViewController {
         }
         return result
     }
-    
+
     private func sha256(_ input: String) -> String {
         let inputData = Data(input.utf8)
         let hashedData = SHA256.hash(data: inputData)
@@ -40,7 +41,7 @@ extension SignInViewController {
         }.joined()
         return hashString
     }
-    
+
     @objc func handleLogInWithAppleID() {
         let nonce = generateRandomNonceString()
         currentNonce = nonce
@@ -53,7 +54,7 @@ extension SignInViewController {
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
     }
-    
+
 }
 
 extension SignInViewController: ASAuthorizationControllerDelegate {
@@ -73,7 +74,7 @@ extension SignInViewController: ASAuthorizationControllerDelegate {
             let credential = OAuthProvider.credential(withProviderID: "apple.com",
                                                       idToken: idTokenString,
                                                       rawNonce: nonce)
-            
+
             Auth.auth().signIn(with: credential) { [unowned self] (_, error) in
                 if let error = error {
                     self.customView.displayError(errorText: error.localizedDescription)
@@ -83,7 +84,7 @@ extension SignInViewController: ASAuthorizationControllerDelegate {
             }
         }
     }
-    
+
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
         print("Failed to login into:", error.localizedDescription)
     }
