@@ -32,11 +32,11 @@ class LaundrySymbolsCollectionViewCell: UICollectionViewCell {
 
     // MARK: - LaundryImage
     private func setupLaundryImage(itemSize: CGFloat) {
-        laundryImage                    = UIImageView(frame: CGRect(x: 0, y: 0, width: itemSize, height: itemSize))
+        let spacing: CGFloat            = 20
+        laundryImage                    = UIImageView(frame: CGRect(x: 0, y: 0, width: itemSize - spacing, height: itemSize - spacing))
         laundryImage.center             = CGPoint(x: itemSize / 2, y: itemSize / 2)
         laundryImage.layer.cornerRadius = Sizes.defaultCornerRadius
         laundryImage.contentMode        = .scaleAspectFit
-        laundryImage.image              = Images.facebookIcon
 
         addSubview(laundryImage)
     }

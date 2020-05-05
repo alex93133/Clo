@@ -5,4 +5,5 @@ enum Constants {
     static let numberOfSymbolsItemsInRow = 5
     static let symbolCellIdentifier = "LaundrySymbol"
     static let symbolHeaderIdentifier = "LaundryHeader"
+    static let jsonFileName = "Symbols"
 }

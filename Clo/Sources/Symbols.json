@@ -1,0 +1,503 @@
+{
+  "symbols": [
+    {
+      "id": 1,
+      "category": "Washing",
+      "description": "Machine wash",
+      "imageName": "Washing_1"
+    },
+    {
+      "id": 2,
+      "category": "Washing",
+      "description": "Gentle wash",
+      "imageName": "Washing_2"
+    },
+    {
+      "id": 3,
+      "category": "Washing",
+      "description": "Very gentle wash",
+      "imageName": "Washing_3"
+    },
+    {
+      "id": 4,
+      "category": "Washing",
+      "description": "Hand wash",
+      "imageName": "Washing_4"
+    },
+    {
+      "id": 5,
+      "category": "Washing",
+      "description": "Do not wash",
+      "imageName": "Washing_5"
+    },
+    {
+      "id": 6,
+      "category": "Washing",
+      "description": "Wash at or below 30 °C",
+      "imageName": "Washing_6"
+    },
+    {
+      "id": 7,
+      "category": "Washing",
+      "description": "Wash at or below 40 °C",
+      "imageName": "Washing_7"
+    },
+    {
+      "id": 8,
+      "category": "Washing",
+      "description": "Wash at or below 60 °C",
+      "imageName": "Washing_8"
+    },
+    {
+      "id": 9,
+      "category": "Washing",
+      "description": "Wash at or below 70 °C",
+      "imageName": "Washing_9"
+    },
+    {
+      "id": 10,
+      "category": "Washing",
+      "description": "Wash at or below 95 °C",
+      "imageName": "Washing_10"
+    },
+    {
+      "id": 11,
+      "category": "Washing",
+      "description": "Gentle wash at or below 30 °C",
+      "imageName": "Washing_11"
+    },
+    {
+      "id": 12,
+      "category": "Washing",
+      "description": "Gentle wash at or below 40 °C",
+      "imageName": "Washing_12"
+    },
+    {
+      "id": 13,
+      "category": "Washing",
+      "description": "Gentle wash at or below 60 °C",
+      "imageName": "Washing_13"
+    },
+    {
+      "id": 14,
+      "category": "Washing",
+      "description": "Gentle wash at or below 70 °C",
+      "imageName": "Washing_14"
+    },
+    {
+      "id": 15,
+      "category": "Washing",
+      "description": "Gentle wash at or below 95 °C",
+      "imageName": "Washing_15"
+    },
+    {
+      "id": 16,
+      "category": "Washing",
+      "description": "Very gentle wash at or below 30 °C",
+      "imageName": "Washing_16"
+    },
+    {
+      "id": 17,
+      "category": "Washing",
+      "description": "Very gentle wash at or below 40 °C",
+      "imageName": "Washing_17"
+    },
+    {
+      "id": 18,
+      "category": "Washing",
+      "description": "Very gentle wash at or below 60 °C",
+      "imageName": "Washing_18"
+    },
+    {
+      "id": 19,
+      "category": "Washing",
+      "description": "Very gentle wash at or below 70 °C",
+      "imageName": "Washing_19"
+    },
+    {
+      "id": 20,
+      "category": "Washing",
+      "description": "Very gentle wash at or below 95 °C",
+      "imageName": "Washing_20"
+    },
+    {
+      "id": 21,
+      "category": "Washing",
+      "description": "Wash at or below 30 °C",
+      "imageName": "Washing_21"
+    },
+    {
+      "id": 22,
+      "category": "Washing",
+      "description": "Wash at or below 40 °C",
+      "imageName": "Washing_22"
+    },
+    {
+      "id": 23,
+      "category": "Washing",
+      "description": "Wash at or below 60 °C",
+      "imageName": "Washing_23"
+    },
+    {
+      "id": 24,
+      "category": "Washing",
+      "description": "Wash at or below 70 °C",
+      "imageName": "Washing_24"
+    },
+    {
+      "id": 25,
+      "category": "Washing",
+      "description": "Wash at or below 95 °C",
+      "imageName": "Washing_25"
+    },
+    {
+      "id": 26,
+      "category": "Washing",
+      "description": "Gentle wash at or below 30 °C",
+      "imageName": "Washing_26"
+    },
+    {
+      "id": 27,
+      "category": "Washing",
+      "description": "Gentle wash at or below 40 °C",
+      "imageName": "Washing_27"
+    },
+    {
+      "id": 28,
+      "category": "Washing",
+      "description": "Gentle wash at or below 60 °C",
+      "imageName": "Washing_28"
+    },
+    {
+      "id": 29,
+      "category": "Washing",
+      "description": "Gentle wash at or below 70 °C",
+      "imageName": "Washing_29"
+    },
+    {
+      "id": 30,
+      "category": "Washing",
+      "description": "Gentle wash at or below 95 °C",
+      "imageName": "Washing_30"
+    },
+    {
+      "id": 31,
+      "category": "Washing",
+      "description": "Very gentle wash at or below 30 °C",
+      "imageName": "Washing_31"
+    },
+    {
+      "id": 32,
+      "category": "Washing",
+      "description": "Very gentle wash at or below 40 °C",
+      "imageName": "Washing_32"
+    },
+    {
+      "id": 33,
+      "category": "Washing",
+      "description": "Very gentle wash at or below 60 °C",
+      "imageName": "Washing_33"
+    },
+    {
+      "id": 34,
+      "category": "Washing",
+      "description": "Very gentle wash at or below 70 °C",
+      "imageName": "Washing_34"
+    },
+    {
+      "id": 35,
+      "category": "Washing",
+      "description": "Very gentle wash at or below 95 °C",
+      "imageName": "Washing_35"
+    },
+    
+    {
+      "id": 36,
+      "category": "Bleaching",
+      "description": "Allowed for both chlorine and non-chlorine bleach",
+      "imageName": "Bleaching_1"
+    },
+    {
+      "id": 37,
+      "category": "Bleaching",
+      "description": "Do not bleach",
+      "imageName": "Bleaching_2"
+    },
+    {
+      "id": 38,
+      "category": "Bleaching",
+      "description": "Non-chlorine bleach when needed",
+      "imageName": "Bleaching_3"
+    },
+    {
+      "id": 39,
+      "category": "Bleaching",
+      "description": "Bleaching with chlorine allowed (obsolete)",
+      "imageName": "Bleaching_4"
+    },
+    {
+      "id": 40,
+      "category": "Bleaching",
+      "description": "Non-chlorine bleach when needed",
+      "imageName": "Bleaching_5"
+    },
+    {
+      "id": 41,
+      "category": "Tumble drying",
+      "description": "Allowed tumble drying",
+      "imageName": "TumbleDrying_1"
+    },
+    {
+      "id": 42,
+      "category": "Tumble drying",
+      "description": "Tumble drying at low temperature",
+      "imageName": "TumbleDrying_2"
+    },
+    {
+      "id": 43,
+      "category": "Tumble drying",
+      "description": "Normal tumble drying",
+      "imageName": "TumbleDrying_3"
+    },
+    {
+      "id": 44,
+      "category": "Tumble drying",
+      "description": "Tumble drying at high temperature",
+      "imageName": "TumbleDrying_4"
+    },
+    {
+      "id": 45,
+      "category": "Tumble drying",
+      "description": "Gentle tumble drying",
+      "imageName": "TumbleDrying_5"
+    },
+    {
+      "id": 46,
+      "category": "Tumble drying",
+      "description": "Very gentle tumble drying",
+      "imageName": "TumbleDrying_6"
+    },
+    {
+      "id": 47,
+      "category": "Tumble drying",
+      "description": "Do not tumble dry",
+      "imageName": "TumbleDrying_7"
+    },
+    {
+      "id": 48,
+      "category": "Tumble drying",
+      "description": "Do not tumble dry",
+      "imageName": "TumbleDrying_8"
+    },
+    {
+      "id": 49,
+      "category": "Tumble drying",
+      "description": "Do not wring",
+      "imageName": "TumbleDrying_9"
+    },
+    {
+      "id": 50,
+      "category": "Natural drying",
+      "description": "Natural drying symbol",
+      "imageName": "NaturalDrying_1"
+    },
+    {
+      "id": 51,
+      "category": "Natural drying",
+      "description": "Line dry",
+      "imageName": "NaturalDrying_2"
+    },
+    {
+      "id": 52,
+      "category": "Natural drying",
+      "description": "Dry flat",
+      "imageName": "NaturalDrying_3"
+    },
+    {
+      "id": 53,
+      "category": "Natural drying",
+      "description": "Drip dry",
+      "imageName": "NaturalDrying_4"
+    },
+    {
+      "id": 54,
+      "category": "Natural drying",
+      "description": "Drip dry flat",
+      "imageName": "NaturalDrying_5"
+    },
+    {
+      "id": 55,
+      "category": "Natural drying",
+      "description": "Line dry in the shade",
+      "imageName": "NaturalDrying_6"
+    },
+    {
+      "id": 56,
+      "category": "Natural drying",
+      "description": "Dry flat in the shade",
+      "imageName": "NaturalDrying_7"
+    },
+    {
+      "id": 57,
+      "category": "Natural drying",
+      "description": "Drip dry in the shade",
+      "imageName": "NaturalDrying_8"
+    },
+    {
+      "id": 58,
+      "category": "Natural drying",
+      "description": "Drip dry flat in the shade",
+      "imageName": "NaturalDrying_9"
+    },
+    {
+      "id": 59,
+      "category": "Natural drying",
+      "description": "Dry in the shade",
+      "imageName": "NaturalDrying_10"
+    },
+    {
+      "id": 60,
+      "category": "Natural drying",
+      "description": "Line dry",
+      "imageName": "NaturalDrying_11"
+    },
+    {
+      "id": 61,
+      "category": "Natural drying",
+      "description": "Line dry in the shade",
+      "imageName": "NaturalDrying_12"
+    },
+    {
+      "id": 62,
+      "category": "Natural drying",
+      "description": "Dry flat in the shade",
+      "imageName": "NaturalDrying_13"
+    },
+    {
+      "id": 63,
+      "category": "Natural drying",
+      "description": "Drip dry",
+      "imageName": "NaturalDrying_14"
+    },
+    {
+      "id": 64,
+      "category": "Natural drying",
+      "description": "Drip dry in the shade",
+      "imageName": "NaturalDrying_15"
+    },
+    {
+      "id": 65,
+      "category": "Ironing",
+      "description": "Allowed ironing",
+      "imageName": "Ironing_1"
+    },
+    {
+      "id": 66,
+      "category": "Ironing",
+      "description": "Do not iron",
+      "imageName": "Ironing_2"
+    },
+    {
+      "id": 67,
+      "category": "Ironing",
+      "description": "Iron at low temperature",
+      "imageName": "Ironing_3"
+    },
+    {
+      "id": 68,
+      "category": "Ironing",
+      "description": "Iron at medium temperature",
+      "imageName": "Ironing_4"
+    },
+    {
+      "id": 69,
+      "category": "Ironing",
+      "description": "Iron at high temperature",
+      "imageName": "Ironing_5"
+    },
+    {
+      "id": 70,
+      "category": "Professional cleaning",
+      "description": "Professional cleaning symbol",
+      "imageName": "ProfessionalCleaning_1"
+    },
+    {
+      "id": 71,
+      "category": "Professional cleaning",
+      "description": "Do not dry clean",
+      "imageName": "ProfessionalCleaning_2"
+    },
+    {
+      "id": 72,
+      "category": "Professional cleaning",
+      "description": "Dry clean, tetrachloroethylene (PCE) only",
+      "imageName": "ProfessionalCleaning_3"
+    },
+    {
+      "id": 73,
+      "category": "Professional cleaning",
+      "description": "Gentle cleaning with tetrachloroethylene (PCE)",
+      "imageName": "ProfessionalCleaning_4"
+    },
+    {
+      "id": 74,
+      "category": "Professional cleaning",
+      "description": "Very gentle cleaning with tetrachloroethylene (PCE)",
+      "imageName": "ProfessionalCleaning_5"
+    },
+    {
+      "id": 75,
+      "category": "Professional cleaning",
+      "description": "Dry clean, hydrocarbon solvent only (HCS)",
+      "imageName": "ProfessionalCleaning_6"
+    },
+    {
+      "id": 76,
+      "category": "Professional cleaning",
+      "description": "Gentle cleaning with hydrocarbon solvents (HCS)",
+      "imageName": "ProfessionalCleaning_7"
+    },
+    {
+      "id": 77,
+      "category": "Professional cleaning",
+      "description": "Very gentle cleaning with hydrocarbon solvents (HCS)",
+      "imageName": "ProfessionalCleaning_8"
+    },
+    {
+      "id": 78,
+      "category": "Professional cleaning",
+      "description": "Dry clean with any solvent",
+      "imageName": "ProfessionalCleaning_9"
+    },
+    {
+      "id": 79,
+      "category": "Professional cleaning",
+      "description": "Gentle cleaning with any solvent",
+      "imageName": "ProfessionalCleaning_10"
+    },
+    {
+      "id": 80,
+      "category": "Professional cleaning",
+      "description": "Very gentle cleaning with any solvent",
+      "imageName": "ProfessionalCleaning_11"
+    },
+    {
+      "id": 81,
+      "category": "Professional cleaning",
+      "description": "Professional wet cleaning",
+      "imageName": "ProfessionalCleaning_12"
+    },
+    {
+      "id": 82,
+      "category": "Professional cleaning",
+      "description": "Gentle wet cleaning",
+      "imageName": "ProfessionalCleaning_13"
+    },
+    {
+      "id": 83,
+      "category": "Professional cleaning",
+      "description": "Very gentle wet cleaning",
+      "imageName": "ProfessionalCleaning_14"
+    }
+  ]
+}
