@@ -11,6 +11,12 @@
 		A807DB972459A317006BE209 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = A807DB962459A317006BE209 /* .swiftlint.yml */; };
 		A81D0B10245850E7003CA6B6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81D0B0F245850E6003CA6B6 /* SignUpViewController.swift */; };
 		A81D0B13245851A6003CA6B6 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81D0B12245851A6003CA6B6 /* FirebaseManager.swift */; };
+		A8204D5B2463183B005E30A0 /* PhotoSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8204D5A2463183B005E30A0 /* PhotoSheetViewController.swift */; };
+		A8204D5D24631881005E30A0 /* PhotoSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8204D5C24631880005E30A0 /* PhotoSheetView.swift */; };
+		A8204D5F2463189D005E30A0 /* PhotoSheetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8204D5E2463189D005E30A0 /* PhotoSheetCollectionViewCell.swift */; };
+		A8204D6124632A65005E30A0 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8204D6024632A65005E30A0 /* ImageView.swift */; };
+		A8204D632463F874005E30A0 /* AddNewClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8204D622463F874005E30A0 /* AddNewClothesViewController.swift */; };
+		A8204D652463F8D9005E30A0 /* AddNewClothesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8204D642463F8D9005E30A0 /* AddNewClothesView.swift */; };
 		A82AC97E2458404F00C0DC3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82AC97D2458404F00C0DC3D /* AppDelegate.swift */; };
 		A82AC9802458404F00C0DC3D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82AC97F2458404F00C0DC3D /* SceneDelegate.swift */; };
 		A82AC9822458404F00C0DC3D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82AC9812458404F00C0DC3D /* SignInViewController.swift */; };
@@ -39,6 +45,7 @@
 		A8B5FFB8245DF3FB00860B61 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5FFB7245DF3FB00860B61 /* Router.swift */; };
 		A8B5FFBA245E069800860B61 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5FFB9245E069800860B61 /* Constants.swift */; };
 		A8B5FFC2245EC15000860B61 /* AuthViewConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5FFC1245EC15000860B61 /* AuthViewConstraints.swift */; };
+		A8B6399724643A12005F335F /* SymbolDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B6399624643A12005F335F /* SymbolDescriptionViewController.swift */; };
 		A8BC7476245C2E9D00106097 /* ViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC7475245C2E9D00106097 /* ViewContoller.swift */; };
 		A8BC7479245C427400106097 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC7478245C427400106097 /* Images.swift */; };
 		A8BC747B245C429300106097 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC747A245C429300106097 /* Colors.swift */; };
@@ -55,6 +62,12 @@
 		A807DB962459A317006BE209 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		A81D0B0F245850E6003CA6B6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A81D0B12245851A6003CA6B6 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		A8204D5A2463183B005E30A0 /* PhotoSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSheetViewController.swift; sourceTree = "<group>"; };
+		A8204D5C24631880005E30A0 /* PhotoSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSheetView.swift; sourceTree = "<group>"; };
+		A8204D5E2463189D005E30A0 /* PhotoSheetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSheetCollectionViewCell.swift; sourceTree = "<group>"; };
+		A8204D6024632A65005E30A0 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		A8204D622463F874005E30A0 /* AddNewClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewClothesViewController.swift; sourceTree = "<group>"; };
+		A8204D642463F8D9005E30A0 /* AddNewClothesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewClothesView.swift; sourceTree = "<group>"; };
 		A82AC97A2458404F00C0DC3D /* Clo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A82AC97D2458404F00C0DC3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A82AC97F2458404F00C0DC3D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +98,7 @@
 		A8B5FFB7245DF3FB00860B61 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		A8B5FFB9245E069800860B61 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A8B5FFC1245EC15000860B61 /* AuthViewConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewConstraints.swift; sourceTree = "<group>"; };
+		A8B6399624643A12005F335F /* SymbolDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolDescriptionViewController.swift; sourceTree = "<group>"; };
 		A8BC7475245C2E9D00106097 /* ViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewContoller.swift; sourceTree = "<group>"; };
 		A8BC7478245C427400106097 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		A8BC747A245C429300106097 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -196,6 +210,7 @@
 				A876C52A24585B0900B08C94 /* String.swift */,
 				A8A2D876245B019300C265F3 /* TextField.swift */,
 				A8BC7475245C2E9D00106097 /* ViewContoller.swift */,
+				A8204D6024632A65005E30A0 /* ImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -233,6 +248,38 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A8644DA72464171A007ABAA8 /* ListOfClothes */ = {
+			isa = PBXGroup;
+			children = (
+				A84ADDF6245F3AF0008F3425 /* ClothesListViewController.swift */,
+			);
+			path = ListOfClothes;
+			sourceTree = "<group>";
+		};
+		A8644DA824641729007ABAA8 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				A8204D642463F8D9005E30A0 /* AddNewClothesView.swift */,
+				A8204D622463F874005E30A0 /* AddNewClothesViewController.swift */,
+				A8204D5C24631880005E30A0 /* PhotoSheetView.swift */,
+				A8204D5E2463189D005E30A0 /* PhotoSheetCollectionViewCell.swift */,
+				A8204D5A2463183B005E30A0 /* PhotoSheetViewController.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		A8644DA924641758007ABAA8 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A8751F1524601E5B00B62589 /* LaundrySymbolsView.swift */,
+				A84ADDFA245F5143008F3425 /* LaundrySymbolsCollectionViewCell.swift */,
+				A8751F13245FFA7300B62589 /* LaundrySymbolsHeader.swift */,
+				A84ADDF4245F3851008F3425 /* LaundrySymbolsViewController.swift */,
+				A8B6399624643A12005F335F /* SymbolDescriptionViewController.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		A8BC7477245C422D00106097 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,30 +313,12 @@
 		A8BC7480245C955E00106097 /* Main interface */ = {
 			isa = PBXGroup;
 			children = (
-				A8BC7481245C959300106097 /* Views */,
-				A8BC7482245C959C00106097 /* Controllers */,
+				A8BC7483245C95CF00106097 /* TabBarController.swift */,
+				A8644DA924641758007ABAA8 /* Helper */,
+				A8644DA824641729007ABAA8 /* Add */,
+				A8644DA72464171A007ABAA8 /* ListOfClothes */,
 			);
 			path = "Main interface";
-			sourceTree = "<group>";
-		};
-		A8BC7481245C959300106097 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				A8751F1524601E5B00B62589 /* LaundrySymbolsView.swift */,
-				A84ADDFA245F5143008F3425 /* LaundrySymbolsCollectionViewCell.swift */,
-				A8751F13245FFA7300B62589 /* LaundrySymbolsHeader.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		A8BC7482245C959C00106097 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				A8BC7483245C95CF00106097 /* TabBarController.swift */,
-				A84ADDF4245F3851008F3425 /* LaundrySymbolsViewController.swift */,
-				A84ADDF6245F3AF0008F3425 /* ClothesListViewController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,8 +328,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A82AC98E2458405100C0DC3D /* Build configuration list for PBXNativeTarget "Clo" */;
 			buildPhases = (
-				A82BEC59245B255000478C8B /* ShellScript */,
 				F881CD4CCF412E64BDECC764 /* [CP] Check Pods Manifest.lock */,
+				A82BEC59245B255000478C8B /* ShellScript */,
 				A82AC9762458404F00C0DC3D /* Sources */,
 				A82AC9772458404F00C0DC3D /* Frameworks */,
 				A82AC9782458404F00C0DC3D /* Resources */,
@@ -455,8 +484,10 @@
 			files = (
 				A84ADDF5245F3851008F3425 /* LaundrySymbolsViewController.swift in Sources */,
 				A84ADDFB245F5143008F3425 /* LaundrySymbolsCollectionViewCell.swift in Sources */,
+				A8204D652463F8D9005E30A0 /* AddNewClothesView.swift in Sources */,
 				A8B5FFB8245DF3FB00860B61 /* Router.swift in Sources */,
 				A876C52D24586A3900B08C94 /* AlertManager.swift in Sources */,
+				A8B6399724643A12005F335F /* SymbolDescriptionViewController.swift in Sources */,
 				A84DB6FF245AC8F200A101B1 /* Sizes.swift in Sources */,
 				A82AC9822458404F00C0DC3D /* SignInViewController.swift in Sources */,
 				A82AC97E2458404F00C0DC3D /* AppDelegate.swift in Sources */,
@@ -466,20 +497,25 @@
 				A876C5292458590900B08C94 /* TextFieldErrorHandler.swift in Sources */,
 				A8C9034A24602FE3004294D9 /* Categories.swift in Sources */,
 				A8B5FFC2245EC15000860B61 /* AuthViewConstraints.swift in Sources */,
+				A8204D5D24631881005E30A0 /* PhotoSheetView.swift in Sources */,
 				A8751F14245FFA7300B62589 /* LaundrySymbolsHeader.swift in Sources */,
 				A84DB6F82459E7F200A101B1 /* SignInViewControllerFacebookExtension.swift in Sources */,
 				A8BC7476245C2E9D00106097 /* ViewContoller.swift in Sources */,
 				A876C52B24585B0900B08C94 /* String.swift in Sources */,
 				A84DB6FB245AB84800A101B1 /* AuthView.swift in Sources */,
+				A8204D5B2463183B005E30A0 /* PhotoSheetViewController.swift in Sources */,
+				A8204D6124632A65005E30A0 /* ImageView.swift in Sources */,
 				A84ADDF7245F3AF0008F3425 /* ClothesListViewController.swift in Sources */,
 				A886AFCF24606301007FAEF2 /* SymbolsSections.swift in Sources */,
 				A87EE82D24587C0900B2639C /* SignInViewControllerGoogleExtension.swift in Sources */,
+				A8204D632463F874005E30A0 /* AddNewClothesViewController.swift in Sources */,
 				A8BC747B245C429300106097 /* Colors.swift in Sources */,
 				A8751F1624601E5B00B62589 /* LaundrySymbolsView.swift in Sources */,
 				A81D0B10245850E7003CA6B6 /* SignUpViewController.swift in Sources */,
 				A8BC7484245C95CF00106097 /* TabBarController.swift in Sources */,
 				A8BC7479245C427400106097 /* Images.swift in Sources */,
 				A8A2D879245B152F00C265F3 /* ForgotPasswordViewController.swift in Sources */,
+				A8204D5F2463189D005E30A0 /* PhotoSheetCollectionViewCell.swift in Sources */,
 				A8C9034824602EE9004294D9 /* Symbols.swift in Sources */,
 				A82AC9802458404F00C0DC3D /* SceneDelegate.swift in Sources */,
 				A851BEE424588B4F00ABF4DC /* SignInViewControllerAppleExtension.swift in Sources */,

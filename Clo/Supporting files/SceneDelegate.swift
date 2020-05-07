@@ -1,4 +1,5 @@
 import UIKit
+import FirebaseAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -8,8 +9,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
-//        window?.rootViewController = UINavigationController(rootViewController: SignInViewController())
-        window?.rootViewController = TabBarController()
+        if Auth.auth().currentUser == nil {
+            window?.rootViewController = UINavigationController(rootViewController: SignInViewController())
+        } else {
+//            window?.rootViewController = PhotoSheetViewController()
+            window?.rootViewController = TabBarController()
+        }
         window?.makeKeyAndVisible()
     }
 }

@@ -13,5 +13,6 @@ pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'GoogleSignIn'
 pod 'SwiftLint'
+pod 'FittedSheets'
 
 end

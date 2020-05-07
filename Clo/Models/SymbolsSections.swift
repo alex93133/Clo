@@ -3,11 +3,11 @@ import Foundation
 struct SymbolsSections {
     let title: String
     let items: [Symbol]
-    
+
     static func getSections() -> [SymbolsSections] {
         guard let symbols = Symbols.allSymbols() else { return []}
-        let sectionTitles = Categories.allCases.map() { $0.rawValue }
-        
+        let sectionTitles = Categories.allCases.map { $0.rawValue }
+
         var symbolDictionary: [String: [Symbol]] = [:]
         for element in symbols {
             if symbolDictionary[element.category.rawValue] == nil {
@@ -15,10 +15,10 @@ struct SymbolsSections {
             }
             symbolDictionary[element.category.rawValue]!.append(element)
         }
-        
+
         var sections = [SymbolsSections]()
-        sections = sectionTitles.map() { SymbolsSections(title: $0, items: symbolDictionary[$0]!) }
-        
+        sections = sectionTitles.map { SymbolsSections(title: $0, items: symbolDictionary[$0]!) }
+
         return sections
     }
 }
