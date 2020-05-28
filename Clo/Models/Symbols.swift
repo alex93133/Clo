@@ -4,7 +4,7 @@ struct Symbols: Codable {
     let symbols: [Symbol]
 
     static func allSymbols() -> [Symbol]? {
-        if let url = Bundle.main.url(forResource: Constants.jsonFileName, withExtension: "json") {
+        if let url = Bundle.main.url(forResource: Identifiers.jsonFileName, withExtension: "json") {
             do {
                 let data = try Data(contentsOf: url)
                 let decoder = JSONDecoder()

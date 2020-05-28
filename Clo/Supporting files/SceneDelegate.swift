@@ -12,7 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if Auth.auth().currentUser == nil {
             window?.rootViewController = UINavigationController(rootViewController: SignInViewController())
         } else {
-//            window?.rootViewController = PhotoSheetViewController()
+            window?.rootViewController = GalleryViewController()
             window?.rootViewController = TabBarController()
         }
         window?.makeKeyAndVisible()

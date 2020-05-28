@@ -14,5 +14,6 @@ pod 'Firebase/Database'
 pod 'GoogleSignIn'
 pod 'SwiftLint'
 pod 'FittedSheets'
+pod 'IQKeyboardManagerSwift'
 
 end

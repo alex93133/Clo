@@ -1,10 +1,21 @@
 import UIKit
 
-extension UIViewController {
+@nonobjc extension UIViewController {
 
-    func addChildViewController(add child: UIViewController, target parent: UIViewController) {
-        parent.addChild(child)
-        parent.view.addSubview(child.view)
-        child.didMove(toParent: parent)
+    func add(_ child: UIViewController, frame: CGRect? = nil) {
+        addChild(child)
+
+        if let frame = frame {
+            child.view.frame = frame
+        }
+
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
+    }
+
+    func remove() {
+        willMove(toParent: nil)
+        view.removeFromSuperview()
+        removeFromParent()
     }
 }
