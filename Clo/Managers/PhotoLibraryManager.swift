@@ -12,11 +12,11 @@ class PhotoLibraryManager {
         DispatchQueue.global().async {
             let manager                  = PHImageManager.default()
             let requestOptions           = PHImageRequestOptions()
-            requestOptions.isSynchronous = true
+            requestOptions.isSynchronous = false
             requestOptions.deliveryMode  = .highQualityFormat
             let fetchOptions             = PHFetchOptions()
             fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-            fetchOptions.fetchLimit      = 200
+            fetchOptions.fetchLimit      = 5
 
             let results: PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
                guard results.count > 0 else { return }

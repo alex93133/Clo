@@ -7,11 +7,6 @@ target 'Clo' do
 
   # Pods for Clo
 
-pod 'Firebase/Analytics'
-pod 'Firebase/Core'
-pod 'Firebase/Auth'
-pod 'Firebase/Database'
-pod 'GoogleSignIn'
 pod 'SwiftLint'
 pod 'FittedSheets'
 pod 'IQKeyboardManagerSwift'

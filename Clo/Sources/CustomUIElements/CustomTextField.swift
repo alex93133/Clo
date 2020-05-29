@@ -4,15 +4,15 @@ class CustomTextField: UITextField {
 
     init(placeholder: String, addTo view: UIView) {
         super.init(frame: .zero)
-        backgroundColor        = Colors.whiteBGColor
+        backgroundColor        = Colors.lightGrayBGColor
         attributedPlaceholder  = NSAttributedString(string: placeholder,
                                                     attributes: [NSAttributedString.Key.foregroundColor: Colors.grayTextColor,
                                                                  NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Fonts.mediumTextSize, weight: .regular)])
         textColor              = Colors.grayTextColor
         layer.cornerRadius     = Constants.customLoginButtonCornerRadius
-        layer.borderWidth      = 0.5
         autocapitalizationType = .none
         setLeftPaddingPoints(Constants.textFieldPadding)
+        CustomBorder.createDefaultBorder(target: layer)
         addToView(view)
     }
 
@@ -23,9 +23,9 @@ class CustomTextField: UITextField {
     private func addToView(_ view: UIView) {
         view.addSubview(self)
 
-        translatesAutoresizingMaskIntoConstraints                                         = false
-        heightAnchor.constraint(equalToConstant: 50).isActive                             = true
-        leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive           = true
-        trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive        = true
+        translatesAutoresizingMaskIntoConstraints                                  = false
+        heightAnchor.constraint(equalToConstant: 50).isActive                      = true
+        leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive    = true
+        trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
     }
 }

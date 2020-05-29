@@ -1,6 +1,7 @@
 import UIKit
 
 struct Symbols: Codable {
+
     let symbols: [Symbol]
 
     static func allSymbols() -> [Symbol]? {
@@ -19,6 +20,7 @@ struct Symbols: Codable {
 }
 
 struct Symbol: Codable {
+
     let id: Int
     let category: Categories
     let description: String

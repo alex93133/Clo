@@ -1,6 +1,7 @@
 import Foundation
 
 struct SymbolsSections {
+
     let title: String
     let items: [Symbol]
 

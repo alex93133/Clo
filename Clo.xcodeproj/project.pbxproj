@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		33041FA1247CF64300721E63 /* ClothesSymbolsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33041FA0247CF64300721E63 /* ClothesSymbolsCollectionViewCell.swift */; };
 		33041FA3247D061700721E63 /* ClothesListCollectionViewCellDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33041FA2247D061700721E63 /* ClothesListCollectionViewCellDelegates.swift */; };
 		33148695247FF279007BAA43 /* InputFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33148694247FF279007BAA43 /* InputFieldsView.swift */; };
+		3315B132248110E300BA354B /* CustomBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3315B131248110E300BA354B /* CustomBorder.swift */; };
 		33574789247FBB89008172FB /* ColorTypeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33574788247FBB89008172FB /* ColorTypeCollectionView.swift */; };
 		3357478B247FBC03008172FB /* ColorTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357478A247FBC03008172FB /* ColorTypeCollectionViewCell.swift */; };
 		3357478E247FC77D008172FB /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357478D247FC77D008172FB /* NextButton.swift */; };
@@ -21,28 +22,19 @@
 		3396FCC9247BFEA800D8B759 /* ClothesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3396FCC8247BFEA800D8B759 /* ClothesListView.swift */; };
 		33E7DCF0247F92CF00BD3F41 /* AddClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCEF247F92CF00BD3F41 /* AddClothesViewController.swift */; };
 		33E7DCF2247F92E800BD3F41 /* AddClothesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCF1247F92E800BD3F41 /* AddClothesView.swift */; };
-		33E7DCF4247F968B00BD3F41 /* ClothesPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCF3247F968B00BD3F41 /* ClothesPhotoView.swift */; };
 		33E7DCFA247FB1D900BD3F41 /* ClothingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCF9247FB1D900BD3F41 /* ClothingType.swift */; };
 		A807DB972459A317006BE209 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = A807DB962459A317006BE209 /* .swiftlint.yml */; };
-		A81D0B10245850E7003CA6B6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81D0B0F245850E6003CA6B6 /* SignUpViewController.swift */; };
-		A81D0B13245851A6003CA6B6 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81D0B12245851A6003CA6B6 /* FirebaseManager.swift */; };
 		A8204D5B2463183B005E30A0 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8204D5A2463183B005E30A0 /* GalleryViewController.swift */; };
 		A8204D5D24631881005E30A0 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8204D5C24631880005E30A0 /* GalleryView.swift */; };
 		A8204D5F2463189D005E30A0 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8204D5E2463189D005E30A0 /* GalleryCollectionViewCell.swift */; };
 		A82AC97E2458404F00C0DC3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82AC97D2458404F00C0DC3D /* AppDelegate.swift */; };
 		A82AC9802458404F00C0DC3D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82AC97F2458404F00C0DC3D /* SceneDelegate.swift */; };
-		A82AC9822458404F00C0DC3D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82AC9812458404F00C0DC3D /* SignInViewController.swift */; };
 		A82AC9872458405100C0DC3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A82AC9862458405100C0DC3D /* Assets.xcassets */; };
 		A82AC98A2458405100C0DC3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A82AC9882458405100C0DC3D /* LaunchScreen.storyboard */; };
 		A84ADDF5245F3851008F3425 /* LaundrySymbolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84ADDF4245F3851008F3425 /* LaundrySymbolsViewController.swift */; };
 		A84ADDF7245F3AF0008F3425 /* ClothesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84ADDF6245F3AF0008F3425 /* ClothesListViewController.swift */; };
 		A84ADDFB245F5143008F3425 /* LaundrySymbolsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84ADDFA245F5143008F3425 /* LaundrySymbolsCollectionViewCell.swift */; };
-		A84DB6F62459E34800A101B1 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = A84DB6F52459E34800A101B1 /* FacebookLogin */; };
-		A84DB6F82459E7F200A101B1 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84DB6F72459E7F200A101B1 /* Facebook.swift */; };
-		A84DB6FB245AB84800A101B1 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84DB6FA245AB84800A101B1 /* AuthView.swift */; };
 		A84DB6FF245AC8F200A101B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84DB6FE245AC8F200A101B1 /* Constants.swift */; };
-		A851BEE424588B4F00ABF4DC /* AppleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A851BEE324588B4F00ABF4DC /* AppleAuth.swift */; };
-		A856135724595F1A006555F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A856135624595F19006555F2 /* GoogleService-Info.plist */; };
 		A85B37DF24584723001833FD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A85B37DE24584723001833FD /* .gitignore */; };
 		A8751F14245FFA7300B62589 /* LaundrySymbolsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8751F13245FFA7300B62589 /* LaundrySymbolsHeader.swift */; };
 		A8751F1624601E5B00B62589 /* LaundrySymbolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8751F1524601E5B00B62589 /* LaundrySymbolsView.swift */; };
@@ -50,12 +42,9 @@
 		A876C52B24585B0900B08C94 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A876C52A24585B0900B08C94 /* String.swift */; };
 		A876C52D24586A3900B08C94 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A876C52C24586A3900B08C94 /* AlertManager.swift */; };
 		A876C52F2458701E00B08C94 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A876C52E2458701E00B08C94 /* Podfile */; };
-		A87EE82D24587C0900B2639C /* GoogleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EE82C24587C0900B2639C /* GoogleAuth.swift */; };
 		A886AFCF24606301007FAEF2 /* SymbolsSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = A886AFCE24606301007FAEF2 /* SymbolsSections.swift */; };
 		A8A2D877245B019300C265F3 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A2D876245B019300C265F3 /* TextField.swift */; };
-		A8A2D879245B152F00C265F3 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A2D878245B152F00C265F3 /* ForgotPasswordViewController.swift */; };
 		A8B5FFB8245DF3FB00860B61 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5FFB7245DF3FB00860B61 /* Router.swift */; };
-		A8B5FFC2245EC15000860B61 /* AuthViewConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5FFC1245EC15000860B61 /* AuthViewConstraints.swift */; };
 		A8B6399724643A12005F335F /* SymbolDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B6399624643A12005F335F /* SymbolDescriptionViewController.swift */; };
 		A8BC7476245C2E9D00106097 /* ViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC7475245C2E9D00106097 /* ViewContoller.swift */; };
 		A8BC7479245C427400106097 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC7478245C427400106097 /* Images.swift */; };
@@ -76,6 +65,7 @@
 		33041FA0247CF64300721E63 /* ClothesSymbolsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesSymbolsCollectionViewCell.swift; sourceTree = "<group>"; };
 		33041FA2247D061700721E63 /* ClothesListCollectionViewCellDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesListCollectionViewCellDelegates.swift; sourceTree = "<group>"; };
 		33148694247FF279007BAA43 /* InputFieldsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldsView.swift; sourceTree = "<group>"; };
+		3315B131248110E300BA354B /* CustomBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBorder.swift; sourceTree = "<group>"; };
 		33574788247FBB89008172FB /* ColorTypeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTypeCollectionView.swift; sourceTree = "<group>"; };
 		3357478A247FBC03008172FB /* ColorTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		3357478D247FC77D008172FB /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
@@ -84,31 +74,22 @@
 		3396FCC8247BFEA800D8B759 /* ClothesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesListView.swift; sourceTree = "<group>"; };
 		33E7DCEF247F92CF00BD3F41 /* AddClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClothesViewController.swift; sourceTree = "<group>"; };
 		33E7DCF1247F92E800BD3F41 /* AddClothesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClothesView.swift; sourceTree = "<group>"; };
-		33E7DCF3247F968B00BD3F41 /* ClothesPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesPhotoView.swift; sourceTree = "<group>"; };
 		33E7DCF9247FB1D900BD3F41 /* ClothingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingType.swift; sourceTree = "<group>"; };
 		7F4903D218EF839C0FC15428 /* Pods-Clo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clo.debug.xcconfig"; path = "Target Support Files/Pods-Clo/Pods-Clo.debug.xcconfig"; sourceTree = "<group>"; };
 		A807DB962459A317006BE209 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
-		A81D0B0F245850E6003CA6B6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		A81D0B12245851A6003CA6B6 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		A8204D5A2463183B005E30A0 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		A8204D5C24631880005E30A0 /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		A8204D5E2463189D005E30A0 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		A82AC97A2458404F00C0DC3D /* Clo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A82AC97D2458404F00C0DC3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A82AC97F2458404F00C0DC3D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A82AC9812458404F00C0DC3D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		A82AC9862458405100C0DC3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A82AC9892458405100C0DC3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A82AC98B2458405100C0DC3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A84ADDF4245F3851008F3425 /* LaundrySymbolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundrySymbolsViewController.swift; sourceTree = "<group>"; };
 		A84ADDF6245F3AF0008F3425 /* ClothesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesListViewController.swift; sourceTree = "<group>"; };
 		A84ADDFA245F5143008F3425 /* LaundrySymbolsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundrySymbolsCollectionViewCell.swift; sourceTree = "<group>"; };
-		A84DB6F72459E7F200A101B1 /* Facebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
-		A84DB6FA245AB84800A101B1 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		A84DB6FE245AC8F200A101B1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		A851BEE324588B4F00ABF4DC /* AppleAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuth.swift; sourceTree = "<group>"; };
-		A856135524594B64006555F2 /* Clo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Clo.entitlements; sourceTree = "<group>"; };
-		A856135624595F19006555F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A85B37DE24584723001833FD /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A8751F13245FFA7300B62589 /* LaundrySymbolsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundrySymbolsHeader.swift; sourceTree = "<group>"; };
 		A8751F1524601E5B00B62589 /* LaundrySymbolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundrySymbolsView.swift; sourceTree = "<group>"; };
@@ -116,12 +97,9 @@
 		A876C52A24585B0900B08C94 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A876C52C24586A3900B08C94 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		A876C52E2458701E00B08C94 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A87EE82C24587C0900B2639C /* GoogleAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuth.swift; sourceTree = "<group>"; };
 		A886AFCE24606301007FAEF2 /* SymbolsSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsSections.swift; sourceTree = "<group>"; };
 		A8A2D876245B019300C265F3 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
-		A8A2D878245B152F00C265F3 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		A8B5FFB7245DF3FB00860B61 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		A8B5FFC1245EC15000860B61 /* AuthViewConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewConstraints.swift; sourceTree = "<group>"; };
 		A8B6399624643A12005F335F /* SymbolDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolDescriptionViewController.swift; sourceTree = "<group>"; };
 		A8BC7475245C2E9D00106097 /* ViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewContoller.swift; sourceTree = "<group>"; };
 		A8BC7478245C427400106097 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -139,7 +117,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A84DB6F62459E34800A101B1 /* FacebookLogin in Frameworks */,
 				21D94A5B432B71402DFD2DFB /* Pods_Clo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +137,7 @@
 			children = (
 				3357478D247FC77D008172FB /* NextButton.swift */,
 				3357478F247FCABD008172FB /* CustomTextField.swift */,
+				3315B131248110E300BA354B /* CustomBorder.swift */,
 			);
 			path = CustomUIElements;
 			sourceTree = "<group>";
@@ -176,7 +154,6 @@
 		A81D0B1124585172003CA6B6 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				A81D0B12245851A6003CA6B6 /* FirebaseManager.swift */,
 				A8D9FEF02465BBFA00B62FB2 /* PhotoLibraryManager.swift */,
 				A876C52C24586A3900B08C94 /* AlertManager.swift */,
 			);
@@ -207,7 +184,7 @@
 				A82AC9962458414800C0DC3D /* Storyboards */,
 				A8BC7477245C422D00106097 /* Sources */,
 				A82AC9912458410100C0DC3D /* Models */,
-				A8BC747C245C43D900106097 /* Units */,
+				A8BC7480245C955E00106097 /* Screens */,
 				A81D0B1124585172003CA6B6 /* Managers */,
 				A8D9FEF22465BC2800B62FB2 /* Utilities */,
 				A82AC9932458411A00C0DC3D /* Extensions */,
@@ -228,19 +205,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		A82AC9922458411200C0DC3D /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				A82AC9812458404F00C0DC3D /* SignInViewController.swift */,
-				A87EE82C24587C0900B2639C /* GoogleAuth.swift */,
-				A851BEE324588B4F00ABF4DC /* AppleAuth.swift */,
-				A84DB6F72459E7F200A101B1 /* Facebook.swift */,
-				A81D0B0F245850E6003CA6B6 /* SignUpViewController.swift */,
-				A8A2D878245B152F00C265F3 /* ForgotPasswordViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		A82AC9932458411A00C0DC3D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,8 +222,6 @@
 				A82AC97F2458404F00C0DC3D /* SceneDelegate.swift */,
 				A82AC9862458405100C0DC3D /* Assets.xcassets */,
 				A82AC98B2458405100C0DC3D /* Info.plist */,
-				A856135624595F19006555F2 /* GoogleService-Info.plist */,
-				A856135524594B64006555F2 /* Clo.entitlements */,
 				A876C52E2458701E00B08C94 /* Podfile */,
 				A85B37DE24584723001833FD /* .gitignore */,
 				A807DB962459A317006BE209 /* .swiftlint.yml */,
@@ -273,15 +235,6 @@
 				A82AC9882458405100C0DC3D /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		A84DB6F9245AB62800A101B1 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A84DB6FA245AB84800A101B1 /* AuthView.swift */,
-				A8B5FFC1245EC15000860B61 /* AuthViewConstraints.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		A8644DA72464171A007ABAA8 /* ListOfClothes */ = {
@@ -324,25 +277,7 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		A8BC747C245C43D900106097 /* Units */ = {
-			isa = PBXGroup;
-			children = (
-				A8BC747D245C441900106097 /* SignIn */,
-				A8BC7480245C955E00106097 /* Main interface */,
-			);
-			path = Units;
-			sourceTree = "<group>";
-		};
-		A8BC747D245C441900106097 /* SignIn */ = {
-			isa = PBXGroup;
-			children = (
-				A84DB6F9245AB62800A101B1 /* View */,
-				A82AC9922458411200C0DC3D /* Controller */,
-			);
-			path = SignIn;
-			sourceTree = "<group>";
-		};
-		A8BC7480245C955E00106097 /* Main interface */ = {
+		A8BC7480245C955E00106097 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				A8BC7483245C95CF00106097 /* TabBarController.swift */,
@@ -350,7 +285,7 @@
 				A8644DA824641729007ABAA8 /* Add */,
 				A8644DA72464171A007ABAA8 /* ListOfClothes */,
 			);
-			path = "Main interface";
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		A8D9FEF22465BC2800B62FB2 /* Utilities */ = {
@@ -389,7 +324,6 @@
 				A8DA1A982465A0370077F0ED /* CameraCollectionViewCell.swift */,
 				33E7DCF1247F92E800BD3F41 /* AddClothesView.swift */,
 				33148694247FF279007BAA43 /* InputFieldsView.swift */,
-				33E7DCF3247F968B00BD3F41 /* ClothesPhotoView.swift */,
 				33574788247FBB89008172FB /* ColorTypeCollectionView.swift */,
 				3357478A247FBC03008172FB /* ColorTypeCollectionViewCell.swift */,
 			);
@@ -431,22 +365,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A82AC98E2458405100C0DC3D /* Build configuration list for PBXNativeTarget "Clo" */;
 			buildPhases = (
-				331486962480026B007BAA43 /* Run Script */,
 				F881CD4CCF412E64BDECC764 /* [CP] Check Pods Manifest.lock */,
+				331486962480026B007BAA43 /* Run Script */,
 				A82AC9762458404F00C0DC3D /* Sources */,
 				A82AC9772458404F00C0DC3D /* Frameworks */,
 				A82AC9782458404F00C0DC3D /* Resources */,
 				D35DC622A32C90C46EBBCC27 /* [CP] Embed Pods Frameworks */,
-				8A67985926714CB5CF2D2BA6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Clo;
-			packageProductDependencies = (
-				A84DB6F52459E34800A101B1 /* FacebookLogin */,
-			);
 			productName = Clo;
 			productReference = A82AC97A2458404F00C0DC3D /* Clo.app */;
 			productType = "com.apple.product-type.application";
@@ -475,9 +405,6 @@
 				Base,
 			);
 			mainGroup = A82AC9712458404F00C0DC3D;
-			packageReferences = (
-				A84DB6F42459E34800A101B1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
-			);
 			productRefGroup = A82AC97B2458404F00C0DC3D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -498,7 +425,6 @@
 				A82AC98A2458405100C0DC3D /* LaunchScreen.storyboard in Resources */,
 				A807DB972459A317006BE209 /* .swiftlint.yml in Resources */,
 				A82AC9872458405100C0DC3D /* Assets.xcassets in Resources */,
-				A856135724595F1A006555F2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,23 +448,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
-		};
-		8A67985926714CB5CF2D2BA6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Clo/Pods-Clo-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Clo/Pods-Clo-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Clo/Pods-Clo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		D35DC622A32C90C46EBBCC27 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -598,44 +507,35 @@
 				33041FA1247CF64300721E63 /* ClothesSymbolsCollectionViewCell.swift in Sources */,
 				A8B6399724643A12005F335F /* SymbolDescriptionViewController.swift in Sources */,
 				A84DB6FF245AC8F200A101B1 /* Constants.swift in Sources */,
-				A82AC9822458404F00C0DC3D /* SignInViewController.swift in Sources */,
 				A82AC97E2458404F00C0DC3D /* AppDelegate.swift in Sources */,
-				A81D0B13245851A6003CA6B6 /* FirebaseManager.swift in Sources */,
-				33E7DCF4247F968B00BD3F41 /* ClothesPhotoView.swift in Sources */,
 				A8A2D877245B019300C265F3 /* TextField.swift in Sources */,
 				A876C5292458590900B08C94 /* TextFieldErrorHandler.swift in Sources */,
 				A8C9034A24602FE3004294D9 /* Categories.swift in Sources */,
-				A8B5FFC2245EC15000860B61 /* AuthViewConstraints.swift in Sources */,
 				A8204D5D24631881005E30A0 /* GalleryView.swift in Sources */,
 				A8751F14245FFA7300B62589 /* LaundrySymbolsHeader.swift in Sources */,
 				3357478B247FBC03008172FB /* ColorTypeCollectionViewCell.swift in Sources */,
-				A84DB6F82459E7F200A101B1 /* Facebook.swift in Sources */,
 				A8BC7476245C2E9D00106097 /* ViewContoller.swift in Sources */,
 				A876C52B24585B0900B08C94 /* String.swift in Sources */,
-				A84DB6FB245AB84800A101B1 /* AuthView.swift in Sources */,
 				A8204D5B2463183B005E30A0 /* GalleryViewController.swift in Sources */,
 				A84ADDF7245F3AF0008F3425 /* ClothesListViewController.swift in Sources */,
 				33E7DCF2247F92E800BD3F41 /* AddClothesView.swift in Sources */,
+				3315B132248110E300BA354B /* CustomBorder.swift in Sources */,
 				33574792247FE40C008172FB /* ClothingColor.swift in Sources */,
 				A886AFCF24606301007FAEF2 /* SymbolsSections.swift in Sources */,
-				A87EE82D24587C0900B2639C /* GoogleAuth.swift in Sources */,
 				A8BC747B245C429300106097 /* Colors.swift in Sources */,
 				A8751F1624601E5B00B62589 /* LaundrySymbolsView.swift in Sources */,
 				33574790247FCABD008172FB /* CustomTextField.swift in Sources */,
 				33041F9F247C122900721E63 /* ClothesListCollectionViewCell.swift in Sources */,
 				33148695247FF279007BAA43 /* InputFieldsView.swift in Sources */,
-				A81D0B10245850E7003CA6B6 /* SignUpViewController.swift in Sources */,
 				33041FA3247D061700721E63 /* ClothesListCollectionViewCellDelegates.swift in Sources */,
 				A8DA1A992465A0370077F0ED /* CameraCollectionViewCell.swift in Sources */,
 				A8BC7484245C95CF00106097 /* TabBarController.swift in Sources */,
 				33041F9D247C113800721E63 /* Identifiers.swift in Sources */,
 				A8BC7479245C427400106097 /* Images.swift in Sources */,
-				A8A2D879245B152F00C265F3 /* ForgotPasswordViewController.swift in Sources */,
 				A8204D5F2463189D005E30A0 /* GalleryCollectionViewCell.swift in Sources */,
 				33E7DCFA247FB1D900BD3F41 /* ClothingType.swift in Sources */,
 				A8C9034824602EE9004294D9 /* Symbols.swift in Sources */,
 				A82AC9802458404F00C0DC3D /* SceneDelegate.swift in Sources */,
-				A851BEE424588B4F00ABF4DC /* AppleAuth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -833,25 +733,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		A84DB6F42459E34800A101B1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.5.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		A84DB6F52459E34800A101B1 /* FacebookLogin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A84DB6F42459E34800A101B1 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
-			productName = FacebookLogin;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A82AC9722458404F00C0DC3D /* Project object */;
 }
