@@ -10,6 +10,7 @@ enum Images {
     static let questionIcon = UIImage(named: "QuestionMarkIcon")
     static let logoImage    = UIImage(named: "Logo")
     static let backIcon     = UIImage(named: "BackIcon")
+    static let checkBox     = UIImage(named: "CheckBox")
 
     enum ColorType {
         static let color = UIImage(named: "ColorType")

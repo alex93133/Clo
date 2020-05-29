@@ -9,9 +9,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
 
-//            window?.rootViewController = TabBarController()
+            window?.rootViewController = TabBarController()
 
-        window?.rootViewController = UINavigationController(rootViewController: AddClothesViewController())
+//        window?.rootViewController = UINavigationController(rootViewController: AddClothesViewController())
         window?.makeKeyAndVisible()
     }
 }

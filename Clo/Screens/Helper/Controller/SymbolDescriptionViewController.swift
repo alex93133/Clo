@@ -5,9 +5,8 @@ class SymbolDescriptionViewController: UIViewController {
     // MARK: - Properties
     var passedImage: UIImage?
     var passedDescription: String?
-
-    var symbolDescriptionLabel: UILabel!
-    var symbolImage: UIImageView!
+    private var symbolDescriptionLabel: UILabel!
+    private var symbolImage: UIImageView!
 
     // MARK: - Lifecycle
     override func viewDidLoad() {

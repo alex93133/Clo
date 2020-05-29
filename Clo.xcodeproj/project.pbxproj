@@ -14,11 +14,15 @@
 		33041FA3247D061700721E63 /* ClothesListCollectionViewCellDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33041FA2247D061700721E63 /* ClothesListCollectionViewCellDelegates.swift */; };
 		33148695247FF279007BAA43 /* InputFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33148694247FF279007BAA43 /* InputFieldsView.swift */; };
 		3315B132248110E300BA354B /* CustomBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3315B131248110E300BA354B /* CustomBorder.swift */; };
+		3315B134248118A400BA354B /* TypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3315B133248118A400BA354B /* TypeViewController.swift */; };
 		33574789247FBB89008172FB /* ColorTypeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33574788247FBB89008172FB /* ColorTypeCollectionView.swift */; };
 		3357478B247FBC03008172FB /* ColorTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357478A247FBC03008172FB /* ColorTypeCollectionViewCell.swift */; };
 		3357478E247FC77D008172FB /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357478D247FC77D008172FB /* NextButton.swift */; };
 		33574790247FCABD008172FB /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357478F247FCABD008172FB /* CustomTextField.swift */; };
 		33574792247FE40C008172FB /* ClothingColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33574791247FE40C008172FB /* ClothingColor.swift */; };
+		3367E76724811B3C00459AA4 /* TypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3367E76624811B3C00459AA4 /* TypeView.swift */; };
+		3367E76924811CA600459AA4 /* TypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3367E76824811CA600459AA4 /* TypeTableViewCell.swift */; };
+		3367E76B2481545C00459AA4 /* PhotoLibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3367E76A2481545B00459AA4 /* PhotoLibraryManager.swift */; };
 		3396FCC9247BFEA800D8B759 /* ClothesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3396FCC8247BFEA800D8B759 /* ClothesListView.swift */; };
 		33E7DCF0247F92CF00BD3F41 /* AddClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCEF247F92CF00BD3F41 /* AddClothesViewController.swift */; };
 		33E7DCF2247F92E800BD3F41 /* AddClothesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCF1247F92E800BD3F41 /* AddClothesView.swift */; };
@@ -53,7 +57,6 @@
 		A8C9034824602EE9004294D9 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C9034724602EE9004294D9 /* Symbols.swift */; };
 		A8C9034A24602FE3004294D9 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C9034924602FE3004294D9 /* Categories.swift */; };
 		A8C9034C24603A6C004294D9 /* Symbols.json in Resources */ = {isa = PBXBuildFile; fileRef = A8C9034B24603A6C004294D9 /* Symbols.json */; };
-		A8D9FEF12465BBFA00B62FB2 /* PhotoLibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D9FEF02465BBFA00B62FB2 /* PhotoLibraryManager.swift */; };
 		A8DA1A992465A0370077F0ED /* CameraCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA1A982465A0370077F0ED /* CameraCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,11 +69,15 @@
 		33041FA2247D061700721E63 /* ClothesListCollectionViewCellDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesListCollectionViewCellDelegates.swift; sourceTree = "<group>"; };
 		33148694247FF279007BAA43 /* InputFieldsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldsView.swift; sourceTree = "<group>"; };
 		3315B131248110E300BA354B /* CustomBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBorder.swift; sourceTree = "<group>"; };
+		3315B133248118A400BA354B /* TypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeViewController.swift; sourceTree = "<group>"; };
 		33574788247FBB89008172FB /* ColorTypeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTypeCollectionView.swift; sourceTree = "<group>"; };
 		3357478A247FBC03008172FB /* ColorTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		3357478D247FC77D008172FB /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
 		3357478F247FCABD008172FB /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		33574791247FE40C008172FB /* ClothingColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingColor.swift; sourceTree = "<group>"; };
+		3367E76624811B3C00459AA4 /* TypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeView.swift; sourceTree = "<group>"; };
+		3367E76824811CA600459AA4 /* TypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTableViewCell.swift; sourceTree = "<group>"; };
+		3367E76A2481545B00459AA4 /* PhotoLibraryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryManager.swift; sourceTree = "<group>"; };
 		3396FCC8247BFEA800D8B759 /* ClothesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesListView.swift; sourceTree = "<group>"; };
 		33E7DCEF247F92CF00BD3F41 /* AddClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClothesViewController.swift; sourceTree = "<group>"; };
 		33E7DCF1247F92E800BD3F41 /* AddClothesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClothesView.swift; sourceTree = "<group>"; };
@@ -108,7 +115,6 @@
 		A8C9034724602EE9004294D9 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		A8C9034924602FE3004294D9 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		A8C9034B24603A6C004294D9 /* Symbols.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Symbols.json; sourceTree = "<group>"; };
-		A8D9FEF02465BBFA00B62FB2 /* PhotoLibraryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryManager.swift; sourceTree = "<group>"; };
 		A8DA1A982465A0370077F0ED /* CameraCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,10 +157,73 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		3367E76C248160BE00459AA4 /* Add Photo */ = {
+			isa = PBXGroup;
+			children = (
+				A8DA1A9424659F280077F0ED /* View */,
+				A8DA1A9524659F300077F0ED /* Controller */,
+			);
+			path = "Add Photo";
+			sourceTree = "<group>";
+		};
+		3367E76D248160D700459AA4 /* Fill Info */ = {
+			isa = PBXGroup;
+			children = (
+				3367E76F248160FE00459AA4 /* View */,
+				3367E7702481610400459AA4 /* Controller */,
+			);
+			path = "Fill Info";
+			sourceTree = "<group>";
+		};
+		3367E76E248160E700459AA4 /* SelectSymbols */ = {
+			isa = PBXGroup;
+			children = (
+				3367E7712481614F00459AA4 /* View */,
+				3367E7722481615500459AA4 /* Controller */,
+			);
+			path = SelectSymbols;
+			sourceTree = "<group>";
+		};
+		3367E76F248160FE00459AA4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				33E7DCF1247F92E800BD3F41 /* AddClothesView.swift */,
+				33148694247FF279007BAA43 /* InputFieldsView.swift */,
+				33574788247FBB89008172FB /* ColorTypeCollectionView.swift */,
+				3357478A247FBC03008172FB /* ColorTypeCollectionViewCell.swift */,
+				3367E76624811B3C00459AA4 /* TypeView.swift */,
+				3367E76824811CA600459AA4 /* TypeTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3367E7702481610400459AA4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				33E7DCEF247F92CF00BD3F41 /* AddClothesViewController.swift */,
+				3315B133248118A400BA354B /* TypeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3367E7712481614F00459AA4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3367E7722481615500459AA4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		A81D0B1124585172003CA6B6 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				A8D9FEF02465BBFA00B62FB2 /* PhotoLibraryManager.swift */,
+				3367E76A2481545B00459AA4 /* PhotoLibraryManager.swift */,
 				A876C52C24586A3900B08C94 /* AlertManager.swift */,
 			);
 			path = Managers;
@@ -249,8 +318,9 @@
 		A8644DA824641729007ABAA8 /* Add */ = {
 			isa = PBXGroup;
 			children = (
-				A8DA1A9424659F280077F0ED /* View */,
-				A8DA1A9524659F300077F0ED /* Controller */,
+				3367E76C248160BE00459AA4 /* Add Photo */,
+				3367E76D248160D700459AA4 /* Fill Info */,
+				3367E76E248160E700459AA4 /* SelectSymbols */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -322,10 +392,6 @@
 				A8204D5C24631880005E30A0 /* GalleryView.swift */,
 				A8204D5E2463189D005E30A0 /* GalleryCollectionViewCell.swift */,
 				A8DA1A982465A0370077F0ED /* CameraCollectionViewCell.swift */,
-				33E7DCF1247F92E800BD3F41 /* AddClothesView.swift */,
-				33148694247FF279007BAA43 /* InputFieldsView.swift */,
-				33574788247FBB89008172FB /* ColorTypeCollectionView.swift */,
-				3357478A247FBC03008172FB /* ColorTypeCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -334,7 +400,6 @@
 			isa = PBXGroup;
 			children = (
 				A8204D5A2463183B005E30A0 /* GalleryViewController.swift */,
-				33E7DCEF247F92CF00BD3F41 /* AddClothesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -499,7 +564,7 @@
 				33E7DCF0247F92CF00BD3F41 /* AddClothesViewController.swift in Sources */,
 				A84ADDF5245F3851008F3425 /* LaundrySymbolsViewController.swift in Sources */,
 				3396FCC9247BFEA800D8B759 /* ClothesListView.swift in Sources */,
-				A8D9FEF12465BBFA00B62FB2 /* PhotoLibraryManager.swift in Sources */,
+				3367E76724811B3C00459AA4 /* TypeView.swift in Sources */,
 				A84ADDFB245F5143008F3425 /* LaundrySymbolsCollectionViewCell.swift in Sources */,
 				3357478E247FC77D008172FB /* NextButton.swift in Sources */,
 				A8B5FFB8245DF3FB00860B61 /* Router.swift in Sources */,
@@ -509,6 +574,7 @@
 				A84DB6FF245AC8F200A101B1 /* Constants.swift in Sources */,
 				A82AC97E2458404F00C0DC3D /* AppDelegate.swift in Sources */,
 				A8A2D877245B019300C265F3 /* TextField.swift in Sources */,
+				3367E76B2481545C00459AA4 /* PhotoLibraryManager.swift in Sources */,
 				A876C5292458590900B08C94 /* TextFieldErrorHandler.swift in Sources */,
 				A8C9034A24602FE3004294D9 /* Categories.swift in Sources */,
 				A8204D5D24631881005E30A0 /* GalleryView.swift in Sources */,
@@ -521,6 +587,7 @@
 				33E7DCF2247F92E800BD3F41 /* AddClothesView.swift in Sources */,
 				3315B132248110E300BA354B /* CustomBorder.swift in Sources */,
 				33574792247FE40C008172FB /* ClothingColor.swift in Sources */,
+				3367E76924811CA600459AA4 /* TypeTableViewCell.swift in Sources */,
 				A886AFCF24606301007FAEF2 /* SymbolsSections.swift in Sources */,
 				A8BC747B245C429300106097 /* Colors.swift in Sources */,
 				A8751F1624601E5B00B62589 /* LaundrySymbolsView.swift in Sources */,
@@ -529,6 +596,7 @@
 				33148695247FF279007BAA43 /* InputFieldsView.swift in Sources */,
 				33041FA3247D061700721E63 /* ClothesListCollectionViewCellDelegates.swift in Sources */,
 				A8DA1A992465A0370077F0ED /* CameraCollectionViewCell.swift in Sources */,
+				3315B134248118A400BA354B /* TypeViewController.swift in Sources */,
 				A8BC7484245C95CF00106097 /* TabBarController.swift in Sources */,
 				33041F9D247C113800721E63 /* Identifiers.swift in Sources */,
 				A8BC7479245C427400106097 /* Images.swift in Sources */,

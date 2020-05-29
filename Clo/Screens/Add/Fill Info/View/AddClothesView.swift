@@ -7,6 +7,8 @@ class AddClothesView: UIView {
     var inputFieldsView: InputFieldsView!
     var colorTypeCollectionView: ColorTypeCollectionView!
     var nextButton: UIButton!
+    
+    var nextButtonHandler: (() -> Void)?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,7 +42,7 @@ class AddClothesView: UIView {
 extension AddClothesView {
 
     @objc func nextButtonPressed() {
-        print("hello")
+        nextButtonHandler?()
     }
 }
 

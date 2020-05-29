@@ -4,9 +4,9 @@ import FittedSheets
 class LaundrySymbolsViewController: UIViewController {
 
     // MARK: - Properties
-    let customView = LaundrySymbolsView(frame: UIScreen.main.bounds)
-    let symbolSections = SymbolsSections.getSections()
-    var symbolDescriptionViewController: SymbolDescriptionViewController!
+    private let customView = LaundrySymbolsView(frame: UIScreen.main.bounds)
+    private let symbolSections = SymbolsSections.getSections()
+    private var symbolDescriptionViewController: SymbolDescriptionViewController!
 
     // MARK: - Lifecycle
     override func viewDidLoad() {

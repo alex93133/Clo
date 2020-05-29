@@ -5,6 +5,7 @@ enum Constants {
     static let customLoginButtonCornerRadius: CGFloat = 12
     static let textFieldPadding: CGFloat              = 12
     static let shadowRadius: CGFloat                  = 4
+    static let colorTypeCellHeight: CGFloat = 52
 
         static let animationTimeInterval     = 0.2
 
