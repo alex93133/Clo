@@ -7,6 +7,7 @@ class AddClothesViewController: UIViewController {
     private let customView = AddClothesView(frame: UIScreen.main.bounds)
     private let clothingColors = ClothingColor.getAllClothingColors()
     private var selectedColorIndexPath: IndexPath?
+    private var selectedType: ClothingType?
     private var typeSheet: SheetViewController!
     private let clothesPhoto: UIImage
     
@@ -36,10 +37,16 @@ class AddClothesViewController: UIViewController {
         view                                                     = customView
         view().colorTypeCollectionView.collectionView.delegate   = self
         view().colorTypeCollectionView.collectionView.dataSource = self
+        view().inputFieldsView.descriptionTextField.delegate     = self
         view().clothesImageView.image                            = clothesPhoto
-        view().inputFieldsView.selectTypeButtonHandler           = { [unowned self]  in
+        
+        view().inputFieldsView.selectTypeButtonHandler = { [unowned self]  in
             self.present(self.typeSheet, animated: false)
         }
+        view().nextButtonHandler = { [unowned self]  in
+            self.presentSelectSymbolsViewController()
+        }
+        view().nextButton.enableButton(isOn: false)
     }
     
     private func setupNavigationBar() {
@@ -61,14 +68,25 @@ class AddClothesViewController: UIViewController {
         sheet.overlayColor                 = Colors.overlayColor
         typeSheet                          = sheet
         
+        handleSelectedType(clothingTypeViewController)
+    }
+    
+    private func handleSelectedType(_ clothingTypeViewController: TypeViewController) {
         clothingTypeViewController.selectedTypeHandle = { [unowned self] type in
-            let buttonTitle = type.rawValue
-            let attributedString = self.view().inputFieldsView.createAttributes(text: buttonTitle)
+            self.selectedType    = type
+            let buttonTitle      = type.rawValue
+            let attributedString = self.view().inputFieldsView.createAttributes(text: buttonTitle,
+                                                                                textColor: Colors.blackTextColor)
             self.view().inputFieldsView.selectTypeButton.setAttributedTitle(attributedString, for: .normal)
             self.typeSheet.closeSheet()
         }
     }
     
+    private func checkFields() {
+        guard selectedType != nil else { return }
+        guard selectedColorIndexPath != nil else { return }
+        view().nextButton.enableButton(isOn: true)
+    }
 }
 
 // MARK: - Actions
@@ -78,6 +96,11 @@ extension AddClothesViewController {
         let tabBraController = TabBarController()
         tabBraController.modalPresentationStyle = .fullScreen
         present(tabBraController, animated: true)
+    }
+    
+    private func presentSelectSymbolsViewController() {
+        let selectSymbolsViewController = SelectSymbolsViewController()
+        navigationController?.pushViewController(selectSymbolsViewController, animated: true)
     }
 }
 
@@ -105,5 +128,14 @@ extension AddClothesViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedColorIndexPath = indexPath
         view().colorTypeCollectionView.collectionView.reloadData()
+        checkFields()
+    }
+}
+
+extension AddClothesViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view().inputFieldsView.descriptionTextField.resignFirstResponder()
+        return true
     }
 }

@@ -8,8 +8,8 @@ class CustomTextField: UITextField {
         attributedPlaceholder  = NSAttributedString(string: placeholder,
                                                     attributes: [NSAttributedString.Key.foregroundColor: Colors.grayTextColor,
                                                                  NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Fonts.mediumTextSize, weight: .regular)])
-        textColor              = Colors.grayTextColor
-        layer.cornerRadius     = Constants.customLoginButtonCornerRadius
+        textColor              = Colors.blackTextColor
+        layer.cornerRadius     = Constants.defaultCornerRadius
         autocapitalizationType = .none
         setLeftPaddingPoints(Constants.textFieldPadding)
         CustomBorder.createDefaultBorder(target: layer)

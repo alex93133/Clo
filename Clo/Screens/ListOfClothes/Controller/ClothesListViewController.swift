@@ -40,7 +40,6 @@ extension ClothesListViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.clothesCellIdentifier, for: indexPath) as? ClothesListCollectionViewCell {
             cell.clothesImageView.image = UIImage(named: "EXAMPLE")
-            cell.clothesName.text = "Pullover"
             return cell
         }
         return UICollectionViewCell()

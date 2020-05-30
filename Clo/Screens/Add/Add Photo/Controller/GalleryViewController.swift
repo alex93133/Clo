@@ -1,7 +1,8 @@
 import UIKit
 import Photos
+import CropViewController
 
-class GalleryViewController: UIViewController {
+class GalleryViewController: UIViewController, CropViewControllerDelegate {
     
     // MARK: - Properties
     private let customView = GalleryView(frame: UIScreen.main.bounds)
@@ -32,16 +33,32 @@ class GalleryViewController: UIViewController {
         photoLibraryManager.getPhotos { [unowned self] image in
             DispatchQueue.main.async {
                 self.allPhotos.append(image)
-                self.view().collectionView.reloadData()
+                let indexPath = IndexPath(item: self.allPhotos.count - 1, section: 0)
+                self.view().collectionView.insertItems(at: [indexPath])
             }
         }
     }
     
-    private func showAddClothesViewController(image: UIImage) {
-        let addClothesViewController = AddClothesViewController(image: image)
-        let navigationController = UINavigationController(rootViewController: addClothesViewController)
+    private func presentAddClothesViewController(image: UIImage) {
+        let addClothesViewController                = AddClothesViewController(image: image)
+        let navigationController                    = UINavigationController(rootViewController: addClothesViewController)
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true)
+    }
+    
+    private func presentPhotoEditor(image: UIImage) {
+        let cropViewController                           = CropViewController(croppingStyle: .default, image: image)
+        cropViewController.delegate                      = self
+        cropViewController.aspectRatioPickerButtonHidden = true
+        cropViewController.aspectRatioLockEnabled        = true
+        cropViewController.resetAspectRatioEnabled       = false
+        cropViewController.aspectRatioPreset             = .preset16x9
+        present(cropViewController, animated: true)
+    }
+    
+    func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
+        cropViewController.dismiss(animated: true)
+        presentAddClothesViewController(image: image)
     }
 }
 
@@ -58,7 +75,6 @@ extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataS
         
         guard let cameraCell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.cameraInputCellIdentifier, for: indexPath) as? CameraCollectionViewCell
             else { return UICollectionViewCell() }
-        
         switch indexPath.item {
         case 0:
             return cameraCell
@@ -75,16 +91,16 @@ extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataS
         default:
             let capturedImage = allPhotos[indexPath.item - 1]
             photoLibraryManager.runRequesting = false
-            showAddClothesViewController(image: capturedImage)
+            presentPhotoEditor(image: capturedImage)
         }
     }
 }
 
 extension GalleryViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     func setupImagePicker() {
-        imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .camera
+        imagePicker               = UIImagePickerController()
+        imagePicker.delegate      = self
+        imagePicker.sourceType    = .camera
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -94,6 +110,6 @@ extension GalleryViewController: UINavigationControllerDelegate, UIImagePickerCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         imagePicker.dismiss(animated: true)
         guard let capturedImage = info[.originalImage] as? UIImage else { return }
-        showAddClothesViewController(image: capturedImage)
+        presentPhotoEditor(image: capturedImage)
     }
 }

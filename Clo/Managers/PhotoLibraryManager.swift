@@ -13,7 +13,6 @@ class PhotoLibraryManager {
             requestOptions.deliveryMode  = .highQualityFormat
             let fetchOptions             = PHFetchOptions()
             fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-            fetchOptions.fetchLimit      = 150
             
             let results: PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
             guard results.count > 0 else { return }

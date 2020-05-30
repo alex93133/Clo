@@ -10,5 +10,6 @@ target 'Clo' do
 pod 'SwiftLint'
 pod 'FittedSheets'
 pod 'IQKeyboardManagerSwift'
+pod 'CropViewController'
 
 end

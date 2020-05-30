@@ -41,19 +41,20 @@ class InputFieldsView: UIView {
         descriptionTextField = CustomTextField(placeholder: "Enter the short description", addTo: self)
         descriptionTextField.adjustsFontSizeToFitWidth = true
         descriptionTextField.minimumFontSize = 10
+        descriptionTextField.autocapitalizationType = .sentences
         CustomBorder.createDefaultBorder(target: descriptionTextField.layer)
         
         setupDescriptionFieldConstraints()
     }
     
     // MARK: - SelectTypeButton
-    func createAttributes(text: String) -> NSMutableAttributedString {
+    func createAttributes(text: String, textColor: UIColor) -> NSMutableAttributedString {
         let attributedString = NSMutableAttributedString(string: text)
         attributedString.addAttribute(NSAttributedString.Key.font,
                                       value: UIFont.systemFont(ofSize: Constants.Fonts.mediumTextSize, weight: .regular),
                                       range: NSRange(location: 0, length: attributedString.length))
         attributedString.addAttribute(NSAttributedString.Key.foregroundColor,
-                                      value: Colors.grayTextColor,
+                                      value: textColor,
                                       range: NSRange(location: 0, length: attributedString.length))
         return attributedString
     }
@@ -61,11 +62,11 @@ class InputFieldsView: UIView {
     private func setupSelectTypeButton() {
         selectTypeButton                            = UIButton()
         selectTypeButton.backgroundColor            = Colors.lightGrayBGColor
-        selectTypeButton.layer.cornerRadius         = Constants.customLoginButtonCornerRadius
+        selectTypeButton.layer.cornerRadius         = Constants.defaultCornerRadius
         selectTypeButton.contentHorizontalAlignment = .left
         selectTypeButton.titleEdgeInsets            = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
         selectTypeButton.addTarget(self, action: #selector(selectTypeButtonPressed), for: .touchUpInside)
-        let attributedString = createAttributes(text: "Select type")
+        let attributedString = createAttributes(text: "Select type", textColor: Colors.grayTextColor)
         selectTypeButton.setAttributedTitle(attributedString, for: .normal)
         CustomBorder.createDefaultBorder(target: selectTypeButton.layer)
         
