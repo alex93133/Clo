@@ -3,7 +3,8 @@ import Foundation
 struct SymbolsSections {
 
     let title: String
-    let items: [Symbol]
+    var items: [Symbol]
+    var hidden = false
 
     static func getSections() -> [SymbolsSections] {
         guard let symbols = Symbols.allSymbols() else { return []}

@@ -3,7 +3,6 @@ import UIKit
 class LaundrySymbolsView: UIView {
 
     // MARK: - Properties
-    var headLabel: UILabel!
     var collectionView: UICollectionView!
 
     override init(frame: CGRect) {
@@ -19,7 +18,7 @@ class LaundrySymbolsView: UIView {
     // MARK: - CollectionView
     private func setupCollectionView() {
         let layout                                  = UICollectionViewFlowLayout()
-        layout.sectionInset                         = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        layout.sectionInset                         = UIEdgeInsets(top: 16, left: 16, bottom: 32, right: 16)
 
         let numberOfItemsInRow: CGFloat             = 5
         let spacing: CGFloat                        = 8

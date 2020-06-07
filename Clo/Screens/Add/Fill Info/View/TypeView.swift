@@ -1,11 +1,10 @@
 import UIKit
 
 class TypeView: UIView {
-    
+
     var tableView: UITableView!
 
     // MARK: - Properties
-      
 
        override init(frame: CGRect) {
            super.init(frame: frame)
@@ -16,7 +15,7 @@ class TypeView: UIView {
        required init?(coder: NSCoder) {
            super.init(coder: coder)
        }
-    
+
     private func setupTableView() {
         tableView = UITableView()
         tableView.tableFooterView = UIView()
@@ -27,14 +26,14 @@ class TypeView: UIView {
 
         setupTableViewConstraints()
     }
-    
+
 }
 
 extension TypeView {
-    
+
     private func setupTableViewConstraints() {
         addSubview(tableView)
-        
+
         tableView.translatesAutoresizingMaskIntoConstraints                   = false
         tableView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive   = true
         tableView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true

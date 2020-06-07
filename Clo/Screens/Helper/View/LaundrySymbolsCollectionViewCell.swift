@@ -5,11 +5,12 @@ class LaundrySymbolsCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
     var laundryImage: UIImageView!
 
-    override var isSelected: Bool {
+    override var isHighlighted: Bool {
         didSet {
-            UIView.animate(withDuration: Constants.animationTimeInterval) {
-                self.transform = self.isSelected ? CGAffineTransform(scaleX: 0.9, y: 0.9) : CGAffineTransform.identity
-            }
+                UIView.animate(withDuration: Constants.animationTimeInterval) { [unowned self] in
+                    let transform: CGAffineTransform = self.isHighlighted ? .init(scaleX: 0.9, y: 0.9) : .identity
+                    self.transform = transform
+                }
         }
     }
 

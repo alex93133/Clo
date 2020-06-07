@@ -20,7 +20,6 @@ class LaundrySymbolsHeader: UICollectionReusableView {
         headerLabel.textColor = Colors.blackTextColor
         headerLabel.font = .systemFont(ofSize: Constants.Fonts.mediumTextSize, weight: .semibold)
         headerLabel.sizeToFit()
-        headerLabel.text = "Bleaching"
         setupHeaderLabelConstraints()
     }
 }

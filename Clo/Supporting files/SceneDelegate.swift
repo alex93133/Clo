@@ -11,7 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
             window?.rootViewController = TabBarController()
 
-//        window?.rootViewController = UINavigationController(rootViewController: AddClothesViewController())
+//        window?.rootViewController = UINavigationController(rootViewController: SelectSymbolsViewController())
         window?.makeKeyAndVisible()
     }
 }

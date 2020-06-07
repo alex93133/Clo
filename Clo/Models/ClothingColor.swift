@@ -13,8 +13,8 @@ struct ClothingColor {
     }
 }
 
-enum ColorType {
-    case color
-    case black
-    case white
+enum ColorType: String {
+    case color = "Color"
+    case black = "Black"
+    case white = "White"
 }

@@ -28,10 +28,6 @@ class ClothesSymbolsCollectionViewCell: UICollectionViewCell {
         laundryImageView             = UIImageView(frame: CGRect(x: 0, y: 0, width: itemSize - 6, height: itemSize - 6))
         laundryImageView.center      = CGPoint(x: itemSize / 2, y: itemSize / 2)
         laundryImageView.contentMode = .scaleAspectFit
-
-        let symbols                  = Symbols.allSymbols()
-        laundryImageView.image       = symbols![0].image
-
         addSubview(laundryImageView)
     }
 }

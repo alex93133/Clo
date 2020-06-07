@@ -12,6 +12,7 @@
 		33041F9F247C122900721E63 /* ClothesListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33041F9E247C122900721E63 /* ClothesListCollectionViewCell.swift */; };
 		33041FA1247CF64300721E63 /* ClothesSymbolsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33041FA0247CF64300721E63 /* ClothesSymbolsCollectionViewCell.swift */; };
 		33041FA3247D061700721E63 /* ClothesListCollectionViewCellDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33041FA2247D061700721E63 /* ClothesListCollectionViewCellDelegates.swift */; };
+		3308ECA7248D5C2F008C7B61 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308ECA6248D5C2F008C7B61 /* Result.swift */; };
 		33148695247FF279007BAA43 /* InputFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33148694247FF279007BAA43 /* InputFieldsView.swift */; };
 		3315B132248110E300BA354B /* CustomBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3315B131248110E300BA354B /* CustomBorder.swift */; };
 		3315B134248118A400BA354B /* TypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3315B133248118A400BA354B /* TypeViewController.swift */; };
@@ -23,9 +24,13 @@
 		3367E76724811B3C00459AA4 /* TypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3367E76624811B3C00459AA4 /* TypeView.swift */; };
 		3367E76924811CA600459AA4 /* TypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3367E76824811CA600459AA4 /* TypeTableViewCell.swift */; };
 		3367E76B2481545C00459AA4 /* PhotoLibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3367E76A2481545B00459AA4 /* PhotoLibraryManager.swift */; };
+		338F227E248A703E001C40D1 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F227D248A703E001C40D1 /* CoreDataManager.swift */; };
+		338F2280248A70A7001C40D1 /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F227F248A70A7001C40D1 /* Clothes.swift */; };
+		338F2282248A8E78001C40D1 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 338F2281248A8E78001C40D1 /* CloudKit.framework */; };
 		3396FCC9247BFEA800D8B759 /* ClothesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3396FCC8247BFEA800D8B759 /* ClothesListView.swift */; };
 		33A8432E2482BF620083339D /* SelectSymbolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8432D2482BF620083339D /* SelectSymbolsViewController.swift */; };
 		33A843302482BF7B0083339D /* SelectSymbolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8432F2482BF7B0083339D /* SelectSymbolsView.swift */; };
+		33DFEB03248D0AF200B802F4 /* Clothes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33DFEB01248D0AF200B802F4 /* Clothes.xcdatamodeld */; };
 		33E7DCF0247F92CF00BD3F41 /* AddClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCEF247F92CF00BD3F41 /* AddClothesViewController.swift */; };
 		33E7DCF2247F92E800BD3F41 /* AddClothesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCF1247F92E800BD3F41 /* AddClothesView.swift */; };
 		33E7DCFA247FB1D900BD3F41 /* ClothingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCF9247FB1D900BD3F41 /* ClothingType.swift */; };
@@ -50,7 +55,6 @@
 		A876C52F2458701E00B08C94 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A876C52E2458701E00B08C94 /* Podfile */; };
 		A886AFCF24606301007FAEF2 /* SymbolsSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = A886AFCE24606301007FAEF2 /* SymbolsSections.swift */; };
 		A8A2D877245B019300C265F3 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A2D876245B019300C265F3 /* TextField.swift */; };
-		A8B5FFB8245DF3FB00860B61 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5FFB7245DF3FB00860B61 /* Router.swift */; };
 		A8B6399724643A12005F335F /* SymbolDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B6399624643A12005F335F /* SymbolDescriptionViewController.swift */; };
 		A8BC7476245C2E9D00106097 /* ViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC7475245C2E9D00106097 /* ViewContoller.swift */; };
 		A8BC7479245C427400106097 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC7478245C427400106097 /* Images.swift */; };
@@ -69,6 +73,7 @@
 		33041F9E247C122900721E63 /* ClothesListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesListCollectionViewCell.swift; sourceTree = "<group>"; };
 		33041FA0247CF64300721E63 /* ClothesSymbolsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesSymbolsCollectionViewCell.swift; sourceTree = "<group>"; };
 		33041FA2247D061700721E63 /* ClothesListCollectionViewCellDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesListCollectionViewCellDelegates.swift; sourceTree = "<group>"; };
+		3308ECA6248D5C2F008C7B61 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		33148694247FF279007BAA43 /* InputFieldsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldsView.swift; sourceTree = "<group>"; };
 		3315B131248110E300BA354B /* CustomBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBorder.swift; sourceTree = "<group>"; };
 		3315B133248118A400BA354B /* TypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeViewController.swift; sourceTree = "<group>"; };
@@ -80,9 +85,13 @@
 		3367E76624811B3C00459AA4 /* TypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeView.swift; sourceTree = "<group>"; };
 		3367E76824811CA600459AA4 /* TypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTableViewCell.swift; sourceTree = "<group>"; };
 		3367E76A2481545B00459AA4 /* PhotoLibraryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryManager.swift; sourceTree = "<group>"; };
+		338F227D248A703E001C40D1 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		338F227F248A70A7001C40D1 /* Clothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
+		338F2281248A8E78001C40D1 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		3396FCC8247BFEA800D8B759 /* ClothesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesListView.swift; sourceTree = "<group>"; };
 		33A8432D2482BF620083339D /* SelectSymbolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSymbolsViewController.swift; sourceTree = "<group>"; };
 		33A8432F2482BF7B0083339D /* SelectSymbolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSymbolsView.swift; sourceTree = "<group>"; };
+		33DFEB02248D0AF200B802F4 /* Clothes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Clothes.xcdatamodel; sourceTree = "<group>"; };
 		33E7DCEF247F92CF00BD3F41 /* AddClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClothesViewController.swift; sourceTree = "<group>"; };
 		33E7DCF1247F92E800BD3F41 /* AddClothesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClothesView.swift; sourceTree = "<group>"; };
 		33E7DCF9247FB1D900BD3F41 /* ClothingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingType.swift; sourceTree = "<group>"; };
@@ -110,7 +119,6 @@
 		A876C52E2458701E00B08C94 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A886AFCE24606301007FAEF2 /* SymbolsSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsSections.swift; sourceTree = "<group>"; };
 		A8A2D876245B019300C265F3 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
-		A8B5FFB7245DF3FB00860B61 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		A8B6399624643A12005F335F /* SymbolDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolDescriptionViewController.swift; sourceTree = "<group>"; };
 		A8BC7475245C2E9D00106097 /* ViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewContoller.swift; sourceTree = "<group>"; };
 		A8BC7478245C427400106097 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -128,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21D94A5B432B71402DFD2DFB /* Pods_Clo.framework in Frameworks */,
+				338F2282248A8E78001C40D1 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +146,7 @@
 		27AE5B08AC8FCA322E5EAB3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				338F2281248A8E78001C40D1 /* CloudKit.framework */,
 				1A228FC09CAD5AF1927CF95B /* Pods_Clo.framework */,
 			);
 			name = Frameworks;
@@ -229,6 +239,7 @@
 		A81D0B1124585172003CA6B6 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				338F227D248A703E001C40D1 /* CoreDataManager.swift */,
 				3367E76A2481545B00459AA4 /* PhotoLibraryManager.swift */,
 				A876C52C24586A3900B08C94 /* AlertManager.swift */,
 			);
@@ -274,8 +285,10 @@
 				A8C9034724602EE9004294D9 /* Symbols.swift */,
 				A8C9034924602FE3004294D9 /* Categories.swift */,
 				A886AFCE24606301007FAEF2 /* SymbolsSections.swift */,
+				338F227F248A70A7001C40D1 /* Clothes.swift */,
 				33E7DCF9247FB1D900BD3F41 /* ClothingType.swift */,
 				33574791247FE40C008172FB /* ClothingColor.swift */,
+				3308ECA6248D5C2F008C7B61 /* Result.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -295,6 +308,7 @@
 			children = (
 				A82AC97D2458404F00C0DC3D /* AppDelegate.swift */,
 				A82AC97F2458404F00C0DC3D /* SceneDelegate.swift */,
+				33DFEB01248D0AF200B802F4 /* Clothes.xcdatamodeld */,
 				A82AC9862458405100C0DC3D /* Assets.xcassets */,
 				A82AC98B2458405100C0DC3D /* Info.plist */,
 				A876C52E2458701E00B08C94 /* Podfile */,
@@ -367,7 +381,6 @@
 		A8D9FEF22465BC2800B62FB2 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				A8B5FFB7245DF3FB00860B61 /* Router.swift */,
 				A876C5282458590900B08C94 /* TextFieldErrorHandler.swift */,
 			);
 			path = Utilities;
@@ -436,8 +449,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A82AC98E2458405100C0DC3D /* Build configuration list for PBXNativeTarget "Clo" */;
 			buildPhases = (
-				F881CD4CCF412E64BDECC764 /* [CP] Check Pods Manifest.lock */,
 				331486962480026B007BAA43 /* Run Script */,
+				F881CD4CCF412E64BDECC764 /* [CP] Check Pods Manifest.lock */,
 				A82AC9762458404F00C0DC3D /* Sources */,
 				A82AC9772458404F00C0DC3D /* Frameworks */,
 				A82AC9782458404F00C0DC3D /* Resources */,
@@ -574,10 +587,10 @@
 				3367E76724811B3C00459AA4 /* TypeView.swift in Sources */,
 				A84ADDFB245F5143008F3425 /* LaundrySymbolsCollectionViewCell.swift in Sources */,
 				3357478E247FC77D008172FB /* NextButton.swift in Sources */,
-				A8B5FFB8245DF3FB00860B61 /* Router.swift in Sources */,
 				A876C52D24586A3900B08C94 /* AlertManager.swift in Sources */,
 				33041FA1247CF64300721E63 /* ClothesSymbolsCollectionViewCell.swift in Sources */,
 				A8B6399724643A12005F335F /* SymbolDescriptionViewController.swift in Sources */,
+				338F227E248A703E001C40D1 /* CoreDataManager.swift in Sources */,
 				A84DB6FF245AC8F200A101B1 /* Constants.swift in Sources */,
 				A82AC97E2458404F00C0DC3D /* AppDelegate.swift in Sources */,
 				A8A2D877245B019300C265F3 /* TextField.swift in Sources */,
@@ -596,6 +609,7 @@
 				3315B132248110E300BA354B /* CustomBorder.swift in Sources */,
 				33574792247FE40C008172FB /* ClothingColor.swift in Sources */,
 				3367E76924811CA600459AA4 /* TypeTableViewCell.swift in Sources */,
+				33DFEB03248D0AF200B802F4 /* Clothes.xcdatamodeld in Sources */,
 				A886AFCF24606301007FAEF2 /* SymbolsSections.swift in Sources */,
 				A8BC747B245C429300106097 /* Colors.swift in Sources */,
 				A8751F1624601E5B00B62589 /* LaundrySymbolsView.swift in Sources */,
@@ -607,9 +621,11 @@
 				3315B134248118A400BA354B /* TypeViewController.swift in Sources */,
 				A8BC7484245C95CF00106097 /* TabBarController.swift in Sources */,
 				33041F9D247C113800721E63 /* Identifiers.swift in Sources */,
+				338F2280248A70A7001C40D1 /* Clothes.swift in Sources */,
 				A8BC7479245C427400106097 /* Images.swift in Sources */,
 				A8204D5F2463189D005E30A0 /* GalleryCollectionViewCell.swift in Sources */,
 				33E7DCFA247FB1D900BD3F41 /* ClothingType.swift in Sources */,
+				3308ECA7248D5C2F008C7B61 /* Result.swift in Sources */,
 				A8C9034824602EE9004294D9 /* Symbols.swift in Sources */,
 				A82AC9802458404F00C0DC3D /* SceneDelegate.swift in Sources */,
 			);
@@ -809,6 +825,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		33DFEB01248D0AF200B802F4 /* Clothes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				33DFEB02248D0AF200B802F4 /* Clothes.xcdatamodel */,
+			);
+			currentVersion = 33DFEB02248D0AF200B802F4 /* Clothes.xcdatamodel */;
+			path = Clothes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A82AC9722458404F00C0DC3D /* Project object */;
 }
