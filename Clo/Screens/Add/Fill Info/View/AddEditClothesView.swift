@@ -1,6 +1,6 @@
 import UIKit
 
-class AddClothesView: UIView {
+class AddEditClothesView: UIView {
 
     // MARK: - Properties
     private let scrollView = UIScrollView()
@@ -54,7 +54,7 @@ class AddClothesView: UIView {
 }
 
 // MARK: - Actions
-extension AddClothesView {
+extension AddEditClothesView {
 
     @objc func nextButtonPressed() {
         nextButtonHandler?()
@@ -62,7 +62,7 @@ extension AddClothesView {
 }
 
 // MARK: - Constraints
-extension AddClothesView {
+extension AddEditClothesView {
 
     private func setupScrollViewConstraints() {
         addSubview(scrollView)

@@ -76,10 +76,10 @@ extension ClothesListCollectionViewCell {
     private func setupClothesImageConstraints() {
         addSubview(clothesImageView)
 
-        clothesImageView.translatesAutoresizingMaskIntoConstraints                                             = false
-        clothesImageView.topAnchor.constraint(equalTo: topAnchor).isActive                                     = true
-        clothesImageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive                             = true
-        clothesImageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive                           = true
+        clothesImageView.translatesAutoresizingMaskIntoConstraints                                  = false
+        clothesImageView.topAnchor.constraint(equalTo: topAnchor).isActive                          = true
+        clothesImageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive                  = true
+        clothesImageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive                = true
         clothesImageView.heightAnchor.constraint(equalTo: widthAnchor, multiplier: 9 / 16).isActive = true
     }
 

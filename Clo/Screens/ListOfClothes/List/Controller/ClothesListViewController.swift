@@ -4,7 +4,7 @@ class ClothesListViewController: UIViewController {
 
     // MARK: - Properties
     private let customView = ClothesListView(frame: UIScreen.main.bounds)
-    private var clothes = CoreDataManager.shared.fetch() {
+    private var clothes: [Clothes]! {
         didSet {
             view().collectionView.reloadData()
         }
@@ -14,6 +14,10 @@ class ClothesListViewController: UIViewController {
     override func viewDidLoad() {
         setupView()
         setupNavigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        clothes = CoreDataManager.shared.fetch()
     }
 
     // MARK: - Functions
@@ -33,6 +37,11 @@ class ClothesListViewController: UIViewController {
         settingsUIBarButtonItem.tintColor = Colors.mintColor
         navigationItem.rightBarButtonItem  = settingsUIBarButtonItem
     }
+    
+    private func presentDetailViewController(with clothes: Clothes) {
+        let detailViewController = DetailViewController(clothes: clothes)
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
 }
 
 // MARK: - Delegates
@@ -50,19 +59,17 @@ extension ClothesListViewController: UICollectionViewDelegate, UICollectionViewD
         }
         return UICollectionViewCell()
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedClothes = clothes[indexPath.item]
+        presentDetailViewController(with: selectedClothes)
+    }
 }
 
 // MARK: - Actions
 extension ClothesListViewController {
 
     @objc func settingsItemPressed() {
-        CoreDataManager.shared.delete { [unowned self] result in
-            switch result {
-            case .success:
-                self.clothes = [Clothes]()
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+       
     }
 }

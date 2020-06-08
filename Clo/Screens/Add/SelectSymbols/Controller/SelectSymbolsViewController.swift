@@ -1,41 +1,39 @@
 import UIKit
 
 class SelectSymbolsViewController: UIViewController {
-
+    
     // MARK: - Properties
     private let customView = SelectSymbolsView(frame: UIScreen.main.bounds)
     var clothesInfo: (type: ClothingType, color: ColorType, info: String?, photo: UIImage)!
     private let selectionSectionTitle = "Your choice"
-    private var sections = SymbolsSections.getSections()
-    private var visibleSections: [SymbolsSections] {
-        return sections.filter { !$0.hidden }
-    }
+    private var sections = SymbolsSections.getSections().sorted { $0.index < $1.index }
     private var selectedSymbols = [Symbol]() {
         willSet {
             if newValue.count == 0 {
-                showHideSelectionSection(show: false)
                 view().nextButton.enableButton(isOn: false, minAlphaValue: 0)
-            }
-        }
-        didSet {
-            if oldValue.count == 0 {
-                showHideSelectionSection(show: true)
+            } else {
                 view().nextButton.enableButton(isOn: true)
             }
         }
     }
-
+    
+    var editableClothes: Clothes?
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        hideCategoriesWhenAppear()
+    }
+    
     // MARK: - Functions
     private func view() -> SelectSymbolsView {
         return view as! SelectSymbolsView
     }
-
+    
     private func setupView() {
         view  =  customView
         view().laundrySymbolsView.collectionView.dataSource = self
@@ -46,43 +44,70 @@ class SelectSymbolsViewController: UIViewController {
         }
         createSelectedSymbolsSection()
     }
-
+    
     private func createSelectedSymbolsSection() {
-        let section = SymbolsSections(title: selectionSectionTitle, items: [])
+        let items = editableClothes?.symbols ?? []
+        let section = SymbolsSections(index: 0, title: selectionSectionTitle, category: nil, items: items)
         sections.insert(section, at: 0)
     }
-
-    private func addItem(item: Symbol) {
-        selectedSymbols.append(item)
-        sections[0].items = selectedSymbols
-    }
-
-    private func removeItem(index: Int) {
-        selectedSymbols.remove(at: index)
-        sections[0].items = selectedSymbols
-    }
-
-    private func showHideSelectionSection(show: Bool) {
-        sections[0].hidden = !show
-        view().laundrySymbolsView.collectionView.reloadData()
-    }
-
-    private func showHideCategory(category: Categories, show: Bool) {
-        if let index = sections.firstIndex(where: { $0.title == category.rawValue }) {
-            sections[index].hidden = !show
-            view().laundrySymbolsView.collectionView.reloadData()
+    
+    private func hideCategoriesWhenAppear() {
+        guard let editableClothes = editableClothes else { return }
+        let categories = editableClothes.symbols.map { $0.category }
+        
+        for category in categories {
+            if let index = sections.firstIndex(where: { category == $0.category }) {
+                sections.remove(at: index)
+            }
         }
     }
-
+    
+    private func selectItem(indexPath: IndexPath) {
+        let item = sections[indexPath.section].items[indexPath.item]
+        selectedSymbols.append(item)
+        sections[0].items.append(item)
+        view().laundrySymbolsView.collectionView.reloadSections(IndexSet(arrayLiteral: 0))
+        removeSection(indexPath: indexPath)
+    }
+    
+    private func removeSection(indexPath: IndexPath) {
+        sections.remove(at: indexPath.section)
+        let indexSet = IndexSet(arrayLiteral: indexPath.section)
+        view().laundrySymbolsView.collectionView.deleteSections(indexSet)
+    }
+    
+    
+    private func unselectItem(indexPath: IndexPath) {
+        restoreSection(indexPath: indexPath)
+        let itemID = sections[indexPath.section].items[indexPath.item].id
+        selectedSymbols.removeAll { $0.id == itemID }
+        sections[0].items.remove(at: indexPath.item)
+        view().laundrySymbolsView.collectionView.reloadSections(IndexSet(arrayLiteral: 0))
+    }
+    
+    private func restoreSection(indexPath: IndexPath) {
+        let category = sections[indexPath.section].items[indexPath.item].category
+        let allSections = SymbolsSections.getSections()
+        
+        guard let section = allSections.first(where: { $0.category == category }) else { return }
+        sections.append(section)
+        sections.sort { $0.index < $1.index }
+        
+        guard let index = sections.firstIndex(where: { $0.category == category }) else {return}
+        let indexSet = IndexSet(arrayLiteral: index)
+        view().laundrySymbolsView.collectionView.insertSections(indexSet)
+    }
+    
     private func saveClothes() {
-        let clothes = Clothes(type: clothesInfo.type,
+        let clothes = Clothes(uID: UUID().uuidString,
+                              type: clothesInfo.type,
                               color: clothesInfo.color,
                               info: clothesInfo.info,
                               photo: clothesInfo.photo,
                               symbols: selectedSymbols)
         CoreDataManager.shared.saveData(clothes: clothes)
     }
-
+    
     private func presentTabBarController() {
         saveClothes()
         let tabBraController = TabBarController()
@@ -93,13 +118,13 @@ class SelectSymbolsViewController: UIViewController {
 
 // MARK: - Delegates
 extension SelectSymbolsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.symbolCellIdentifier, for: indexPath) as! LaundrySymbolsCollectionViewCell
-
-        let section = visibleSections[indexPath.section]
+        
+        let section = sections[indexPath.section]
         cell.laundryImage.image = section.items[indexPath.item].image?.withRenderingMode(.alwaysTemplate)
-
+        
         if section.title == selectionSectionTitle {
             cell.laundryImage.tintColor = Colors.mintColor
         } else {
@@ -107,38 +132,34 @@ extension SelectSymbolsViewController: UICollectionViewDelegate, UICollectionVie
         }
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        visibleSections[section].items.count
+        sections[section].items.count
     }
-
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        visibleSections.count
+        sections.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let item = visibleSections[indexPath.section].items[indexPath.item]
-
-        if visibleSections[indexPath.section].title == selectionSectionTitle {
-            removeItem(index: indexPath.item)
-            showHideCategory(category: item.category, show: true)
+        if indexPath.section != 0 {
+            selectItem(indexPath: indexPath)
         } else {
-            addItem(item: item)
-            showHideCategory(category: item.category, show: false)
+            unselectItem(indexPath: indexPath)
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Identifiers.symbolHeaderIdentifier, for: indexPath) as! LaundrySymbolsHeader
-            headerView.headerLabel.text = visibleSections[indexPath.section].title
+            headerView.headerLabel.text = sections[indexPath.section].title
             return headerView
         }
         return UICollectionReusableView()
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 32.0)
     }

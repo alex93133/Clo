@@ -10,9 +10,10 @@ enum Identifiers {
     static let clothesSymbolsCellIdentifier = "ClothesSymbols"
     static let clothesColorCellIdentifier   = "ClothesColor"
     static let colorTypeCellIdentifier      = "ColorType"
-
-    enum Notifications {
-
+    
+    enum DetailCells {
+        static let photoCellIdentifier        = "SelectedPhoto"
+        static let typeWithInfoCellIdentifier = "SelectedTypeAndInfo"
+        static let symbolsCellIdentifier      = "SelectedSymbols"
     }
-
 }

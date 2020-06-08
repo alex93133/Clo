@@ -1,6 +1,6 @@
 import UIKit
 
-class TypeView: UIView {
+class DetailView: UIView {
     
     // MARK: - Properties
     var tableView: UITableView!
@@ -20,17 +20,20 @@ class TypeView: UIView {
         tableView                      = UITableView()
         tableView.tableFooterView      = UIView()
         tableView.backgroundColor      = Colors.whiteBGColor
-        tableView.separatorColor       = Colors.separator
+        tableView.separatorColor       = .clear
         tableView.alwaysBounceVertical = false
-        tableView.register(TypeTableViewCell.self, forCellReuseIdentifier: Identifiers.colorTypeCellIdentifier)
+        tableView.rowHeight            = UITableView.automaticDimension
+        
+        tableView.register(DetailPhotoTableViewCell.self, forCellReuseIdentifier: Identifiers.DetailCells.photoCellIdentifier)
+        tableView.register(DetailTypeAndInfoTableViewCell.self, forCellReuseIdentifier: Identifiers.DetailCells.typeWithInfoCellIdentifier)
+        tableView.register(DetailSymbolsTableViewCell.self, forCellReuseIdentifier: Identifiers.DetailCells.symbolsCellIdentifier)
         
         setupTableViewConstraints()
     }
-    
 }
 
 // MARK: - Constraints
-extension TypeView {
+extension DetailView {
     
     private func setupTableViewConstraints() {
         addSubview(tableView)

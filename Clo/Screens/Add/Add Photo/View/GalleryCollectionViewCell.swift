@@ -16,13 +16,13 @@ class GalleryCollectionViewCell: UICollectionViewCell {
 
     // MARK: - PhotoImageView
     private func setupPhotoImage(frame: CGRect) {
-        let itemSize             = frame.size.height
-        photoImage               = UIImageView(frame: CGRect(x: 0, y: 0,
+        let itemSize                   = frame.size.height
+        photoImage                     = UIImageView(frame: CGRect(x: 0, y: 0,
                                                              width: itemSize,
                                                              height: itemSize))
-        photoImage.center        = CGPoint(x: itemSize / 2, y: itemSize / 2)
-        photoImage.contentMode   = .scaleAspectFill
-        photoImage.clipsToBounds = true
+        photoImage.center              = CGPoint(x: itemSize / 2, y: itemSize / 2)
+        photoImage.contentMode         = .scaleAspectFill
+        photoImage.layer.masksToBounds = true
 
         addSubview(photoImage)
     }

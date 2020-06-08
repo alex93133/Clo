@@ -7,4 +7,5 @@ enum ClothingType: String, CaseIterable {
     case bedLinen      = "Bed linen"
     case casualWear    = "Casual wear"
     case babyClothes   = "Baby clothes"
+    case sportWear     = "Sport wear"
 }

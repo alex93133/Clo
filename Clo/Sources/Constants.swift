@@ -8,10 +8,9 @@ enum Constants {
     static let animationTimeInterval                  = 0.2
 
     enum Fonts {
-        static let smallTextSize: CGFloat             = 15
+        static let smallTextSize: CGFloat             = 13
         static let mediumTextSize: CGFloat            = 17
-        static let headTextSize: CGFloat              = 34
-        static let clothesNameTextSize: CGFloat       = 28
+        static let clothesTypeTextSize: CGFloat       = 20
         static let navigationBarItemTextSize: CGFloat = 22
     }
 

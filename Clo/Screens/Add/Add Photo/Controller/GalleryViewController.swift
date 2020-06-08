@@ -40,7 +40,7 @@ class GalleryViewController: UIViewController, CropViewControllerDelegate {
     }
 
     private func presentAddClothesViewController(image: UIImage) {
-        let addClothesViewController                = AddClothesViewController(image: image)
+        let addClothesViewController                = AddEditClothesViewController(image: image)
         let navigationController                    = UINavigationController(rootViewController: addClothesViewController)
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true)

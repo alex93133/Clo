@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ClothesInfo" representedClassName="ClothesInfo" syncable="YES" codeGenerationType="class">
-        <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="color" attributeType="String"/>
         <attribute name="info" optional="YES" attributeType="String" valueTransformerName="" customClassName="[Clothes]"/>
-        <attribute name="photo" optional="YES" attributeType="Binary"/>
-        <attribute name="symbolsIDs" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
-        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="photo" attributeType="Binary"/>
+        <attribute name="symbolsIDs" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[Int]"/>
+        <attribute name="type" attributeType="String"/>
+        <attribute name="uID" attributeType="String"/>
     </entity>
     <elements>
-        <element name="ClothesInfo" positionX="-54" positionY="-9" width="128" height="118"/>
+        <element name="ClothesInfo" positionX="-54" positionY="-9" width="128" height="133"/>
     </elements>
 </model>
