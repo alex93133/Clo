@@ -45,9 +45,9 @@ class DetailSymbolsTableViewCell: UITableViewCell {
     }
     
     private func setupDescriptionLabel() {
-        descriptionLabel = UILabel()
+        descriptionLabel               = UILabel()
         descriptionLabel.numberOfLines = 0
-        descriptionLabel.textColor = Colors.grayTextColor
+        descriptionLabel.textColor     = Colors.grayTextColor
         descriptionLabel.font = .systemFont(ofSize: Constants.Fonts.smallTextSize, weight: .regular)
         setupDescriptionLabelConstraints()
     }

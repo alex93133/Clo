@@ -10,7 +10,7 @@ class TypeTableViewCell: UITableViewCell {
         setupLabel()
         setupCheckBox()
         backgroundColor = Colors.whiteBGColor
-        selectionStyle = .none
+        selectionStyle  = .none
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,18 +31,17 @@ class TypeTableViewCell: UITableViewCell {
     // MARK: - Label
     private func setupLabel() {
         textLabel?.textColor = Colors.blackTextColor
-        textLabel?.font = .systemFont(ofSize: Constants.Fonts.mediumTextSize, weight: .regular)
+        textLabel?.font      = .systemFont(ofSize: Constants.Fonts.mediumTextSize, weight: .regular)
     }
     
     // MARK: - CheckBox
     private func setupCheckBox() {
-        checkBox = UIImageView()
+        checkBox             = UIImageView()
         checkBox.contentMode = .scaleAspectFill
-        checkBox.image = Images.checkBox
-        checkBox.alpha = 0
+        checkBox.image       = Images.checkBox
+        checkBox.alpha       = 0
         setupCheckBoxConstraints()
     }
-    
 }
 
 // MARK: - Constraints
@@ -51,10 +50,10 @@ extension TypeTableViewCell {
     private func setupCheckBoxConstraints() {
         addSubview(checkBox)
         
-        checkBox.translatesAutoresizingMaskIntoConstraints = false
-        checkBox.widthAnchor.constraint(equalToConstant: 28).isActive = true
-        checkBox.heightAnchor.constraint(equalToConstant: 28).isActive = true
-        checkBox.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        checkBox.translatesAutoresizingMaskIntoConstraints                                  = false
+        checkBox.widthAnchor.constraint(equalToConstant: 28).isActive                       = true
+        checkBox.heightAnchor.constraint(equalToConstant: 28).isActive                      = true
+        checkBox.centerYAnchor.constraint(equalTo: centerYAnchor).isActive                  = true
         checkBox.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -21).isActive = true
     }
 }

@@ -8,6 +8,7 @@ class ClothesListCollectionViewCell: UICollectionViewCell {
     var collectionView: UICollectionView!
     var symbols: [Symbol]!
     var color: ColorType!
+    var itemHandler: ((CustomAlertController) -> Void)!
 
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -36,7 +37,6 @@ class ClothesListCollectionViewCell: UICollectionViewCell {
     private func setupClothesImageView(itemSize: CGFloat) {
         clothesImageView             = UIImageView()
         clothesImageView.contentMode = .scaleAspectFill
-
         setupClothesImageConstraints()
     }
 
@@ -45,7 +45,6 @@ class ClothesListCollectionViewCell: UICollectionViewCell {
         lineView                 = UIView(frame: CGRect(x: 0, y: 0, width: rect.width - 24, height: 1))
         lineView.center          = CGPoint(x: rect.width / 2, y: 283)
         lineView.backgroundColor = Colors.lightGrayBGColor
-
         addSubview(lineView)
     }
     // MARK: - CollectionView
@@ -64,6 +63,7 @@ class ClothesListCollectionViewCell: UICollectionViewCell {
         collectionView                                = UICollectionView(frame: frame, collectionViewLayout: layout)
         collectionView.backgroundColor                = .clear
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.isScrollEnabled                = false
 
         collectionView.register(ClothesSymbolsCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.clothesSymbolsCellIdentifier)
 

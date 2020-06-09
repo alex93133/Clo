@@ -3,7 +3,7 @@ import UIKit
 class TypeViewController: UITableViewController {
 
     // MARK: - Properties
-    private let customView = TypeView(frame: UIScreen.main.bounds)
+    private let customView    = TypeView(frame: UIScreen.main.bounds)
     private let clothingTypes = ClothingType.allCases
     var selectedTypeHandle: ((ClothingType) -> Void)?
 
@@ -11,7 +11,6 @@ class TypeViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-
     }
 
     // MARK: - Functions

@@ -9,7 +9,6 @@ class AddEditClothesView: UIView {
     var inputFieldsView: InputFieldsView!
     var colorTypeCollectionView: ColorTypeCollectionView!
     var nextButton: NextButton!
-
     var nextButtonHandler: (() -> Void)?
 
     override init(frame: CGRect) {
@@ -87,11 +86,11 @@ extension AddEditClothesView {
     private func setupClothesImageViewConstraints() {
         stackView.addArrangedSubview(clothesImageView)
 
-        clothesImageView.translatesAutoresizingMaskIntoConstraints                                            = false
+        clothesImageView.translatesAutoresizingMaskIntoConstraints                                             = false
         clothesImageView.heightAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 9 / 16).isActive = true
         clothesImageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 12).isActive    = true
-        clothesImageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -12).isActive  = true
-        clothesImageView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0).isActive            = true
+        clothesImageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -12).isActive = true
+        clothesImageView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0).isActive             = true
     }
 
     private func setupInputFieldsViewConstraints() {

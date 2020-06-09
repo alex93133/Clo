@@ -4,7 +4,6 @@ class LaundrySymbolsCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Properties
     var laundryImage: UIImageView!
-
     override var isHighlighted: Bool {
         didSet {
                 UIView.animate(withDuration: Constants.animationTimeInterval) { [unowned self] in

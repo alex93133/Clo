@@ -13,5 +13,4 @@ enum Constants {
         static let clothesTypeTextSize: CGFloat       = 20
         static let navigationBarItemTextSize: CGFloat = 22
     }
-
 }

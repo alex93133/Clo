@@ -4,14 +4,14 @@ import CoreData
 class CoreDataManager {
     
     // MARK: - Properties
-    static let shared = CoreDataManager()
-    private init() {}
-    
     var context: NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         let context = appDelegate?.persistentContainer.viewContext
         return context!
     }
+    
+    static let shared = CoreDataManager()
+    private init() {}
     
     // MARK: - Fetch
     func fetch(handler: @escaping (Result<Error>) -> Void) -> [Clothes] {

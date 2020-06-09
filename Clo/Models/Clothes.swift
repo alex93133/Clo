@@ -14,8 +14,7 @@ struct Clothes {
 extension Clothes {
 
     init(uID: String, typeString: String, colorString: String, info: String?, photoData: Data, symbolsIDs: [Int]) {
-
-        let symbols = Symbols.allSymbols()
+        let symbols         = Symbols.allSymbols()
         let selectedSymbols = symbols!.filter { symbolsIDs.contains($0.id) }
         
         self.uID     = uID

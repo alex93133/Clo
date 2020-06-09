@@ -9,7 +9,7 @@ class DetailPhotoTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupPhotoImageView()
         backgroundColor = Colors.whiteBGColor
-        selectionStyle = .none
+        selectionStyle  = .none
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -18,9 +18,9 @@ class DetailPhotoTableViewCell: UITableViewCell {
     
     // MARK: - PhotoImageView
     private func setupPhotoImageView() {
-        photoImageView = UIImageView()
-        photoImageView.contentMode = .scaleAspectFill
-        photoImageView.layer.cornerRadius = Constants.defaultCornerRadius
+        photoImageView                     = UIImageView()
+        photoImageView.contentMode         = .scaleAspectFill
+        photoImageView.layer.cornerRadius  = Constants.defaultCornerRadius
         photoImageView.layer.masksToBounds = true
         setupPhotoImageViewConstraints()
     }

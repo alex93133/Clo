@@ -26,7 +26,6 @@ class CameraCollectionViewCell: UICollectionViewCell {
         takePhotoIcon.contentMode         = .scaleAspectFit
         takePhotoIcon.layer.masksToBounds = true
         takePhotoIcon.image               = Images.cameraIcon
-
         addSubview(takePhotoIcon)
     }
 }

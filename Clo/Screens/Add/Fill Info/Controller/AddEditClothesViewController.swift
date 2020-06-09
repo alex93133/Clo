@@ -10,7 +10,6 @@ class AddEditClothesViewController: UIViewController {
     private var selectedColor: ColorType?
     private var typeSheet: SheetViewController!
     private var clothesPhoto: UIImage
-    
     private var editableClothes: Clothes?
     
     init(image: UIImage? = nil) {
@@ -90,8 +89,6 @@ class AddEditClothesViewController: UIViewController {
         
         handleSelectedType(clothingTypeViewController)
     }
-    
-    
     
     private func handleSelectedType(_ clothingTypeViewController: TypeViewController) {
         clothingTypeViewController.selectedTypeHandle = { [unowned self] type in

@@ -37,10 +37,10 @@ extension ClothesSymbolsCollectionViewCell {
     private func setupLaundryImageViewConstraints() {
         addSubview(laundryImageView)
         
-        laundryImageView.translatesAutoresizingMaskIntoConstraints = false
-        laundryImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 6).isActive = true
+        laundryImageView.translatesAutoresizingMaskIntoConstraints                                 = false
+        laundryImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 6).isActive    = true
         laundryImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -6).isActive = true
-        laundryImageView.topAnchor.constraint(equalTo: topAnchor, constant: 6).isActive = true
-        laundryImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6).isActive = true
+        laundryImageView.topAnchor.constraint(equalTo: topAnchor, constant: 6).isActive            = true
+        laundryImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6).isActive     = true
     }
 }

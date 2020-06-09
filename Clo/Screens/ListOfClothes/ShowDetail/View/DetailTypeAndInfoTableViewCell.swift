@@ -13,7 +13,7 @@ class DetailTypeAndInfoTableViewCell: UITableViewCell {
         setupInfoLabel()
         setupStackView()
         backgroundColor = Colors.whiteBGColor
-        selectionStyle = .none
+        selectionStyle  = .none
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -22,16 +22,16 @@ class DetailTypeAndInfoTableViewCell: UITableViewCell {
     
     // MARK: - TypeLabel
     private func setupTypeLabel() {
-        typeLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 312, height: 194))
+        typeLabel           = UILabel(frame: CGRect(x: 0, y: 0, width: 312, height: 194))
         typeLabel.textColor = Colors.blackTextColor
-        typeLabel.font = .systemFont(ofSize: Constants.Fonts.clothesTypeTextSize, weight: .semibold)
+        typeLabel.font      = .systemFont(ofSize: Constants.Fonts.clothesTypeTextSize, weight: .semibold)
     }
     
     // MARK: - InfoLabel
     private func setupInfoLabel() {
-        infoLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 312, height: 194))
+        infoLabel           = UILabel(frame: CGRect(x: 0, y: 0, width: 312, height: 194))
         infoLabel.textColor = Colors.grayTextColor
-        infoLabel.font = .systemFont(ofSize: Constants.Fonts.mediumTextSize, weight: .regular)
+        infoLabel.font      = .systemFont(ofSize: Constants.Fonts.mediumTextSize, weight: .regular)
     }
     
     // MARK: - StackView
@@ -44,7 +44,6 @@ class DetailTypeAndInfoTableViewCell: UITableViewCell {
         
         stackView.addArrangedSubview(typeLabel)
         stackView.addArrangedSubview(infoLabel)
-        
         setupStackViewConstraints()
     }
 }

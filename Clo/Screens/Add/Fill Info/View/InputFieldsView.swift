@@ -5,7 +5,6 @@ class InputFieldsView: UIView {
     // MARK: - Properties
     var descriptionTextField: UITextField!
     var selectTypeButton: UIButton!
-
     var selectTypeButtonHandler: (() -> Void)?
 
     init() {
@@ -43,7 +42,6 @@ class InputFieldsView: UIView {
         descriptionTextField.minimumFontSize = 10
         descriptionTextField.autocapitalizationType = .sentences
         CustomBorder.createDefaultBorder(target: descriptionTextField.layer)
-
         setupDescriptionFieldConstraints()
     }
 
@@ -69,7 +67,6 @@ class InputFieldsView: UIView {
         let attributedString = createAttributes(text: "Select type", textColor: Colors.grayTextColor)
         selectTypeButton.setAttributedTitle(attributedString, for: .normal)
         CustomBorder.createDefaultBorder(target: selectTypeButton.layer)
-
         setupSelectTypeButtonConstraints()
     }
 }

@@ -39,6 +39,7 @@
 		33E7DCF0247F92CF00BD3F41 /* AddEditClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCEF247F92CF00BD3F41 /* AddEditClothesViewController.swift */; };
 		33E7DCF2247F92E800BD3F41 /* AddEditClothesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCF1247F92E800BD3F41 /* AddEditClothesView.swift */; };
 		33E7DCFA247FB1D900BD3F41 /* ClothingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCF9247FB1D900BD3F41 /* ClothingType.swift */; };
+		33F1A4E1248F94B800857FE9 /* CustomAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F1A4E0248F94B800857FE9 /* CustomAlertController.swift */; };
 		A807DB972459A317006BE209 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = A807DB962459A317006BE209 /* .swiftlint.yml */; };
 		A8204D5B2463183B005E30A0 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8204D5A2463183B005E30A0 /* GalleryViewController.swift */; };
 		A8204D5D24631881005E30A0 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8204D5C24631880005E30A0 /* GalleryView.swift */; };
@@ -54,13 +55,9 @@
 		A85B37DF24584723001833FD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A85B37DE24584723001833FD /* .gitignore */; };
 		A8751F14245FFA7300B62589 /* LaundrySymbolsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8751F13245FFA7300B62589 /* LaundrySymbolsHeader.swift */; };
 		A8751F1624601E5B00B62589 /* LaundrySymbolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8751F1524601E5B00B62589 /* LaundrySymbolsView.swift */; };
-		A876C5292458590900B08C94 /* TextFieldErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A876C5282458590900B08C94 /* TextFieldErrorHandler.swift */; };
-		A876C52B24585B0900B08C94 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A876C52A24585B0900B08C94 /* String.swift */; };
-		A876C52D24586A3900B08C94 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A876C52C24586A3900B08C94 /* AlertManager.swift */; };
 		A876C52F2458701E00B08C94 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A876C52E2458701E00B08C94 /* Podfile */; };
 		A886AFCF24606301007FAEF2 /* SymbolsSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = A886AFCE24606301007FAEF2 /* SymbolsSections.swift */; };
 		A8A2D877245B019300C265F3 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A2D876245B019300C265F3 /* TextField.swift */; };
-		A8B6399724643A12005F335F /* SymbolDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B6399624643A12005F335F /* SymbolDescriptionViewController.swift */; };
 		A8BC7476245C2E9D00106097 /* ViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC7475245C2E9D00106097 /* ViewContoller.swift */; };
 		A8BC7479245C427400106097 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC7478245C427400106097 /* Images.swift */; };
 		A8BC747B245C429300106097 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BC747A245C429300106097 /* Colors.swift */; };
@@ -105,6 +102,7 @@
 		33E7DCEF247F92CF00BD3F41 /* AddEditClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditClothesViewController.swift; sourceTree = "<group>"; };
 		33E7DCF1247F92E800BD3F41 /* AddEditClothesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditClothesView.swift; sourceTree = "<group>"; };
 		33E7DCF9247FB1D900BD3F41 /* ClothingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingType.swift; sourceTree = "<group>"; };
+		33F1A4E0248F94B800857FE9 /* CustomAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertController.swift; sourceTree = "<group>"; };
 		7F4903D218EF839C0FC15428 /* Pods-Clo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clo.debug.xcconfig"; path = "Target Support Files/Pods-Clo/Pods-Clo.debug.xcconfig"; sourceTree = "<group>"; };
 		A807DB962459A317006BE209 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		A8204D5A2463183B005E30A0 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
@@ -123,13 +121,9 @@
 		A85B37DE24584723001833FD /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A8751F13245FFA7300B62589 /* LaundrySymbolsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundrySymbolsHeader.swift; sourceTree = "<group>"; };
 		A8751F1524601E5B00B62589 /* LaundrySymbolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundrySymbolsView.swift; sourceTree = "<group>"; };
-		A876C5282458590900B08C94 /* TextFieldErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldErrorHandler.swift; sourceTree = "<group>"; };
-		A876C52A24585B0900B08C94 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		A876C52C24586A3900B08C94 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		A876C52E2458701E00B08C94 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A886AFCE24606301007FAEF2 /* SymbolsSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsSections.swift; sourceTree = "<group>"; };
 		A8A2D876245B019300C265F3 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
-		A8B6399624643A12005F335F /* SymbolDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolDescriptionViewController.swift; sourceTree = "<group>"; };
 		A8BC7475245C2E9D00106097 /* ViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewContoller.swift; sourceTree = "<group>"; };
 		A8BC7478245C427400106097 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		A8BC747A245C429300106097 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -205,6 +199,7 @@
 				3357478D247FC77D008172FB /* NextButton.swift */,
 				3357478F247FCABD008172FB /* CustomTextField.swift */,
 				3315B131248110E300BA354B /* CustomBorder.swift */,
+				33F1A4E0248F94B800857FE9 /* CustomAlertController.swift */,
 			);
 			path = CustomUIElements;
 			sourceTree = "<group>";
@@ -288,7 +283,6 @@
 			children = (
 				338F227D248A703E001C40D1 /* CoreDataManager.swift */,
 				3367E76A2481545B00459AA4 /* PhotoLibraryManager.swift */,
-				A876C52C24586A3900B08C94 /* AlertManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -343,7 +337,6 @@
 		A82AC9932458411A00C0DC3D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A876C52A24585B0900B08C94 /* String.swift */,
 				A8A2D876245B019300C265F3 /* TextField.swift */,
 				A8BC7475245C2E9D00106097 /* ViewContoller.swift */,
 			);
@@ -428,7 +421,6 @@
 		A8D9FEF22465BC2800B62FB2 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				A876C5282458590900B08C94 /* TextFieldErrorHandler.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -447,7 +439,6 @@
 			isa = PBXGroup;
 			children = (
 				A84ADDF4245F3851008F3425 /* LaundrySymbolsViewController.swift */,
-				A8B6399624643A12005F335F /* SymbolDescriptionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -634,23 +625,20 @@
 				3367E76724811B3C00459AA4 /* TypeView.swift in Sources */,
 				A84ADDFB245F5143008F3425 /* LaundrySymbolsCollectionViewCell.swift in Sources */,
 				3357478E247FC77D008172FB /* NextButton.swift in Sources */,
-				A876C52D24586A3900B08C94 /* AlertManager.swift in Sources */,
 				33041FA1247CF64300721E63 /* ClothesSymbolsCollectionViewCell.swift in Sources */,
-				A8B6399724643A12005F335F /* SymbolDescriptionViewController.swift in Sources */,
 				338F227E248A703E001C40D1 /* CoreDataManager.swift in Sources */,
 				A84DB6FF245AC8F200A101B1 /* Constants.swift in Sources */,
 				A82AC97E2458404F00C0DC3D /* AppDelegate.swift in Sources */,
 				A8A2D877245B019300C265F3 /* TextField.swift in Sources */,
 				3308ECAF248E0A50008C7B61 /* DetailView.swift in Sources */,
 				3367E76B2481545C00459AA4 /* PhotoLibraryManager.swift in Sources */,
-				A876C5292458590900B08C94 /* TextFieldErrorHandler.swift in Sources */,
 				A8C9034A24602FE3004294D9 /* Categories.swift in Sources */,
 				A8204D5D24631881005E30A0 /* GalleryView.swift in Sources */,
+				33F1A4E1248F94B800857FE9 /* CustomAlertController.swift in Sources */,
 				3308ECB7248E0CD4008C7B61 /* DetailSymbolsTableViewCell.swift in Sources */,
 				A8751F14245FFA7300B62589 /* LaundrySymbolsHeader.swift in Sources */,
 				3357478B247FBC03008172FB /* ColorTypeCollectionViewCell.swift in Sources */,
 				A8BC7476245C2E9D00106097 /* ViewContoller.swift in Sources */,
-				A876C52B24585B0900B08C94 /* String.swift in Sources */,
 				A8204D5B2463183B005E30A0 /* GalleryViewController.swift in Sources */,
 				A84ADDF7245F3AF0008F3425 /* ClothesListViewController.swift in Sources */,
 				33E7DCF2247F92E800BD3F41 /* AddEditClothesView.swift in Sources */,

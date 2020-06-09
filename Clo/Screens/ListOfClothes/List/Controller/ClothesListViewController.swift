@@ -5,6 +5,7 @@ class ClothesListViewController: UIViewController {
     // MARK: - Properties
     private let customView = ClothesListView(frame: UIScreen.main.bounds)
     private var clothes: [Clothes]!
+    private var itemHandler: ((CustomAlertController) -> Void)!
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -32,6 +33,10 @@ class ClothesListViewController: UIViewController {
         view                             =  customView
         view().collectionView.delegate   = self
         view().collectionView.dataSource = self
+        
+        itemHandler = { [unowned self] sheet in
+            self.present(sheet, animated: true)
+        }
     }
 
     private func setupNavigationBar() {
@@ -60,6 +65,7 @@ extension ClothesListViewController: UICollectionViewDelegate, UICollectionViewD
             cell.clothesImageView.image = currentClothes.photo
             cell.symbols                = currentClothes.symbols
             cell.color                  = currentClothes.color
+            cell.itemHandler            = itemHandler
             return cell
         }
         return UICollectionViewCell()

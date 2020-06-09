@@ -28,10 +28,10 @@ class NextButton: UIButton {
     private func addToView(_ view: UIView) {
         view.addSubview(self)
 
-        translatesAutoresizingMaskIntoConstraints                                                      = false
-        heightAnchor.constraint(equalToConstant: 52).isActive                                          = true
-        leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8).isActive                   = true
-        trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8).isActive                = true
+        translatesAutoresizingMaskIntoConstraints                                      = false
+        heightAnchor.constraint(equalToConstant: 52).isActive                          = true
+        leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8).isActive    = true
+        trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8).isActive = true
     }
 
     func enableButton(isOn: Bool, minAlphaValue: CGFloat = 0.5) {

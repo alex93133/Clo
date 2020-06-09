@@ -29,33 +29,33 @@ class DetailViewController: UIViewController {
     }
     
     private func setupView() {
-        view =  customView
-        view().tableView.delegate = self
+        view                        =  customView
+        view().tableView.delegate   = self
         view().tableView.dataSource = self
     }
     
     private func setupNavigationBar() {
-        navigationItem.title = "About"
-        let settingsUIBarButtonItem = UIBarButtonItem(image: Images.editIcon, style: .plain, target: self, action: #selector(editButtonPressed))
+        navigationItem.title              = "About"
+        let settingsUIBarButtonItem       = UIBarButtonItem(image: Images.editIcon, style: .plain, target: self, action: #selector(editButtonPressed))
         settingsUIBarButtonItem.tintColor = Colors.mintColor
-        navigationItem.rightBarButtonItem  = settingsUIBarButtonItem
+        navigationItem.rightBarButtonItem = settingsUIBarButtonItem
     }
     
     private func createActionSheet() {
-        alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alertController                = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alertController.view.tintColor = Colors.mintColor
         
         let editAction = UIAlertAction(title: "Edit", style: .default) { [unowned self] _ in
             let editViewController = AddEditClothesViewController(clothes: self.clothes)
             self.navigationController?.pushViewController(editViewController, animated: true)
         }
-        editAction.setValue(Images.editIcon, forKey: "image")
-        
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { [unowned self] _ in
             self.deleteClothes()
         }
-        deleteAction.setValue(Images.deleteIcon, forKey: "image")
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        deleteAction.setValue(Images.deleteIcon, forKey: "image")
+        editAction.setValue(Images.editIcon, forKey: "image")
         
         alertController.addAction(editAction)
         alertController.addAction(deleteAction)

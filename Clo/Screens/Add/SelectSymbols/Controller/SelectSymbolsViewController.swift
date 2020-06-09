@@ -5,6 +5,7 @@ class SelectSymbolsViewController: UIViewController {
     // MARK: - Properties
     private let customView = SelectSymbolsView(frame: UIScreen.main.bounds)
     var clothesInfo: (type: ClothingType, color: ColorType, info: String?, photo: UIImage)!
+    var editableClothes: Clothes?
     private let selectionSectionTitle = "Your choice"
     private var sections = SymbolsSections.getSections().sorted { $0.index < $1.index }
     private var selectedSymbols = [Symbol]() {
@@ -16,9 +17,7 @@ class SelectSymbolsViewController: UIViewController {
             }
         }
     }
-    
-    var editableClothes: Clothes?
-    
+
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
