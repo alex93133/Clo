@@ -3,6 +3,7 @@ import CoreData
 
 class CoreDataManager {
     
+    // MARK: - Properties
     static let shared = CoreDataManager()
     private init() {}
     
@@ -12,7 +13,8 @@ class CoreDataManager {
         return context!
     }
     
-    func fetch() -> [Clothes] {
+    // MARK: - Fetch
+    func fetch(handler: @escaping (Result<Error>) -> Void) -> [Clothes] {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ClothesInfo")
         request.returnsObjectsAsFaults = false
         
@@ -38,12 +40,13 @@ class CoreDataManager {
                 allClothes.append(clothes)
             }
         } catch {
-            print("Failed")
+            handler(.failure(error))
         }
         return allClothes
     }
     
-    func saveData(clothes: Clothes) {
+    // MARK: - Save
+    func saveData(clothes: Clothes, handler: @escaping (Result<Error>) -> Void) {
         guard let entity = NSEntityDescription.entity(forEntityName: "ClothesInfo", in: context) else { return }
         
         guard let photoData = clothes.photo.pngData() else { return }
@@ -59,8 +62,9 @@ class CoreDataManager {
         
         do {
             try context.save()
+            handler(.success)
         } catch {
-            print("Failed saving")
+            handler(.failure(error))
         }
     }
     
@@ -76,13 +80,40 @@ class CoreDataManager {
                 }
             }
         } catch {
-            print("Failed")
+            handler(.failure(error))
         }
         
         do {
             try context.save()
             handler(.success)
-        } catch let error {
+        } catch {
+            handler(.failure(error))
+        }
+    }
+    
+    // MARK: - Update
+    func update(editableClothes: Clothes, handler: @escaping (Result<Error>) -> Void) {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ClothesInfo")
+        
+        do {
+            let result = try context.fetch(request)
+            for object in result as! [NSManagedObject] {
+                guard let uID = object.value(forKey: "uID") as? String else { return }
+                if uID == editableClothes.uID {
+                    let arrayOfID = editableClothes.symbols.map { $0.id }
+                    object.setValue(editableClothes.type.rawValue, forKey: "type")
+                    object.setValue(editableClothes.color.rawValue, forKey: "color")
+                    object.setValue(editableClothes.info, forKey: "info")
+                    object.setValue(arrayOfID, forKey: "symbolsIDs")
+                }
+            }
+        } catch {
+            handler(.failure(error))
+        }
+        do {
+            try context.save()
+            handler(.success)
+        } catch {
             handler(.failure(error))
         }
     }

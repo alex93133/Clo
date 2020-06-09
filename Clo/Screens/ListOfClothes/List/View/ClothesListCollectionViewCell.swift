@@ -7,6 +7,7 @@ class ClothesListCollectionViewCell: UICollectionViewCell {
     var lineView: UIView!
     var collectionView: UICollectionView!
     var symbols: [Symbol]!
+    var color: ColorType!
 
     override init(frame: CGRect) {
         super.init(frame: .zero)

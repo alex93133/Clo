@@ -63,7 +63,7 @@ extension DetailSymbolsTableViewCell {
         customSeparator.heightAnchor.constraint(equalToConstant: 0.5).isActive                     = true
         customSeparator.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive    = true
         customSeparator.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
-        customSeparator.bottomAnchor.constraint(equalTo: bottomAnchor,constant: 5).isActive        = true
+        customSeparator.bottomAnchor.constraint(equalTo: bottomAnchor).isActive                    = true
     }
     
     private func setupSymbolImageViewConstraints() {

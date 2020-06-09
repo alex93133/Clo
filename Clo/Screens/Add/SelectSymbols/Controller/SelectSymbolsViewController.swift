@@ -40,7 +40,7 @@ class SelectSymbolsViewController: UIViewController {
         view().laundrySymbolsView.collectionView.delegate = self
         view().nextButton.enableButton(isOn: false, minAlphaValue: 0)
         view().nextButtonHandler = { [unowned self] in
-            self.presentTabBarController()
+            self.handleData()
         }
         createSelectedSymbolsSection()
     }
@@ -53,6 +53,7 @@ class SelectSymbolsViewController: UIViewController {
     
     private func hideCategoriesWhenAppear() {
         guard let editableClothes = editableClothes else { return }
+        selectedSymbols = editableClothes.symbols
         let categories = editableClothes.symbols.map { $0.category }
         
         for category in categories {
@@ -98,6 +99,14 @@ class SelectSymbolsViewController: UIViewController {
         view().laundrySymbolsView.collectionView.insertSections(indexSet)
     }
     
+    private func handleData() {
+        if editableClothes != nil {
+            updateClothes()
+        } else {
+            saveClothes()
+        }
+    }
+    
     private func saveClothes() {
         let clothes = Clothes(uID: UUID().uuidString,
                               type: clothesInfo.type,
@@ -105,11 +114,34 @@ class SelectSymbolsViewController: UIViewController {
                               info: clothesInfo.info,
                               photo: clothesInfo.photo,
                               symbols: selectedSymbols)
-        CoreDataManager.shared.saveData(clothes: clothes)
+        CoreDataManager.shared.saveData(clothes: clothes) { [unowned self] result in
+            switch result {
+            case .success:
+                self.presentTabBarController()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func updateClothes() {
+        guard var editableClothes = editableClothes else { return }
+        editableClothes.type = clothesInfo.type
+        editableClothes.color = clothesInfo.color
+        editableClothes.info = clothesInfo.info
+        editableClothes.symbols = selectedSymbols
+        
+        CoreDataManager.shared.update(editableClothes: editableClothes) { [unowned self] result in
+            switch result {
+            case .success:
+                self.presentTabBarController()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     private func presentTabBarController() {
-        saveClothes()
         let tabBraController = TabBarController()
         tabBraController.modalPresentationStyle = .fullScreen
         present(tabBraController, animated: true)

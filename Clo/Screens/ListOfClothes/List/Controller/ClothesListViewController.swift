@@ -4,11 +4,7 @@ class ClothesListViewController: UIViewController {
 
     // MARK: - Properties
     private let customView = ClothesListView(frame: UIScreen.main.bounds)
-    private var clothes: [Clothes]! {
-        didSet {
-            view().collectionView.reloadData()
-        }
-    }
+    private var clothes: [Clothes]!
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -17,7 +13,14 @@ class ClothesListViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        clothes = CoreDataManager.shared.fetch()
+        clothes = CoreDataManager.shared.fetch { [unowned self] result in
+            switch result {
+            case .success:
+                self.view().collectionView.reloadData()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 
     // MARK: - Functions
@@ -53,8 +56,10 @@ extension ClothesListViewController: UICollectionViewDelegate, UICollectionViewD
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.clothesCellIdentifier, for: indexPath) as? ClothesListCollectionViewCell {
-            cell.clothesImageView.image = clothes[indexPath.item].photo
-            cell.symbols = clothes[indexPath.item].symbols
+            let currentClothes          = clothes[indexPath.item]
+            cell.clothesImageView.image = currentClothes.photo
+            cell.symbols                = currentClothes.symbols
+            cell.color                  = currentClothes.color
             return cell
         }
         return UICollectionViewCell()
