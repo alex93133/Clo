@@ -42,6 +42,7 @@ class CoreDataManager {
         } catch {
             handler(.failure(error))
         }
+        handler(.success)
         return allClothes
     }
     

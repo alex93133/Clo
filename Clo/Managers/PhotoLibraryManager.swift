@@ -18,7 +18,7 @@ class PhotoLibraryManager {
             guard results.count > 0 else { return }
             for i in 0..<results.count {
                 let asset = results.object(at: i)
-                let size = CGSize(width: 400, height: 400)
+                let size = CGSize(width: 1000, height: 1000)
                 if self.runRequesting {
                     manager.requestImage(for: asset, targetSize: size, contentMode: .aspectFill, options: requestOptions) { image, _ in
                         if let image = image {
