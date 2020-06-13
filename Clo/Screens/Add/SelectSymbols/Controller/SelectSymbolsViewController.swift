@@ -17,11 +17,12 @@ class SelectSymbolsViewController: UIViewController {
             }
         }
     }
-
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupNavigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +44,11 @@ class SelectSymbolsViewController: UIViewController {
         }
         createSelectedSymbolsSection()
     }
+    
+    private func setupNavigationBar() {
+           let title            = editableClothes == nil ? "Add your icons" : "Edit your icons"
+           navigationItem.title = title
+       }
     
     private func createSelectedSymbolsSection() {
         let items = editableClothes?.symbols ?? []
@@ -151,17 +157,20 @@ class SelectSymbolsViewController: UIViewController {
 extension SelectSymbolsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.symbolCellIdentifier, for: indexPath) as! LaundrySymbolsCollectionViewCell
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         
-        let section = sections[indexPath.section]
-        cell.laundryImage.image = section.items[indexPath.item].image?.withRenderingMode(.alwaysTemplate)
-        
-        if section.title == selectionSectionTitle {
-            cell.laundryImage.tintColor = Colors.mintColor
-        } else {
-            cell.laundryImage.tintColor = .black
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.symbolCellIdentifier, for: indexPath) as? LaundrySymbolsCollectionViewCell {
+            let section = sections[indexPath.section]
+            cell.laundryImage.image = section.items[indexPath.item].image?.withRenderingMode(.alwaysTemplate)
+            
+            if section.title == selectionSectionTitle {
+                cell.laundryImage.tintColor = Colors.mintColor
+            } else {
+                cell.laundryImage.tintColor = .black
+            }
+            return cell
         }
-        return cell
+        return UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

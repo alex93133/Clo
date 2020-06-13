@@ -29,8 +29,8 @@ extension ClothesListCollectionViewCell: UICollectionViewDelegate, UICollectionV
         default:
             let symbol   = symbols[indexPath.item - 1]
             let sheet    = CustomAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-            sheet.symbol = symbol
             itemHandler(sheet)
+            sheet.symbol = symbol
         }
     }
 }

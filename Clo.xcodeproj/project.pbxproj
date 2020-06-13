@@ -39,6 +39,7 @@
 		33E7DCF0247F92CF00BD3F41 /* AddEditClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCEF247F92CF00BD3F41 /* AddEditClothesViewController.swift */; };
 		33E7DCF2247F92E800BD3F41 /* AddEditClothesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCF1247F92E800BD3F41 /* AddEditClothesView.swift */; };
 		33E7DCFA247FB1D900BD3F41 /* ClothingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCF9247FB1D900BD3F41 /* ClothingType.swift */; };
+		33E95F212493C66E00102199 /* PhotoSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E95F202493C66E00102199 /* PhotoSheet.swift */; };
 		33F1A4E1248F94B800857FE9 /* CustomAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F1A4E0248F94B800857FE9 /* CustomAlertController.swift */; };
 		A807DB972459A317006BE209 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = A807DB962459A317006BE209 /* .swiftlint.yml */; };
 		A8204D5B2463183B005E30A0 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8204D5A2463183B005E30A0 /* GalleryViewController.swift */; };
@@ -102,6 +103,7 @@
 		33E7DCEF247F92CF00BD3F41 /* AddEditClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditClothesViewController.swift; sourceTree = "<group>"; };
 		33E7DCF1247F92E800BD3F41 /* AddEditClothesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditClothesView.swift; sourceTree = "<group>"; };
 		33E7DCF9247FB1D900BD3F41 /* ClothingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingType.swift; sourceTree = "<group>"; };
+		33E95F202493C66E00102199 /* PhotoSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSheet.swift; sourceTree = "<group>"; };
 		33F1A4E0248F94B800857FE9 /* CustomAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertController.swift; sourceTree = "<group>"; };
 		7F4903D218EF839C0FC15428 /* Pods-Clo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clo.debug.xcconfig"; path = "Target Support Files/Pods-Clo/Pods-Clo.debug.xcconfig"; sourceTree = "<group>"; };
 		A807DB962459A317006BE209 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
@@ -456,6 +458,7 @@
 		A8DA1A9524659F300077F0ED /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				33E95F202493C66E00102199 /* PhotoSheet.swift */,
 				A8204D5A2463183B005E30A0 /* GalleryViewController.swift */,
 			);
 			path = Controller;
@@ -635,6 +638,7 @@
 				A8C9034A24602FE3004294D9 /* Categories.swift in Sources */,
 				A8204D5D24631881005E30A0 /* GalleryView.swift in Sources */,
 				33F1A4E1248F94B800857FE9 /* CustomAlertController.swift in Sources */,
+				33E95F212493C66E00102199 /* PhotoSheet.swift in Sources */,
 				3308ECB7248E0CD4008C7B61 /* DetailSymbolsTableViewCell.swift in Sources */,
 				A8751F14245FFA7300B62589 /* LaundrySymbolsHeader.swift in Sources */,
 				3357478B247FBC03008172FB /* ColorTypeCollectionViewCell.swift in Sources */,

@@ -5,6 +5,7 @@ class TypeViewController: UITableViewController {
     // MARK: - Properties
     private let customView    = TypeView(frame: UIScreen.main.bounds)
     private let clothingTypes = ClothingType.allCases
+    var selectedType: ClothingType!
     var selectedTypeHandle: ((ClothingType) -> Void)?
 
     // MARK: - Lifecycle
@@ -22,6 +23,12 @@ class TypeViewController: UITableViewController {
         view  =  customView
         view().tableView.delegate = self
         view().tableView.dataSource = self
+        
+        if let selectedType = selectedType {
+            guard let index = clothingTypes.firstIndex(of: selectedType) else { return }
+            let indexPath = IndexPath(row: index, section: 0)
+            view().tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        }
     }
 }
 
@@ -46,9 +53,9 @@ extension TypeViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedType = clothingTypes[indexPath.row]
+        selectedType = clothingTypes[indexPath.row]
         DispatchQueue.main.asyncAfter(deadline: .now() + Constants.animationTimeInterval) { [unowned self] in
-            self.selectedTypeHandle?(selectedType)
+            self.selectedTypeHandle?(self.selectedType)
         }
     }
 }

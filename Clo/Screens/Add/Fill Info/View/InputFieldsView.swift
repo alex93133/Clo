@@ -80,7 +80,7 @@ extension InputFieldsView {
         descriptionTextField.translatesAutoresizingMaskIntoConstraints                                  = false
         descriptionTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive    = true
         descriptionTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
-        descriptionTextField.heightAnchor.constraint(equalToConstant: 64).isActive                      = true
+        descriptionTextField.heightAnchor.constraint(equalToConstant: 44).isActive                      = true
         descriptionTextField.topAnchor.constraint(equalTo: topAnchor, constant: 136).isActive           = true
     }
 

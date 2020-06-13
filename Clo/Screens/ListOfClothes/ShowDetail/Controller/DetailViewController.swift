@@ -42,8 +42,9 @@ class DetailViewController: UIViewController {
     }
     
     private func createActionSheet() {
-        alertController                = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        alertController.view.tintColor = Colors.mintColor
+        alertController                            = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alertController.view.tintColor             = Colors.mintColor
+        alertController.overrideUserInterfaceStyle = .light
         
         let editAction = UIAlertAction(title: "Edit", style: .default) { [unowned self] _ in
             let editViewController = AddEditClothesViewController(clothes: self.clothes)

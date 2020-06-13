@@ -69,24 +69,27 @@ class AddEditClothesViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        navigationItem.title = "Add new item"
-        let backUIBarButtonItem = UIBarButtonItem(image: Images.backIcon, style: .plain, target: self, action: #selector(backButtonPressed))
-        backUIBarButtonItem.tintColor = Colors.mintColor
-        navigationItem.leftBarButtonItem  = backUIBarButtonItem
+        let title                        = editableClothes == nil ? "Add new item" : "Edit your clothes"
+        navigationItem.title             = title
+        let backUIBarButtonItem          = UIBarButtonItem(image: Images.backIcon, style: .plain, target: self, action: #selector(backButtonPressed))
+        backUIBarButtonItem.tintColor    = Colors.mintColor
+        navigationItem.leftBarButtonItem = backUIBarButtonItem
     }
     
     private func createTypeSheet() {
         let safeZoneHeight: CGFloat        = 70
         let height: CGFloat                = Constants.colorTypeCellHeight * CGFloat(ClothingType.allCases.count) + safeZoneHeight
         let clothingTypeViewController     = TypeViewController()
-        let sheet                          = SheetViewController(controller: clothingTypeViewController, sizes: [.fixed(height)])
-        sheet.extendBackgroundBehindHandle = true
-        sheet.adjustForBottomSafeArea      = true
-        sheet.blurBottomSafeArea           = true
-        sheet.topCornersRadius             = 15
-        sheet.overlayColor                 = Colors.overlayColor
-        typeSheet                          = sheet
+        typeSheet                          = SheetViewController(controller: clothingTypeViewController, sizes: [.fixed(height)])
+        typeSheet.extendBackgroundBehindHandle = true
+        typeSheet.adjustForBottomSafeArea      = true
+        typeSheet.blurBottomSafeArea           = true
+        typeSheet.topCornersRadius             = 15
+        typeSheet.overlayColor                 = Colors.overlayColor
         
+        if let selectedType = editableClothes?.type {
+            clothingTypeViewController.selectedType = selectedType
+        }
         handleSelectedType(clothingTypeViewController)
     }
     
