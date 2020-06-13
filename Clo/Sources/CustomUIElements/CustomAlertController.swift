@@ -3,20 +3,21 @@ import UIKit
 class CustomAlertController: UIAlertController {
     
     // MARK: - Properties
-    var symbol: Symbol? {
-        didSet {
-            headLabel.text        = symbol?.description
-            imageView.image       = symbol?.image
-            messageLabel.isHidden = true
-            let cancelAction      = UIAlertAction(title: "Ok", style: .cancel)
-            addAction(cancelAction)
-        }
-    }
     private var overlayView: UIView!
     var headLabel: UILabel!
     var imageView: UIImageView!
     var messageLabel: UILabel!
     var stackView: UIStackView!
+    var symbol: Symbol? {
+           didSet {
+               view.heightAnchor.constraint(equalToConstant: 220).isActive = true
+               headLabel.text        = symbol?.description
+               imageView.image       = symbol?.image
+               messageLabel.isHidden = true
+               let cancelAction      = UIAlertAction(title: "Ok", style: .cancel)
+               addAction(cancelAction)
+           }
+       }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -31,8 +32,10 @@ class CustomAlertController: UIAlertController {
     
     // MARK: - View
     private func setupView() {
-        view.tintColor             = Colors.mintColor
-        overrideUserInterfaceStyle = .light
+        view.tintColor                                              = Colors.mintColor
+        overrideUserInterfaceStyle                                  = .light
+        view.translatesAutoresizingMaskIntoConstraints              = false
+        view.heightAnchor.constraint(equalToConstant: 320).isActive = true
     }
     
     // MARK: - SymbolImage
@@ -60,7 +63,6 @@ class CustomAlertController: UIAlertController {
         headLabel.textColor     = Colors.blackTextColor
         headLabel.textAlignment = .center
         headLabel.numberOfLines = 0
-        headLabel.sizeToFit()
     }
     
     // MARK: - MessageLabel
@@ -99,10 +101,8 @@ extension CustomAlertController {
         view.addSubview(stackView)
         
         stackView.translatesAutoresizingMaskIntoConstraints                                                           = false
-        stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16).isActive            = true
-        stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -180).isActive     = true
-        stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive    = true
-        stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
+        stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive            = true
+        stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 16).isActive = true
     }
     
     private func setupOverlayViewConstraints() {
@@ -123,6 +123,7 @@ extension CustomAlertController {
     private func setupHeadLabelConstraints() {
         headLabel.translatesAutoresizingMaskIntoConstraints                               = false
         headLabel.widthAnchor.constraint(equalToConstant: view.frame.width - 32).isActive = true
+        headLabel.heightAnchor.constraint(equalToConstant: 50).isActive                   = true
     }
     
     private func setupMessageLabelConstraints() {
