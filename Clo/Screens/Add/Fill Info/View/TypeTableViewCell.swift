@@ -20,7 +20,8 @@ class TypeTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         if selected {
-            UIView.animate(withDuration: Constants.animationTimeInterval) { [unowned self] in
+            UIView.animate(withDuration: Constants.animationTimeInterval) { [weak self] in
+                guard let self = self else { return }
                 self.checkBox.alpha = 1
             }
         } else {

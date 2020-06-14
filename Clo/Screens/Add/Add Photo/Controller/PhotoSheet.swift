@@ -1,12 +1,14 @@
 import UIKit
 import FittedSheets
 
-struct PhotoSheet {
+class PhotoSheet {
     
+    // MARK: - Properties
     var gallerySheet: SheetViewController!
     var galleryViewController: GalleryViewController!
     
-    mutating func setupGallerySheet(height: CGFloat) -> SheetViewController {
+    // MARK: - Functions
+    func setupGallerySheet(height: CGFloat) -> SheetViewController {
         galleryViewController                     = GalleryViewController()
         gallerySheet                              = SheetViewController(controller: galleryViewController, sizes: [.fixed(height)])
         gallerySheet.extendBackgroundBehindHandle = true
@@ -14,13 +16,6 @@ struct PhotoSheet {
         gallerySheet.blurBottomSafeArea           = true
         gallerySheet.topCornersRadius             = 15
         gallerySheet.overlayColor                 = Colors.overlayColor
-        
         return gallerySheet
-    }
-    
-    func handleDismiss() {
-        gallerySheet.didDismiss = {  _ in
-            self.galleryViewController.photoLibraryManager.runRequesting = false
-        }
     }
 }

@@ -10,12 +10,15 @@ class AddEditClothesView: UIView {
     var colorTypeCollectionView: ColorTypeCollectionView!
     var nextButton: NextButton!
     var nextButtonHandler: (() -> Void)?
+    var changePhotoButton: UIButton!
+    var changePhotoButtonHandler: (() -> Void)?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupScrollViewConstraints()
         setupStackView()
         setupClothesImageView()
+        setupChangePhotoButton()
         setupInputFieldsViewConstraints()
         setupColorTypeCollectionViewConstraints()
         setupNextButton()
@@ -41,8 +44,13 @@ class AddEditClothesView: UIView {
         clothesImageView.contentMode         = .scaleAspectFill
         clothesImageView.layer.cornerRadius  = Constants.defaultCornerRadius
         clothesImageView.layer.masksToBounds = true
-
         setupClothesImageViewConstraints()
+    }
+    
+    private func setupChangePhotoButton() {
+        changePhotoButton = UIButton()
+        changePhotoButton.addTarget(self, action: #selector(changePhotoButtonPressed), for: .touchUpInside)
+        setupChangePhotoButtonConstraints()
     }
 
     // MARK: - NextButton
@@ -54,8 +62,12 @@ class AddEditClothesView: UIView {
 
 // MARK: - Actions
 extension AddEditClothesView {
+    
+    @objc private func changePhotoButtonPressed() {
+        changePhotoButtonHandler?()
+    }
 
-    @objc func nextButtonPressed() {
+    @objc private func nextButtonPressed() {
         nextButtonHandler?()
     }
 }
@@ -93,6 +105,16 @@ extension AddEditClothesView {
         clothesImageView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0).isActive             = true
     }
 
+    private func setupChangePhotoButtonConstraints() {
+        addSubview(changePhotoButton)
+        
+        changePhotoButton.translatesAutoresizingMaskIntoConstraints                                    = false
+        changePhotoButton.leadingAnchor.constraint(equalTo: clothesImageView.leadingAnchor).isActive   = true
+        changePhotoButton.trailingAnchor.constraint(equalTo: clothesImageView.trailingAnchor).isActive = true
+        changePhotoButton.topAnchor.constraint(equalTo: clothesImageView.topAnchor).isActive           = true
+        changePhotoButton.bottomAnchor.constraint(equalTo: clothesImageView.bottomAnchor).isActive     = true
+    }
+    
     private func setupInputFieldsViewConstraints() {
         inputFieldsView = InputFieldsView()
         stackView.addArrangedSubview(inputFieldsView)

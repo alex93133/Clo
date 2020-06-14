@@ -46,11 +46,13 @@ class DetailViewController: UIViewController {
         alertController.view.tintColor             = Colors.mintColor
         alertController.overrideUserInterfaceStyle = .light
         
-        let editAction = UIAlertAction(title: "Edit", style: .default) { [unowned self] _ in
+        let editAction = UIAlertAction(title: "Edit", style: .default) { [weak self] _ in
+            guard let self = self else { return }
             let editViewController = AddEditClothesViewController(clothes: self.clothes)
             self.navigationController?.pushViewController(editViewController, animated: true)
         }
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { [unowned self] _ in
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
+            guard let self = self else { return }
             self.deleteClothes()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
@@ -64,7 +66,8 @@ class DetailViewController: UIViewController {
     }
     
     private func deleteClothes() {
-        CoreDataManager.shared.delete(clothes: clothes) { [unowned self] result in
+        CoreDataManager.shared.delete(clothes: clothes) { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success:
                 self.navigationController?.popViewController(animated: true)

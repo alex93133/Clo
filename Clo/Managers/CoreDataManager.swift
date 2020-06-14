@@ -100,8 +100,10 @@ class CoreDataManager {
             let result = try context.fetch(request)
             for object in result as! [NSManagedObject] {
                 guard let uID = object.value(forKey: "uID") as? String else { return }
+                guard let photoData = editableClothes.photo.pngData() else { return }
                 if uID == editableClothes.uID {
                     let arrayOfID = editableClothes.symbols.map { $0.id }
+                    object.setValue(photoData, forKey: "photo")
                     object.setValue(editableClothes.type.rawValue, forKey: "type")
                     object.setValue(editableClothes.color.rawValue, forKey: "color")
                     object.setValue(editableClothes.info, forKey: "info")

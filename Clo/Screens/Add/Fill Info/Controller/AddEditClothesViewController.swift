@@ -8,7 +8,6 @@ class AddEditClothesViewController: UIViewController {
     private let clothingColors = ClothingColor.getAllClothingColors()
     private var selectedType: ClothingType?
     private var selectedColor: ColorType?
-    private var typeSheet: SheetViewController!
     private var clothesPhoto: UIImage
     private var editableClothes: Clothes?
     
@@ -40,7 +39,6 @@ class AddEditClothesViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupNavigationBar()
-        createTypeSheet()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,14 +56,7 @@ class AddEditClothesViewController: UIViewController {
         view().colorTypeCollectionView.collectionView.dataSource = self
         view().inputFieldsView.descriptionTextField.delegate     = self
         view().clothesImageView.image                            = clothesPhoto
-        
-        view().inputFieldsView.selectTypeButtonHandler = { [unowned self]  in
-            self.present(self.typeSheet, animated: false)
-        }
-        view().nextButtonHandler = { [unowned self]  in
-            self.presentSelectSymbolsViewController()
-        }
-        view().nextButton.enableButton(isOn: false)
+        setupButtonActions()
     }
     
     private func setupNavigationBar() {
@@ -76,29 +67,36 @@ class AddEditClothesViewController: UIViewController {
         navigationItem.leftBarButtonItem = backUIBarButtonItem
     }
     
-    private func createTypeSheet() {
-        let safeZoneHeight: CGFloat        = 70
-        let height: CGFloat                = Constants.colorTypeCellHeight * CGFloat(ClothingType.allCases.count) + safeZoneHeight
-        let clothingTypeViewController     = TypeViewController()
-        typeSheet                          = SheetViewController(controller: clothingTypeViewController, sizes: [.fixed(height)])
+    static func createTypeSheet(typeViewController: TypeViewController) -> SheetViewController {
+        let safeZoneHeight: CGFloat            = 70
+        let height: CGFloat                    = Constants.colorTypeCellHeight * CGFloat(typeViewController.clothingTypes.count) + safeZoneHeight
+        let clothingTypeViewController         = typeViewController
+        let typeSheet                          = SheetViewController(controller: clothingTypeViewController, sizes: [.fixed(height)])
         typeSheet.extendBackgroundBehindHandle = true
         typeSheet.adjustForBottomSafeArea      = true
         typeSheet.blurBottomSafeArea           = true
         typeSheet.topCornersRadius             = 15
         typeSheet.overlayColor                 = Colors.overlayColor
-        
-        if let selectedType = editableClothes?.type {
-            clothingTypeViewController.selectedType = selectedType
-        }
-        handleSelectedType(clothingTypeViewController)
+        return typeSheet
     }
     
-    private func handleSelectedType(_ clothingTypeViewController: TypeViewController) {
-        clothingTypeViewController.selectedTypeHandle = { [unowned self] type in
-            self.selectedType    = type
-            let buttonTitle      = type.rawValue
+    private func presentTypeSheet() {
+        let typeViewController  = TypeViewController()
+        typeViewController.clothingTypes.removeFirst()
+        let sheetViewController = AddEditClothesViewController.createTypeSheet(typeViewController: typeViewController)
+        
+        if let selectedType     = editableClothes?.type {
+            typeViewController.selectedType = selectedType
+        }
+        present(sheetViewController, animated: false)
+        
+        typeViewController.selectedTypeHandle = { [weak self] type in
+            guard let self = self else { return }
+            self.selectedType = type
+            let buttonTitle   = type.rawValue
             self.setButtonTitle(buttonTitle)
-            self.typeSheet.closeSheet()
+            sheetViewController.closeSheet()
+            self.checkFields()
         }
     }
     
@@ -116,12 +114,13 @@ class AddEditClothesViewController: UIViewController {
     
     private func passData(to viewController: SelectSymbolsViewController) {
         guard let selectedType = selectedType else { return }
-        guard let  selectedColor = selectedColor else { return }
+        guard let selectedColor = selectedColor else { return }
+        guard let photo = view().clothesImageView.image else { return }
         
         viewController.clothesInfo = (type: selectedType,
                                       color: selectedColor,
                                       info: view().inputFieldsView.descriptionTextField.text,
-                                      photo: clothesPhoto)
+                                      photo: photo)
         
         if let editableClothes = editableClothes {
             viewController.editableClothes = editableClothes
@@ -131,6 +130,33 @@ class AddEditClothesViewController: UIViewController {
 
 // MARK: - Actions
 extension AddEditClothesViewController {
+    
+    private func setupButtonActions() {
+        
+        view().changePhotoButtonHandler = { [weak self] in
+            guard let self = self else { return }
+            let sheet                                      = PhotoSheet()
+            let photoSheetViewController                   = sheet.setupGallerySheet(height:  self.view.frame.size.height * 2 / 3)
+            sheet.galleryViewController.itemHasImage       = true
+            sheet.galleryViewController.updateImageHandler = { image in
+                self.view().clothesImageView.image = image
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2 * Constants.animationTimeInterval) {
+                    sheet.gallerySheet.closeSheet()
+                }
+            }
+            self.present(photoSheetViewController, animated: false)
+        }
+        
+        view().inputFieldsView.selectTypeButtonHandler = { [weak self]  in
+            guard let self = self else { return }
+            self.presentTypeSheet()
+        }
+        view().nextButtonHandler = { [weak self]  in
+            guard let self = self else { return }
+            self.presentSelectSymbolsViewController()
+        }
+        view().nextButton.enableButton(isOn: false)
+    }
     
     @objc private func backButtonPressed() {
         if editableClothes != nil {

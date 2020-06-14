@@ -39,7 +39,8 @@ class SelectSymbolsViewController: UIViewController {
         view().laundrySymbolsView.collectionView.dataSource = self
         view().laundrySymbolsView.collectionView.delegate = self
         view().nextButton.enableButton(isOn: false, minAlphaValue: 0)
-        view().nextButtonHandler = { [unowned self] in
+        view().nextButtonHandler = { [weak self] in
+            guard let self = self else { return }
             self.handleData()
         }
         createSelectedSymbolsSection()
@@ -119,7 +120,8 @@ class SelectSymbolsViewController: UIViewController {
                               info: clothesInfo.info,
                               photo: clothesInfo.photo,
                               symbols: selectedSymbols)
-        CoreDataManager.shared.saveData(clothes: clothes) { [unowned self] result in
+        CoreDataManager.shared.saveData(clothes: clothes) { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success:
                 self.presentTabBarController()
@@ -131,12 +133,14 @@ class SelectSymbolsViewController: UIViewController {
     
     private func updateClothes() {
         guard var editableClothes = editableClothes else { return }
+        editableClothes.photo = clothesInfo.photo
         editableClothes.type = clothesInfo.type
         editableClothes.color = clothesInfo.color
         editableClothes.info = clothesInfo.info
         editableClothes.symbols = selectedSymbols
         
-        CoreDataManager.shared.update(editableClothes: editableClothes) { [unowned self] result in
+        CoreDataManager.shared.update(editableClothes: editableClothes) { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success:
                 self.presentTabBarController()

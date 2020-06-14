@@ -1,6 +1,7 @@
 import Foundation
 
 enum ClothingType: String, CaseIterable {
+    case all           = "All"
     case outerClothing = "Outer clothing"
     case underwear     = "Underwear"
     case textile       = "Textile"

@@ -40,10 +40,9 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     private func presentSheetViewController() {
-        var sheet = PhotoSheet()
+        let sheet = PhotoSheet()
         let sheetViewController = sheet.setupGallerySheet(height:  view.frame.size.height * 2 / 3)
         present(sheetViewController, animated: false)
-        sheet.handleDismiss()
     }
     
     private func presentViewWithWarning() {
@@ -51,7 +50,8 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         
         let cancelAction  = UIAlertAction(title: "Maybe later", style: .cancel)
         alert.addAction(cancelAction)
-        let getAccessAction = UIAlertAction(title: "Get access", style: .default) { [unowned self] _ in
+        let getAccessAction = UIAlertAction(title: "Get access", style: .default) { [weak self] _ in
+            guard let self = self else { return }
             self.getAccess()
         }
         alert.addAction(getAccessAction)
@@ -65,7 +65,8 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     private func getAccess() {
         AVCaptureDevice.requestAccess(for: .video) { successOfCameraRequest in
-                PHPhotoLibrary.requestAuthorization { [unowned self]  resultOfLibrary in
+                PHPhotoLibrary.requestAuthorization { [weak self]  resultOfLibrary in
+                    guard let self = self else { return }
                     if resultOfLibrary == .authorized && successOfCameraRequest {
                         DispatchQueue.main.async {
                             self.presentSheetViewController()
@@ -80,7 +81,8 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
             
             let cancelAction  = UIAlertAction(title: "Maybe later", style: .cancel)
             alert.addAction(cancelAction)
-            let openSettingsAction = UIAlertAction(title: "Open Settings", style: .default) { [unowned self] _ in
+            let openSettingsAction = UIAlertAction(title: "Open Settings", style: .default) { [weak self] _ in
+                guard let self = self else { return }
                 self.openSettings()
             }
             alert.addAction(openSettingsAction)
