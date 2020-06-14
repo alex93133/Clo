@@ -32,6 +32,7 @@ class ClothesListView: UIView {
         collectionView.showsVerticalScrollIndicator = false
 
         collectionView.register(ClothesListCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.clothesCellIdentifier)
+        collectionView.register(AddNewItemCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.addNewItemCellIdentifier)
 
         setupCollectionViewConstraints()
     }

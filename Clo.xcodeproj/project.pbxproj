@@ -13,6 +13,7 @@
 		33041FA1247CF64300721E63 /* ClothesSymbolsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33041FA0247CF64300721E63 /* ClothesSymbolsCollectionViewCell.swift */; };
 		33041FA3247D061700721E63 /* ClothesListCollectionViewCellDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33041FA2247D061700721E63 /* ClothesListCollectionViewCellDelegates.swift */; };
 		3306B4482496210400A42C85 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3306B4472496210400A42C85 /* Image.swift */; };
+		3306B44A2496557B00A42C85 /* AddNewItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3306B4492496557B00A42C85 /* AddNewItemCollectionViewCell.swift */; };
 		3308ECA7248D5C2F008C7B61 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308ECA6248D5C2F008C7B61 /* Result.swift */; };
 		3308ECAD248E09D5008C7B61 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308ECAC248E09D5008C7B61 /* DetailViewController.swift */; };
 		3308ECAF248E0A50008C7B61 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308ECAE248E0A50008C7B61 /* DetailView.swift */; };
@@ -78,6 +79,7 @@
 		33041FA0247CF64300721E63 /* ClothesSymbolsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesSymbolsCollectionViewCell.swift; sourceTree = "<group>"; };
 		33041FA2247D061700721E63 /* ClothesListCollectionViewCellDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesListCollectionViewCellDelegates.swift; sourceTree = "<group>"; };
 		3306B4472496210400A42C85 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		3306B4492496557B00A42C85 /* AddNewItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		3308ECA6248D5C2F008C7B61 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		3308ECAC248E09D5008C7B61 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3308ECAE248E0A50008C7B61 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -482,6 +484,7 @@
 				33041F9E247C122900721E63 /* ClothesListCollectionViewCell.swift */,
 				33041FA2247D061700721E63 /* ClothesListCollectionViewCellDelegates.swift */,
 				33041FA0247CF64300721E63 /* ClothesSymbolsCollectionViewCell.swift */,
+				3306B4492496557B00A42C85 /* AddNewItemCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -645,6 +648,7 @@
 				3308ECB7248E0CD4008C7B61 /* DetailSymbolsTableViewCell.swift in Sources */,
 				A8751F14245FFA7300B62589 /* LaundrySymbolsHeader.swift in Sources */,
 				3357478B247FBC03008172FB /* ColorTypeCollectionViewCell.swift in Sources */,
+				3306B44A2496557B00A42C85 /* AddNewItemCollectionViewCell.swift in Sources */,
 				A8BC7476245C2E9D00106097 /* ViewContoller.swift in Sources */,
 				A8204D5B2463183B005E30A0 /* GalleryViewController.swift in Sources */,
 				A84ADDF7245F3AF0008F3425 /* ClothesListViewController.swift in Sources */,

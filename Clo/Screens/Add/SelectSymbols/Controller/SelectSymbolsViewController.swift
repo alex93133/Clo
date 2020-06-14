@@ -89,7 +89,7 @@ class SelectSymbolsViewController: UIViewController {
         let itemID = sections[indexPath.section].items[indexPath.item].id
         selectedSymbols.removeAll { $0.id == itemID }
         sections[0].items.remove(at: indexPath.item)
-        view().laundrySymbolsView.collectionView.reloadSections(IndexSet(arrayLiteral: 0))
+        view().laundrySymbolsView.collectionView.deleteItems(at: [indexPath])
     }
     
     private func restoreSection(indexPath: IndexPath) {

@@ -86,30 +86,46 @@ class ClothesListViewController: UIViewController {
             sheetViewController.closeSheet()
         }
     }
+    
+    private func presentSheetViewController() {
+           let sheet = PhotoSheet()
+           let sheetViewController = sheet.setupGallerySheet(height:  view.frame.size.height * 2 / 3)
+           present(sheetViewController, animated: false)
+       }
 }
 
 // MARK: - Delegates
 extension ClothesListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        visibleClothes.count
+        visibleClothes.count == 0 ? 1 : visibleClothes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.clothesCellIdentifier, for: indexPath) as? ClothesListCollectionViewCell {
-            let currentClothes          = visibleClothes[indexPath.item]
-            cell.clothesImageView.image = currentClothes.photo
-            cell.symbols                = currentClothes.symbols
-            cell.color                  = currentClothes.color
-            cell.itemHandler            = itemHandler
-            return cell
+        if visibleClothes.count == 0 {
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.addNewItemCellIdentifier, for: indexPath) as? AddNewItemCollectionViewCell {
+                return cell
+            }
+        } else {
+            if  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.clothesCellIdentifier, for: indexPath) as? ClothesListCollectionViewCell {
+                let currentClothes          = visibleClothes[indexPath.item]
+                cell.clothesImageView.image = currentClothes.photo
+                cell.symbols                = currentClothes.symbols
+                cell.color                  = currentClothes.color
+                cell.itemHandler            = itemHandler
+                return cell
+            }
         }
         return UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedClothes = visibleClothes[indexPath.item]
-        presentDetailViewController(with: selectedClothes)
+        if visibleClothes.count == 0 {
+            presentSheetViewController()
+        } else {
+            let selectedClothes = visibleClothes[indexPath.item]
+            presentDetailViewController(with: selectedClothes)
+        }
     }
 }
 

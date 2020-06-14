@@ -8,6 +8,7 @@ enum Identifiers {
     static let cameraInputCellIdentifier    = "CameraInput"
     static let clothesCellIdentifier        = "Clothes"
     static let clothesSymbolsCellIdentifier = "ClothesSymbols"
+    static let addNewItemCellIdentifier     = "AddNewItem"
     static let clothesColorCellIdentifier   = "ClothesColor"
     static let colorTypeCellIdentifier      = "ColorType"
     
