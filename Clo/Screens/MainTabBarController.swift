@@ -5,7 +5,7 @@ import AVFoundation
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 
     // MARK: - Properties
-    private var imageToPass: UIImage!
+    private var imageToPass: UIImage?
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -53,7 +53,8 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         }
         gallerySheet.sheet.didDismiss = { [weak self] _ in
             guard let self = self else { return }
-            self.presentAddClothesViewController(image: self.imageToPass)
+            guard let image = self.imageToPass else { return }
+            self.presentAddClothesViewController(image: image)
         }
         present(gallerySheet.sheet, animated: false)
     }

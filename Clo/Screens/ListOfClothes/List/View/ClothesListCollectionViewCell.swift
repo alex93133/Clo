@@ -6,7 +6,11 @@ class ClothesListCollectionViewCell: UICollectionViewCell {
     var clothesImageView: UIImageView!
     var lineView: UIView!
     var collectionView: UICollectionView!
-    var symbols: [Symbol]!
+    var symbols: [Symbol]! {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     var color: ColorType!
     var itemHandler: ((CustomAlertController) -> Void)!
 

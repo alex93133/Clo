@@ -41,10 +41,6 @@ class ClothesListViewController: UIViewController {
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        print("память")
-    }
-
     // MARK: - Functions
     private func view() -> ClothesListView {
         return view as! ClothesListView
@@ -60,6 +56,14 @@ class ClothesListViewController: UIViewController {
             self.present(sheet, animated: true)
         }
     }
+    
+    private func smoothReloadData() {
+        UIView.transition(with: view().collectionView,
+                          duration: Constants.animationTimeInterval,
+                          options: .transitionCrossDissolve,
+                          animations: { [weak self] in self?.view().collectionView.reloadData() },
+                          completion: nil)
+        }
 
     private func setupNavigationBar() {
         navigationItem.title              = "My clothes"
@@ -94,11 +98,15 @@ extension ClothesListViewController {
 extension ClothesListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        visibleClothes.count == 0 ? 1 : visibleClothes.count
+        if visibleClothes.count == 0 && clothes.count == 0 {
+            return 1
+        } else {
+       return visibleClothes.count
+    }
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if visibleClothes.count == 0 {
+        if clothes.count == 0 {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.addNewItemCellIdentifier, for: indexPath) as? AddNewItemCollectionViewCell {
                 return cell
             }
@@ -129,6 +137,6 @@ extension ClothesListViewController: TypeViewControllerDelegate {
 
     func applySelectedType(with type: ClothingType) {
         currentCategory = type
-        view().collectionView.reloadData()
+        smoothReloadData()
     }
 }

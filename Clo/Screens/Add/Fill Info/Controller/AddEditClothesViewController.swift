@@ -34,10 +34,6 @@ class AddEditClothesViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    deinit {
-        print("deinit AddEdit")
-    }
-
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
