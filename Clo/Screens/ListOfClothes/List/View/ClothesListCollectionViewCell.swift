@@ -10,6 +10,12 @@ class ClothesListCollectionViewCell: UICollectionViewCell {
     var color: ColorType!
     var itemHandler: ((CustomAlertController) -> Void)!
 
+    override var isHighlighted: Bool {
+        didSet {
+            animate(down: isHighlighted)
+        }
+    }
+
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupView()

@@ -46,7 +46,7 @@ class AddEditClothesView: UIView {
         clothesImageView.layer.masksToBounds = true
         setupClothesImageViewConstraints()
     }
-    
+
     private func setupChangePhotoButton() {
         changePhotoButton = UIButton()
         changePhotoButton.addTarget(self, action: #selector(changePhotoButtonPressed), for: .touchUpInside)
@@ -62,7 +62,7 @@ class AddEditClothesView: UIView {
 
 // MARK: - Actions
 extension AddEditClothesView {
-    
+
     @objc private func changePhotoButtonPressed() {
         changePhotoButtonHandler?()
     }
@@ -107,14 +107,14 @@ extension AddEditClothesView {
 
     private func setupChangePhotoButtonConstraints() {
         addSubview(changePhotoButton)
-        
+
         changePhotoButton.translatesAutoresizingMaskIntoConstraints                                    = false
         changePhotoButton.leadingAnchor.constraint(equalTo: clothesImageView.leadingAnchor).isActive   = true
         changePhotoButton.trailingAnchor.constraint(equalTo: clothesImageView.trailingAnchor).isActive = true
         changePhotoButton.topAnchor.constraint(equalTo: clothesImageView.topAnchor).isActive           = true
         changePhotoButton.bottomAnchor.constraint(equalTo: clothesImageView.bottomAnchor).isActive     = true
     }
-    
+
     private func setupInputFieldsViewConstraints() {
         inputFieldsView = InputFieldsView()
         stackView.addArrangedSubview(inputFieldsView)

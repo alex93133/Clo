@@ -1,21 +1,21 @@
 import UIKit
 
 class DetailPhotoTableViewCell: UITableViewCell {
-    
+
     // MARK: - Properties
     var photoImageView: UIImageView!
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupPhotoImageView()
         backgroundColor = Colors.whiteBGColor
         selectionStyle  = .none
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
+
     // MARK: - PhotoImageView
     private func setupPhotoImageView() {
         photoImageView                     = UIImageView()
@@ -28,10 +28,10 @@ class DetailPhotoTableViewCell: UITableViewCell {
 
 // MARK: - Constraints
 extension DetailPhotoTableViewCell {
-    
+
     private func setupPhotoImageViewConstraints() {
         addSubview(photoImageView)
-        
+
         photoImageView.translatesAutoresizingMaskIntoConstraints                                  = false
         photoImageView.topAnchor.constraint(equalTo: topAnchor).isActive                          = true
         photoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive    = true

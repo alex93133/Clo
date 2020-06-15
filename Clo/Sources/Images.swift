@@ -12,7 +12,7 @@ enum Images {
     static let editIcon     = UIImage(named: "EditIcon")
     static let deleteIcon   = UIImage(systemName: "trash")
     static let addNewIcon   = UIImage(named: "AddNewItem")
-    
+
     enum ColorType {
         static let color = UIImage(named: "Color")
         static let black = UIImage(named: "Black")

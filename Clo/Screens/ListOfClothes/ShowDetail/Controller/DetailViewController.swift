@@ -1,51 +1,51 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    
+
     // MARK: - Properties
     private let customView = DetailView(frame: UIScreen.main.bounds)
     private var alertController: UIAlertController!
     var clothes: Clothes
-    
+
     init(clothes: Clothes) {
         self.clothes = clothes
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - Lifecycle
     override func viewDidLoad() {
         setupView()
         setupNavigationBar()
         createActionSheet()
     }
-    
+
     // MARK: - Functions
     private func view() -> DetailView {
         return view as! DetailView
     }
-    
+
     private func setupView() {
         view                        =  customView
         view().tableView.delegate   = self
         view().tableView.dataSource = self
     }
-    
+
     private func setupNavigationBar() {
         navigationItem.title              = "About"
         let settingsUIBarButtonItem       = UIBarButtonItem(image: Images.editIcon, style: .plain, target: self, action: #selector(editButtonPressed))
         settingsUIBarButtonItem.tintColor = Colors.mintColor
         navigationItem.rightBarButtonItem = settingsUIBarButtonItem
     }
-    
+
     private func createActionSheet() {
         alertController                            = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alertController.view.tintColor             = Colors.mintColor
         alertController.overrideUserInterfaceStyle = .light
-        
+
         let editAction = UIAlertAction(title: "Edit", style: .default) { [weak self] _ in
             guard let self = self else { return }
             let editViewController = AddEditClothesViewController(clothes: self.clothes)
@@ -56,15 +56,15 @@ class DetailViewController: UIViewController {
             self.deleteClothes()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        
+
         deleteAction.setValue(Images.deleteIcon, forKey: "image")
         editAction.setValue(Images.editIcon, forKey: "image")
-        
+
         alertController.addAction(editAction)
         alertController.addAction(deleteAction)
         alertController.addAction(cancelAction)
     }
-    
+
     private func deleteClothes() {
         CoreDataManager.shared.delete(clothes: clothes) { [weak self] result in
             guard let self = self else { return }
@@ -80,7 +80,7 @@ class DetailViewController: UIViewController {
 
 // MARK: - Actions
 extension DetailViewController {
-    
+
     @objc private func editButtonPressed() {
         present(alertController, animated: true)
     }
@@ -88,11 +88,11 @@ extension DetailViewController {
 
 // MARK: - Delegates
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         3
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 2:
@@ -101,7 +101,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             return 1
         }
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:

@@ -1,5 +1,5 @@
 PODS:
-  - CropViewController (2.5.2)
+  - CropViewController (2.5.3)
   - FittedSheets (1.4.6)
   - IQKeyboardManagerSwift (6.5.5)
   - SwiftLint (0.39.2)
@@ -18,7 +18,7 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
-  CropViewController: 1aac40093c5739e60d992b04724a55d12a689a4c
+  CropViewController: a5c143548a0fabcd6cc25f2d26e40460cfb8c78c
   FittedSheets: 7f37fee2567d15dcde391f31eccbffb660ddebf0
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447

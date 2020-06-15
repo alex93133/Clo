@@ -2,25 +2,25 @@ import UIKit
 import Photos
 
 class PhotoLibraryManager {
-    
+
     // MARK: - Properties
     private let manager = PHImageManager.default()
     private var requestOptions = PHImageRequestOptions()
     private let fetchOptions = PHFetchOptions()
-    
+
     init() {
         setupSession()
     }
-    
+
     // MARK: - Functions
     private func setupSession() {
         requestOptions.isSynchronous = true
         requestOptions.deliveryMode  = .opportunistic
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
     }
-    
+
     func getAllPhotos(completion: @escaping (UIImage) -> Void) {
-        DispatchQueue.global(qos: .background).async  {
+        DispatchQueue.global(qos: .background).async {
             let results: PHFetchResult = PHAsset.fetchAssets(with: .image, options: self.fetchOptions)
             guard results.count > 0 else { return }
             for i in 0..<results.count {
@@ -34,14 +34,14 @@ class PhotoLibraryManager {
             }
         }
     }
-    
+
     func getOriginalPhotoFromLibrary(index: Int, completion: @escaping (UIImage) -> Void) {
         let results = PHAsset.fetchAssets(with: PHAssetMediaType.image, options: fetchOptions)
         guard results.count > 0 else { return }
         let asset = results.object(at: index)
         let manager = PHImageManager.default()
         let size = CGSize(width: asset.pixelWidth, height: asset.pixelHeight)
-        
+
         manager.requestImage(for: asset,
                              targetSize: size,
                              contentMode: .aspectFit,
@@ -52,4 +52,3 @@ class PhotoLibraryManager {
         })
     }
 }
-

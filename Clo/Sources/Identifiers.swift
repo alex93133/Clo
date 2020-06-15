@@ -11,7 +11,7 @@ enum Identifiers {
     static let addNewItemCellIdentifier     = "AddNewItem"
     static let clothesColorCellIdentifier   = "ClothesColor"
     static let colorTypeCellIdentifier      = "ColorType"
-    
+
     enum DetailCells {
         static let photoCellIdentifier        = "SelectedPhoto"
         static let typeWithInfoCellIdentifier = "SelectedTypeAndInfo"

@@ -1,9 +1,16 @@
 import UIKit
+import CoreData
+
+protocol ClothesListViewControllerDelegate: class {
+    func presentPhotoSheet()
+}
 
 class ClothesListViewController: UIViewController {
-    
     // MARK: - Properties
     private let customView = ClothesListView(frame: UIScreen.main.bounds)
+    private var itemHandler: ((CustomAlertController) -> Void)!
+    private var currentCategory: ClothingType!
+    weak var delegate: ClothesListViewControllerDelegate!
     private var clothes: [Clothes]!
     private var visibleClothes: [Clothes]! {
         guard let clothes = clothes else { return []}
@@ -15,17 +22,13 @@ class ClothesListViewController: UIViewController {
             return filteredClothes
         }
     }
-    
-    //    private var index
-    private var itemHandler: ((CustomAlertController) -> Void)!
-    private var currentCategory: ClothingType!
-    
+
     // MARK: - Lifecycle
     override func viewDidLoad() {
         setupView()
         setupNavigationBar()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         clothes = CoreDataManager.shared.fetch { [weak self] result in
             guard let self = self else { return }
@@ -37,70 +40,63 @@ class ClothesListViewController: UIViewController {
             }
         }
     }
-    
+
     override func didReceiveMemoryWarning() {
-        print("пизда")
+        print("память")
     }
-    
+
     // MARK: - Functions
     private func view() -> ClothesListView {
         return view as! ClothesListView
     }
-    
+
     private func setupView() {
         view                             =  customView
         view().collectionView.delegate   = self
         view().collectionView.dataSource = self
-        
+
         itemHandler = { [weak self] sheet in
             guard let self = self else { return }
             self.present(sheet, animated: true)
         }
     }
-    
+
     private func setupNavigationBar() {
         navigationItem.title              = "My clothes"
         let settingsUIBarButtonItem       = UIBarButtonItem(image: Images.settingsIcon, style: .plain, target: self, action: #selector(sortItemPressed))
         settingsUIBarButtonItem.tintColor = Colors.mintColor
         navigationItem.rightBarButtonItem = settingsUIBarButtonItem
     }
-    
+
     private func presentDetailViewController(with clothes: Clothes) {
         let detailViewController = DetailViewController(clothes: clothes)
         navigationController?.pushViewController(detailViewController, animated: true)
     }
-    
+
     private func presentTypeSheet() {
-        let typeViewController  = TypeViewController()
-        let sheetViewController = AddEditClothesViewController.createTypeSheet(typeViewController: typeViewController)
-        
-        let category = currentCategory ?? .all
-        typeViewController.selectedType = category
-        
-        present(sheetViewController, animated: false)
-        
-        typeViewController.selectedTypeHandle = { [weak self] type in
-            guard let self = self else { return }
-            self.currentCategory = type
-            self.view().collectionView.reloadData()
-            sheetViewController.closeSheet()
-        }
+        let typeSheet               = TypeSheet()
+        let category                = currentCategory ?? .all
+        typeSheet.type.selectedType = category
+        typeSheet.type.delegate     = self
+        present(typeSheet.sheet, animated: false)
     }
-    
-    private func presentSheetViewController() {
-           let sheet = PhotoSheet()
-           let sheetViewController = sheet.setupGallerySheet(height:  view.frame.size.height * 2 / 3)
-           present(sheetViewController, animated: false)
-       }
+}
+
+// MARK: - Actions
+extension ClothesListViewController {
+
+    @objc func sortItemPressed() {
+        presentTypeSheet()
+    }
 }
 
 // MARK: - Delegates
 extension ClothesListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         visibleClothes.count == 0 ? 1 : visibleClothes.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if visibleClothes.count == 0 {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.addNewItemCellIdentifier, for: indexPath) as? AddNewItemCollectionViewCell {
@@ -118,10 +114,10 @@ extension ClothesListViewController: UICollectionViewDelegate, UICollectionViewD
         }
         return UICollectionViewCell()
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if visibleClothes.count == 0 {
-            presentSheetViewController()
+            delegate.presentPhotoSheet()
         } else {
             let selectedClothes = visibleClothes[indexPath.item]
             presentDetailViewController(with: selectedClothes)
@@ -129,10 +125,10 @@ extension ClothesListViewController: UICollectionViewDelegate, UICollectionViewD
     }
 }
 
-// MARK: - Actions
-extension ClothesListViewController {
-    
-    @objc func sortItemPressed() {
-        presentTypeSheet()
+extension ClothesListViewController: TypeViewControllerDelegate {
+
+    func applySelectedType(with type: ClothingType) {
+        currentCategory = type
+        view().collectionView.reloadData()
     }
 }

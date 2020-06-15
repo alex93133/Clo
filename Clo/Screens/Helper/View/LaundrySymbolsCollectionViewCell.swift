@@ -4,13 +4,10 @@ class LaundrySymbolsCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Properties
     var laundryImage: UIImageView!
+
     override var isHighlighted: Bool {
         didSet {
-                UIView.animate(withDuration: Constants.animationTimeInterval) { [weak self] in
-                    guard let self = self else { return }
-                    let transform: CGAffineTransform = self.isHighlighted ? .init(scaleX: 0.9, y: 0.9) : .identity
-                    self.transform = transform
-                }
+            animate(down: isHighlighted)
         }
     }
 
