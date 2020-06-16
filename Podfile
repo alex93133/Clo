@@ -7,7 +7,6 @@ target 'Clo' do
 
   # Pods for Clo
 
-pod 'SwiftLint'
 pod 'FittedSheets'
 pod 'IQKeyboardManagerSwift'
 pod 'CropViewController'

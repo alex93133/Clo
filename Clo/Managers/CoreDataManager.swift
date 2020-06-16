@@ -4,10 +4,9 @@ import CoreData
 class CoreDataManager {
 
     // MARK: - Properties
+    weak var appDelegate = (UIApplication.shared.delegate as! AppDelegate)
     var context: NSManagedObjectContext {
-        let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        let context = appDelegate?.persistentContainer.viewContext
-        return context!
+        return appDelegate!.persistentContainer.viewContext
     }
 
     static let shared = CoreDataManager()
@@ -43,7 +42,7 @@ class CoreDataManager {
             handler(.failure(error))
         }
         handler(.success)
-        return allClothes
+        return allClothes.reversed()
     }
 
     // MARK: - Save
@@ -60,13 +59,7 @@ class CoreDataManager {
         newClothes.setValue(clothes.info, forKey: "info")
         newClothes.setValue(photoData, forKey: "photo")
         newClothes.setValue(arrayOfID, forKey: "symbolsIDs")
-
-        do {
-            try context.save()
-            handler(.success)
-        } catch {
-            handler(.failure(error))
-        }
+        handler(appDelegate!.saveContext())
     }
 
     func delete(clothes: Clothes, handler: @escaping (Result<Error>) -> Void) {
@@ -83,13 +76,7 @@ class CoreDataManager {
         } catch {
             handler(.failure(error))
         }
-
-        do {
-            try context.save()
-            handler(.success)
-        } catch {
-            handler(.failure(error))
-        }
+        handler(appDelegate!.saveContext())
     }
 
     // MARK: - Update
@@ -113,11 +100,6 @@ class CoreDataManager {
         } catch {
             handler(.failure(error))
         }
-        do {
-            try context.save()
-            handler(.success)
-        } catch {
-            handler(.failure(error))
-        }
+        handler(appDelegate!.saveContext())
     }
 }

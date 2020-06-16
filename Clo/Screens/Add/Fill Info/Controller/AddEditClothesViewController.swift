@@ -39,6 +39,7 @@ class AddEditClothesViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupNavigationBar()
+        hideKeyboardWhenTappedAround()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -68,10 +69,8 @@ class AddEditClothesViewController: UIViewController {
     }
 
     private func presentTypeSheet() {
-        let typeSheet           = TypeSheet()
+        let typeSheet           = TypeSheet(hideCategoryNamedAll: true)
         typeSheet.type.delegate = self
-        typeSheet.type.clothingTypes.removeFirst()
-
         if let selectedType = editableClothes?.type {
             typeSheet.type.selectedType = selectedType
         }
@@ -131,6 +130,7 @@ extension AddEditClothesViewController {
 
         view().inputFieldsView.selectTypeButtonHandler = { [weak self]  in
             guard let self = self else { return }
+            self.view.endEditing(true)
             self.presentTypeSheet()
         }
         view().nextButtonHandler = { [weak self]  in

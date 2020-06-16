@@ -6,7 +6,6 @@ struct SymbolsSections {
     let title: String
     var category: Categories?
     var items: [Symbol]
-    var hidden = false
 
     static func getSections() -> [SymbolsSections] {
         guard let symbols = Symbols.allSymbols() else { return []}

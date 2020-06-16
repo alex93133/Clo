@@ -55,6 +55,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
             guard let self = self else { return }
             guard let image = self.imageToPass else { return }
             self.presentAddClothesViewController(image: image)
+            self.imageToPass = nil
         }
         present(gallerySheet.sheet, animated: false)
     }

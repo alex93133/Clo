@@ -8,7 +8,7 @@ class ClothesSymbolsCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupView()
-        setupLaundryImageView(itemSize: frame.width)
+        setupLaundryImageView()
     }
 
     required init?(coder: NSCoder) {
@@ -24,7 +24,7 @@ class ClothesSymbolsCollectionViewCell: UICollectionViewCell {
     }
 
     // MARK: - LaundryImageView
-    private func setupLaundryImageView(itemSize: CGFloat) {
+    private func setupLaundryImageView() {
         laundryImageView             = UIImageView()
         laundryImageView.contentMode = .scaleAspectFit
         setupLaundryImageViewConstraints()

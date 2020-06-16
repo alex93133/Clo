@@ -7,7 +7,7 @@ class AddNewItemCollectionViewCell: UICollectionViewCell {
 
     override var isHighlighted: Bool {
         didSet {
-            animate(down: isHighlighted)
+            animate()
         }
     }
 

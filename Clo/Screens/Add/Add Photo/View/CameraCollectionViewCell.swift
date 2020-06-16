@@ -3,7 +3,6 @@ import UIKit
 class CameraCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Properties
-    var photoImage: UIImageView!
     var takePhotoIcon: UIImageView!
 
     override init(frame: CGRect) {

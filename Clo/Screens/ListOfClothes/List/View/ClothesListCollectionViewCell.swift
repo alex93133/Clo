@@ -16,14 +16,14 @@ class ClothesListCollectionViewCell: UICollectionViewCell {
 
     override var isHighlighted: Bool {
         didSet {
-            animate(down: isHighlighted)
+            animate()
         }
     }
 
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupView()
-        setupClothesImageView(itemSize: frame.width)
+        setupClothesImageView()
         setupCollectionView()
         setupLineView(rect: frame)
 
@@ -44,7 +44,7 @@ class ClothesListCollectionViewCell: UICollectionViewCell {
     }
 
     // MARK: - ClothesImageView
-    private func setupClothesImageView(itemSize: CGFloat) {
+    private func setupClothesImageView() {
         clothesImageView             = UIImageView()
         clothesImageView.contentMode = .scaleAspectFill
         setupClothesImageConstraints()

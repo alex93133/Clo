@@ -56,14 +56,14 @@ class ClothesListViewController: UIViewController {
             self.present(sheet, animated: true)
         }
     }
-    
+
     private func smoothReloadData() {
         UIView.transition(with: view().collectionView,
                           duration: Constants.animationTimeInterval,
                           options: .transitionCrossDissolve,
                           animations: { [weak self] in self?.view().collectionView.reloadData() },
                           completion: nil)
-        }
+    }
 
     private func setupNavigationBar() {
         navigationItem.title              = "My clothes"
@@ -101,8 +101,8 @@ extension ClothesListViewController: UICollectionViewDelegate, UICollectionViewD
         if visibleClothes.count == 0 && clothes.count == 0 {
             return 1
         } else {
-       return visibleClothes.count
-    }
+            return visibleClothes.count
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
