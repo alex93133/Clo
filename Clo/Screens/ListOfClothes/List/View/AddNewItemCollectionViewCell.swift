@@ -1,32 +1,32 @@
 import UIKit
 
 class AddNewItemCollectionViewCell: UICollectionViewCell {
-    
+
     // MARK: - Properties
     var addIconImageView: UIImageView!
-    
+
     override var isHighlighted: Bool {
         didSet {
             animate()
         }
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupView()
         setupAddIconImageView()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(frame: .zero)
     }
-    
+
     private func setupView() {
         backgroundColor     = Colors.mintColor
         layer.cornerRadius  = Constants.defaultCornerRadius
         layer.masksToBounds = true
     }
-    
+
     // MARK: - AddIconImageView
     private func setupAddIconImageView() {
         addIconImageView             = UIImageView()
@@ -38,7 +38,7 @@ class AddNewItemCollectionViewCell: UICollectionViewCell {
 
 // MARK: - Constraints
 extension AddNewItemCollectionViewCell {
-    
+
     private func setupAddIconImageViewConstraints() {
         addSubview(addIconImageView)
         addIconImageView.translatesAutoresizingMaskIntoConstraints = false

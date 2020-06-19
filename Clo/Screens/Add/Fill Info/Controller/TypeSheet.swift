@@ -2,18 +2,18 @@ import FittedSheets
 import UIKit
 
 class TypeSheet {
-    
+
     // MARK: - Properties
     var type = TypeViewController()
     var sheet: SheetViewController!
-    
+
     init(hideCategoryNamedAll: Bool = false) {
         if hideCategoryNamedAll {
             type.clothingTypes.removeFirst()
         }
         setup()
     }
-    
+
     // MARK: - Functions
     private func setup() {
         let safeZoneHeight: CGFloat        = 70

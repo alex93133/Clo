@@ -11,7 +11,7 @@ enum Identifiers {
     static let photoCellIdentifier          = "PhotoFromGallery"
     static let symbolCellIdentifier         = "LaundrySymbol"
     static let symbolHeaderIdentifier       = "LaundryHeader"
-   
+
     enum DetailCells {
         static let photoCellIdentifier        = "SelectedPhoto"
         static let symbolsCellIdentifier      = "SelectedSymbols"

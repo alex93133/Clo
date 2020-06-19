@@ -39,7 +39,6 @@ class AddEditClothesViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupNavigationBar()
-        hideKeyboardWhenTappedAround()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -182,6 +181,14 @@ extension AddEditClothesViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view().inputFieldsView.descriptionTextField.resignFirstResponder()
         return true
+    }
+
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        view().changePhotoButton.isEnabled = false
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        view().changePhotoButton.isEnabled = true
     }
 }
 

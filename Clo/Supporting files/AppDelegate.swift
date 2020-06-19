@@ -7,7 +7,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enable                       = true
+        IQKeyboardManager.shared.shouldResignOnTouchOutside   = true
+        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
 
         UINavigationBar.appearance().titleTextAttributes              = [NSAttributedString.Key.foregroundColor: Colors.blackTextColor,
                                                                          NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Fonts.navigationBarItemTextSize, weight: .bold)]

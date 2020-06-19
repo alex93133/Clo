@@ -1,13 +1,13 @@
 import UIKit
 
 class DetailSymbolsTableViewCell: UITableViewCell {
-    
+
     // MARK: - Properties
     var symbolImageView: UIImageView!
     var descriptionLabel: UILabel!
     private var view: UIView!
     private var customSeparator: UIView!
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupView()
@@ -17,11 +17,11 @@ class DetailSymbolsTableViewCell: UITableViewCell {
         backgroundColor = Colors.whiteBGColor
         selectionStyle  = .none
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
+
     // MARK: - View
     private func setupView() {
         view                     = UIView()
@@ -30,20 +30,20 @@ class DetailSymbolsTableViewCell: UITableViewCell {
         view.layer.masksToBounds = true
         setupViewConstraints()
     }
-    
+
     private func setupCustomSeparator() {
         customSeparator                 = UIView()
         customSeparator.backgroundColor = Colors.separator
         setupCustomSeparatorConstraints()
     }
-    
+
     // MARK: - SymbolImageView
     private func setupSymbolImageView() {
         symbolImageView             = UIImageView()
         symbolImageView.contentMode = .scaleAspectFit
         setupSymbolImageViewConstraints()
     }
-    
+
     private func setupDescriptionLabel() {
         descriptionLabel               = UILabel()
         descriptionLabel.numberOfLines = 0
@@ -55,7 +55,7 @@ class DetailSymbolsTableViewCell: UITableViewCell {
 
 // MARK: - Constraints
 extension DetailSymbolsTableViewCell {
-    
+
     private func setupCustomSeparatorConstraints() {
         addSubview(customSeparator)
         customSeparator.translatesAutoresizingMaskIntoConstraints = false
@@ -64,7 +64,7 @@ extension DetailSymbolsTableViewCell {
                                      customSeparator.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
                                      customSeparator.bottomAnchor.constraint(equalTo: bottomAnchor)])
     }
-    
+
     private func setupSymbolImageViewConstraints() {
         view.addSubview(symbolImageView)
         symbolImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -73,7 +73,7 @@ extension DetailSymbolsTableViewCell {
                                      symbolImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
                                      symbolImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)])
     }
-    
+
     private func setupViewConstraints() {
         addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -83,7 +83,7 @@ extension DetailSymbolsTableViewCell {
                                      view.heightAnchor.constraint(equalToConstant: 42),
                                      view.widthAnchor.constraint(equalToConstant: 42)])
     }
-    
+
     private func setupDescriptionLabelConstraints() {
         addSubview(descriptionLabel)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false

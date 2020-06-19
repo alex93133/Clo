@@ -1,7 +1,7 @@
 import UIKit
 
 class AddEditClothesView: UIView {
-    
+
     // MARK: - Properties
     private let scrollView = UIScrollView()
     private let stackView = UIStackView()
@@ -12,7 +12,7 @@ class AddEditClothesView: UIView {
     var nextButtonHandler: (() -> Void)?
     var changePhotoButton: UIButton!
     var changePhotoButtonHandler: (() -> Void)?
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupScrollViewConstraints()
@@ -25,11 +25,11 @@ class AddEditClothesView: UIView {
         backgroundColor = Colors.whiteBGColor
         scrollView.showsVerticalScrollIndicator = false
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+
     // MARK: - StackView
     private func setupStackView() {
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -37,7 +37,7 @@ class AddEditClothesView: UIView {
         stackView.spacing                                   = 0
         setupStackViewConstraints()
     }
-    
+
     // MARK: - ClothesImageView
     private func setupClothesImageView() {
         clothesImageView                     = UIImageView()
@@ -46,13 +46,13 @@ class AddEditClothesView: UIView {
         clothesImageView.layer.masksToBounds = true
         setupClothesImageViewConstraints()
     }
-    
+
     private func setupChangePhotoButton() {
         changePhotoButton = UIButton()
         changePhotoButton.addTarget(self, action: #selector(changePhotoButtonPressed), for: .touchUpInside)
         setupChangePhotoButtonConstraints()
     }
-    
+
     // MARK: - NextButton
     private func setupNextButton() {
         nextButton = NextButton(title: "Next", action: #selector(nextButtonPressed), addTo: self)
@@ -62,11 +62,11 @@ class AddEditClothesView: UIView {
 
 // MARK: - Actions
 extension AddEditClothesView {
-    
+
     @objc private func changePhotoButtonPressed() {
         changePhotoButtonHandler?()
     }
-    
+
     @objc private func nextButtonPressed() {
         nextButtonHandler?()
     }
@@ -74,7 +74,7 @@ extension AddEditClothesView {
 
 // MARK: - Constraints
 extension AddEditClothesView {
-    
+
     private func setupScrollViewConstraints() {
         addSubview(scrollView)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -83,7 +83,7 @@ extension AddEditClothesView {
                                      scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
                                      scrollView.bottomAnchor.constraint(equalTo: bottomAnchor)])
     }
-    
+
     private func setupStackViewConstraints() {
         scrollView.addSubview(stackView)
         NSLayoutConstraint.activate([stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
@@ -92,7 +92,7 @@ extension AddEditClothesView {
                                      stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -100),
                                      stackView.widthAnchor.constraint(equalTo: widthAnchor)])
     }
-    
+
     private func setupClothesImageViewConstraints() {
         stackView.addArrangedSubview(clothesImageView)
         clothesImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -101,7 +101,7 @@ extension AddEditClothesView {
                                      clothesImageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -12),
                                      clothesImageView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0)])
     }
-    
+
     private func setupChangePhotoButtonConstraints() {
         addSubview(changePhotoButton)
         changePhotoButton.translatesAutoresizingMaskIntoConstraints = false
@@ -110,7 +110,7 @@ extension AddEditClothesView {
                                      changePhotoButton.topAnchor.constraint(equalTo: clothesImageView.topAnchor),
                                      changePhotoButton.bottomAnchor.constraint(equalTo: clothesImageView.bottomAnchor)])
     }
-    
+
     private func setupInputFieldsViewConstraints() {
         inputFieldsView = InputFieldsView()
         stackView.addArrangedSubview(inputFieldsView)
@@ -120,7 +120,7 @@ extension AddEditClothesView {
                                      inputFieldsView.heightAnchor.constraint(equalToConstant: 244),
                                      inputFieldsView.topAnchor.constraint(equalTo: clothesImageView.bottomAnchor, constant: 16)])
     }
-    
+
     private func setupColorTypeCollectionViewConstraints() {
         colorTypeCollectionView = ColorTypeCollectionView()
         stackView.addArrangedSubview(colorTypeCollectionView)
