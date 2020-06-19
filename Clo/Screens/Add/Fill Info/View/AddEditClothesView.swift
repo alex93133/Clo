@@ -1,7 +1,7 @@
 import UIKit
 
 class AddEditClothesView: UIView {
-
+    
     // MARK: - Properties
     private let scrollView = UIScrollView()
     private let stackView = UIStackView()
@@ -12,7 +12,7 @@ class AddEditClothesView: UIView {
     var nextButtonHandler: (() -> Void)?
     var changePhotoButton: UIButton!
     var changePhotoButtonHandler: (() -> Void)?
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupScrollViewConstraints()
@@ -25,11 +25,11 @@ class AddEditClothesView: UIView {
         backgroundColor = Colors.whiteBGColor
         scrollView.showsVerticalScrollIndicator = false
     }
-
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-
+    
     // MARK: - StackView
     private func setupStackView() {
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -37,7 +37,7 @@ class AddEditClothesView: UIView {
         stackView.spacing                                   = 0
         setupStackViewConstraints()
     }
-
+    
     // MARK: - ClothesImageView
     private func setupClothesImageView() {
         clothesImageView                     = UIImageView()
@@ -46,27 +46,27 @@ class AddEditClothesView: UIView {
         clothesImageView.layer.masksToBounds = true
         setupClothesImageViewConstraints()
     }
-
+    
     private func setupChangePhotoButton() {
         changePhotoButton = UIButton()
         changePhotoButton.addTarget(self, action: #selector(changePhotoButtonPressed), for: .touchUpInside)
         setupChangePhotoButtonConstraints()
     }
-
+    
     // MARK: - NextButton
     private func setupNextButton() {
         nextButton = NextButton(title: "Next", action: #selector(nextButtonPressed), addTo: self)
-        nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -8).isActive = true
+        NSLayoutConstraint.activate([nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -8)])
     }
 }
 
 // MARK: - Actions
 extension AddEditClothesView {
-
+    
     @objc private func changePhotoButtonPressed() {
         changePhotoButtonHandler?()
     }
-
+    
     @objc private func nextButtonPressed() {
         nextButtonHandler?()
     }
@@ -74,66 +74,60 @@ extension AddEditClothesView {
 
 // MARK: - Constraints
 extension AddEditClothesView {
-
+    
     private func setupScrollViewConstraints() {
         addSubview(scrollView)
-
-        scrollView.translatesAutoresizingMaskIntoConstraints                   = false
-        scrollView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive   = true
-        scrollView.topAnchor.constraint(equalTo: topAnchor).isActive           = true
-        scrollView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive     = true
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                                     scrollView.topAnchor.constraint(equalTo: topAnchor),
+                                     scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
+                                     scrollView.bottomAnchor.constraint(equalTo: bottomAnchor)])
     }
-
+    
     private func setupStackViewConstraints() {
         scrollView.addSubview(stackView)
-
-        stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive               = true
-        stackView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive                       = true
-        stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive             = true
-        stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -100).isActive = true
-        stackView.widthAnchor.constraint(equalTo: widthAnchor).isActive                              = true
+        NSLayoutConstraint.activate([stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+                                     stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+                                     stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+                                     stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -100),
+                                     stackView.widthAnchor.constraint(equalTo: widthAnchor)])
     }
-
+    
     private func setupClothesImageViewConstraints() {
         stackView.addArrangedSubview(clothesImageView)
-
-        clothesImageView.translatesAutoresizingMaskIntoConstraints                                             = false
-        clothesImageView.heightAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 9 / 16).isActive = true
-        clothesImageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 12).isActive    = true
-        clothesImageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -12).isActive = true
-        clothesImageView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0).isActive             = true
+        clothesImageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([clothesImageView.heightAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 9 / 16),
+                                     clothesImageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 12),
+                                     clothesImageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -12),
+                                     clothesImageView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0)])
     }
-
+    
     private func setupChangePhotoButtonConstraints() {
         addSubview(changePhotoButton)
-
-        changePhotoButton.translatesAutoresizingMaskIntoConstraints                                    = false
-        changePhotoButton.leadingAnchor.constraint(equalTo: clothesImageView.leadingAnchor).isActive   = true
-        changePhotoButton.trailingAnchor.constraint(equalTo: clothesImageView.trailingAnchor).isActive = true
-        changePhotoButton.topAnchor.constraint(equalTo: clothesImageView.topAnchor).isActive           = true
-        changePhotoButton.bottomAnchor.constraint(equalTo: clothesImageView.bottomAnchor).isActive     = true
+        changePhotoButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([changePhotoButton.leadingAnchor.constraint(equalTo: clothesImageView.leadingAnchor),
+                                     changePhotoButton.trailingAnchor.constraint(equalTo: clothesImageView.trailingAnchor),
+                                     changePhotoButton.topAnchor.constraint(equalTo: clothesImageView.topAnchor),
+                                     changePhotoButton.bottomAnchor.constraint(equalTo: clothesImageView.bottomAnchor)])
     }
-
+    
     private func setupInputFieldsViewConstraints() {
         inputFieldsView = InputFieldsView()
         stackView.addArrangedSubview(inputFieldsView)
-
-        inputFieldsView.translatesAutoresizingMaskIntoConstraints                                           = false
-        inputFieldsView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive                = true
-        inputFieldsView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive              = true
-        inputFieldsView.heightAnchor.constraint(equalToConstant: 244).isActive                              = true
-        inputFieldsView.topAnchor.constraint(equalTo: clothesImageView.bottomAnchor, constant: 16).isActive = true
+        inputFieldsView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([inputFieldsView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+                                     inputFieldsView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+                                     inputFieldsView.heightAnchor.constraint(equalToConstant: 244),
+                                     inputFieldsView.topAnchor.constraint(equalTo: clothesImageView.bottomAnchor, constant: 16)])
     }
-
+    
     private func setupColorTypeCollectionViewConstraints() {
         colorTypeCollectionView = ColorTypeCollectionView()
         stackView.addArrangedSubview(colorTypeCollectionView)
-
-        colorTypeCollectionView.translatesAutoresizingMaskIntoConstraints                              = false
-        colorTypeCollectionView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive   = true
-        colorTypeCollectionView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
-        colorTypeCollectionView.heightAnchor.constraint(equalToConstant: 94).isActive                  = true
-        colorTypeCollectionView.topAnchor.constraint(equalTo: inputFieldsView.bottomAnchor).isActive   = true
+        colorTypeCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([colorTypeCollectionView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+                                     colorTypeCollectionView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+                                     colorTypeCollectionView.heightAnchor.constraint(equalToConstant: 94),
+                                     colorTypeCollectionView.topAnchor.constraint(equalTo: inputFieldsView.bottomAnchor)])
     }
 }

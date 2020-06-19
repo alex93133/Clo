@@ -29,11 +29,10 @@ extension LaundrySymbolsHeader {
 
     private func setupHeaderLabelConstraints() {
         addSubview(headerLabel)
-
-        headerLabel.translatesAutoresizingMaskIntoConstraints                           = false
-        headerLabel.heightAnchor.constraint(equalToConstant: frame.height).isActive     = true
-        headerLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive           = true
-        headerLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive   = true
-        headerLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: 16).isActive = true
+        headerLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([headerLabel.heightAnchor.constraint(equalToConstant: frame.height),
+        headerLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+        headerLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
+        headerLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: 16)])
     }
 }

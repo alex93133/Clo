@@ -1,5 +1,5 @@
-import UIKit
 import CoreData
+import UIKit
 
 protocol ClothesListViewControllerDelegate: class {
     func presentPhotoSheet()

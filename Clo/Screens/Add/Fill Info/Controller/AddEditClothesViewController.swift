@@ -1,5 +1,5 @@
-import UIKit
 import FittedSheets
+import UIKit
 
 class AddEditClothesViewController: UIViewController {
 

@@ -1,40 +1,40 @@
 import UIKit
 
 class InputFieldsView: UIView {
-
+    
     // MARK: - Properties
     var descriptionTextField: UITextField!
     var selectTypeButton: UIButton!
     var selectTypeButtonHandler: (() -> Void)?
-
+    
     init() {
         super.init(frame: .zero)
         setupDescriptionTextField()
         setupSelectTypeButton()
         placeLabels()
     }
-
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-
+    
     // MARK: - InputLabels
     private func createInputLabels(text: String) -> UILabel {
         let label       = UILabel()
         label.text      = text
         label.font      = .systemFont(ofSize: Constants.Fonts.smallTextSize, weight: .regular)
         label.textColor = Colors.grayTextColor
-
+        
         addSubview(label)
-
-        label.translatesAutoresizingMaskIntoConstraints                                  = false
-        label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive    = true
-        label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
-        label.heightAnchor.constraint(equalToConstant: 18).isActive                      = true
-
+        
+        label.translatesAutoresizingMaskIntoConstraints  = false
+        NSLayoutConstraint.activate([label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+                                     label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+                                     label.heightAnchor.constraint(equalToConstant: 18)])
+        
         return label
     }
-
+    
     // MARK: - DescriptionTextField
     private func setupDescriptionTextField() {
         descriptionTextField = CustomTextField(placeholder: "Enter the short description", addTo: self)
@@ -44,7 +44,7 @@ class InputFieldsView: UIView {
         CustomBorder.createDefaultBorder(target: descriptionTextField.layer)
         setupDescriptionFieldConstraints()
     }
-
+    
     // MARK: - SelectTypeButton
     func createAttributes(text: String, textColor: UIColor) -> NSMutableAttributedString {
         let attributedString = NSMutableAttributedString(string: text)
@@ -56,7 +56,7 @@ class InputFieldsView: UIView {
                                       range: NSRange(location: 0, length: attributedString.length))
         return attributedString
     }
-
+    
     private func setupSelectTypeButton() {
         selectTypeButton                            = UIButton()
         selectTypeButton.backgroundColor            = Colors.lightGrayBGColor
@@ -73,40 +73,38 @@ class InputFieldsView: UIView {
 
 // MARK: - Constraints
 extension InputFieldsView {
-
+    
     private func setupDescriptionFieldConstraints() {
         addSubview(descriptionTextField)
-
-        descriptionTextField.translatesAutoresizingMaskIntoConstraints                                  = false
-        descriptionTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive    = true
-        descriptionTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
-        descriptionTextField.heightAnchor.constraint(equalToConstant: 44).isActive                      = true
-        descriptionTextField.topAnchor.constraint(equalTo: topAnchor, constant: 136).isActive           = true
+        descriptionTextField.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([descriptionTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+                                     descriptionTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+                                     descriptionTextField.heightAnchor.constraint(equalToConstant: 44),
+                                     descriptionTextField.topAnchor.constraint(equalTo: topAnchor, constant: 136)])
     }
-
+    
     private func setupSelectTypeButtonConstraints() {
         addSubview(selectTypeButton)
-
-        selectTypeButton.translatesAutoresizingMaskIntoConstraints                                  = false
-        selectTypeButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive    = true
-        selectTypeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
-        selectTypeButton.heightAnchor.constraint(equalToConstant: 44).isActive                      = true
-        selectTypeButton.topAnchor.constraint(equalTo: topAnchor, constant: 40).isActive            = true
+        selectTypeButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([selectTypeButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+                                     selectTypeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+                                     selectTypeButton.heightAnchor.constraint(equalToConstant: 44),
+                                     selectTypeButton.topAnchor.constraint(equalTo: topAnchor, constant: 40)])
     }
-
+    
     private func placeLabels() {
         let label1 = createInputLabels(text: "Clothing type")
         let label2 = createInputLabels(text: "Description")
         let label3 = createInputLabels(text: "Select color")
-        label1.topAnchor.constraint(equalTo: topAnchor, constant: 12).isActive                         = true
-        label2.topAnchor.constraint(equalTo: selectTypeButton.bottomAnchor, constant: 24).isActive     = true
-        label3.topAnchor.constraint(equalTo: descriptionTextField.bottomAnchor, constant: 24).isActive = true
+        NSLayoutConstraint.activate([label1.topAnchor.constraint(equalTo: topAnchor, constant: 12),
+                                     label2.topAnchor.constraint(equalTo: selectTypeButton.bottomAnchor, constant: 24),
+                                     label3.topAnchor.constraint(equalTo: descriptionTextField.bottomAnchor, constant: 24)])
     }
 }
 
 // MARK: - Actions
 extension InputFieldsView {
-
+    
     @objc func selectTypeButtonPressed() {
         selectTypeButtonHandler?()
     }

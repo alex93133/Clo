@@ -324,7 +324,6 @@
 				A82AC9912458410100C0DC3D /* Models */,
 				A8BC7480245C955E00106097 /* Screens */,
 				A81D0B1124585172003CA6B6 /* Managers */,
-				A8D9FEF22465BC2800B62FB2 /* Utilities */,
 				A82AC9932458411A00C0DC3D /* Extensions */,
 				A82AC9952458413600C0DC3D /* Supporting files */,
 			);
@@ -429,13 +428,6 @@
 				A8644DA72464171A007ABAA8 /* ListOfClothes */,
 			);
 			path = Screens;
-			sourceTree = "<group>";
-		};
-		A8D9FEF22465BC2800B62FB2 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utilities;
 			sourceTree = "<group>";
 		};
 		A8DA1A9224659EF30077F0ED /* View */ = {

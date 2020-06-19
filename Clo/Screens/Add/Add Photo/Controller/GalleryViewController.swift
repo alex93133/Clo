@@ -1,5 +1,5 @@
-import UIKit
 import CropViewController
+import UIKit
 
 protocol GalleryViewControllerDelegate: class {
     func updateImage(with image: UIImage)

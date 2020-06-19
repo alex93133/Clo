@@ -45,11 +45,10 @@ extension LaundrySymbolsView {
 
     private func setupCollectionViewConstraints() {
         addSubview(collectionView)
-
-        collectionView.translatesAutoresizingMaskIntoConstraints               = false
-        collectionView.leftAnchor.constraint(equalTo: leftAnchor).isActive     = true
-        collectionView.rightAnchor.constraint(equalTo: rightAnchor).isActive   = true
-        collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        collectionView.topAnchor.constraint(equalTo: topAnchor).isActive       = true
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([collectionView.leftAnchor.constraint(equalTo: leftAnchor),
+        collectionView.rightAnchor.constraint(equalTo: rightAnchor),
+        collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
+        collectionView.topAnchor.constraint(equalTo: topAnchor)])
     }
 }
