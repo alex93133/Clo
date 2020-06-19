@@ -16,7 +16,8 @@ class CustomTextField: UITextField {
         attributedPlaceholder  = NSAttributedString(string: placeholder,
                                                     attributes: [NSAttributedString.Key.foregroundColor: Colors.grayTextColor,
                                                                  NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Fonts.mediumTextSize, weight: .regular)])
-        CustomBorder.createDefaultBorder(target: layer)
+        layer.borderWidth = 0.5
+        layer.borderColor = Colors.separator.cgColor
         addToView(view)
     }
 

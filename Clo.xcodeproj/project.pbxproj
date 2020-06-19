@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		21D94A5B432B71402DFD2DFB /* Pods_Clo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A228FC09CAD5AF1927CF95B /* Pods_Clo.framework */; };
 		3303FE8524975B2F00724FAB /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3303FE8424975B2F00724FAB /* CollectionViewCell.swift */; };
-		3303FE872497778800724FAB /* TypeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3303FE862497778800724FAB /* TypeSheet.swift */; };
+		3303FE872497778800724FAB /* ItemSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3303FE862497778800724FAB /* ItemSheet.swift */; };
 		33041F9D247C113800721E63 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33041F9C247C113800721E63 /* Identifiers.swift */; };
 		33041F9F247C122900721E63 /* ClothesListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33041F9E247C122900721E63 /* ClothesListCollectionViewCell.swift */; };
 		33041FA1247CF64300721E63 /* ClothesSymbolsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33041FA0247CF64300721E63 /* ClothesSymbolsCollectionViewCell.swift */; };
@@ -23,19 +23,20 @@
 		3308ECB3248E0CC0008C7B61 /* DetailTypeAndInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308ECB2248E0CC0008C7B61 /* DetailTypeAndInfoTableViewCell.swift */; };
 		3308ECB7248E0CD4008C7B61 /* DetailSymbolsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308ECB6248E0CD4008C7B61 /* DetailSymbolsTableViewCell.swift */; };
 		33148695247FF279007BAA43 /* InputFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33148694247FF279007BAA43 /* InputFieldsView.swift */; };
-		3315B132248110E300BA354B /* CustomBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3315B131248110E300BA354B /* CustomBorder.swift */; };
-		3315B134248118A400BA354B /* TypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3315B133248118A400BA354B /* TypeViewController.swift */; };
+		3315B134248118A400BA354B /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3315B133248118A400BA354B /* ItemViewController.swift */; };
 		33574789247FBB89008172FB /* ColorTypeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33574788247FBB89008172FB /* ColorTypeCollectionView.swift */; };
 		3357478B247FBC03008172FB /* ColorTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357478A247FBC03008172FB /* ColorTypeCollectionViewCell.swift */; };
 		3357478E247FC77D008172FB /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357478D247FC77D008172FB /* NextButton.swift */; };
 		33574790247FCABD008172FB /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357478F247FCABD008172FB /* CustomTextField.swift */; };
 		33574792247FE40C008172FB /* ClothingColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33574791247FE40C008172FB /* ClothingColor.swift */; };
-		3367E76724811B3C00459AA4 /* TypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3367E76624811B3C00459AA4 /* TypeView.swift */; };
-		3367E76924811CA600459AA4 /* TypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3367E76824811CA600459AA4 /* TypeTableViewCell.swift */; };
+		3367E76724811B3C00459AA4 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3367E76624811B3C00459AA4 /* ItemView.swift */; };
+		3367E76924811CA600459AA4 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3367E76824811CA600459AA4 /* ItemTableViewCell.swift */; };
 		3367E76B2481545C00459AA4 /* PhotoLibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3367E76A2481545B00459AA4 /* PhotoLibraryManager.swift */; };
 		338F227E248A703E001C40D1 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F227D248A703E001C40D1 /* CoreDataManager.swift */; };
 		338F2280248A70A7001C40D1 /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F227F248A70A7001C40D1 /* Clothes.swift */; };
 		338F2282248A8E78001C40D1 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 338F2281248A8E78001C40D1 /* CloudKit.framework */; };
+		3392C5EB249CEF290066D5DD /* CustomFieldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3392C5EA249CEF290066D5DD /* CustomFieldButton.swift */; };
+		3392C5ED249CF8FE0066D5DD /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3392C5EC249CF8FE0066D5DD /* File.swift */; };
 		3396FCC9247BFEA800D8B759 /* ClothesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3396FCC8247BFEA800D8B759 /* ClothesListView.swift */; };
 		33A8432E2482BF620083339D /* SelectSymbolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8432D2482BF620083339D /* SelectSymbolsViewController.swift */; };
 		33A843302482BF7B0083339D /* SelectSymbolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8432F2482BF7B0083339D /* SelectSymbolsView.swift */; };
@@ -76,7 +77,7 @@
 		1A228FC09CAD5AF1927CF95B /* Pods_Clo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E5A39CE76BE4E7124AF2DCB /* Pods-Clo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clo.release.xcconfig"; path = "Target Support Files/Pods-Clo/Pods-Clo.release.xcconfig"; sourceTree = "<group>"; };
 		3303FE8424975B2F00724FAB /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		3303FE862497778800724FAB /* TypeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeSheet.swift; sourceTree = "<group>"; };
+		3303FE862497778800724FAB /* ItemSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSheet.swift; sourceTree = "<group>"; };
 		33041F9C247C113800721E63 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
 		33041F9E247C122900721E63 /* ClothesListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesListCollectionViewCell.swift; sourceTree = "<group>"; };
 		33041FA0247CF64300721E63 /* ClothesSymbolsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesSymbolsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -90,19 +91,20 @@
 		3308ECB2248E0CC0008C7B61 /* DetailTypeAndInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTypeAndInfoTableViewCell.swift; sourceTree = "<group>"; };
 		3308ECB6248E0CD4008C7B61 /* DetailSymbolsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSymbolsTableViewCell.swift; sourceTree = "<group>"; };
 		33148694247FF279007BAA43 /* InputFieldsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldsView.swift; sourceTree = "<group>"; };
-		3315B131248110E300BA354B /* CustomBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBorder.swift; sourceTree = "<group>"; };
-		3315B133248118A400BA354B /* TypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeViewController.swift; sourceTree = "<group>"; };
+		3315B133248118A400BA354B /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		33574788247FBB89008172FB /* ColorTypeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTypeCollectionView.swift; sourceTree = "<group>"; };
 		3357478A247FBC03008172FB /* ColorTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		3357478D247FC77D008172FB /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
 		3357478F247FCABD008172FB /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		33574791247FE40C008172FB /* ClothingColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingColor.swift; sourceTree = "<group>"; };
-		3367E76624811B3C00459AA4 /* TypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeView.swift; sourceTree = "<group>"; };
-		3367E76824811CA600459AA4 /* TypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTableViewCell.swift; sourceTree = "<group>"; };
+		3367E76624811B3C00459AA4 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		3367E76824811CA600459AA4 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		3367E76A2481545B00459AA4 /* PhotoLibraryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryManager.swift; sourceTree = "<group>"; };
 		338F227D248A703E001C40D1 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		338F227F248A70A7001C40D1 /* Clothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
 		338F2281248A8E78001C40D1 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		3392C5EA249CEF290066D5DD /* CustomFieldButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFieldButton.swift; sourceTree = "<group>"; };
+		3392C5EC249CF8FE0066D5DD /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		3396FCC8247BFEA800D8B759 /* ClothesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesListView.swift; sourceTree = "<group>"; };
 		33A8432D2482BF620083339D /* SelectSymbolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSymbolsViewController.swift; sourceTree = "<group>"; };
 		33A8432F2482BF7B0083339D /* SelectSymbolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSymbolsView.swift; sourceTree = "<group>"; };
@@ -206,8 +208,8 @@
 			children = (
 				3357478D247FC77D008172FB /* NextButton.swift */,
 				3357478F247FCABD008172FB /* CustomTextField.swift */,
-				3315B131248110E300BA354B /* CustomBorder.swift */,
 				33F1A4E0248F94B800857FE9 /* CustomAlertController.swift */,
+				3392C5EA249CEF290066D5DD /* CustomFieldButton.swift */,
 			);
 			path = CustomUIElements;
 			sourceTree = "<group>";
@@ -255,8 +257,6 @@
 				33148694247FF279007BAA43 /* InputFieldsView.swift */,
 				33574788247FBB89008172FB /* ColorTypeCollectionView.swift */,
 				3357478A247FBC03008172FB /* ColorTypeCollectionViewCell.swift */,
-				3367E76624811B3C00459AA4 /* TypeView.swift */,
-				3367E76824811CA600459AA4 /* TypeTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -265,8 +265,6 @@
 			isa = PBXGroup;
 			children = (
 				33E7DCEF247F92CF00BD3F41 /* AddEditClothesViewController.swift */,
-				3303FE862497778800724FAB /* TypeSheet.swift */,
-				3315B133248118A400BA354B /* TypeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -283,6 +281,33 @@
 			isa = PBXGroup;
 			children = (
 				33A8432D2482BF620083339D /* SelectSymbolsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3392C5EE249D04A10066D5DD /* ItemList */ = {
+			isa = PBXGroup;
+			children = (
+				3392C5EF249D04BA0066D5DD /* View */,
+				3392C5F0249D04BF0066D5DD /* Controller */,
+			);
+			path = ItemList;
+			sourceTree = "<group>";
+		};
+		3392C5EF249D04BA0066D5DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3367E76624811B3C00459AA4 /* ItemView.swift */,
+				3367E76824811CA600459AA4 /* ItemTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3392C5F0249D04BF0066D5DD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3303FE862497778800724FAB /* ItemSheet.swift */,
+				3315B133248118A400BA354B /* ItemViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -348,6 +373,7 @@
 				A8A2D876245B019300C265F3 /* TextField.swift */,
 				3306B4472496210400A42C85 /* Image.swift */,
 				3303FE8424975B2F00724FAB /* CollectionViewCell.swift */,
+				3392C5EC249CF8FE0066D5DD /* File.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -423,6 +449,7 @@
 				A8644DA924641758007ABAA8 /* Helper */,
 				A8644DA824641729007ABAA8 /* Add */,
 				A8644DA72464171A007ABAA8 /* ListOfClothes */,
+				3392C5EE249D04A10066D5DD /* ItemList */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -626,7 +653,7 @@
 				33A8432E2482BF620083339D /* SelectSymbolsViewController.swift in Sources */,
 				A84ADDF5245F3851008F3425 /* LaundrySymbolsViewController.swift in Sources */,
 				3396FCC9247BFEA800D8B759 /* ClothesListView.swift in Sources */,
-				3367E76724811B3C00459AA4 /* TypeView.swift in Sources */,
+				3367E76724811B3C00459AA4 /* ItemView.swift in Sources */,
 				A84ADDFB245F5143008F3425 /* LaundrySymbolsCollectionViewCell.swift in Sources */,
 				3357478E247FC77D008172FB /* NextButton.swift in Sources */,
 				33041FA1247CF64300721E63 /* ClothesSymbolsCollectionViewCell.swift in Sources */,
@@ -649,15 +676,16 @@
 				A84ADDF7245F3AF0008F3425 /* ClothesListViewController.swift in Sources */,
 				33E7DCF2247F92E800BD3F41 /* AddEditClothesView.swift in Sources */,
 				33A843302482BF7B0083339D /* SelectSymbolsView.swift in Sources */,
-				3315B132248110E300BA354B /* CustomBorder.swift in Sources */,
+				3392C5EB249CEF290066D5DD /* CustomFieldButton.swift in Sources */,
 				3308ECAD248E09D5008C7B61 /* DetailViewController.swift in Sources */,
 				33574792247FE40C008172FB /* ClothingColor.swift in Sources */,
-				3367E76924811CA600459AA4 /* TypeTableViewCell.swift in Sources */,
+				3367E76924811CA600459AA4 /* ItemTableViewCell.swift in Sources */,
 				33DFEB03248D0AF200B802F4 /* Clothes.xcdatamodeld in Sources */,
 				3306B4482496210400A42C85 /* Image.swift in Sources */,
 				A886AFCF24606301007FAEF2 /* SymbolsSections.swift in Sources */,
 				A8BC747B245C429300106097 /* Colors.swift in Sources */,
-				3303FE872497778800724FAB /* TypeSheet.swift in Sources */,
+				3303FE872497778800724FAB /* ItemSheet.swift in Sources */,
+				3392C5ED249CF8FE0066D5DD /* File.swift in Sources */,
 				A8751F1624601E5B00B62589 /* LaundrySymbolsView.swift in Sources */,
 				3308ECB1248E0CA8008C7B61 /* DetailPhotoTableViewCell.swift in Sources */,
 				33574790247FCABD008172FB /* CustomTextField.swift in Sources */,
@@ -665,7 +693,7 @@
 				33148695247FF279007BAA43 /* InputFieldsView.swift in Sources */,
 				33041FA3247D061700721E63 /* ClothesListCollectionViewCellDelegates.swift in Sources */,
 				A8DA1A992465A0370077F0ED /* CameraCollectionViewCell.swift in Sources */,
-				3315B134248118A400BA354B /* TypeViewController.swift in Sources */,
+				3315B134248118A400BA354B /* ItemViewController.swift in Sources */,
 				A8BC7484245C95CF00106097 /* MainTabBarController.swift in Sources */,
 				33041F9D247C113800721E63 /* Identifiers.swift in Sources */,
 				3308ECB3248E0CC0008C7B61 /* DetailTypeAndInfoTableViewCell.swift in Sources */,

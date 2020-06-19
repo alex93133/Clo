@@ -1,24 +1,22 @@
 import FittedSheets
 import UIKit
 
-class TypeSheet {
+class ItemSheet {
 
     // MARK: - Properties
-    var type = TypeViewController()
+    var itemViewController: ItemViewController!
     var sheet: SheetViewController!
 
-    init(hideCategoryNamedAll: Bool = false) {
-        if hideCategoryNamedAll {
-            type.clothingTypes.removeFirst()
-        }
+    init(items: [String]) {
+        itemViewController = ItemViewController(items: items)
         setup()
     }
 
     // MARK: - Functions
     private func setup() {
         let safeZoneHeight: CGFloat        = 70
-        let height: CGFloat                = Constants.colorTypeCellHeight * CGFloat(type.clothingTypes.count) + safeZoneHeight
-        sheet                              = SheetViewController(controller: type, sizes: [.fixed(height)])
+        let height: CGFloat                = Constants.colorTypeCellHeight * CGFloat(itemViewController.items.count) + safeZoneHeight
+        sheet                              = SheetViewController(controller: itemViewController, sizes: [.fixed(height)])
         sheet.extendBackgroundBehindHandle = true
         sheet.adjustForBottomSafeArea      = true
         sheet.blurBottomSafeArea           = true

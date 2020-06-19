@@ -1,6 +1,6 @@
 import UIKit
 
-class TypeView: UIView {
+class ItemView: UIView {
 
     // MARK: - Properties
     var tableView: UITableView!
@@ -22,7 +22,7 @@ class TypeView: UIView {
         tableView.backgroundColor      = Colors.whiteColor
         tableView.separatorColor       = Colors.separator
         tableView.alwaysBounceVertical = false
-        tableView.register(TypeTableViewCell.self, forCellReuseIdentifier: Identifiers.colorTypeCellIdentifier)
+        tableView.register(ItemTableViewCell.self, forCellReuseIdentifier: Identifiers.colorTypeCellIdentifier)
 
         setupTableViewConstraints()
     }
@@ -30,7 +30,7 @@ class TypeView: UIView {
 }
 
 // MARK: - Constraints
-extension TypeView {
+extension ItemView {
 
     private func setupTableViewConstraints() {
         addSubview(tableView)

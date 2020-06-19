@@ -18,29 +18,37 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     private func setupView() {
         tabBar.barTintColor      = Colors.whiteColor
         tabBar.tintColor         = Colors.mintColor
-        selectedIndex            = 1
+        selectedIndex            = 2
         tabBar.layer.borderWidth = 0.5
         tabBar.layer.borderColor = UIColor.lightGray.cgColor
         delegate                 = self
     }
 
     private func createTabs() {
-
+        
         let item1 = UINavigationController(rootViewController: LaundrySymbolsViewController())
         let icon1 = UITabBarItem(title: "", image: Images.questionIcon, tag: 1)
         item1.tabBarItem = icon1
+        
+        let item2 = UIViewController()
+        let icon2 = UITabBarItem(title: "", image: Images.machineIcon, tag: 2)
+        item2.tabBarItem = icon2
 
         let clothesListViewController = ClothesListViewController()
         clothesListViewController.delegate = self
-        let item2 = UINavigationController(rootViewController: clothesListViewController)
-        let icon2 = UITabBarItem(title: "", image: Images.clothesIcon, tag: 2)
-        item2.tabBarItem = icon2
-
-        let item3 = UIViewController()
-        let icon3 = UITabBarItem(title: "", image: Images.addIcon, tag: 3)
+        let item3 = UINavigationController(rootViewController: clothesListViewController)
+        let icon3 = UITabBarItem(title: "", image: Images.clothesIcon, tag: 3)
         item3.tabBarItem = icon3
 
-        let controllers = [item1, item2, item3]
+        let item4 = UIViewController()
+        let icon4 = UITabBarItem(title: "", image: Images.addIcon, tag: 4)
+        item4.tabBarItem = icon4
+        
+        let item5 = UIViewController()
+        let icon5 = UITabBarItem(title: "", image: Images.menuIcon, tag: 5)
+        item5.tabBarItem = icon5
+        
+        let controllers = [item1, item2, item3, item4, item5]
         viewControllers = controllers
     }
 
@@ -54,27 +62,34 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         gallerySheet.sheet.didDismiss = { [weak self] _ in
             guard let self = self else { return }
             guard let image = self.imageToPass else { return }
-            self.presentAddClothesViewController(image: image)
+            self.presentAddEditClothesViewController(image: image)
             self.imageToPass = nil
         }
         present(gallerySheet.sheet, animated: false)
     }
 
-    private func presentAddClothesViewController(image: UIImage) {
+    private func presentAddEditClothesViewController(image: UIImage) {
         let addClothesViewController                = AddEditClothesViewController(image: image)
         let navigationController                    = UINavigationController(rootViewController: addClothesViewController)
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true)
     }
-
+    
     private func presentViewWithWarning() {
         let alert = CustomAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
         let cancelAction  = UIAlertAction(title: "Maybe later", style: .cancel)
         alert.addAction(cancelAction)
-        let getAccessAction = UIAlertAction(title: "Get access", style: .default) { [weak self] _ in
-            guard let self = self else { return }
-            self.getAccess()
+        let getAccessAction = UIAlertAction(title: "Get access", style: .default) { _ in
+            PhotoLibraryManager.getAccess { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .accessed:
+                    self.presentPhotoSheet()
+                case .denied:
+                    return
+                }
+            }
         }
         alert.addAction(getAccessAction)
 
@@ -83,19 +98,6 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         alert.imageView.image   = Images.cameraIcon
         alert.headLabel.text    = "Please note"
         alert.messageLabel.text = "For the full application, you will need a smartphone camera. Please allow access"
-    }
-
-    private func getAccess() {
-        AVCaptureDevice.requestAccess(for: .video) { successOfCameraRequest in
-            PHPhotoLibrary.requestAuthorization { [weak self]  resultOfLibrary in
-                guard let self = self else { return }
-                if resultOfLibrary == .authorized && successOfCameraRequest {
-                    DispatchQueue.main.async {
-                        self.presentSheetViewController()
-                    }
-                }
-            }
-        }
     }
 
     private func presentViewWithError() {
@@ -126,28 +128,27 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
 
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        if tabBarController.customizableViewControllers?.firstIndex(of: viewController) == 2 {
-
-            let statusOfLibrary = PHPhotoLibrary.authorizationStatus()
-            let statusOfCamera = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
-
-            if statusOfLibrary == .notDetermined || statusOfCamera == .notDetermined {
-                presentViewWithWarning()
-                return false
-            }
-
-            if statusOfLibrary == .denied || statusOfCamera == .denied {
-                presentViewWithError()
-                return false
-            }
-
-            if statusOfLibrary == .authorized && statusOfCamera == .authorized {
-                presentSheetViewController()
-            }
-
+        switch tabBarController.customizableViewControllers?.firstIndex(of: viewController) {
+        case 1:
+            print("Machine")
             return false
-        } else {
-            return true
+        case 4:
+            print("Menu")
+            return false
+        case 3:
+            PhotoLibraryManager.checkAccessStatus { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .allow:
+                    self.presentPhotoSheet()
+                case .warning:
+                    self.presentViewWithWarning()
+                case .error:
+                    self.presentViewWithError()
+                }
+            }
+            return false
+        default: return true
         }
     }
 }

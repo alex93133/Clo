@@ -1,35 +1,44 @@
 import UIKit
 
-protocol TypeViewControllerDelegate: class {
-    func applySelectedType(with type: ClothingType)
+protocol ItemViewControllerDelegate: class {
+    func applySelectedItem(with item: String)
 }
 
-class TypeViewController: UITableViewController {
-
+class ItemViewController: UITableViewController {
+    
     // MARK: - Properties
-    private let customView = TypeView(frame: UIScreen.main.bounds)
-    var clothingTypes = ClothingType.allCases
-    var selectedType: ClothingType!
-    weak var delegate: TypeViewControllerDelegate!
-
+    private let customView = ItemView(frame: UIScreen.main.bounds)
+    var items: [String]
+    var selectedItem: String?
+    weak var delegate: ItemViewControllerDelegate!
+    
+    init(items: [String]) {
+        self.items = items
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
-
+    
     // MARK: - Functions
-    private func view() -> TypeView {
-        return view as! TypeView
+    private func view() -> ItemView {
+        return view as! ItemView
     }
-
+    
     private func setupView() {
         view                        =  customView
         view().tableView.delegate   = self
         view().tableView.dataSource = self
-
-        if let selectedType = selectedType {
-            guard let index = clothingTypes.firstIndex(of: selectedType) else { return }
+        
+        if let selectedItem = selectedItem {
+            guard let index = items.firstIndex(of: selectedItem) else { return }
             let indexPath = IndexPath(row: index, section: 0)
             view().tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
         }
@@ -37,30 +46,31 @@ class TypeViewController: UITableViewController {
 }
 
 // MARK: - Delegates
-extension TypeViewController {
-
+extension ItemViewController {
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        clothingTypes.count
+        items.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.colorTypeCellIdentifier) as? TypeTableViewCell {
-            cell.textLabel?.text = clothingTypes[indexPath.row].rawValue
+        if let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.colorTypeCellIdentifier) as? ItemTableViewCell {
+            cell.textLabel?.text = items[indexPath.row]
             return cell
         } else {
             return UITableViewCell()
         }
     }
-
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constants.colorTypeCellHeight
     }
-
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedType = clothingTypes[indexPath.row]
+        selectedItem = items[indexPath.row]
         DispatchQueue.main.asyncAfter(deadline: .now() + Constants.animationTimeInterval) { [weak self] in
             guard let self = self else { return }
-            self.delegate?.applySelectedType(with: self.selectedType)
+            guard let selectedItem = self.selectedItem else { return }
+            self.delegate?.applySelectedItem(with: selectedItem)
             self.sheetViewController?.closeSheet()
         }
     }

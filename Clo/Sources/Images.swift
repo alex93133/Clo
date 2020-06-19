@@ -10,6 +10,8 @@ enum Images {
     static let deleteIcon   = UIImage(systemName: "trash")
     static let editIcon     = UIImage(named: "EditIcon")
     static let forbidden    = UIImage(named: "Forbidden")
+    static let machineIcon  = UIImage(named: "MachineIcon")
+    static let menuIcon     = UIImage(named: "MenuIcon")
     static let questionIcon = UIImage(named: "QuestionMarkIcon")
     static let settingsIcon = UIImage(named: "SettingsIcon")
 

@@ -1,6 +1,6 @@
 import UIKit
 
-class TypeTableViewCell: UITableViewCell {
+class ItemTableViewCell: UITableViewCell {
 
     // MARK: - Properties
     var checkBox: UIImageView!
@@ -46,7 +46,7 @@ class TypeTableViewCell: UITableViewCell {
 }
 
 // MARK: - Constraints
-extension TypeTableViewCell {
+extension ItemTableViewCell {
 
     private func setupCheckBoxConstraints() {
         addSubview(checkBox)

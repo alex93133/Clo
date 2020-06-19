@@ -78,10 +78,11 @@ class ClothesListViewController: UIViewController {
     }
 
     private func presentTypeSheet() {
-        let typeSheet               = TypeSheet()
-        let category                = currentCategory ?? .all
-        typeSheet.type.selectedType = category
-        typeSheet.type.delegate     = self
+        let clothesTypes                          = ClothingType.allCases.map { $0.rawValue }
+        let typeSheet                             = ItemSheet(items: clothesTypes)
+        let category                              = currentCategory ?? .all
+        typeSheet.itemViewController.selectedItem = category.rawValue
+        typeSheet.itemViewController.delegate     = self
         present(typeSheet.sheet, animated: false)
     }
 }
@@ -133,10 +134,11 @@ extension ClothesListViewController: UICollectionViewDelegate, UICollectionViewD
     }
 }
 
-extension ClothesListViewController: TypeViewControllerDelegate {
-
-    func applySelectedType(with type: ClothingType) {
-        currentCategory = type
+extension ClothesListViewController: ItemViewControllerDelegate {
+    
+    func applySelectedItem(with item: String) {
+        guard let category = ClothingType(rawValue: item) else { return }
+        currentCategory = category
         smoothReloadData()
     }
 }

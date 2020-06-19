@@ -1,79 +1,63 @@
 import UIKit
 
 class InputFieldsView: UIView {
-
+    
     // MARK: - Properties
     var descriptionTextField: UITextField!
-    var selectTypeButton: UIButton!
+    var selectTypeButton: CustomFieldButton!
     var selectTypeButtonHandler: (() -> Void)?
-
+    
     init() {
         super.init(frame: .zero)
         setupDescriptionTextField()
         setupSelectTypeButton()
         placeLabels()
     }
-
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-
+    
     // MARK: - InputLabels
     private func createInputLabels(text: String) -> UILabel {
         let label       = UILabel()
         label.text      = text
         label.font      = .systemFont(ofSize: Constants.Fonts.smallTextSize, weight: .regular)
         label.textColor = Colors.grayTextColor
-
+        
         addSubview(label)
-
+        
         label.translatesAutoresizingMaskIntoConstraints  = false
         NSLayoutConstraint.activate([label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
                                      label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
                                      label.heightAnchor.constraint(equalToConstant: 18)])
-
+        
         return label
     }
-
+    
     // MARK: - DescriptionTextField
     private func setupDescriptionTextField() {
-        descriptionTextField = CustomTextField(placeholder: "Enter the short description", addTo: self)
+        descriptionTextField                           = CustomTextField(placeholder: "Enter the short description", addTo: self)
         descriptionTextField.adjustsFontSizeToFitWidth = true
-        descriptionTextField.minimumFontSize = 10
-        descriptionTextField.autocapitalizationType = .sentences
-        CustomBorder.createDefaultBorder(target: descriptionTextField.layer)
+        descriptionTextField.minimumFontSize           = 10
+        descriptionTextField.autocapitalizationType    = .sentences
+        descriptionTextField.layer.borderWidth         = 0.5
+        descriptionTextField.layer.borderColor         = Colors.separator.cgColor
         setupDescriptionFieldConstraints()
     }
-
+    
     // MARK: - SelectTypeButton
-    func createAttributes(text: String, textColor: UIColor) -> NSMutableAttributedString {
-        let attributedString = NSMutableAttributedString(string: text)
-        attributedString.addAttribute(NSAttributedString.Key.font,
-                                      value: UIFont.systemFont(ofSize: Constants.Fonts.mediumTextSize, weight: .regular),
-                                      range: NSRange(location: 0, length: attributedString.length))
-        attributedString.addAttribute(NSAttributedString.Key.foregroundColor,
-                                      value: textColor,
-                                      range: NSRange(location: 0, length: attributedString.length))
-        return attributedString
-    }
-
     private func setupSelectTypeButton() {
-        selectTypeButton                            = UIButton()
-        selectTypeButton.backgroundColor            = Colors.lightGrayBGColor
-        selectTypeButton.layer.cornerRadius         = Constants.defaultCornerRadius
-        selectTypeButton.contentHorizontalAlignment = .left
-        selectTypeButton.titleEdgeInsets            = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
-        selectTypeButton.addTarget(self, action: #selector(selectTypeButtonPressed), for: .touchUpInside)
-        let attributedString = createAttributes(text: "Select type", textColor: Colors.grayTextColor)
-        selectTypeButton.setAttributedTitle(attributedString, for: .normal)
-        CustomBorder.createDefaultBorder(target: selectTypeButton.layer)
-        setupSelectTypeButtonConstraints()
+        selectTypeButton = CustomFieldButton(title: "Select type",
+                                             action: #selector(selectTypeButtonPressed),
+                                             addTo: self)
+        NSLayoutConstraint.activate([selectTypeButton.topAnchor.constraint(equalTo: topAnchor, constant: 40)])
     }
 }
 
 // MARK: - Constraints
 extension InputFieldsView {
-
+    
     private func setupDescriptionFieldConstraints() {
         addSubview(descriptionTextField)
         descriptionTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -82,16 +66,7 @@ extension InputFieldsView {
                                      descriptionTextField.heightAnchor.constraint(equalToConstant: 44),
                                      descriptionTextField.topAnchor.constraint(equalTo: topAnchor, constant: 136)])
     }
-
-    private func setupSelectTypeButtonConstraints() {
-        addSubview(selectTypeButton)
-        selectTypeButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([selectTypeButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
-                                     selectTypeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
-                                     selectTypeButton.heightAnchor.constraint(equalToConstant: 44),
-                                     selectTypeButton.topAnchor.constraint(equalTo: topAnchor, constant: 40)])
-    }
-
+    
     private func placeLabels() {
         let label1 = createInputLabels(text: "Clothing type")
         let label2 = createInputLabels(text: "Description")
@@ -104,7 +79,7 @@ extension InputFieldsView {
 
 // MARK: - Actions
 extension InputFieldsView {
-
+    
     @objc func selectTypeButtonPressed() {
         selectTypeButtonHandler?()
     }

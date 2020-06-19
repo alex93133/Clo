@@ -32,9 +32,8 @@ class CustomAlertController: UIAlertController {
 
     // MARK: - View
     private func setupView() {
-        view.tintColor                                              = Colors.mintColor
-        overrideUserInterfaceStyle                                  = .light
-        view.translatesAutoresizingMaskIntoConstraints              = false
+        view.tintColor                                 = Colors.mintColor
+        view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([view.heightAnchor.constraint(equalToConstant: 320)])
     }
 
