@@ -48,7 +48,7 @@ class CustomAlertController: UIAlertController {
     private func setupOverlayView() {
         overlayView                     = UIView()
         overlayView.layer.cornerRadius  = Constants.defaultCornerRadius
-        overlayView.backgroundColor     = Colors.whiteBGColor
+        overlayView.backgroundColor     = Colors.whiteColor
         overlayView.layer.shadowColor   = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
         overlayView.layer.shadowOpacity = 1
         overlayView.layer.shadowOffset  = CGSize(width: 0, height: 4)

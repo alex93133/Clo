@@ -12,7 +12,7 @@ class DetailTypeAndInfoTableViewCell: UITableViewCell {
         setupTypeLabel()
         setupInfoLabel()
         setupStackView()
-        backgroundColor = Colors.whiteBGColor
+        backgroundColor = Colors.whiteColor
         selectionStyle  = .none
     }
 

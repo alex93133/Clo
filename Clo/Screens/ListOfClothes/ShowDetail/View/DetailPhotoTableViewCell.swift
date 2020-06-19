@@ -8,7 +8,7 @@ class DetailPhotoTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupPhotoImageView()
-        backgroundColor = Colors.whiteBGColor
+        backgroundColor = Colors.whiteColor
         selectionStyle  = .none
     }
 

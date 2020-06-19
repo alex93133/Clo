@@ -7,5 +7,5 @@ enum Colors {
     static let mintColor        = UIColor(red: 0, green: 0.741, blue: 0.749, alpha: 1)
     static let overlayColor     = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
     static let separator        = UIColor.lightGray
-    static let whiteBGColor     = UIColor.white
+    static let whiteColor       = UIColor.white
 }

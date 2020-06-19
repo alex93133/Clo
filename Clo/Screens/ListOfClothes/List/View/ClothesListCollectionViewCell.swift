@@ -40,7 +40,7 @@ class ClothesListCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius  = Constants.defaultCornerRadius
         layer.borderColor   = UIColor.clear.cgColor
         layer.masksToBounds = true
-        backgroundColor     = Colors.whiteBGColor
+        backgroundColor     = Colors.whiteColor
     }
 
     // MARK: - ClothesImageView

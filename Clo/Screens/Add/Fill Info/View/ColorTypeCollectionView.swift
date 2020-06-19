@@ -27,7 +27,7 @@ class ColorTypeCollectionView: UIView {
         layout.minimumInteritemSpacing              = spacing
 
         collectionView                              = UICollectionView(frame: frame, collectionViewLayout: layout)
-        collectionView.backgroundColor              = Colors.whiteBGColor
+        collectionView.backgroundColor              = Colors.whiteColor
         collectionView.showsVerticalScrollIndicator = false
 
         collectionView.register(ColorTypeCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.clothesColorCellIdentifier)

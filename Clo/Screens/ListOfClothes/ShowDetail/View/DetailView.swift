@@ -8,7 +8,7 @@ class DetailView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupTableView()
-        backgroundColor = Colors.whiteBGColor
+        backgroundColor = Colors.whiteColor
     }
 
     required init?(coder: NSCoder) {
@@ -19,7 +19,7 @@ class DetailView: UIView {
     private func setupTableView() {
         tableView                      = UITableView()
         tableView.tableFooterView      = UIView()
-        tableView.backgroundColor      = Colors.whiteBGColor
+        tableView.backgroundColor      = Colors.whiteColor
         tableView.separatorColor       = .clear
         tableView.alwaysBounceVertical = false
         tableView.rowHeight            = UITableView.automaticDimension

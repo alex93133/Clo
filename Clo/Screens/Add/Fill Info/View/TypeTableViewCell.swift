@@ -9,7 +9,7 @@ class TypeTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupLabel()
         setupCheckBox()
-        backgroundColor = Colors.whiteBGColor
+        backgroundColor = Colors.whiteColor
         selectionStyle  = .none
     }
 

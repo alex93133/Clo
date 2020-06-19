@@ -16,7 +16,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 
     // MARK: - Functions
     private func setupView() {
-        tabBar.barTintColor      = Colors.whiteBGColor
+        tabBar.barTintColor      = Colors.whiteColor
         tabBar.tintColor         = Colors.mintColor
         selectedIndex            = 1
         tabBar.layer.borderWidth = 0.5

@@ -26,7 +26,7 @@ class LaundrySymbolsCollectionViewCell: UICollectionViewCell {
         let view                 = UIView(frame: CGRect(x: 0, y: 0, width: itemSize, height: itemSize))
         view.center              = CGPoint(x: itemSize / 2, y: itemSize / 2)
         view.layer.cornerRadius  = Constants.defaultCornerRadius
-        view.backgroundColor     = Colors.whiteBGColor
+        view.backgroundColor     = Colors.whiteColor
 
         view.layer.shadowColor   = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
         view.layer.shadowOpacity = 1

@@ -14,7 +14,7 @@ class DetailSymbolsTableViewCell: UITableViewCell {
         setupSymbolImageView()
         setupDescriptionLabel()
         setupCustomSeparator()
-        backgroundColor = Colors.whiteBGColor
+        backgroundColor = Colors.whiteColor
         selectionStyle  = .none
     }
 

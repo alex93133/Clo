@@ -22,7 +22,7 @@ class AddEditClothesView: UIView {
         setupInputFieldsViewConstraints()
         setupColorTypeCollectionViewConstraints()
         setupNextButton()
-        backgroundColor = Colors.whiteBGColor
+        backgroundColor = Colors.whiteColor
         scrollView.showsVerticalScrollIndicator = false
     }
 

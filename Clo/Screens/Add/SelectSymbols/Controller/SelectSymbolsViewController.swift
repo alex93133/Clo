@@ -105,10 +105,13 @@ class SelectSymbolsViewController: UIViewController {
     }
 
     private func handleData() {
-        if editableClothes != nil {
-            updateClothes()
-        } else {
-            saveClothes()
+        view().nextButton.isProcessing = true
+        DispatchQueue.global().async {
+            if self.editableClothes != nil {
+                self.updateClothes()
+            } else {
+                self.saveClothes()
+            }
         }
     }
 
@@ -121,30 +124,36 @@ class SelectSymbolsViewController: UIViewController {
                               symbols: selectedSymbols)
         CoreDataManager.shared.saveData(clothes: clothes) { [weak self] result in
             guard let self = self else { return }
-            switch result {
-            case .success:
-                self.parent?.dismiss(animated: true)
-            case .failure(let error):
-                print(error.localizedDescription)
+            DispatchQueue.main.async {
+                self.view().nextButton.isProcessing = false
+                switch result {
+                case .success:
+                    self.parent?.dismiss(animated: true)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
             }
         }
     }
 
     private func updateClothes() {
         guard var editableClothes = editableClothes else { return }
-        editableClothes.photo = clothesInfo.photo
-        editableClothes.type = clothesInfo.type
-        editableClothes.color = clothesInfo.color
-        editableClothes.info = clothesInfo.info
+        editableClothes.photo   = clothesInfo.photo
+        editableClothes.type    = clothesInfo.type
+        editableClothes.color   = clothesInfo.color
+        editableClothes.info    = clothesInfo.info
         editableClothes.symbols = selectedSymbols
 
         CoreDataManager.shared.update(editableClothes: editableClothes) { [weak self] result in
             guard let self = self else { return }
-            switch result {
-            case .success:
-                self.navigationController?.popToRootViewController(animated: true)
-            case .failure(let error):
-                print(error.localizedDescription)
+            DispatchQueue.main.async {
+                self.view().nextButton.isProcessing = false
+                switch result {
+                case .success:
+                    self.navigationController?.popToRootViewController(animated: true)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
             }
         }
     }
