@@ -1,14 +1,13 @@
 import Foundation
 
 struct SymbolsSections {
-
     let index: Int
     let title: String
     var category: Categories?
     var items: [Symbol]
 
     static func getSections() -> [SymbolsSections] {
-        guard let symbols = Symbols.allSymbols() else { return []}
+        guard let symbols = Symbols.allSymbols() else { return [] }
         let sectionTitles = Categories.allCases.map { $0.rawValue }
 
         var symbolDictionary: [String: [Symbol]] = [:]

@@ -6,35 +6,35 @@ class InputFieldsView: UIView {
     var descriptionTextField: UITextField!
     var selectTypeButton: CustomFieldButton!
     var selectTypeButtonHandler: (() -> Void)?
-    
+
     init() {
         super.init(frame: .zero)
         setupDescriptionTextField()
         setupSelectTypeButton()
         placeLabels()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+
     // MARK: - InputLabels
     private func createInputLabels(text: String) -> UILabel {
         let label       = UILabel()
         label.text      = text
         label.font      = .systemFont(ofSize: Constants.Fonts.smallTextSize, weight: .regular)
-        label.textColor = Colors.grayTextColor
-        
+        label.textColor = Colors.textGray
+
         addSubview(label)
-        
-        label.translatesAutoresizingMaskIntoConstraints  = false
+
+        label.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
                                      label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
                                      label.heightAnchor.constraint(equalToConstant: 18)])
-        
+
         return label
     }
-    
+
     // MARK: - DescriptionTextField
     private func setupDescriptionTextField() {
         descriptionTextField                           = CustomTextField(placeholder: "Enter the short description", addTo: self)
@@ -42,10 +42,10 @@ class InputFieldsView: UIView {
         descriptionTextField.minimumFontSize           = 10
         descriptionTextField.autocapitalizationType    = .sentences
         descriptionTextField.layer.borderWidth         = 0.5
-        descriptionTextField.layer.borderColor         = Colors.separator.cgColor
+        descriptionTextField.layer.borderColor         = Colors.border.cgColor
         setupDescriptionFieldConstraints()
     }
-    
+
     // MARK: - SelectTypeButton
     private func setupSelectTypeButton() {
         selectTypeButton = CustomFieldButton(title: "Select type",
@@ -66,7 +66,7 @@ extension InputFieldsView {
                                      descriptionTextField.heightAnchor.constraint(equalToConstant: 44),
                                      descriptionTextField.topAnchor.constraint(equalTo: topAnchor, constant: 136)])
     }
-    
+
     private func placeLabels() {
         let label1 = createInputLabels(text: "Clothing type")
         let label2 = createInputLabels(text: "Description")
@@ -79,7 +79,7 @@ extension InputFieldsView {
 
 // MARK: - Actions
 extension InputFieldsView {
-    
+  
     @objc func selectTypeButtonPressed() {
         selectTypeButtonHandler?()
     }

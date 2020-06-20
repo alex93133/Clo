@@ -1,7 +1,6 @@
 import UIKit
 
 struct ClothingColor {
-
     let type: ColorType
     let image: UIImage
 

@@ -1,33 +1,38 @@
-import UIKit
-import IQKeyboardManagerSwift
 import CoreData
+import IQKeyboardManagerSwift
+import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
+    
+    func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared.enable                       = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside   = true
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
 
-        UINavigationBar.appearance().titleTextAttributes              = [NSAttributedString.Key.foregroundColor: Colors.blackTextColor,
-                                                                         NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Fonts.navigationBarItemTextSize, weight: .bold)]
-        UINavigationBar.appearance().isTranslucent                    = false
-        UINavigationBar.appearance().barTintColor                     = Colors.lightGrayBGColor
+        //        Color of items
+        UIBarButtonItem.appearance().tintColor                        = Colors.mint
+        //        Setting back image
         UINavigationBar.appearance().backIndicatorImage               = Images.backIcon
         UINavigationBar.appearance().backIndicatorTransitionMaskImage = Images.backIcon
-        UIBarButtonItem.appearance().tintColor                        = Colors.mintColor
+        // Removing separator
+        UINavigationBar.appearance().shadowImage                      = UIImage()
+        // Removing back image text for 2 states
         UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: .normal)
         UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: UIControl.State.highlighted)
-        
+//        Disable transparent
+        UINavigationBar.appearance().isTranslucent                    = false
+        // Font and text color for title
+        UINavigationBar.appearance().titleTextAttributes              = [NSAttributedString.Key.foregroundColor: Colors.accent,
+                                                            NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Fonts.navigationBarItemTextSize, weight: .bold)]
+        UINavigationBar.appearance().barTintColor                     = Colors.mainBG
         return true
     }
 
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentCloudKitContainer = {
         let container = NSPersistentCloudKitContainer(name: "Clothes")
-        container.loadPersistentStores(completionHandler: { (_, error) in
+        container.loadPersistentStores(completionHandler: { _, error in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
@@ -36,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     // MARK: - Core Data Saving support
-    func saveContext () -> Result<Error> {
+    func saveContext() -> Result<Error> {
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {

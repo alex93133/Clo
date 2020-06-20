@@ -1,13 +1,13 @@
 import UIKit
 
 class ClothesListView: UIView {
-
+    
     // MARK: - Properties
     var collectionView: UICollectionView!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = Colors.lightGrayBGColor
+        backgroundColor = Colors.mainBG
         setupCollectionView()
     }
 
@@ -28,7 +28,7 @@ class ClothesListView: UIView {
         layout.minimumLineSpacing                   = spacing
 
         collectionView                              = UICollectionView(frame: frame, collectionViewLayout: layout)
-        collectionView.backgroundColor              = Colors.lightGrayBGColor
+        collectionView.backgroundColor              = Colors.mainBG
         collectionView.showsVerticalScrollIndicator = false
 
         collectionView.register(ClothesListCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.clothesCellIdentifier)
@@ -40,7 +40,7 @@ class ClothesListView: UIView {
 
 // MARK: - Constraints
 extension ClothesListView {
-
+   
     private func setupCollectionViewConstraints() {
         addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false

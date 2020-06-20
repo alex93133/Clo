@@ -1,16 +1,16 @@
 import UIKit
 
 class ClothesListCollectionViewCell: UICollectionViewCell {
-
+    
     // MARK: - Properties
     var clothesImageView: UIImageView!
-    var lineView: UIView!
     var collectionView: UICollectionView!
     var symbols: [Symbol]! {
         didSet {
             collectionView.reloadData()
         }
     }
+
     var color: ColorType!
     var itemHandler: ((CustomAlertController) -> Void)!
 
@@ -20,43 +20,41 @@ class ClothesListCollectionViewCell: UICollectionViewCell {
         }
     }
 
-    override init(frame: CGRect) {
+    override init(frame _: CGRect) {
         super.init(frame: .zero)
         setupView()
         setupClothesImageView()
         setupCollectionView()
-        setupLineView(rect: frame)
 
         collectionView.delegate   = self
         collectionView.dataSource = self
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         super.init(frame: .zero)
     }
 
     // MARK: - View
     private func setupView() {
-        layer.cornerRadius  = Constants.defaultCornerRadius
-        layer.borderColor   = UIColor.clear.cgColor
-        layer.masksToBounds = true
-        backgroundColor     = Colors.whiteColor
+        contentView.layer.cornerRadius  = Constants.defaultCornerRadius
+        contentView.backgroundColor     = Colors.mainBG
+
+        contentView.layer.shadowColor   = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        contentView.layer.shadowOpacity = 1
+        contentView.layer.shadowOffset  = CGSize(width: 0, height: 2)
+        contentView.layer.shadowRadius  = Constants.shadowRadius
     }
 
     // MARK: - ClothesImageView
     private func setupClothesImageView() {
-        clothesImageView             = UIImageView()
-        clothesImageView.contentMode = .scaleAspectFill
+        clothesImageView                     = UIImageView()
+        clothesImageView.contentMode         = .scaleAspectFill
+        clothesImageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        clothesImageView.layer.cornerRadius  = Constants.defaultCornerRadius
+        clothesImageView.layer.masksToBounds = true
         setupClothesImageConstraints()
     }
 
-    // MARK: - LineView
-    private func setupLineView(rect: CGRect) {
-        lineView                 = UIView(frame: CGRect(x: 0, y: 0, width: rect.width - 24, height: 1))
-        lineView.center          = CGPoint(x: rect.width / 2, y: 283)
-        lineView.backgroundColor = Colors.lightGrayBGColor
-        addSubview(lineView)
-    }
     // MARK: - CollectionView
     private func setupCollectionView() {
         let layout                                    = UICollectionViewFlowLayout()
@@ -83,14 +81,14 @@ class ClothesListCollectionViewCell: UICollectionViewCell {
 
 // MARK: - Constraints
 extension ClothesListCollectionViewCell {
-
+  
     private func setupClothesImageConstraints() {
-        addSubview(clothesImageView)
+        contentView.addSubview(clothesImageView)
         clothesImageView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([clothesImageView.topAnchor.constraint(equalTo: topAnchor),
-                                     clothesImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-                                     clothesImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-                                     clothesImageView.heightAnchor.constraint(equalTo: widthAnchor, multiplier: 9 / 16)])
+        NSLayoutConstraint.activate([clothesImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+                                     clothesImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+                                     clothesImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+                                     clothesImageView.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 9 / 16)])
     }
 
     private func setupCollectionViewConstraints() {

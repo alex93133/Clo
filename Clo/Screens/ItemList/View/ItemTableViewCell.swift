@@ -1,7 +1,7 @@
 import UIKit
 
 class ItemTableViewCell: UITableViewCell {
-
+   
     // MARK: - Properties
     var checkBox: UIImageView!
 
@@ -9,7 +9,7 @@ class ItemTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupLabel()
         setupCheckBox()
-        backgroundColor = Colors.whiteColor
+        backgroundColor = Colors.mainBG
         selectionStyle  = .none
     }
 
@@ -31,7 +31,7 @@ class ItemTableViewCell: UITableViewCell {
 
     // MARK: - Label
     private func setupLabel() {
-        textLabel?.textColor = Colors.blackTextColor
+        textLabel?.textColor = Colors.accent
         textLabel?.font      = .systemFont(ofSize: Constants.Fonts.mediumTextSize, weight: .regular)
     }
 
@@ -47,7 +47,7 @@ class ItemTableViewCell: UITableViewCell {
 
 // MARK: - Constraints
 extension ItemTableViewCell {
-
+  
     private func setupCheckBoxConstraints() {
         addSubview(checkBox)
         checkBox.translatesAutoresizingMaskIntoConstraints = false

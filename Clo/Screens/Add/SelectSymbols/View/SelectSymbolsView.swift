@@ -1,7 +1,7 @@
 import UIKit
 
 class SelectSymbolsView: UIView {
-
+  
     // MARK: - Properties
     let laundrySymbolsView = LaundrySymbolsView(frame: UIScreen.main.bounds)
     var nextButton: NextButton!
@@ -11,7 +11,7 @@ class SelectSymbolsView: UIView {
         super.init(frame: frame)
         setupLaundrySymbolsViewConstraints()
         setupNextButton()
-        backgroundColor = Colors.lightGrayBGColor
+        backgroundColor = Colors.additionalBG
     }
 
     required init?(coder: NSCoder) {
@@ -27,7 +27,7 @@ class SelectSymbolsView: UIView {
 
 // MARK: - Actions
 extension SelectSymbolsView {
-
+   
     @objc func nextButtonPressed() {
         nextButtonHandler?()
     }
@@ -35,7 +35,7 @@ extension SelectSymbolsView {
 
 // MARK: - Constraints
 extension SelectSymbolsView {
-
+    
     private func setupLaundrySymbolsViewConstraints() {
         addSubview(laundrySymbolsView)
         laundrySymbolsView.translatesAutoresizingMaskIntoConstraints = false

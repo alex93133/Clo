@@ -1,14 +1,14 @@
 import UIKit
 
 class ItemView: UIView {
-
+    
     // MARK: - Properties
     var tableView: UITableView!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupTableView()
-        backgroundColor = Colors.whiteColor
+        backgroundColor = Colors.mainBG
     }
 
     required init?(coder: NSCoder) {
@@ -19,19 +19,18 @@ class ItemView: UIView {
     private func setupTableView() {
         tableView                      = UITableView()
         tableView.tableFooterView      = UIView()
-        tableView.backgroundColor      = Colors.whiteColor
-        tableView.separatorColor       = Colors.separator
+        tableView.backgroundColor      = Colors.mainBG
+        tableView.separatorColor       = Colors.border
         tableView.alwaysBounceVertical = false
         tableView.register(ItemTableViewCell.self, forCellReuseIdentifier: Identifiers.colorTypeCellIdentifier)
 
         setupTableViewConstraints()
     }
-
 }
 
 // MARK: - Constraints
 extension ItemView {
-
+ 
     private func setupTableViewConstraints() {
         addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false

@@ -1,7 +1,7 @@
 import UIKit
 
 class DetailSymbolsTableViewCell: UITableViewCell {
-
+    
     // MARK: - Properties
     var symbolImageView: UIImageView!
     var descriptionLabel: UILabel!
@@ -14,7 +14,7 @@ class DetailSymbolsTableViewCell: UITableViewCell {
         setupSymbolImageView()
         setupDescriptionLabel()
         setupCustomSeparator()
-        backgroundColor = Colors.whiteColor
+        backgroundColor = Colors.mainBG
         selectionStyle  = .none
     }
 
@@ -25,7 +25,7 @@ class DetailSymbolsTableViewCell: UITableViewCell {
     // MARK: - View
     private func setupView() {
         view                     = UIView()
-        view.backgroundColor     = Colors.lightGrayBGColor
+        view.backgroundColor     = Colors.mainBG
         view.layer.cornerRadius  = Constants.defaultCornerRadius
         view.layer.masksToBounds = true
         setupViewConstraints()
@@ -33,7 +33,7 @@ class DetailSymbolsTableViewCell: UITableViewCell {
 
     private func setupCustomSeparator() {
         customSeparator                 = UIView()
-        customSeparator.backgroundColor = Colors.separator
+        customSeparator.backgroundColor = Colors.border
         setupCustomSeparatorConstraints()
     }
 
@@ -41,21 +41,22 @@ class DetailSymbolsTableViewCell: UITableViewCell {
     private func setupSymbolImageView() {
         symbolImageView             = UIImageView()
         symbolImageView.contentMode = .scaleAspectFit
+        symbolImageView.tintColor   = Colors.accent
         setupSymbolImageViewConstraints()
     }
 
     private func setupDescriptionLabel() {
         descriptionLabel               = UILabel()
         descriptionLabel.numberOfLines = 0
-        descriptionLabel.textColor     = Colors.grayTextColor
-        descriptionLabel.font = .systemFont(ofSize: Constants.Fonts.smallTextSize, weight: .regular)
+        descriptionLabel.textColor     = Colors.textGray
+        descriptionLabel.font          = .systemFont(ofSize: Constants.Fonts.smallTextSize, weight: .regular)
         setupDescriptionLabelConstraints()
     }
 }
 
 // MARK: - Constraints
 extension DetailSymbolsTableViewCell {
-
+   
     private func setupCustomSeparatorConstraints() {
         addSubview(customSeparator)
         customSeparator.translatesAutoresizingMaskIntoConstraints = false

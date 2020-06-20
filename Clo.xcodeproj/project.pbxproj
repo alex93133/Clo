@@ -36,7 +36,6 @@
 		338F2280248A70A7001C40D1 /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F227F248A70A7001C40D1 /* Clothes.swift */; };
 		338F2282248A8E78001C40D1 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 338F2281248A8E78001C40D1 /* CloudKit.framework */; };
 		3392C5EB249CEF290066D5DD /* CustomFieldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3392C5EA249CEF290066D5DD /* CustomFieldButton.swift */; };
-		3392C5ED249CF8FE0066D5DD /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3392C5EC249CF8FE0066D5DD /* File.swift */; };
 		3396FCC9247BFEA800D8B759 /* ClothesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3396FCC8247BFEA800D8B759 /* ClothesListView.swift */; };
 		33A8432E2482BF620083339D /* SelectSymbolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8432D2482BF620083339D /* SelectSymbolsViewController.swift */; };
 		33A843302482BF7B0083339D /* SelectSymbolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8432F2482BF7B0083339D /* SelectSymbolsView.swift */; };
@@ -104,7 +103,6 @@
 		338F227F248A70A7001C40D1 /* Clothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
 		338F2281248A8E78001C40D1 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		3392C5EA249CEF290066D5DD /* CustomFieldButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFieldButton.swift; sourceTree = "<group>"; };
-		3392C5EC249CF8FE0066D5DD /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		3396FCC8247BFEA800D8B759 /* ClothesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesListView.swift; sourceTree = "<group>"; };
 		33A8432D2482BF620083339D /* SelectSymbolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSymbolsViewController.swift; sourceTree = "<group>"; };
 		33A8432F2482BF7B0083339D /* SelectSymbolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSymbolsView.swift; sourceTree = "<group>"; };
@@ -373,7 +371,6 @@
 				A8A2D876245B019300C265F3 /* TextField.swift */,
 				3306B4472496210400A42C85 /* Image.swift */,
 				3303FE8424975B2F00724FAB /* CollectionViewCell.swift */,
-				3392C5EC249CF8FE0066D5DD /* File.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -600,7 +597,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#if which swiftlint >/dev/null; then\n# swiftlint\n#else\n#  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n#fi\n";
+			shellScript = "if which swiftlint >/dev/null; then\n swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		D35DC622A32C90C46EBBCC27 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -685,7 +682,6 @@
 				A886AFCF24606301007FAEF2 /* SymbolsSections.swift in Sources */,
 				A8BC747B245C429300106097 /* Colors.swift in Sources */,
 				3303FE872497778800724FAB /* ItemSheet.swift in Sources */,
-				3392C5ED249CF8FE0066D5DD /* File.swift in Sources */,
 				A8751F1624601E5B00B62589 /* LaundrySymbolsView.swift in Sources */,
 				3308ECB1248E0CA8008C7B61 /* DetailPhotoTableViewCell.swift in Sources */,
 				33574790247FCABD008172FB /* CustomTextField.swift in Sources */,

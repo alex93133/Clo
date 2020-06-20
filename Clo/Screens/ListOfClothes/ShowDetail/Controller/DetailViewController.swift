@@ -1,7 +1,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    
     // MARK: - Properties
     private let customView = DetailView(frame: UIScreen.main.bounds)
     private var alertController: UIAlertController!
@@ -12,7 +12,7 @@ class DetailViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -29,22 +29,24 @@ class DetailViewController: UIViewController {
     }
 
     private func setupView() {
-        view                        =  customView
+        view                        = customView
         view().tableView.delegate   = self
         view().tableView.dataSource = self
     }
 
     private func setupNavigationBar() {
         navigationItem.title              = "About"
-        let settingsUIBarButtonItem       = UIBarButtonItem(image: Images.editIcon, style: .plain, target: self, action: #selector(editButtonPressed))
-        settingsUIBarButtonItem.tintColor = Colors.mintColor
+        let settingsUIBarButtonItem       = UIBarButtonItem(image: Images.editIcon,
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(editButtonPressed))
+        settingsUIBarButtonItem.tintColor = Colors.mint
         navigationItem.rightBarButtonItem = settingsUIBarButtonItem
     }
 
     private func createActionSheet() {
-        alertController                            = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        alertController.view.tintColor             = Colors.mintColor
-        alertController.overrideUserInterfaceStyle = .light
+        alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alertController.view.tintColor = Colors.mint
 
         let editAction = UIAlertAction(title: "Edit", style: .default) { [weak self] _ in
             guard let self = self else { return }
@@ -71,7 +73,7 @@ class DetailViewController: UIViewController {
             switch result {
             case .success:
                 self.navigationController?.popViewController(animated: true)
-            case .failure(let error):
+            case let .failure(error):
                 print(error.localizedDescription)
             }
         }
@@ -80,7 +82,7 @@ class DetailViewController: UIViewController {
 
 // MARK: - Actions
 extension DetailViewController {
-
+   
     @objc private func editButtonPressed() {
         present(alertController, animated: true)
     }
@@ -88,12 +90,12 @@ extension DetailViewController {
 
 // MARK: - Delegates
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
-
-    func numberOfSections(in tableView: UITableView) -> Int {
+  
+    func numberOfSections(in _: UITableView) -> Int {
         3
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 2:
             return clothes.symbols.count + 1
@@ -122,13 +124,13 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         case 2:
             if let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.DetailCells.symbolsCellIdentifier) as? DetailSymbolsTableViewCell {
                 if indexPath.row == 0 {
-                    let insets                 = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
+                    let insets = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
                     cell.symbolImageView.image = UIImage(named: clothes.color.rawValue)?.withAlignmentRectInsets(insets)
                     cell.descriptionLabel.text = clothes.color.rawValue
                 } else {
-                    let symbol                 = clothes.symbols[indexPath.row - 1]
+                    let symbol = clothes.symbols[indexPath.row - 1]
                     cell.descriptionLabel.text = symbol.description
-                    cell.symbolImageView.image = symbol.image
+                    cell.symbolImageView.image = symbol.image?.withRenderingMode(.alwaysTemplate)
                 }
                 return cell
             }

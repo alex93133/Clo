@@ -1,7 +1,7 @@
 import UIKit
 
 class ColorTypeCollectionView: UIView {
-
+   
     // MARK: - Properties
     var collectionView: UICollectionView!
 
@@ -27,7 +27,7 @@ class ColorTypeCollectionView: UIView {
         layout.minimumInteritemSpacing              = spacing
 
         collectionView                              = UICollectionView(frame: frame, collectionViewLayout: layout)
-        collectionView.backgroundColor              = Colors.whiteColor
+        collectionView.backgroundColor              = Colors.mainBG
         collectionView.showsVerticalScrollIndicator = false
 
         collectionView.register(ColorTypeCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.clothesColorCellIdentifier)
@@ -37,7 +37,7 @@ class ColorTypeCollectionView: UIView {
 
 // MARK: - Constraints
 extension ColorTypeCollectionView {
-
+    
     private func setupCollectionViewConstraints() {
         addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false

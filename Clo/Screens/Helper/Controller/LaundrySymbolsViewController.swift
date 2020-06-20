@@ -1,7 +1,7 @@
 import UIKit
 
 class LaundrySymbolsViewController: UIViewController {
-
+  
     // MARK: - Properties
     private let customView = LaundrySymbolsView(frame: UIScreen.main.bounds)
     private let symbolSections = SymbolsSections.getSections()
@@ -11,22 +11,31 @@ class LaundrySymbolsViewController: UIViewController {
         setupView()
     }
 
+    override func viewWillAppear(_: Bool) {
+        tabBarController?.tabBar.barTintColor = Colors.additionalBG
+    }
+
+    override func viewDidDisappear(_: Bool) {
+        tabBarController?.tabBar.barTintColor = Colors.mainBG
+    }
+
     // MARK: - Functions
     private func view() -> LaundrySymbolsView {
         return view as! LaundrySymbolsView
     }
 
     private func setupView() {
-        view  =  customView
-        view().collectionView.dataSource = self
-        view().collectionView.delegate = self
-        navigationItem.title = "Information"
+        view                                             = customView
+        view().collectionView.dataSource                 = self
+        view().collectionView.delegate                   = self
+        navigationItem.title                             = "Information"
+        navigationController?.navigationBar.barTintColor = Colors.additionalBG
     }
 }
 
 // MARK: - Delegates
 extension LaundrySymbolsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.symbolCellIdentifier, for: indexPath) as! LaundrySymbolsCollectionViewCell
 
@@ -36,15 +45,15 @@ extension LaundrySymbolsViewController: UICollectionViewDelegate, UICollectionVi
         return cell
     }
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         symbolSections[section].items.count
     }
 
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func numberOfSections(in _: UICollectionView) -> Int {
         symbolSections.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sheet = CustomAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         present(sheet, animated: true)
         sheet.symbol = symbolSections[indexPath.section].items[indexPath.item]
@@ -61,7 +70,7 @@ extension LaundrySymbolsViewController: UICollectionViewDelegate, UICollectionVi
         return UICollectionReusableView()
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, referenceSizeForHeaderInSection _: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 80.0)
     }
 }

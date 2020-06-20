@@ -1,14 +1,14 @@
 import UIKit
 
 class DetailPhotoTableViewCell: UITableViewCell {
-
+   
     // MARK: - Properties
     var photoImageView: UIImageView!
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupPhotoImageView()
-        backgroundColor = Colors.whiteColor
+        backgroundColor = Colors.mainBG
         selectionStyle  = .none
     }
 
@@ -28,7 +28,7 @@ class DetailPhotoTableViewCell: UITableViewCell {
 
 // MARK: - Constraints
 extension DetailPhotoTableViewCell {
-
+   
     private func setupPhotoImageViewConstraints() {
         addSubview(photoImageView)
         photoImageView.translatesAutoresizingMaskIntoConstraints = false

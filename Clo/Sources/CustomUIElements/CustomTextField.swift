@@ -1,29 +1,29 @@
 import UIKit
 
 class CustomTextField: UITextField {
-
-    override init(frame: CGRect) {
+    
+    override init(frame _: CGRect) {
         super.init(frame: .zero)
         setup()
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     convenience init(placeholder: String, addTo view: UIView) {
         self.init(frame: .zero)
-        attributedPlaceholder  = NSAttributedString(string: placeholder,
-                                                    attributes: [NSAttributedString.Key.foregroundColor: Colors.grayTextColor,
-                                                                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Fonts.mediumTextSize, weight: .regular)])
+        attributedPlaceholder = NSAttributedString(string: placeholder,
+                                                   attributes: [NSAttributedString.Key.foregroundColor: Colors.textGray,
+                                                                NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Fonts.mediumTextSize, weight: .regular)])
         layer.borderWidth = 0.5
-        layer.borderColor = Colors.separator.cgColor
+        layer.borderColor = Colors.border.cgColor
         addToView(view)
     }
 
     private func setup() {
-        backgroundColor        = Colors.lightGrayBGColor
-        textColor              = Colors.blackTextColor
+        backgroundColor        = Colors.additionalBG
+        textColor              = Colors.accent
         layer.cornerRadius     = Constants.defaultCornerRadius
         autocapitalizationType = .none
         setLeftPaddingPoints(Constants.textFieldPadding)

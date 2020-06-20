@@ -1,7 +1,7 @@
 import UIKit
 
 class AddEditClothesView: UIView {
-
+    
     // MARK: - Properties
     private let scrollView = UIScrollView()
     private let stackView = UIStackView()
@@ -22,7 +22,7 @@ class AddEditClothesView: UIView {
         setupInputFieldsViewConstraints()
         setupColorTypeCollectionViewConstraints()
         setupNextButton()
-        backgroundColor = Colors.whiteColor
+        backgroundColor = Colors.mainBG
         scrollView.showsVerticalScrollIndicator = false
     }
 
@@ -62,7 +62,7 @@ class AddEditClothesView: UIView {
 
 // MARK: - Actions
 extension AddEditClothesView {
-
+   
     @objc private func changePhotoButtonPressed() {
         changePhotoButtonHandler?()
     }

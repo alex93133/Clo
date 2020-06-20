@@ -1,7 +1,7 @@
 import UIKit
 
 class CustomAlertController: UIAlertController {
-
+    
     // MARK: - Properties
     private var overlayView: UIView!
     var headLabel: UILabel!
@@ -32,7 +32,7 @@ class CustomAlertController: UIAlertController {
 
     // MARK: - View
     private func setupView() {
-        view.tintColor                                 = Colors.mintColor
+        view.tintColor = Colors.mint
         view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([view.heightAnchor.constraint(equalToConstant: 320)])
     }
@@ -47,7 +47,7 @@ class CustomAlertController: UIAlertController {
     private func setupOverlayView() {
         overlayView                     = UIView()
         overlayView.layer.cornerRadius  = Constants.defaultCornerRadius
-        overlayView.backgroundColor     = Colors.whiteColor
+        overlayView.backgroundColor     = Colors.mainBG
         overlayView.layer.shadowColor   = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
         overlayView.layer.shadowOpacity = 1
         overlayView.layer.shadowOffset  = CGSize(width: 0, height: 4)
@@ -59,7 +59,7 @@ class CustomAlertController: UIAlertController {
     private func setupHeadLabel() {
         headLabel               = UILabel()
         headLabel.font          = .systemFont(ofSize: Constants.Fonts.mediumTextSize, weight: .semibold)
-        headLabel.textColor     = Colors.blackTextColor
+        headLabel.textColor     = Colors.accent
         headLabel.textAlignment = .center
         headLabel.numberOfLines = 0
     }
@@ -68,7 +68,7 @@ class CustomAlertController: UIAlertController {
     private func setupMessageLabel() {
         messageLabel               = UILabel()
         messageLabel.font          = .systemFont(ofSize: Constants.Fonts.smallTextSize, weight: .regular)
-        messageLabel.textColor     = Colors.grayTextColor
+        messageLabel.textColor     = Colors.textGray
         messageLabel.textAlignment = .center
         messageLabel.numberOfLines = 0
         messageLabel.sizeToFit()
@@ -95,7 +95,7 @@ class CustomAlertController: UIAlertController {
 
 // MARK: - Constraints
 extension CustomAlertController {
-
+   
     private func setupStackViewConstraints() {
         view.addSubview(stackView)
 

@@ -1,7 +1,7 @@
 import UIKit
 
 class ColorTypeCollectionViewCell: UICollectionViewCell {
-
+    
     // MARK: - Properties
     var colorTypeImageView: UIImageView!
 
@@ -10,7 +10,7 @@ class ColorTypeCollectionViewCell: UICollectionViewCell {
         setupColorTypeImageView(itemSize: frame.height)
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         super.init(frame: .zero)
     }
 
@@ -32,5 +32,4 @@ class ColorTypeCollectionViewCell: UICollectionViewCell {
 
         addSubview(colorTypeImageView)
     }
-
 }

@@ -1,17 +1,17 @@
 import UIKit
 
 class ClothesSymbolsCollectionViewCell: UICollectionViewCell {
-
+    
     // MARK: - Properties
     var laundryImageView: UIImageView!
 
-    override init(frame: CGRect) {
+    override init(frame _: CGRect) {
         super.init(frame: .zero)
         setupView()
         setupLaundryImageView()
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         super.init(frame: .zero)
     }
 
@@ -20,20 +20,21 @@ class ClothesSymbolsCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius  = Constants.defaultCornerRadius
         layer.borderColor   = UIColor.clear.cgColor
         layer.masksToBounds = true
-        backgroundColor     = Colors.lightGrayBGColor
+        backgroundColor     = Colors.additionalBG
     }
 
     // MARK: - LaundryImageView
     private func setupLaundryImageView() {
         laundryImageView             = UIImageView()
-        laundryImageView.contentMode = .scaleAspectFit
+        laundryImageView.contentMode = .scaleAspectFill
+        laundryImageView.tintColor   = Colors.accent
         setupLaundryImageViewConstraints()
     }
 }
 
 // MARK: - Constraints
 extension ClothesSymbolsCollectionViewCell {
-
+  
     private func setupLaundryImageViewConstraints() {
         addSubview(laundryImageView)
         laundryImageView.translatesAutoresizingMaskIntoConstraints = false

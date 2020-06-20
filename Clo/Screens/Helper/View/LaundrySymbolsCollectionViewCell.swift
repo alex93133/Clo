@@ -1,7 +1,7 @@
 import UIKit
 
 class LaundrySymbolsCollectionViewCell: UICollectionViewCell {
-
+   
     // MARK: - Properties
     var laundryImage: UIImageView!
 
@@ -17,31 +17,29 @@ class LaundrySymbolsCollectionViewCell: UICollectionViewCell {
         setupLaundryImage(itemSize: frame.size.height)
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         super.init(frame: .zero)
     }
 
     // MARK: - View
     private func setupView(itemSize: CGFloat) {
-        let view                 = UIView(frame: CGRect(x: 0, y: 0, width: itemSize, height: itemSize))
-        view.center              = CGPoint(x: itemSize / 2, y: itemSize / 2)
-        view.layer.cornerRadius  = Constants.defaultCornerRadius
-        view.backgroundColor     = Colors.whiteColor
+        contentView.center              = CGPoint(x: itemSize / 2, y: itemSize / 2)
+        contentView.layer.cornerRadius  = Constants.defaultCornerRadius
+        contentView.backgroundColor     = Colors.mainBG
 
-        view.layer.shadowColor   = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-        view.layer.shadowOpacity = 1
-        view.layer.shadowOffset  = CGSize(width: 0, height: 4)
-        view.layer.shadowRadius  = Constants.shadowRadius
-
-        addSubview(view)
+        contentView.layer.shadowColor   = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        contentView.layer.shadowOpacity = 1
+        contentView.layer.shadowOffset  = CGSize(width: 0, height: 4)
+        contentView.layer.shadowRadius  = Constants.shadowRadius
     }
 
     // MARK: - LaundryImage
     private func setupLaundryImage(itemSize: CGFloat) {
-        let spacing: CGFloat            = 20
-        laundryImage                    = UIImageView(frame: CGRect(x: 0, y: 0, width: itemSize - spacing, height: itemSize - spacing))
-        laundryImage.center             = CGPoint(x: itemSize / 2, y: itemSize / 2)
-        laundryImage.contentMode        = .scaleAspectFit
+        let spacing: CGFloat     = itemSize / 2
+        laundryImage             = UIImageView(frame: CGRect(x: 0, y: 0, width: itemSize - spacing, height: itemSize - spacing))
+        laundryImage.center      = CGPoint(x: itemSize / 2, y: itemSize / 2)
+        laundryImage.contentMode = .scaleAspectFit
+        laundryImage.tintColor   = Colors.accent
 
         addSubview(laundryImage)
     }

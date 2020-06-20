@@ -2,7 +2,7 @@ import FittedSheets
 import UIKit
 
 class ItemSheet {
-
+   
     // MARK: - Properties
     var itemViewController: ItemViewController!
     var sheet: SheetViewController!
@@ -18,9 +18,8 @@ class ItemSheet {
         let height: CGFloat                = Constants.colorTypeCellHeight * CGFloat(itemViewController.items.count) + safeZoneHeight
         sheet                              = SheetViewController(controller: itemViewController, sizes: [.fixed(height)])
         sheet.extendBackgroundBehindHandle = true
-        sheet.adjustForBottomSafeArea      = true
-        sheet.blurBottomSafeArea           = true
+        sheet.blurBottomSafeArea           = false
         sheet.topCornersRadius             = 15
-        sheet.overlayColor                 = Colors.overlayColor
+        sheet.overlay                      = Colors.overlay
     }
 }

@@ -1,7 +1,7 @@
 import UIKit
 
 class SelectSymbolsViewController: UIViewController {
-
+   
     // MARK: - Properties
     private let customView = SelectSymbolsView(frame: UIScreen.main.bounds)
     var clothesInfo: (type: ClothingType, color: ColorType, info: String?, photo: UIImage)!
@@ -25,7 +25,7 @@ class SelectSymbolsViewController: UIViewController {
         setupNavigationBar()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_: Bool) {
         hideCategoriesWhenAppear()
     }
 
@@ -35,9 +35,9 @@ class SelectSymbolsViewController: UIViewController {
     }
 
     private func setupView() {
-        view  =  customView
+        view                                                = customView
         view().laundrySymbolsView.collectionView.dataSource = self
-        view().laundrySymbolsView.collectionView.delegate = self
+        view().laundrySymbolsView.collectionView.delegate   = self
         view().nextButton.enableButton(isOn: false, minAlphaValue: 0)
         view().nextButtonHandler = { [weak self] in
             guard let self = self else { return }
@@ -47,8 +47,9 @@ class SelectSymbolsViewController: UIViewController {
     }
 
     private func setupNavigationBar() {
-        let title            = editableClothes == nil ? "Add your icons" : "Edit your icons"
+        let title = editableClothes == nil ? "Add your icons" : "Edit your icons"
         navigationItem.title = title
+        navigationController?.navigationBar.barTintColor = Colors.additionalBG
     }
 
     private func createSelectedSymbolsSection() {
@@ -99,7 +100,7 @@ class SelectSymbolsViewController: UIViewController {
         sections.append(section)
         sections.sort { $0.index < $1.index }
 
-        guard let index = sections.firstIndex(where: { $0.category == category }) else {return}
+        guard let index = sections.firstIndex(where: { $0.category == category }) else { return }
         let indexSet = IndexSet(arrayLiteral: index)
         view().laundrySymbolsView.collectionView.insertSections(indexSet)
     }
@@ -129,7 +130,7 @@ class SelectSymbolsViewController: UIViewController {
                 switch result {
                 case .success:
                     self.parent?.dismiss(animated: true)
-                case .failure(let error):
+                case let .failure(error):
                     print(error.localizedDescription)
                 }
             }
@@ -138,11 +139,11 @@ class SelectSymbolsViewController: UIViewController {
 
     private func updateClothes() {
         guard var editableClothes = editableClothes else { return }
-        editableClothes.photo   = clothesInfo.photo
-        editableClothes.type    = clothesInfo.type
-        editableClothes.color   = clothesInfo.color
-        editableClothes.info    = clothesInfo.info
-        editableClothes.symbols = selectedSymbols
+        editableClothes.photo     = clothesInfo.photo
+        editableClothes.type      = clothesInfo.type
+        editableClothes.color     = clothesInfo.color
+        editableClothes.info      = clothesInfo.info
+        editableClothes.symbols   = selectedSymbols
 
         CoreDataManager.shared.update(editableClothes: editableClothes) { [weak self] result in
             guard let self = self else { return }
@@ -151,7 +152,7 @@ class SelectSymbolsViewController: UIViewController {
                 switch result {
                 case .success:
                     self.navigationController?.popToRootViewController(animated: true)
-                case .failure(let error):
+                case let .failure(error):
                     print(error.localizedDescription)
                 }
             }
@@ -161,7 +162,7 @@ class SelectSymbolsViewController: UIViewController {
 
 // MARK: - Delegates
 extension SelectSymbolsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
+   
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
 
@@ -170,24 +171,24 @@ extension SelectSymbolsViewController: UICollectionViewDelegate, UICollectionVie
             cell.laundryImage.image = section.items[indexPath.item].image?.withRenderingMode(.alwaysTemplate)
 
             if section.title == selectionSectionTitle {
-                cell.laundryImage.tintColor = Colors.mintColor
+                cell.laundryImage.tintColor = Colors.mint
             } else {
-                cell.laundryImage.tintColor = .black
+                cell.laundryImage.tintColor = Colors.accent
             }
             return cell
         }
         return UICollectionViewCell()
     }
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         sections[section].items.count
     }
 
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func numberOfSections(in _: UICollectionView) -> Int {
         sections.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section != 0 {
             selectItem(indexPath: indexPath)
         } else {
@@ -206,7 +207,7 @@ extension SelectSymbolsViewController: UICollectionViewDelegate, UICollectionVie
         return UICollectionReusableView()
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, referenceSizeForHeaderInSection _: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 32.0)
     }
 }

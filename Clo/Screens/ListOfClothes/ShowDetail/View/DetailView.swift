@@ -1,14 +1,14 @@
 import UIKit
 
 class DetailView: UIView {
-
+    
     // MARK: - Properties
     var tableView: UITableView!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupTableView()
-        backgroundColor = Colors.whiteColor
+        backgroundColor = Colors.mainBG
     }
 
     required init?(coder: NSCoder) {
@@ -19,7 +19,7 @@ class DetailView: UIView {
     private func setupTableView() {
         tableView                      = UITableView()
         tableView.tableFooterView      = UIView()
-        tableView.backgroundColor      = Colors.whiteColor
+        tableView.backgroundColor      = Colors.mainBG
         tableView.separatorColor       = .clear
         tableView.alwaysBounceVertical = false
         tableView.rowHeight            = UITableView.automaticDimension
@@ -34,7 +34,7 @@ class DetailView: UIView {
 
 // MARK: - Constraints
 extension DetailView {
-
+   
     private func setupTableViewConstraints() {
         addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false

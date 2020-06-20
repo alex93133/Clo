@@ -1,7 +1,7 @@
 import UIKit
 
 class DetailTypeAndInfoTableViewCell: UITableViewCell {
-
+    
     // MARK: - Properties
     private var stackView: UIStackView!
     var typeLabel: UILabel!
@@ -12,7 +12,7 @@ class DetailTypeAndInfoTableViewCell: UITableViewCell {
         setupTypeLabel()
         setupInfoLabel()
         setupStackView()
-        backgroundColor = Colors.whiteColor
+        backgroundColor = Colors.mainBG
         selectionStyle  = .none
     }
 
@@ -23,14 +23,14 @@ class DetailTypeAndInfoTableViewCell: UITableViewCell {
     // MARK: - TypeLabel
     private func setupTypeLabel() {
         typeLabel           = UILabel(frame: CGRect(x: 0, y: 0, width: 312, height: 194))
-        typeLabel.textColor = Colors.blackTextColor
+        typeLabel.textColor = Colors.accent
         typeLabel.font      = .systemFont(ofSize: Constants.Fonts.clothesTypeTextSize, weight: .semibold)
     }
 
     // MARK: - InfoLabel
     private func setupInfoLabel() {
         infoLabel           = UILabel(frame: CGRect(x: 0, y: 0, width: 312, height: 194))
-        infoLabel.textColor = Colors.grayTextColor
+        infoLabel.textColor = Colors.textGray
         infoLabel.font      = .systemFont(ofSize: Constants.Fonts.mediumTextSize, weight: .regular)
     }
 
@@ -50,7 +50,7 @@ class DetailTypeAndInfoTableViewCell: UITableViewCell {
 
 // MARK: - Constraints
 extension DetailTypeAndInfoTableViewCell {
-
+    
     private func setupStackViewConstraints() {
         addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
