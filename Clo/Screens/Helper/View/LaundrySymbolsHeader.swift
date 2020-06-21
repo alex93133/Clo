@@ -1,7 +1,7 @@
 import UIKit
 
 class LaundrySymbolsHeader: UICollectionReusableView {
-   
+
     // MARK: - Properties
     var headerLabel: UILabel!
 
@@ -22,17 +22,16 @@ class LaundrySymbolsHeader: UICollectionReusableView {
         headerLabel.sizeToFit()
         setupHeaderLabelConstraints()
     }
-}
 
-// MARK: - Constraints
-extension LaundrySymbolsHeader {
-    
+    // MARK: - Constraints
     private func setupHeaderLabelConstraints() {
         addSubview(headerLabel)
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([headerLabel.heightAnchor.constraint(equalToConstant: frame.height),
-                                     headerLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-                                     headerLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
-                                     headerLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: 16)])
+        NSLayoutConstraint.activate([
+            headerLabel.heightAnchor.constraint(equalToConstant: frame.height),
+            headerLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            headerLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
+            headerLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: 16)
+        ])
     }
 }

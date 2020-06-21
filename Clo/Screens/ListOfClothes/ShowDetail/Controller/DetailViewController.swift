@@ -1,7 +1,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    
+
     // MARK: - Properties
     private let customView = DetailView(frame: UIScreen.main.bounds)
     private var alertController: UIAlertController!
@@ -18,6 +18,7 @@ class DetailViewController: UIViewController {
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
+        super.viewDidLoad()
         setupView()
         setupNavigationBar()
         createActionSheet()
@@ -73,24 +74,22 @@ class DetailViewController: UIViewController {
             switch result {
             case .success:
                 self.navigationController?.popViewController(animated: true)
+
             case let .failure(error):
                 print(error.localizedDescription)
             }
         }
     }
-}
 
-// MARK: - Actions
-extension DetailViewController {
-   
-    @objc private func editButtonPressed() {
+    // MARK: - Actions
+    @objc
+    private func editButtonPressed() {
         present(alertController, animated: true)
     }
 }
 
 // MARK: - Delegates
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
-  
     func numberOfSections(in _: UITableView) -> Int {
         3
     }
@@ -99,6 +98,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         switch section {
         case 2:
             return clothes.symbols.count + 1
+
         default:
             return 1
         }
@@ -111,6 +111,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.photoImageView.image = clothes.photo
                 return cell
             }
+
         case 1:
             if let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.DetailCells.typeWithInfoCellIdentifier) as? DetailTypeAndInfoTableViewCell {
                 cell.typeLabel.text = clothes.type.rawValue
@@ -121,6 +122,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
                 }
                 return cell
             }
+
         case 2:
             if let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.DetailCells.symbolsCellIdentifier) as? DetailSymbolsTableViewCell {
                 if indexPath.row == 0 {
@@ -134,7 +136,9 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
                 }
                 return cell
             }
-        default: fatalError()
+
+        default:
+            fatalError("There are no cell")
         }
         return UITableViewCell()
     }

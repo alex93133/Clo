@@ -6,7 +6,7 @@ protocol GalleryViewControllerDelegate: class {
 }
 
 class GalleryViewController: UIViewController, CropViewControllerDelegate {
-   
+
     // MARK: - Properties
     private let customView = GalleryView(frame: UIScreen.main.bounds)
     private var imagePicker: UIImagePickerController!
@@ -18,6 +18,7 @@ class GalleryViewController: UIViewController, CropViewControllerDelegate {
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
+        super.viewDidLoad()
         setupView()
         setupImagePicker()
         getPhotos()
@@ -72,21 +73,21 @@ class GalleryViewController: UIViewController, CropViewControllerDelegate {
 
 // MARK: - Delegates
 extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-   
     func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
         allPhotos.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let photoCell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.photoCellIdentifier, for: indexPath) as? GalleryCollectionViewCell
-        else { return UICollectionViewCell() }
+            else { return UICollectionViewCell() }
 
         guard let cameraCell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.cameraInputCellIdentifier, for: indexPath) as? CameraCollectionViewCell
-        else { return UICollectionViewCell() }
-        
+            else { return UICollectionViewCell() }
+
         switch indexPath.item {
         case 0:
             return cameraCell
+
         default:
             photoCell.photoImage.image = allPhotos[indexPath.item - 1]
             return photoCell
@@ -97,6 +98,7 @@ extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataS
         switch indexPath.item {
         case 0:
             present(imagePicker, animated: true)
+
         default:
             photoLibraryManager.getOriginalPhotoFromLibrary(index: indexPath.item - 1) { [weak self] image in
                 guard let self = self else { return }
@@ -107,7 +109,6 @@ extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataS
 }
 
 extension GalleryViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
- 
     func setupImagePicker() {
         imagePicker            = UIImagePickerController()
         imagePicker.delegate   = self

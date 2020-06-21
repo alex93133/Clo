@@ -2,23 +2,23 @@ import CoreData
 import UIKit
 
 class CoreDataManager {
-    
+
     // MARK: - Properties
     weak var appDelegate = (UIApplication.shared.delegate as! AppDelegate)
     var context: NSManagedObjectContext {
         return appDelegate!.persistentContainer.viewContext
     }
-    
+
     static let shared = CoreDataManager()
     private init() {}
-    
+
     // MARK: - Fetch
     func fetch(handler: @escaping (Result<Error>) -> Void) -> [Clothes] {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ClothesInfo")
         request.returnsObjectsAsFaults = false
-        
+
         var allClothes = [Clothes]()
-        
+
         do {
             let result = try context.fetch(request)
             for data in result as! [NSManagedObject] {
@@ -29,7 +29,7 @@ class CoreDataManager {
                     let photoData   = data.value(forKey: "photo") as? Data,
                     let symbolsIDs  = data.value(forKey: "symbolsIDs") as? [Int]
                     else { return allClothes }
-                
+
                 let clothes = Clothes(uID: uID,
                                       typeString: typeString,
                                       colorString: colorString,
@@ -44,15 +44,15 @@ class CoreDataManager {
         handler(.success)
         return allClothes.reversed()
     }
-    
+
     // MARK: - Save
     func saveData(clothes: Clothes, handler: @escaping (Result<Error>) -> Void) {
         guard let entity = NSEntityDescription.entity(forEntityName: "ClothesInfo", in: context) else { return }
-        
+
         guard let photoData = clothes.photo.pngData() else { return }
         let arrayOfID       = clothes.symbols.map { $0.id }
         let newClothes      = NSManagedObject(entity: entity, insertInto: context)
-        
+
         newClothes.setValue(clothes.uID, forKey: "uID")
         newClothes.setValue(clothes.type.rawValue, forKey: "type")
         newClothes.setValue(clothes.color.rawValue, forKey: "color")
@@ -61,11 +61,11 @@ class CoreDataManager {
         newClothes.setValue(arrayOfID, forKey: "symbolsIDs")
         handler(appDelegate!.saveContext())
     }
-    
-    //MARK: - Delete
+
+    // MARK: - Delete
     func delete(clothes: Clothes, handler: @escaping (Result<Error>) -> Void) {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ClothesInfo")
-        
+
         do {
             let result = try context.fetch(request)
             for object in result as! [NSManagedObject] {
@@ -79,11 +79,10 @@ class CoreDataManager {
         }
         handler(appDelegate!.saveContext())
     }
-    
+
     // MARK: - Update
     func update(editableClothes: Clothes, handler: @escaping (Result<Error>) -> Void) {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ClothesInfo")
-        
         do {
             let result = try context.fetch(request)
             for object in result as! [NSManagedObject] {

@@ -1,7 +1,7 @@
 import UIKit
 
-class CustomFieldButton: UIButton {
-    
+class CloFieldButton: UIButton {
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -31,9 +31,11 @@ class CustomFieldButton: UIButton {
     private func addToView(_ view: UIView) {
         view.addSubview(self)
         translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
-                                     trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
-                                     heightAnchor.constraint(equalToConstant: 44)])
+        NSLayoutConstraint.activate([
+            leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
+            trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
+            heightAnchor.constraint(equalToConstant: 44)
+        ])
     }
 
     func createAttributes(text: String, textColor: UIColor) -> NSMutableAttributedString {

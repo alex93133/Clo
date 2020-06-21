@@ -1,7 +1,7 @@
 import UIKit
 
 class ItemView: UIView {
-    
+
     // MARK: - Properties
     var tableView: UITableView!
 
@@ -26,17 +26,16 @@ class ItemView: UIView {
 
         setupTableViewConstraints()
     }
-}
 
-// MARK: - Constraints
-extension ItemView {
- 
+    // MARK: - Constraints
     private func setupTableViewConstraints() {
         addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
-                                     tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-                                     tableView.topAnchor.constraint(equalTo: topAnchor),
-                                     tableView.bottomAnchor.constraint(equalTo: bottomAnchor)])
+        NSLayoutConstraint.activate([
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.topAnchor.constraint(equalTo: topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
     }
 }

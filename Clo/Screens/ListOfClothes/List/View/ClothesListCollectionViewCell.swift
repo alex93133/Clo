@@ -1,7 +1,7 @@
 import UIKit
 
 class ClothesListCollectionViewCell: UICollectionViewCell {
-    
+
     // MARK: - Properties
     var clothesImageView: UIImageView!
     var collectionView: UICollectionView!
@@ -12,7 +12,7 @@ class ClothesListCollectionViewCell: UICollectionViewCell {
     }
 
     var color: ColorType!
-    var itemHandler: ((CustomAlertController) -> Void)!
+    var itemHandler: ((CloAlertController) -> Void)!
 
     override var isHighlighted: Bool {
         didSet {
@@ -77,26 +77,27 @@ class ClothesListCollectionViewCell: UICollectionViewCell {
 
         setupCollectionViewConstraints()
     }
-}
 
-// MARK: - Constraints
-extension ClothesListCollectionViewCell {
-  
+    // MARK: - Constraints
     private func setupClothesImageConstraints() {
         contentView.addSubview(clothesImageView)
         clothesImageView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([clothesImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-                                     clothesImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-                                     clothesImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-                                     clothesImageView.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 9 / 16)])
+        NSLayoutConstraint.activate([
+            clothesImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            clothesImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            clothesImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            clothesImageView.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 9 / 16)
+        ])
     }
 
     private func setupCollectionViewConstraints() {
         addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-                                     collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-                                     collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
-                                     collectionView.heightAnchor.constraint(equalToConstant: 70)])
+        NSLayoutConstraint.activate([
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            collectionView.heightAnchor.constraint(equalToConstant: 70)
+        ])
     }
 }

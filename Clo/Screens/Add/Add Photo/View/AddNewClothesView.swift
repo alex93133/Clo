@@ -8,7 +8,6 @@ protocol AddNewClothesViewDelegate: class {
 
 class AddNewClothesView: UIView {
     // MARK: - Properties
-
     weak var delegate: AddNewClothesViewDelegate!
     var addPhotoButton: UIButton!
     var blurEffectView: UIVisualEffectView!
@@ -25,9 +24,8 @@ class AddNewClothesView: UIView {
     }
 
     // MARK: - ApplyBlurEffect
-
     func applyBlurEffect(_ show: Bool) {
-        UIView.animate(withDuration: Constants.animationTimeInterval) { [unowned self] in
+        UIView.animate(withDuration: Constants.animationTimeInterval) { [weak self] in
             if show {
                 self.blurEffectView.alpha = 1
             } else {
@@ -37,7 +35,6 @@ class AddNewClothesView: UIView {
     }
 
     // MARK: - BlurEffectView
-
     private func setupBlurEffectView() {
         let blurEffect = UIBlurEffect(style: .light)
         blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -49,7 +46,6 @@ class AddNewClothesView: UIView {
     }
 
     // MARK: - AddPhotoNextButton
-
     private func setupAddPhotoNextButton() {
         addPhotoButton = UIButton()
         addPhotoButton.backgroundColor = Colors.whiteBGColor
@@ -60,20 +56,15 @@ class AddNewClothesView: UIView {
         addPhotoButton.addTarget(self, action: #selector(addPhotoButtonPressed), for: .touchUpInside)
         setupAddPhotoButtonConstraints()
     }
-}
 
-// MARK: - Actions
-
-extension AddNewClothesView {
-    @objc func addPhotoButtonPressed() {
+    // MARK: - Actions
+    @objc
+    func addPhotoButtonPressed() {
         delegate.addPhotoButtonPressed()
     }
-}
 
-// MARK: - Constraints
-
-extension AddNewClothesView {
-    fileprivate func setupAddPhotoButtonConstraints() {
+    // MARK: - Constraints
+    private func setupAddPhotoButtonConstraints() {
         addSubview(addPhotoButton)
 
         addPhotoButton.translatesAutoresizingMaskIntoConstraints = false

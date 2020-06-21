@@ -1,7 +1,7 @@
 import UIKit
 
 class DetailView: UIView {
-    
+
     // MARK: - Properties
     var tableView: UITableView!
 
@@ -30,17 +30,16 @@ class DetailView: UIView {
 
         setupTableViewConstraints()
     }
-}
 
-// MARK: - Constraints
-extension DetailView {
-   
+    // MARK: - Constraints
     private func setupTableViewConstraints() {
         addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
-                                     tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-                                     tableView.topAnchor.constraint(equalTo: topAnchor),
-                                     tableView.bottomAnchor.constraint(equalTo: bottomAnchor)])
+        NSLayoutConstraint.activate([
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.topAnchor.constraint(equalTo: topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
     }
 }

@@ -6,10 +6,10 @@ protocol ClothesListViewControllerDelegate: class {
 }
 
 class ClothesListViewController: UIViewController {
-    
+
     // MARK: - Properties
     private let customView = ClothesListView(frame: UIScreen.main.bounds)
-    private var itemHandler: ((CustomAlertController) -> Void)!
+    private var itemHandler: ((CloAlertController) -> Void)!
     private var currentCategory: ClothingType!
     weak var delegate: ClothesListViewControllerDelegate!
     private var clothes: [Clothes]!
@@ -26,16 +26,19 @@ class ClothesListViewController: UIViewController {
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
+        super.viewDidLoad()
         setupView()
         setupNavigationBar()
     }
 
     override func viewWillAppear(_: Bool) {
+        super.viewWillAppear(true)
         clothes = CoreDataManager.shared.fetch { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success:
                 self.view().collectionView.reloadData()
+
             case let .failure(error):
                 print(error.localizedDescription)
             }
@@ -87,21 +90,18 @@ class ClothesListViewController: UIViewController {
         typeSheet.itemViewController.delegate     = self
         present(typeSheet.sheet, animated: false)
     }
-}
 
-// MARK: - Actions
-extension ClothesListViewController {
-   
-    @objc func sortItemPressed() {
+    // MARK: - Actions
+    @objc
+    func sortItemPressed() {
         presentTypeSheet()
     }
 }
 
 // MARK: - Delegates
 extension ClothesListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
     func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
-        if visibleClothes.count == 0, clothes.count == 0 {
+        if visibleClothes.isEmpty, clothes.isEmpty {
             return 1
         } else {
             return visibleClothes.count
@@ -109,7 +109,7 @@ extension ClothesListViewController: UICollectionViewDelegate, UICollectionViewD
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if clothes.count == 0 {
+        if clothes.isEmpty {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.addNewItemCellIdentifier, for: indexPath) as? AddNewItemCollectionViewCell {
                 return cell
             }
@@ -127,7 +127,7 @@ extension ClothesListViewController: UICollectionViewDelegate, UICollectionViewD
     }
 
     func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if visibleClothes.count == 0 {
+        if visibleClothes.isEmpty {
             delegate.presentPhotoSheet()
         } else {
             let selectedClothes = visibleClothes[indexPath.item]
@@ -137,7 +137,6 @@ extension ClothesListViewController: UICollectionViewDelegate, UICollectionViewD
 }
 
 extension ClothesListViewController: ItemViewControllerDelegate {
-    
     func applySelectedItem(with item: String) {
         guard let category = ClothingType(rawValue: item) else { return }
         currentCategory = category

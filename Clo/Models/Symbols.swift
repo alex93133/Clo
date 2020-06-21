@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 struct Symbols: Codable {
     let symbols: [Symbol]
@@ -15,15 +15,5 @@ struct Symbols: Codable {
             }
         }
         return nil
-    }
-}
-
-struct Symbol: Codable {
-    let id: Int
-    let category: Categories
-    let description: String
-    let imageName: String
-    var image: UIImage? {
-        return UIImage(named: imageName)?.withRenderingMode(.alwaysTemplate)
     }
 }

@@ -2,7 +2,7 @@ import Photos
 import UIKit
 
 class PhotoLibraryManager {
-    
+
     // MARK: - Properties
     private let manager = PHImageManager.default()
     private var requestOptions = PHImageRequestOptions()
@@ -67,8 +67,8 @@ class PhotoLibraryManager {
         DispatchQueue.global(qos: .background).async {
             let results: PHFetchResult = PHAsset.fetchAssets(with: .image, options: self.fetchOptions)
             guard results.count > 0 else { return }
-            for i in 0 ..< results.count {
-                let asset = results.object(at: i)
+            for index in 0 ..< results.count {
+                let asset = results.object(at: index)
                 let size = CGSize(width: 300, height: 300)
                 self.manager.requestImage(for: asset, targetSize: size, contentMode: .aspectFill, options: self.requestOptions) { image, _ in
                     if let image = image {
@@ -89,10 +89,9 @@ class PhotoLibraryManager {
         manager.requestImage(for: asset,
                              targetSize: size,
                              contentMode: .aspectFit,
-                             options: requestOptions,
-                             resultHandler: { image, _ in
-                                 guard let image = image else { return }
-                                 completion(image)
-        })
+                             options: requestOptions) { image, _ in
+                                guard let image = image else { return }
+                                completion(image)
+        }
     }
 }

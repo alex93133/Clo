@@ -11,10 +11,11 @@ enum Colors {
         switch traitCollection.userInterfaceStyle {
         case .unspecified, .light:
             return .white
+
         case .dark:
             return UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
         @unknown default:
-            fatalError()
+            fatalError("New color mode is coming")
         }
     }
 
@@ -22,10 +23,11 @@ enum Colors {
         switch traitCollection.userInterfaceStyle {
         case .unspecified, .light:
             return UIColor(red: 0.969, green: 0.969, blue: 0.969, alpha: 1)
+
         case .dark:
             return UIColor(red: 0.247, green: 0.247, blue: 0.247, alpha: 1)
         @unknown default:
-            fatalError()
+            fatalError("New color mode is coming")
         }
     }
 
@@ -33,10 +35,11 @@ enum Colors {
         switch traitCollection.userInterfaceStyle {
         case .unspecified, .light:
             return UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
+
         case .dark:
             return .white
         @unknown default:
-            fatalError()
+            fatalError("New color mode is coming")
         }
     }
 }

@@ -2,7 +2,7 @@ import FittedSheets
 import UIKit
 
 class ItemSheet {
-   
+
     // MARK: - Properties
     var itemViewController: ItemViewController!
     var sheet: SheetViewController!

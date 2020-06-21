@@ -1,7 +1,7 @@
 import UIKit
 
 class DetailTypeAndInfoTableViewCell: UITableViewCell {
-    
+
     // MARK: - Properties
     private var stackView: UIStackView!
     var typeLabel: UILabel!
@@ -46,17 +46,16 @@ class DetailTypeAndInfoTableViewCell: UITableViewCell {
         stackView.addArrangedSubview(infoLabel)
         setupStackViewConstraints()
     }
-}
 
-// MARK: - Constraints
-extension DetailTypeAndInfoTableViewCell {
-    
+    // MARK: - Constraints
     private func setupStackViewConstraints() {
         addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([stackView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-                                     stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
-                                     stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-                                     stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)])
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+        ])
     }
 }

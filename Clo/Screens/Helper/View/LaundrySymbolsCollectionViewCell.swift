@@ -1,7 +1,7 @@
 import UIKit
 
 class LaundrySymbolsCollectionViewCell: UICollectionViewCell {
-   
+
     // MARK: - Properties
     var laundryImage: UIImageView!
 

@@ -1,7 +1,7 @@
 import UIKit
 
 class AddNewItemCollectionViewCell: UICollectionViewCell {
-   
+
     // MARK: - Properties
     var addIconImageView: UIImageView!
     override var isHighlighted: Bool {
@@ -33,17 +33,16 @@ class AddNewItemCollectionViewCell: UICollectionViewCell {
         addIconImageView.image       = Images.addNewIcon
         setupAddIconImageViewConstraints()
     }
-}
 
-// MARK: - Constraints
-extension AddNewItemCollectionViewCell {
- 
+    // MARK: - Constraints
     private func setupAddIconImageViewConstraints() {
         addSubview(addIconImageView)
         addIconImageView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([addIconImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-                                     addIconImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-                                     addIconImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-                                     addIconImageView.heightAnchor.constraint(equalTo: widthAnchor, multiplier: 9 / 16)])
+        NSLayoutConstraint.activate([
+            addIconImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            addIconImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            addIconImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            addIconImageView.heightAnchor.constraint(equalTo: widthAnchor, multiplier: 9 / 16)
+        ])
     }
 }

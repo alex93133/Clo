@@ -4,7 +4,6 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared.enable                       = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside   = true
@@ -20,11 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Removing back image text for 2 states
         UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: .normal)
         UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: UIControl.State.highlighted)
-//        Disable transparent
+        //        Disable transparent
         UINavigationBar.appearance().isTranslucent                    = false
         // Font and text color for title
-        UINavigationBar.appearance().titleTextAttributes              = [NSAttributedString.Key.foregroundColor: Colors.accent,
-                                                            NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Fonts.navigationBarItemTextSize, weight: .bold)]
+        UINavigationBar.appearance().titleTextAttributes              = [
+            NSAttributedString.Key.foregroundColor: Colors.accent,
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Fonts.navigationBarItemTextSize, weight: .bold)
+        ]
         UINavigationBar.appearance().barTintColor                     = Colors.mainBG
         return true
     }
@@ -32,11 +33,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentCloudKitContainer = {
         let container = NSPersistentCloudKitContainer(name: "Clothes")
-        container.loadPersistentStores(completionHandler: { _, error in
+        container.loadPersistentStores { _, error in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
-        })
+        }
         return container
     }()
 

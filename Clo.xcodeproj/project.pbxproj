@@ -24,10 +24,12 @@
 		3308ECB7248E0CD4008C7B61 /* DetailSymbolsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308ECB6248E0CD4008C7B61 /* DetailSymbolsTableViewCell.swift */; };
 		33148695247FF279007BAA43 /* InputFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33148694247FF279007BAA43 /* InputFieldsView.swift */; };
 		3315B134248118A400BA354B /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3315B133248118A400BA354B /* ItemViewController.swift */; };
+		33270511249F684500E50B98 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33270510249F684500E50B98 /* Symbol.swift */; };
+		33270513249F688E00E50B98 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33270512249F688E00E50B98 /* ColorType.swift */; };
 		33574789247FBB89008172FB /* ColorTypeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33574788247FBB89008172FB /* ColorTypeCollectionView.swift */; };
 		3357478B247FBC03008172FB /* ColorTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357478A247FBC03008172FB /* ColorTypeCollectionViewCell.swift */; };
-		3357478E247FC77D008172FB /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357478D247FC77D008172FB /* NextButton.swift */; };
-		33574790247FCABD008172FB /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357478F247FCABD008172FB /* CustomTextField.swift */; };
+		3357478E247FC77D008172FB /* CloNextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357478D247FC77D008172FB /* CloNextButton.swift */; };
+		33574790247FCABD008172FB /* CloTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357478F247FCABD008172FB /* CloTextField.swift */; };
 		33574792247FE40C008172FB /* ClothingColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33574791247FE40C008172FB /* ClothingColor.swift */; };
 		3367E76724811B3C00459AA4 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3367E76624811B3C00459AA4 /* ItemView.swift */; };
 		3367E76924811CA600459AA4 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3367E76824811CA600459AA4 /* ItemTableViewCell.swift */; };
@@ -35,7 +37,7 @@
 		338F227E248A703E001C40D1 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F227D248A703E001C40D1 /* CoreDataManager.swift */; };
 		338F2280248A70A7001C40D1 /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F227F248A70A7001C40D1 /* Clothes.swift */; };
 		338F2282248A8E78001C40D1 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 338F2281248A8E78001C40D1 /* CloudKit.framework */; };
-		3392C5EB249CEF290066D5DD /* CustomFieldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3392C5EA249CEF290066D5DD /* CustomFieldButton.swift */; };
+		3392C5EB249CEF290066D5DD /* CloFieldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3392C5EA249CEF290066D5DD /* CloFieldButton.swift */; };
 		3396FCC9247BFEA800D8B759 /* ClothesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3396FCC8247BFEA800D8B759 /* ClothesListView.swift */; };
 		33A8432E2482BF620083339D /* SelectSymbolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8432D2482BF620083339D /* SelectSymbolsViewController.swift */; };
 		33A843302482BF7B0083339D /* SelectSymbolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8432F2482BF7B0083339D /* SelectSymbolsView.swift */; };
@@ -44,7 +46,7 @@
 		33E7DCF2247F92E800BD3F41 /* AddEditClothesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCF1247F92E800BD3F41 /* AddEditClothesView.swift */; };
 		33E7DCFA247FB1D900BD3F41 /* ClothingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCF9247FB1D900BD3F41 /* ClothingType.swift */; };
 		33E95F212493C66E00102199 /* GallerySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E95F202493C66E00102199 /* GallerySheet.swift */; };
-		33F1A4E1248F94B800857FE9 /* CustomAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F1A4E0248F94B800857FE9 /* CustomAlertController.swift */; };
+		33F1A4E1248F94B800857FE9 /* CloAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F1A4E0248F94B800857FE9 /* CloAlertController.swift */; };
 		A807DB972459A317006BE209 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = A807DB962459A317006BE209 /* .swiftlint.yml */; };
 		A8204D5B2463183B005E30A0 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8204D5A2463183B005E30A0 /* GalleryViewController.swift */; };
 		A8204D5D24631881005E30A0 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8204D5C24631880005E30A0 /* GalleryView.swift */; };
@@ -91,10 +93,12 @@
 		3308ECB6248E0CD4008C7B61 /* DetailSymbolsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSymbolsTableViewCell.swift; sourceTree = "<group>"; };
 		33148694247FF279007BAA43 /* InputFieldsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldsView.swift; sourceTree = "<group>"; };
 		3315B133248118A400BA354B /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		33270510249F684500E50B98 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
+		33270512249F688E00E50B98 /* ColorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorType.swift; sourceTree = "<group>"; };
 		33574788247FBB89008172FB /* ColorTypeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTypeCollectionView.swift; sourceTree = "<group>"; };
 		3357478A247FBC03008172FB /* ColorTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTypeCollectionViewCell.swift; sourceTree = "<group>"; };
-		3357478D247FC77D008172FB /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
-		3357478F247FCABD008172FB /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		3357478D247FC77D008172FB /* CloNextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloNextButton.swift; sourceTree = "<group>"; };
+		3357478F247FCABD008172FB /* CloTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloTextField.swift; sourceTree = "<group>"; };
 		33574791247FE40C008172FB /* ClothingColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingColor.swift; sourceTree = "<group>"; };
 		3367E76624811B3C00459AA4 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		3367E76824811CA600459AA4 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -102,7 +106,7 @@
 		338F227D248A703E001C40D1 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		338F227F248A70A7001C40D1 /* Clothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
 		338F2281248A8E78001C40D1 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		3392C5EA249CEF290066D5DD /* CustomFieldButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFieldButton.swift; sourceTree = "<group>"; };
+		3392C5EA249CEF290066D5DD /* CloFieldButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloFieldButton.swift; sourceTree = "<group>"; };
 		3396FCC8247BFEA800D8B759 /* ClothesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesListView.swift; sourceTree = "<group>"; };
 		33A8432D2482BF620083339D /* SelectSymbolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSymbolsViewController.swift; sourceTree = "<group>"; };
 		33A8432F2482BF7B0083339D /* SelectSymbolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSymbolsView.swift; sourceTree = "<group>"; };
@@ -111,7 +115,7 @@
 		33E7DCF1247F92E800BD3F41 /* AddEditClothesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditClothesView.swift; sourceTree = "<group>"; };
 		33E7DCF9247FB1D900BD3F41 /* ClothingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingType.swift; sourceTree = "<group>"; };
 		33E95F202493C66E00102199 /* GallerySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallerySheet.swift; sourceTree = "<group>"; };
-		33F1A4E0248F94B800857FE9 /* CustomAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertController.swift; sourceTree = "<group>"; };
+		33F1A4E0248F94B800857FE9 /* CloAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloAlertController.swift; sourceTree = "<group>"; };
 		7F4903D218EF839C0FC15428 /* Pods-Clo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clo.debug.xcconfig"; path = "Target Support Files/Pods-Clo/Pods-Clo.debug.xcconfig"; sourceTree = "<group>"; };
 		A807DB962459A317006BE209 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		A8204D5A2463183B005E30A0 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
@@ -204,10 +208,10 @@
 		3357478C247FC74A008172FB /* CustomUIElements */ = {
 			isa = PBXGroup;
 			children = (
-				3357478D247FC77D008172FB /* NextButton.swift */,
-				3357478F247FCABD008172FB /* CustomTextField.swift */,
-				33F1A4E0248F94B800857FE9 /* CustomAlertController.swift */,
-				3392C5EA249CEF290066D5DD /* CustomFieldButton.swift */,
+				3357478D247FC77D008172FB /* CloNextButton.swift */,
+				3357478F247FCABD008172FB /* CloTextField.swift */,
+				33F1A4E0248F94B800857FE9 /* CloAlertController.swift */,
+				3392C5EA249CEF290066D5DD /* CloFieldButton.swift */,
 			);
 			path = CustomUIElements;
 			sourceTree = "<group>";
@@ -355,11 +359,13 @@
 			isa = PBXGroup;
 			children = (
 				A8C9034724602EE9004294D9 /* Symbols.swift */,
+				33270510249F684500E50B98 /* Symbol.swift */,
 				A8C9034924602FE3004294D9 /* Categories.swift */,
 				A886AFCE24606301007FAEF2 /* SymbolsSections.swift */,
 				338F227F248A70A7001C40D1 /* Clothes.swift */,
 				33E7DCF9247FB1D900BD3F41 /* ClothingType.swift */,
 				33574791247FE40C008172FB /* ClothingColor.swift */,
+				33270512249F688E00E50B98 /* ColorType.swift */,
 				3308ECA6248D5C2F008C7B61 /* Result.swift */,
 			);
 			path = Models;
@@ -652,7 +658,8 @@
 				3396FCC9247BFEA800D8B759 /* ClothesListView.swift in Sources */,
 				3367E76724811B3C00459AA4 /* ItemView.swift in Sources */,
 				A84ADDFB245F5143008F3425 /* LaundrySymbolsCollectionViewCell.swift in Sources */,
-				3357478E247FC77D008172FB /* NextButton.swift in Sources */,
+				33270513249F688E00E50B98 /* ColorType.swift in Sources */,
+				3357478E247FC77D008172FB /* CloNextButton.swift in Sources */,
 				33041FA1247CF64300721E63 /* ClothesSymbolsCollectionViewCell.swift in Sources */,
 				338F227E248A703E001C40D1 /* CoreDataManager.swift in Sources */,
 				3303FE8524975B2F00724FAB /* CollectionViewCell.swift in Sources */,
@@ -663,7 +670,7 @@
 				3367E76B2481545C00459AA4 /* PhotoLibraryManager.swift in Sources */,
 				A8C9034A24602FE3004294D9 /* Categories.swift in Sources */,
 				A8204D5D24631881005E30A0 /* GalleryView.swift in Sources */,
-				33F1A4E1248F94B800857FE9 /* CustomAlertController.swift in Sources */,
+				33F1A4E1248F94B800857FE9 /* CloAlertController.swift in Sources */,
 				33E95F212493C66E00102199 /* GallerySheet.swift in Sources */,
 				3308ECB7248E0CD4008C7B61 /* DetailSymbolsTableViewCell.swift in Sources */,
 				A8751F14245FFA7300B62589 /* LaundrySymbolsHeader.swift in Sources */,
@@ -673,7 +680,7 @@
 				A84ADDF7245F3AF0008F3425 /* ClothesListViewController.swift in Sources */,
 				33E7DCF2247F92E800BD3F41 /* AddEditClothesView.swift in Sources */,
 				33A843302482BF7B0083339D /* SelectSymbolsView.swift in Sources */,
-				3392C5EB249CEF290066D5DD /* CustomFieldButton.swift in Sources */,
+				3392C5EB249CEF290066D5DD /* CloFieldButton.swift in Sources */,
 				3308ECAD248E09D5008C7B61 /* DetailViewController.swift in Sources */,
 				33574792247FE40C008172FB /* ClothingColor.swift in Sources */,
 				3367E76924811CA600459AA4 /* ItemTableViewCell.swift in Sources */,
@@ -684,7 +691,7 @@
 				3303FE872497778800724FAB /* ItemSheet.swift in Sources */,
 				A8751F1624601E5B00B62589 /* LaundrySymbolsView.swift in Sources */,
 				3308ECB1248E0CA8008C7B61 /* DetailPhotoTableViewCell.swift in Sources */,
-				33574790247FCABD008172FB /* CustomTextField.swift in Sources */,
+				33574790247FCABD008172FB /* CloTextField.swift in Sources */,
 				33041F9F247C122900721E63 /* ClothesListCollectionViewCell.swift in Sources */,
 				33148695247FF279007BAA43 /* InputFieldsView.swift in Sources */,
 				33041FA3247D061700721E63 /* ClothesListCollectionViewCellDelegates.swift in Sources */,
@@ -698,6 +705,7 @@
 				A8204D5F2463189D005E30A0 /* GalleryCollectionViewCell.swift in Sources */,
 				33E7DCFA247FB1D900BD3F41 /* ClothingType.swift in Sources */,
 				3308ECA7248D5C2F008C7B61 /* Result.swift in Sources */,
+				33270511249F684500E50B98 /* Symbol.swift in Sources */,
 				A8C9034824602EE9004294D9 /* Symbols.swift in Sources */,
 				A82AC9802458404F00C0DC3D /* SceneDelegate.swift in Sources */,
 			);
@@ -840,7 +848,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Clo/Supporting files/Clo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = AQL4937GS7;
 				INFOPLIST_FILE = "$(SRCROOT)/Clo/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -862,7 +870,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Clo/Supporting files/Clo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = AQL4937GS7;
 				INFOPLIST_FILE = "$(SRCROOT)/Clo/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

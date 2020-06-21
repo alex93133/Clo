@@ -2,15 +2,15 @@ import FittedSheets
 import UIKit
 
 class GallerySheet {
-    
+
     // MARK: - Properties
     var sheet: SheetViewController!
     var gallery: GalleryViewController!
-    
+
     init(height: CGFloat) {
         setup(height: height)
     }
-    
+
     // MARK: - Functions
     private func setup(height: CGFloat) {
         gallery                            = GalleryViewController()

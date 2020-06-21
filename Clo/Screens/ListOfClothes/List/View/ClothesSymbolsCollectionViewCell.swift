@@ -1,7 +1,7 @@
 import UIKit
 
 class ClothesSymbolsCollectionViewCell: UICollectionViewCell {
-    
+
     // MARK: - Properties
     var laundryImageView: UIImageView!
 
@@ -30,17 +30,16 @@ class ClothesSymbolsCollectionViewCell: UICollectionViewCell {
         laundryImageView.tintColor   = Colors.accent
         setupLaundryImageViewConstraints()
     }
-}
 
-// MARK: - Constraints
-extension ClothesSymbolsCollectionViewCell {
-  
+    // MARK: - Constraints
     private func setupLaundryImageViewConstraints() {
         addSubview(laundryImageView)
         laundryImageView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([laundryImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 6),
-                                     laundryImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -6),
-                                     laundryImageView.topAnchor.constraint(equalTo: topAnchor, constant: 6),
-                                     laundryImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6)])
+        NSLayoutConstraint.activate([
+            laundryImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 6),
+            laundryImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -6),
+            laundryImageView.topAnchor.constraint(equalTo: topAnchor, constant: 6),
+            laundryImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6)
+        ])
     }
 }

@@ -2,7 +2,6 @@ import UIKit
 
 class ForgotPasswordView: UIView {
     // MARK: - Properties
-
     var headLabel: UILabel!
     var messageLabel: UILabel!
     var emailTextField: UITextField!
@@ -11,7 +10,6 @@ class ForgotPasswordView: UIView {
     var forgotButtonHandler: (() -> Void)!
 
     // MARK: - LoginLabel
-
     private func setupHeadLabel() {
         headLabel = UILabel()
         headLabel.text = "Forgot password?"
@@ -22,7 +20,6 @@ class ForgotPasswordView: UIView {
     }
 
     // MARK: - MessageLabel
-
     private func setupMessageLabel() {
         messageLabel = UILabel()
         messageLabel.text = "to recover your password enter your email"
@@ -33,7 +30,6 @@ class ForgotPasswordView: UIView {
     }
 
     // MARK: - EmailTextField
-
     private func setupEmailTextField() {
         emailTextField = AuthView.createTextField(placeholder: "Email")
         emailTextField.textContentType = .emailAddress
@@ -41,7 +37,6 @@ class ForgotPasswordView: UIView {
     }
 
     // MARK: - NextButton
-
     private func setupNextButton() {
         forgotButton = UIButton()
         forgotButton.backgroundColor = Colors.mintColor
@@ -52,12 +47,10 @@ class ForgotPasswordView: UIView {
         forgotButton.addTarget(self, action: #selector(forgotButtonPressed), for: .touchUpInside)
         setupNextButtonConstraints()
     }
-}
 
-// MARK: - Actions
-
-extension ForgotPasswordView {
-    @objc func forgotButtonPressed() {
+    // MARK: - Actions
+    @objc
+    func forgotButtonPressed() {
         forgotButtonHandler()
     }
 }

@@ -1,7 +1,7 @@
 import UIKit
 
 class DetailPhotoTableViewCell: UITableViewCell {
-   
+
     // MARK: - Properties
     var photoImageView: UIImageView!
 
@@ -24,18 +24,17 @@ class DetailPhotoTableViewCell: UITableViewCell {
         photoImageView.layer.masksToBounds = true
         setupPhotoImageViewConstraints()
     }
-}
 
-// MARK: - Constraints
-extension DetailPhotoTableViewCell {
-   
+    // MARK: - Constraints
     private func setupPhotoImageViewConstraints() {
         addSubview(photoImageView)
         photoImageView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([photoImageView.topAnchor.constraint(equalTo: topAnchor),
-                                     photoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
-                                     photoImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
-                                     photoImageView.heightAnchor.constraint(equalTo: widthAnchor, multiplier: 9 / 16),
-                                     photoImageView.bottomAnchor.constraint(equalTo: bottomAnchor)])
+        NSLayoutConstraint.activate([
+            photoImageView.topAnchor.constraint(equalTo: topAnchor),
+            photoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+            photoImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+            photoImageView.heightAnchor.constraint(equalTo: widthAnchor, multiplier: 9 / 16),
+            photoImageView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
     }
 }

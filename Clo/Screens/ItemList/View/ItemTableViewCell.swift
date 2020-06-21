@@ -1,7 +1,7 @@
 import UIKit
 
 class ItemTableViewCell: UITableViewCell {
-   
+
     // MARK: - Properties
     var checkBox: UIImageView!
 
@@ -43,17 +43,16 @@ class ItemTableViewCell: UITableViewCell {
         checkBox.alpha       = 0
         setupCheckBoxConstraints()
     }
-}
 
-// MARK: - Constraints
-extension ItemTableViewCell {
-  
+    // MARK: - Constraints
     private func setupCheckBoxConstraints() {
         addSubview(checkBox)
         checkBox.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([checkBox.widthAnchor.constraint(equalToConstant: 28),
-                                     checkBox.heightAnchor.constraint(equalToConstant: 28),
-                                     checkBox.centerYAnchor.constraint(equalTo: centerYAnchor),
-                                     checkBox.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -21)])
+        NSLayoutConstraint.activate([
+            checkBox.widthAnchor.constraint(equalToConstant: 28),
+            checkBox.heightAnchor.constraint(equalToConstant: 28),
+            checkBox.centerYAnchor.constraint(equalTo: centerYAnchor),
+            checkBox.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -21)
+        ])
     }
 }

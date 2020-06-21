@@ -11,9 +11,3 @@ struct ClothingColor {
         return [color, black, white]
     }
 }
-
-enum ColorType: String {
-    case black = "Black"
-    case color = "Color"
-    case white = "White"
-}

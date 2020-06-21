@@ -3,7 +3,7 @@ import Photos
 import UIKit
 
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
-    
+
     // MARK: - Properties
     private var imageToPass: UIImage?
 
@@ -36,7 +36,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 
         let clothesListViewController      = ClothesListViewController()
         clothesListViewController.delegate = self
-        
+
         let item3        = UINavigationController(rootViewController: clothesListViewController)
         let icon3        = UITabBarItem(title: "", image: Images.clothesIcon, tag: 3)
         item3.tabBarItem = icon3
@@ -77,7 +77,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
 
     private func presentViewWithWarning() {
-        let alert = CustomAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let alert = CloAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
         let cancelAction = UIAlertAction(title: "Maybe later", style: .cancel)
         alert.addAction(cancelAction)
@@ -87,6 +87,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
                 switch result {
                 case .accessed:
                     self.presentPhotoSheet()
+
                 case .denied:
                     return
                 }
@@ -102,7 +103,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
 
     private func presentViewWithError() {
-        let alert = CustomAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let alert = CloAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
         let cancelAction = UIAlertAction(title: "Maybe later", style: .cancel)
         alert.addAction(cancelAction)
@@ -133,29 +134,34 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         case 1:
             print("Machine")
             return false
+
         case 4:
             print("Menu")
             return false
+
         case 3:
             PhotoLibraryManager.checkAccessStatus { [weak self] result in
                 guard let self = self else { return }
                 switch result {
                 case .allow:
                     self.presentPhotoSheet()
+
                 case .warning:
                     self.presentViewWithWarning()
+
                 case .error:
                     self.presentViewWithError()
                 }
             }
             return false
-        default: return true
+
+        default:
+            return true
         }
     }
 }
 
 extension MainTabBarController: ClothesListViewControllerDelegate {
-   
     func presentPhotoSheet() {
         presentSheetViewController()
     }

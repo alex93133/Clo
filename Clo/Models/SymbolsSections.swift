@@ -22,7 +22,8 @@ struct SymbolsSections {
         sections = sectionTitles.map { SymbolsSections(index: sectionTitles.firstIndex(of: $0)! + 1,
                                                        title: $0,
                                                        category: Categories(rawValue: $0),
-                                                       items: symbolDictionary[$0]!) }
+                                                       items: symbolDictionary[$0]!)
+        }
 
         return sections
     }

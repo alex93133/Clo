@@ -1,7 +1,7 @@
 import UIKit
 
 class ClothesListView: UIView {
-    
+
     // MARK: - Properties
     var collectionView: UICollectionView!
 
@@ -36,17 +36,16 @@ class ClothesListView: UIView {
 
         setupCollectionViewConstraints()
     }
-}
 
-// MARK: - Constraints
-extension ClothesListView {
-   
+    // MARK: - Constraints
     private func setupCollectionViewConstraints() {
         addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([collectionView.leftAnchor.constraint(equalTo: leftAnchor),
-                                     collectionView.rightAnchor.constraint(equalTo: rightAnchor),
-                                     collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
-                                     collectionView.topAnchor.constraint(equalTo: topAnchor)])
+        NSLayoutConstraint.activate([
+            collectionView.leftAnchor.constraint(equalTo: leftAnchor),
+            collectionView.rightAnchor.constraint(equalTo: rightAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            collectionView.topAnchor.constraint(equalTo: topAnchor)
+        ])
     }
 }

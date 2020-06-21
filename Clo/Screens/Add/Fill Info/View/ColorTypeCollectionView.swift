@@ -1,7 +1,7 @@
 import UIKit
 
 class ColorTypeCollectionView: UIView {
-   
+
     // MARK: - Properties
     var collectionView: UICollectionView!
 
@@ -33,17 +33,16 @@ class ColorTypeCollectionView: UIView {
         collectionView.register(ColorTypeCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.clothesColorCellIdentifier)
         setupCollectionViewConstraints()
     }
-}
 
-// MARK: - Constraints
-extension ColorTypeCollectionView {
-    
+    // MARK: - Constraints
     private func setupCollectionViewConstraints() {
         addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-                                     collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-                                     collectionView.topAnchor.constraint(equalTo: topAnchor),
-                                     collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)])
+        NSLayoutConstraint.activate([
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            collectionView.topAnchor.constraint(equalTo: topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
     }
 }

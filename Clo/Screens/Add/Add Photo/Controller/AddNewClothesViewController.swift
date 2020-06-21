@@ -23,7 +23,7 @@ class AddNewClothesViewController: UIViewController {
         view().delegate = self
     }
 
-    fileprivate func setupPhotoSheet() -> SheetViewController {
+    private func setupPhotoSheet() -> SheetViewController {
         let photoSheetViewController = PhotoSheetViewController()
         let height = view.frame.size.height * 2 / 3
         let sheet = SheetViewController(controller: photoSheetViewController, sizes: [.fixed(height)])
@@ -43,7 +43,7 @@ extension AddNewClothesViewController: AddNewClothesViewDelegate {
         let sheetViewController = setupPhotoSheet()
         present(sheetViewController, animated: true)
 
-        sheetViewController.didDismiss = { [unowned self] _ in
+        sheetViewController.didDismiss = { [weak self] _ in
             self.view().applyBlurEffect(false)
         }
     }

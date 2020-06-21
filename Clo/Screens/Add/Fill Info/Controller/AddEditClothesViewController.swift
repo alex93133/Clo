@@ -2,7 +2,7 @@ import FittedSheets
 import UIKit
 
 class AddEditClothesViewController: UIViewController {
-   
+
     // MARK: - Properties
     private let customView = AddEditClothesView(frame: UIScreen.main.bounds)
     private let clothingColors = ClothingColor.getAllClothingColors()
@@ -42,6 +42,7 @@ class AddEditClothesViewController: UIViewController {
     }
 
     override func viewWillAppear(_: Bool) {
+        super.viewWillAppear(true)
         checkFields()
     }
 
@@ -120,11 +121,8 @@ class AddEditClothesViewController: UIViewController {
             viewController.editableClothes = editableClothes
         }
     }
-}
 
-// MARK: - Actions
-extension AddEditClothesViewController {
-   
+    // MARK: - Actions
     private func setupButtonActions() {
         view().changePhotoButtonHandler = { [weak self] in
             guard let self = self else { return }
@@ -143,7 +141,8 @@ extension AddEditClothesViewController {
         view().nextButton.enableButton(isOn: false)
     }
 
-    @objc private func backButtonPressed() {
+    @objc
+    private func backButtonPressed() {
         if editableClothes != nil {
             navigationController?.popViewController(animated: true)
         } else {
@@ -154,7 +153,6 @@ extension AddEditClothesViewController {
 
 // MARK: - Delegates
 extension AddEditClothesViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-   
     func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
         clothingColors.count
     }
@@ -181,7 +179,6 @@ extension AddEditClothesViewController: UICollectionViewDelegate, UICollectionVi
 }
 
 extension AddEditClothesViewController: UITextFieldDelegate {
-   
     func textFieldShouldReturn(_: UITextField) -> Bool {
         view().inputFieldsView.descriptionTextField.resignFirstResponder()
         return true
@@ -197,7 +194,6 @@ extension AddEditClothesViewController: UITextFieldDelegate {
 }
 
 extension AddEditClothesViewController: ItemViewControllerDelegate {
-   
     func applySelectedItem(with item: String) {
         guard let type = ClothingType(rawValue: item) else { return }
         selectedType = type
@@ -208,7 +204,6 @@ extension AddEditClothesViewController: ItemViewControllerDelegate {
 }
 
 extension AddEditClothesViewController: GalleryViewControllerDelegate {
-    
     func updateImage(with image: UIImage) {
         view().clothesImageView.image = image
     }

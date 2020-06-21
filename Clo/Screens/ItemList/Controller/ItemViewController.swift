@@ -5,7 +5,7 @@ protocol ItemViewControllerDelegate: class {
 }
 
 class ItemViewController: UITableViewController {
-  
+
     // MARK: - Properties
     private let customView = ItemView(frame: UIScreen.main.bounds)
     var items: [String]
@@ -47,7 +47,6 @@ class ItemViewController: UITableViewController {
 
 // MARK: - Delegates
 extension ItemViewController {
-   
     override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         items.count
     }

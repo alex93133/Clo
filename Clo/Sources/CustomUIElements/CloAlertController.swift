@@ -1,7 +1,7 @@
 import UIKit
 
-class CustomAlertController: UIAlertController {
-    
+class CloAlertController: UIAlertController {
+
     // MARK: - Properties
     private var overlayView: UIView!
     var headLabel: UILabel!
@@ -91,38 +91,43 @@ class CustomAlertController: UIAlertController {
         setupHeadLabelConstraints()
         setupMessageLabelConstraints()
     }
-}
 
-// MARK: - Constraints
-extension CustomAlertController {
-   
+    // MARK: - Constraints
     private func setupStackViewConstraints() {
         view.addSubview(stackView)
 
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                                     stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 16)])
+        NSLayoutConstraint.activate([
+            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 16)
+        ])
     }
 
     private func setupOverlayViewConstraints() {
         overlayView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([overlayView.heightAnchor.constraint(equalToConstant: 70),
-                                     overlayView.widthAnchor.constraint(equalToConstant: 70)])
+        NSLayoutConstraint.activate([
+            overlayView.heightAnchor.constraint(equalToConstant: 70),
+            overlayView.widthAnchor.constraint(equalToConstant: 70)
+        ])
         setupImageViewConstraints()
     }
 
     private func setupImageViewConstraints() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([imageView.leadingAnchor.constraint(equalTo: overlayView.leadingAnchor, constant: 16),
-                                     imageView.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor, constant: -16),
-                                     imageView.topAnchor.constraint(equalTo: overlayView.topAnchor, constant: 16),
-                                     imageView.bottomAnchor.constraint(equalTo: overlayView.bottomAnchor, constant: -16)])
+        NSLayoutConstraint.activate([
+            imageView.leadingAnchor.constraint(equalTo: overlayView.leadingAnchor, constant: 16),
+            imageView.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor, constant: -16),
+            imageView.topAnchor.constraint(equalTo: overlayView.topAnchor, constant: 16),
+            imageView.bottomAnchor.constraint(equalTo: overlayView.bottomAnchor, constant: -16)
+        ])
     }
 
     private func setupHeadLabelConstraints() {
         headLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([headLabel.widthAnchor.constraint(equalToConstant: view.frame.width - 32),
-                                     headLabel.heightAnchor.constraint(equalToConstant: 50)])
+        NSLayoutConstraint.activate([
+            headLabel.widthAnchor.constraint(equalToConstant: view.frame.width - 32),
+            headLabel.heightAnchor.constraint(equalToConstant: 50)
+        ])
     }
 
     private func setupMessageLabelConstraints() {

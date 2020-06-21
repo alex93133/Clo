@@ -1,7 +1,7 @@
 import UIKit
 
 class ColorTypeCollectionViewCell: UICollectionViewCell {
-    
+
     // MARK: - Properties
     var colorTypeImageView: UIImageView!
 

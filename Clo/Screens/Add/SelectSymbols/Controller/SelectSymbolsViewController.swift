@@ -1,7 +1,7 @@
 import UIKit
 
 class SelectSymbolsViewController: UIViewController {
-   
+
     // MARK: - Properties
     private let customView = SelectSymbolsView(frame: UIScreen.main.bounds)
     var clothesInfo: (type: ClothingType, color: ColorType, info: String?, photo: UIImage)!
@@ -10,7 +10,7 @@ class SelectSymbolsViewController: UIViewController {
     private var sections = SymbolsSections.getSections().sorted { $0.index < $1.index }
     private var selectedSymbols = [Symbol]() {
         willSet {
-            if newValue.count == 0 {
+            if newValue.isEmpty {
                 view().nextButton.enableButton(isOn: false, minAlphaValue: 0)
             } else {
                 view().nextButton.enableButton(isOn: true)
@@ -26,6 +26,7 @@ class SelectSymbolsViewController: UIViewController {
     }
 
     override func viewWillAppear(_: Bool) {
+        super.viewWillAppear(true)
         hideCategoriesWhenAppear()
     }
 
@@ -130,6 +131,7 @@ class SelectSymbolsViewController: UIViewController {
                 switch result {
                 case .success:
                     self.parent?.dismiss(animated: true)
+
                 case let .failure(error):
                     print(error.localizedDescription)
                 }
@@ -152,6 +154,7 @@ class SelectSymbolsViewController: UIViewController {
                 switch result {
                 case .success:
                     self.navigationController?.popToRootViewController(animated: true)
+
                 case let .failure(error):
                     print(error.localizedDescription)
                 }
@@ -162,7 +165,6 @@ class SelectSymbolsViewController: UIViewController {
 
 // MARK: - Delegates
 extension SelectSymbolsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-   
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
 

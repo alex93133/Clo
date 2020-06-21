@@ -1,7 +1,8 @@
 import UIKit
 
-class NextButton: UIButton {
-    
+class CloNextButton: UIButton {
+
+    // MARK: - Properties
     private var activityIndicator: UIActivityIndicatorView!
     private var temporaryTitle: String?
     var isProcessing: Bool {
@@ -48,9 +49,11 @@ class NextButton: UIButton {
     private func addToView(_ view: UIView) {
         view.addSubview(self)
         translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([heightAnchor.constraint(equalToConstant: 52),
-                                     leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
-                                     trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8)])
+        NSLayoutConstraint.activate([
+            heightAnchor.constraint(equalToConstant: 52),
+            leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8)
+        ])
     }
 
     private func setupActivityIndicator() {
@@ -60,8 +63,10 @@ class NextButton: UIButton {
         activityIndicator.center           = center
         addSubview(activityIndicator)
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor),
-                                     activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor)])
+        NSLayoutConstraint.activate([
+            activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor),
+            activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor)
+        ])
     }
 
     func enableButton(isOn: Bool, minAlphaValue: CGFloat = 0.5) {
