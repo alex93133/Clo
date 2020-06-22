@@ -8,6 +8,7 @@ enum Images {
     static let checkBox     = UIImage(named: "CheckBox")
     static let clothesIcon  = UIImage(named: "ClothesIcon")
     static let deleteIcon   = UIImage(systemName: "trash")
+    static let dropDownIcon = UIImage(systemName: "chevron.down")
     static let editIcon     = UIImage(named: "EditIcon")
     static let forbidden    = UIImage(named: "Forbidden")
     static let machineIcon  = UIImage(named: "MachineIcon")

@@ -130,9 +130,11 @@ class SelectSymbolsViewController: UIViewController {
                 self.view().nextButton.isProcessing = false
                 switch result {
                 case .success:
+                    FeedbackManager.success()
                     self.parent?.dismiss(animated: true)
 
                 case let .failure(error):
+                    FeedbackManager.error()
                     print(error.localizedDescription)
                 }
             }
@@ -154,8 +156,10 @@ class SelectSymbolsViewController: UIViewController {
                 switch result {
                 case .success:
                     self.navigationController?.popToRootViewController(animated: true)
+                    FeedbackManager.success()
 
                 case let .failure(error):
+                    FeedbackManager.error()
                     print(error.localizedDescription)
                 }
             }
@@ -191,6 +195,7 @@ extension SelectSymbolsViewController: UICollectionViewDelegate, UICollectionVie
     }
 
     func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        FeedbackManager.select()
         if indexPath.section != 0 {
             selectItem(indexPath: indexPath)
         } else {

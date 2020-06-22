@@ -56,6 +56,7 @@ extension LaundrySymbolsViewController: UICollectionViewDelegate, UICollectionVi
     }
 
     func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        FeedbackManager.select()
         let sheet = CloAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         present(sheet, animated: true)
         sheet.symbol = symbolSections[indexPath.section].items[indexPath.item]

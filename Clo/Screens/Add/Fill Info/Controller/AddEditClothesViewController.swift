@@ -162,9 +162,9 @@ extension AddEditClothesViewController: UICollectionViewDelegate, UICollectionVi
             cell.colorTypeImageView.image = clothingColors[indexPath.item].image
 
             if selectedColor != nil, clothingColors[indexPath.item].type != selectedColor {
-                cell.colorTypeImageView.alpha = 0.3
-            } else {
                 cell.colorTypeImageView.alpha = 1
+            } else {
+                cell.colorTypeImageView.alpha = 0.3
             }
             return cell
         }
@@ -172,6 +172,7 @@ extension AddEditClothesViewController: UICollectionViewDelegate, UICollectionVi
     }
 
     func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        FeedbackManager.select()
         selectedColor = clothingColors[indexPath.item].type
         view().colorTypeCollectionView.collectionView.reloadData()
         checkFields()

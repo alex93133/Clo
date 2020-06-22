@@ -51,8 +51,8 @@ class InputFieldsView: UIView {
     // MARK: - SelectTypeButton
     private func setupSelectTypeButton() {
         selectTypeButton = CloFieldButton(title: "Select type",
-                                             action: #selector(selectTypeButtonPressed),
-                                             addTo: self)
+                                          action: #selector(selectTypeButtonPressed),
+                                          addTo: self)
         NSLayoutConstraint.activate([selectTypeButton.topAnchor.constraint(equalTo: topAnchor, constant: 40)])
     }
 

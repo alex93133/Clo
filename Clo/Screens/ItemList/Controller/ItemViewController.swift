@@ -65,6 +65,7 @@ extension ItemViewController {
     }
 
     override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
+        FeedbackManager.select()
         selectedItem = items[indexPath.row]
         DispatchQueue.main.asyncAfter(deadline: .now() + Constants.animationTimeInterval) { [weak self] in
             guard let self = self else { return }

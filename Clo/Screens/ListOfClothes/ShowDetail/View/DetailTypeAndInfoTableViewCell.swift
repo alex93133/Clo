@@ -24,7 +24,7 @@ class DetailTypeAndInfoTableViewCell: UITableViewCell {
     private func setupTypeLabel() {
         typeLabel           = UILabel(frame: CGRect(x: 0, y: 0, width: 312, height: 194))
         typeLabel.textColor = Colors.accent
-        typeLabel.font      = .systemFont(ofSize: Constants.Fonts.clothesTypeTextSize, weight: .semibold)
+        typeLabel.font      = .systemFont(ofSize: Constants.Fonts.largeTypeTextSize, weight: .semibold)
     }
 
     // MARK: - InfoLabel

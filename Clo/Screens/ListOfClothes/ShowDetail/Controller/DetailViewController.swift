@@ -73,9 +73,11 @@ class DetailViewController: UIViewController {
             guard let self = self else { return }
             switch result {
             case .success:
+                FeedbackManager.success()
                 self.navigationController?.popViewController(animated: true)
 
             case let .failure(error):
+                FeedbackManager.error()
                 print(error.localizedDescription)
             }
         }

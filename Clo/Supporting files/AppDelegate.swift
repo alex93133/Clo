@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Font and text color for title
         UINavigationBar.appearance().titleTextAttributes              = [
             NSAttributedString.Key.foregroundColor: Colors.accent,
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Fonts.navigationBarItemTextSize, weight: .bold)
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Fonts.headTextSize, weight: .bold)
         ]
         UINavigationBar.appearance().barTintColor                     = Colors.mainBG
         return true

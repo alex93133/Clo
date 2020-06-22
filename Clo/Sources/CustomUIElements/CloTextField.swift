@@ -23,6 +23,7 @@ class CloTextField: UITextField {
         addToView(view)
     }
 
+    // MARK: - Properties
     private func setup() {
         backgroundColor        = Colors.additionalBG
         textColor              = Colors.accent

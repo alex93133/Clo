@@ -28,6 +28,7 @@ extension ClothesListCollectionViewCell: UICollectionViewDelegate, UICollectionV
             return
 
         default:
+            FeedbackManager.select()
             let symbol = symbols[indexPath.item - 1]
             let sheet = CloAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             itemHandler(sheet)

@@ -5,10 +5,11 @@ protocol ClothesListViewControllerDelegate: class {
     func presentPhotoSheet()
 }
 
-class ClothesListViewController: UIViewController {
+class ClothesListViewController: UIViewController, UIGestureRecognizerDelegate {
 
     // MARK: - Properties
     private let customView = ClothesListView(frame: UIScreen.main.bounds)
+    private var washingFilterSheet: WashingFilterSheet!
     private var itemHandler: ((CloAlertController) -> Void)!
     private var currentCategory: ClothingType!
     weak var delegate: ClothesListViewControllerDelegate!
@@ -29,6 +30,7 @@ class ClothesListViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupNavigationBar()
+        gestureRecognizer()
     }
 
     override func viewWillAppear(_: Bool) {
@@ -61,6 +63,21 @@ class ClothesListViewController: UIViewController {
         }
     }
 
+    private func gestureRecognizer() {
+        let longPress: UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self,
+                                                                                   action: #selector(handleLongPress(gesture:)))
+        longPress.minimumPressDuration              = 0.6
+        longPress.delegate                          = self
+        longPress.delaysTouchesBegan                = false
+        view().collectionView.addGestureRecognizer(longPress)
+    }
+
+    private func presentWashingFilter(with clothes: Clothes) {
+        washingFilterSheet = WashingFilterSheet()
+        washingFilterSheet.washingFilter.referenceClothes = clothes
+        present(washingFilterSheet.sheet, animated: false)
+    }
+
     private func smoothReloadData() {
         UIView.transition(with: view().collectionView,
                           duration: Constants.animationTimeInterval,
@@ -70,10 +87,14 @@ class ClothesListViewController: UIViewController {
     }
 
     private func setupNavigationBar() {
-        navigationItem.title = "My clothes"
-        let settingsUIBarButtonItem = UIBarButtonItem(image: Images.settingsIcon, style: .plain, target: self, action: #selector(sortItemPressed))
-        settingsUIBarButtonItem.tintColor = Colors.mint
-        navigationItem.rightBarButtonItem = settingsUIBarButtonItem
+        let settingsUIBarButtonItem = UIBarButtonItem(image: Images.settingsIcon,
+                                                      style: .plain,
+                                                      target: self,
+                                                      action: #selector(sortItemPressed))
+        navigationController?.navigationBar.barTintColor = Colors.mainBG
+        settingsUIBarButtonItem.tintColor                = Colors.mint
+        navigationItem.rightBarButtonItem                = settingsUIBarButtonItem
+        navigationItem.title                             = "My clothes"
     }
 
     private func presentDetailViewController(with clothes: Clothes) {
@@ -95,6 +116,16 @@ class ClothesListViewController: UIViewController {
     @objc
     func sortItemPressed() {
         presentTypeSheet()
+    }
+
+    @objc
+    func handleLongPress(gesture: UILongPressGestureRecognizer!) {
+        guard gesture.state == .began else { return }
+        FeedbackManager.heavy()
+        let point = gesture.location(in: view().collectionView)
+        if let indexPath = view().collectionView.indexPathForItem(at: point) {
+            presentWashingFilter(with: visibleClothes[indexPath.item])
+        }
     }
 }
 

@@ -73,7 +73,9 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         let addClothesViewController = AddEditClothesViewController(image: image)
         let navigationController = UINavigationController(rootViewController: addClothesViewController)
         navigationController.modalPresentationStyle = .fullScreen
-        present(navigationController, animated: true)
+        present(navigationController, animated: true) {
+            FeedbackManager.heavy()
+        }
     }
 
     private func presentViewWithWarning() {
@@ -129,10 +131,16 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         }
     }
 
+    private func presentWashingFilter() {
+        let washingFilterSheet = WashingFilterSheet()
+        present(washingFilterSheet.sheet, animated: false)
+    }
+
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         switch tabBarController.customizableViewControllers?.firstIndex(of: viewController) {
         case 1:
-            print("Machine")
+            FeedbackManager.light()
+            presentWashingFilter()
             return false
 
         case 4:
@@ -144,12 +152,15 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
                 guard let self = self else { return }
                 switch result {
                 case .allow:
+                    FeedbackManager.light()
                     self.presentPhotoSheet()
 
                 case .warning:
+                    FeedbackManager.warning()
                     self.presentViewWithWarning()
 
                 case .error:
+                    FeedbackManager.error()
                     self.presentViewWithError()
                 }
             }

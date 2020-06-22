@@ -38,6 +38,7 @@ class CloNextButton: UIButton {
         addToView(view)
     }
 
+    // MARK: - Functions
     private func setup() {
         backgroundColor    = Colors.mint
         layer.cornerRadius = Constants.defaultCornerRadius
