@@ -45,7 +45,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         let icon4        = UITabBarItem(title: "", image: Images.addIcon, tag: 4)
         item4.tabBarItem = icon4
 
-        let item5        = UIViewController()
+        let item5        = MenuViewController()
         let icon5        = UITabBarItem(title: "", image: Images.menuIcon, tag: 5)
         item5.tabBarItem = icon5
 
@@ -70,8 +70,8 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
 
     private func presentAddEditClothesViewController(image: UIImage) {
-        let addClothesViewController = AddEditClothesViewController(image: image)
-        let navigationController = UINavigationController(rootViewController: addClothesViewController)
+        let addClothesViewController                = AddEditClothesViewController(image: image)
+        let navigationController                    = UINavigationController(rootViewController: addClothesViewController)
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true) {
             FeedbackManager.heavy()
@@ -131,8 +131,19 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         }
     }
 
-    private func presentWashingFilter() {
+    private func presentWashingFilter(with clothes: Clothes?) {
         let washingFilterSheet = WashingFilterSheet()
+        if let clothes = clothes {
+            if clothes.symbols.contains(where: { $0.id ==  4 }) {
+                guard let symbol = clothes.symbols.first(where: { $0.id ==  4 }) else { return }
+                WashingManager.presentViewWithWarning(symbol: symbol, target: self)
+            }
+            if clothes.symbols.contains(where: { $0.id ==  5 }) {
+                guard let symbol = clothes.symbols.first(where: { $0.id ==  5 }) else { return }
+                WashingManager.presentViewWithError(symbol: symbol, target: self)
+            }
+        }
+        washingFilterSheet.washingFilter.referenceClothes = clothes
         present(washingFilterSheet.sheet, animated: false)
     }
 
@@ -140,11 +151,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         switch tabBarController.customizableViewControllers?.firstIndex(of: viewController) {
         case 1:
             FeedbackManager.light()
-            presentWashingFilter()
-            return false
-
-        case 4:
-            print("Menu")
+            presentWashingFilter(with: nil)
             return false
 
         case 3:
@@ -173,6 +180,10 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 }
 
 extension MainTabBarController: ClothesListViewControllerDelegate {
+    func presentWashingFilterSheet(with clothes: Clothes) {
+        presentWashingFilter(with: clothes)
+    }
+
     func presentPhotoSheet() {
         presentSheetViewController()
     }

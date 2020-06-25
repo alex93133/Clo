@@ -14,8 +14,6 @@ class DetailSymbolsTableViewCell: UITableViewCell {
         setupSymbolImageView()
         setupDescriptionLabel()
         setupCustomSeparator()
-        backgroundColor = Colors.mainBG
-        selectionStyle  = .none
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -25,9 +23,10 @@ class DetailSymbolsTableViewCell: UITableViewCell {
     // MARK: - View
     private func setupView() {
         view                     = UIView()
-        view.backgroundColor     = Colors.mainBG
         view.layer.cornerRadius  = Constants.defaultCornerRadius
         view.layer.masksToBounds = true
+        selectionStyle           = .none
+        backgroundColor          = Colors.mainBG
         setupViewConstraints()
     }
 

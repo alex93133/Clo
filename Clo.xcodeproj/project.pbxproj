@@ -44,7 +44,13 @@
 		3396FCC9247BFEA800D8B759 /* ClothesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3396FCC8247BFEA800D8B759 /* ClothesListView.swift */; };
 		33A8432E2482BF620083339D /* SelectSymbolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8432D2482BF620083339D /* SelectSymbolsViewController.swift */; };
 		33A843302482BF7B0083339D /* SelectSymbolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8432F2482BF7B0083339D /* SelectSymbolsView.swift */; };
+		33B5923524A492F00079E57A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B5923424A492F00079E57A /* MenuViewController.swift */; };
+		33B5923724A492FE0079E57A /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B5923624A492FE0079E57A /* MenuView.swift */; };
+		33B5923924A498AB0079E57A /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B5923824A498AB0079E57A /* MenuItemTableViewCell.swift */; };
+		33C5172B24A4A6ED00128C4B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C5172A24A4A6ED00128C4B /* StoreKit.framework */; };
+		33C5172D24A4AA2000128C4B /* InAppPurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C5172C24A4AA2000128C4B /* InAppPurchaseManager.swift */; };
 		33DFEB03248D0AF200B802F4 /* Clothes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33DFEB01248D0AF200B802F4 /* Clothes.xcdatamodeld */; };
+		33E61A1224A47DE100B6D1FD /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E61A1124A47DE100B6D1FD /* ResultViewController.swift */; };
 		33E7DCF0247F92CF00BD3F41 /* AddEditClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCEF247F92CF00BD3F41 /* AddEditClothesViewController.swift */; };
 		33E7DCF2247F92E800BD3F41 /* AddEditClothesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCF1247F92E800BD3F41 /* AddEditClothesView.swift */; };
 		33E7DCFA247FB1D900BD3F41 /* ClothingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCF9247FB1D900BD3F41 /* ClothingType.swift */; };
@@ -120,7 +126,13 @@
 		3396FCC8247BFEA800D8B759 /* ClothesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesListView.swift; sourceTree = "<group>"; };
 		33A8432D2482BF620083339D /* SelectSymbolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSymbolsViewController.swift; sourceTree = "<group>"; };
 		33A8432F2482BF7B0083339D /* SelectSymbolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSymbolsView.swift; sourceTree = "<group>"; };
+		33B5923424A492F00079E57A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		33B5923624A492FE0079E57A /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		33B5923824A498AB0079E57A /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
+		33C5172A24A4A6ED00128C4B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		33C5172C24A4AA2000128C4B /* InAppPurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseManager.swift; sourceTree = "<group>"; };
 		33DFEB02248D0AF200B802F4 /* Clothes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Clothes.xcdatamodel; sourceTree = "<group>"; };
+		33E61A1124A47DE100B6D1FD /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		33E7DCEF247F92CF00BD3F41 /* AddEditClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditClothesViewController.swift; sourceTree = "<group>"; };
 		33E7DCF1247F92E800BD3F41 /* AddEditClothesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditClothesView.swift; sourceTree = "<group>"; };
 		33E7DCF9247FB1D900BD3F41 /* ClothingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingType.swift; sourceTree = "<group>"; };
@@ -165,6 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33C5172B24A4A6ED00128C4B /* StoreKit.framework in Frameworks */,
 				21D94A5B432B71402DFD2DFB /* Pods_Clo.framework in Frameworks */,
 				338F2282248A8E78001C40D1 /* CloudKit.framework in Frameworks */,
 			);
@@ -176,6 +189,7 @@
 		27AE5B08AC8FCA322E5EAB3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				33C5172A24A4A6ED00128C4B /* StoreKit.framework */,
 				338F2281248A8E78001C40D1 /* CloudKit.framework */,
 				1A228FC09CAD5AF1927CF95B /* Pods_Clo.framework */,
 			);
@@ -328,6 +342,32 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		33B5923124A492830079E57A /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				33B5923324A492DB0079E57A /* View */,
+				33B5923224A492D40079E57A /* Controller */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		33B5923224A492D40079E57A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				33B5923424A492F00079E57A /* MenuViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		33B5923324A492DB0079E57A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				33B5923624A492FE0079E57A /* MenuView.swift */,
+				33B5923824A498AB0079E57A /* MenuItemTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		33FEB3AA249F8F6B00D2B037 /* WasnigFilter */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +382,7 @@
 			children = (
 				33FEB3B1249F902400D2B037 /* WashingFilterSheet.swift */,
 				33FEB3AD249F8FCB00D2B037 /* WashingFilterViewController.swift */,
+				33E61A1124A47DE100B6D1FD /* ResultViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -361,6 +402,7 @@
 				3367E76A2481545B00459AA4 /* PhotoLibraryManager.swift */,
 				332AC389249FBBD30081EC50 /* WashingManager.swift */,
 				3314D609249FE72400F69DF4 /* FeedbackManager.swift */,
+				33C5172C24A4AA2000128C4B /* InAppPurchaseManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -498,6 +540,7 @@
 				A8644DA72464171A007ABAA8 /* ListOfClothes */,
 				3392C5EE249D04A10066D5DD /* ItemList */,
 				33FEB3AA249F8F6B00D2B037 /* WasnigFilter */,
+				33B5923124A492830079E57A /* Menu */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -648,7 +691,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if which swiftlint >/dev/null; then\n swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from #https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		D35DC622A32C90C46EBBCC27 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -696,6 +739,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33B5923724A492FE0079E57A /* MenuView.swift in Sources */,
 				33574789247FBB89008172FB /* ColorTypeCollectionView.swift in Sources */,
 				33E7DCF0247F92CF00BD3F41 /* AddEditClothesViewController.swift in Sources */,
 				33EFBD25249FA62C0031942A /* ImageView.swift in Sources */,
@@ -708,6 +752,7 @@
 				33270513249F688E00E50B98 /* ColorType.swift in Sources */,
 				3357478E247FC77D008172FB /* CloNextButton.swift in Sources */,
 				33041FA1247CF64300721E63 /* ClothesSymbolsCollectionViewCell.swift in Sources */,
+				33B5923924A498AB0079E57A /* MenuItemTableViewCell.swift in Sources */,
 				338F227E248A703E001C40D1 /* CoreDataManager.swift in Sources */,
 				3303FE8524975B2F00724FAB /* CollectionViewCell.swift in Sources */,
 				A84DB6FF245AC8F200A101B1 /* Constants.swift in Sources */,
@@ -726,6 +771,7 @@
 				A8204D5B2463183B005E30A0 /* GalleryViewController.swift in Sources */,
 				A84ADDF7245F3AF0008F3425 /* ClothesListViewController.swift in Sources */,
 				33E7DCF2247F92E800BD3F41 /* AddEditClothesView.swift in Sources */,
+				33C5172D24A4AA2000128C4B /* InAppPurchaseManager.swift in Sources */,
 				33A843302482BF7B0083339D /* SelectSymbolsView.swift in Sources */,
 				3392C5EB249CEF290066D5DD /* CloFieldButton.swift in Sources */,
 				3308ECAD248E09D5008C7B61 /* DetailViewController.swift in Sources */,
@@ -733,6 +779,7 @@
 				332AC388249FBB3C0081EC50 /* WashingMode.swift in Sources */,
 				3367E76924811CA600459AA4 /* ItemTableViewCell.swift in Sources */,
 				33DFEB03248D0AF200B802F4 /* Clothes.xcdatamodeld in Sources */,
+				33B5923524A492F00079E57A /* MenuViewController.swift in Sources */,
 				3306B4482496210400A42C85 /* Image.swift in Sources */,
 				A886AFCF24606301007FAEF2 /* SymbolsSections.swift in Sources */,
 				A8BC747B245C429300106097 /* Colors.swift in Sources */,
@@ -754,6 +801,7 @@
 				3308ECB3248E0CC0008C7B61 /* DetailTypeAndInfoTableViewCell.swift in Sources */,
 				338F2280248A70A7001C40D1 /* Clothes.swift in Sources */,
 				A8BC7479245C427400106097 /* Images.swift in Sources */,
+				33E61A1224A47DE100B6D1FD /* ResultViewController.swift in Sources */,
 				A8204D5F2463189D005E30A0 /* GalleryCollectionViewCell.swift in Sources */,
 				33E7DCFA247FB1D900BD3F41 /* ClothingType.swift in Sources */,
 				3308ECA7248D5C2F008C7B61 /* Result.swift in Sources */,
@@ -900,7 +948,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Clo/Supporting files/Clo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = AQL4937GS7;
 				INFOPLIST_FILE = "$(SRCROOT)/Clo/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -922,7 +970,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Clo/Supporting files/Clo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = AQL4937GS7;
 				INFOPLIST_FILE = "$(SRCROOT)/Clo/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

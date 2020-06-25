@@ -48,7 +48,6 @@ opt_in_rules:
 - no_extension_access_modifier
 - nimble_operator
 - multiline_parameters
-- multiline_literal_brackets
 - multiline_function_chains
 - multiline_arguments
 - modifier_order

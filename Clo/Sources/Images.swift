@@ -11,6 +11,7 @@ enum Images {
     static let dropDownIcon = UIImage(systemName: "chevron.down")
     static let editIcon     = UIImage(named: "EditIcon")
     static let forbidden    = UIImage(named: "Forbidden")
+    static let logoImage    = UIImage(named: "Logo")
     static let machineIcon  = UIImage(named: "MachineIcon")
     static let menuIcon     = UIImage(named: "MenuIcon")
     static let questionIcon = UIImage(named: "QuestionMarkIcon")
@@ -20,5 +21,12 @@ enum Images {
         static let black = UIImage(named: "Black")
         static let color = UIImage(named: "Color")
         static let white = UIImage(named: "White")
+    }
+
+    enum Menu {
+        static let star     = UIImage(named: "StarIcon")
+        static let coffee   = UIImage(named: "CoffeeIcon")
+        static let feedback = UIImage(named: "FeedbackIcon")
+        static let chevron  = UIImage(systemName: "chevron.right")
     }
 }

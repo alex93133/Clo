@@ -12,7 +12,6 @@ class WashingFilterViewController: UIViewController {
     private var color: ColorType!
     private var temperature: Int!
     private var washingMode: WashingMode!
-    private var washingManager = WashingManager()
     var referenceClothes: Clothes?
 
     // MARK: - Lifecycle
@@ -29,27 +28,53 @@ class WashingFilterViewController: UIViewController {
     private func setupView() {
         view = customView
         view().delegate = self
+        view().nextButton.enableButton(isOn: false)
         fillInfoAtButtons()
     }
 
     private func fillInfoAtButtons() {
         guard let clothes = referenceClothes else { return }
 
+        view().nextButton.enableButton(isOn: true)
+
         color = clothes.color
         let attributedTitleForColor = view().colorButton.createAttributes(text: color.rawValue, textColor: Colors.accent)
         view().colorButton.setAttributedTitle(attributedTitleForColor, for: .normal)
 
-        if let clothesWashingTemperature = washingManager.getTemperature(clothes: clothes) {
+        if let clothesWashingTemperature = WashingManager.getTemperature(clothes: clothes) {
             temperature = clothesWashingTemperature
             let attributedTitleForTemperature = view().temperatureButton.createAttributes(text: String(temperature), textColor: Colors.accent)
             view().temperatureButton.setAttributedTitle(attributedTitleForTemperature, for: .normal)
         }
 
-        if let clothesWashingMode = washingManager.getWashingMode(clothes: clothes) {
+        if let clothesWashingMode = WashingManager.getWashingMode(clothes: clothes) {
             washingMode = clothesWashingMode
             let attributedTitleForWashingMode = view().washingModeButton.createAttributes(text: washingMode.rawValue, textColor: Colors.accent)
             view().washingModeButton.setAttributedTitle(attributedTitleForWashingMode, for: .normal)
         }
+    }
+
+    private func checkFields() {
+        guard color != nil,
+            temperature != nil,
+            washingMode != nil else { return }
+        view().nextButton.enableButton(isOn: true)
+    }
+
+    private func collectClothes() {
+        let clothes = CoreDataManager.shared.fetch { _ in }
+        var washingManager = WashingManager(clothes: clothes,
+                                            temperature: temperature,
+                                            color: color,
+                                            washingMode: washingMode,
+                                            coincidence: view().switcher.isOn)
+        presentResult(clothes: washingManager.filterClothes())
+    }
+
+    private func presentResult(clothes: [Clothes]?) {
+        let navigationController = UINavigationController(rootViewController: ResultViewController(clothes: clothes))
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true)
     }
 }
 
@@ -76,7 +101,7 @@ extension WashingFilterViewController: WashingFilterViewDelegate {
     }
 
     func nextButtonPressed() {
-        print("Hello")
+        collectClothes()
     }
 }
 
@@ -95,5 +120,6 @@ extension WashingFilterViewController: ItemViewControllerDelegate {
             view().washingModeButton.setAttributedTitle(attributedTitle, for: .normal)
             self.washingMode = washingMode
         }
+        checkFields()
     }
 }

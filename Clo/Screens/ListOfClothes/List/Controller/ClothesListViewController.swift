@@ -3,6 +3,7 @@ import UIKit
 
 protocol ClothesListViewControllerDelegate: class {
     func presentPhotoSheet()
+    func presentWashingFilterSheet(with clothes: Clothes)
 }
 
 class ClothesListViewController: UIViewController, UIGestureRecognizerDelegate {
@@ -72,12 +73,6 @@ class ClothesListViewController: UIViewController, UIGestureRecognizerDelegate {
         view().collectionView.addGestureRecognizer(longPress)
     }
 
-    private func presentWashingFilter(with clothes: Clothes) {
-        washingFilterSheet = WashingFilterSheet()
-        washingFilterSheet.washingFilter.referenceClothes = clothes
-        present(washingFilterSheet.sheet, animated: false)
-    }
-
     private func smoothReloadData() {
         UIView.transition(with: view().collectionView,
                           duration: Constants.animationTimeInterval,
@@ -124,7 +119,7 @@ class ClothesListViewController: UIViewController, UIGestureRecognizerDelegate {
         FeedbackManager.heavy()
         let point = gesture.location(in: view().collectionView)
         if let indexPath = view().collectionView.indexPathForItem(at: point) {
-            presentWashingFilter(with: visibleClothes[indexPath.item])
+            delegate.presentWashingFilterSheet(with: visibleClothes[indexPath.item])
         }
     }
 }
@@ -146,11 +141,11 @@ extension ClothesListViewController: UICollectionViewDelegate, UICollectionViewD
             }
         } else {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.clothesCellIdentifier, for: indexPath) as? ClothesListCollectionViewCell {
-                let currentClothes = visibleClothes[indexPath.item]
+                let currentClothes          = visibleClothes[indexPath.item]
                 cell.clothesImageView.image = currentClothes.photo
-                cell.symbols = currentClothes.symbols
-                cell.color = currentClothes.color
-                cell.itemHandler = itemHandler
+                cell.symbols                = currentClothes.symbols
+                cell.color                  = currentClothes.color
+                cell.itemHandler            = itemHandler
                 return cell
             }
         }
