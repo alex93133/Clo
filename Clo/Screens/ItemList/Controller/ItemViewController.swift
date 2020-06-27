@@ -53,7 +53,7 @@ extension ItemViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.colorTypeCellIdentifier) as? ItemTableViewCell {
-            cell.textLabel?.text = items[indexPath.row]
+            cell.textLabel?.text = NSLocalizedString(items[indexPath.row], comment: "")
             return cell
         } else {
             return UITableViewCell()

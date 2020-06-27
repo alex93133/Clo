@@ -244,43 +244,43 @@
     {
       "id": 41,
       "category": "Tumble drying",
-      "description": "Allowed tumble drying",
+      "description": "Do not wring",
       "imageName": "TumbleDrying_1"
     },
     {
       "id": 42,
       "category": "Tumble drying",
-      "description": "Tumble drying at low temperature",
+      "description": "Allowed tumble drying",
       "imageName": "TumbleDrying_2"
     },
     {
       "id": 43,
       "category": "Tumble drying",
-      "description": "Normal tumble drying",
+      "description": "Tumble drying at low temperature",
       "imageName": "TumbleDrying_3"
     },
     {
       "id": 44,
       "category": "Tumble drying",
-      "description": "Tumble drying at high temperature",
+      "description": "Normal tumble drying",
       "imageName": "TumbleDrying_4"
     },
     {
       "id": 45,
       "category": "Tumble drying",
-      "description": "Gentle tumble drying",
+      "description": "Tumble drying at high temperature",
       "imageName": "TumbleDrying_5"
     },
     {
       "id": 46,
       "category": "Tumble drying",
-      "description": "Very gentle tumble drying",
+      "description": "Gentle tumble drying",
       "imageName": "TumbleDrying_6"
     },
     {
       "id": 47,
       "category": "Tumble drying",
-      "description": "Do not tumble dry",
+      "description": "Very gentle tumble drying",
       "imageName": "TumbleDrying_7"
     },
     {
@@ -292,7 +292,7 @@
     {
       "id": 49,
       "category": "Tumble drying",
-      "description": "Do not wring",
+      "description": "Do not tumble dry",
       "imageName": "TumbleDrying_9"
     },
     {
@@ -400,19 +400,19 @@
     {
       "id": 67,
       "category": "Ironing",
-      "description": "Iron at low temperature",
+      "description": "Iron at low temperature (at or below 110°С)",
       "imageName": "Ironing_3"
     },
     {
       "id": 68,
       "category": "Ironing",
-      "description": "Iron at medium temperature",
+      "description": "Iron at medium temperature (at or below 150°С)",
       "imageName": "Ironing_4"
     },
     {
       "id": 69,
       "category": "Ironing",
-      "description": "Iron at high temperature",
+      "description": "Iron at high temperature (at or below 200°С)",
       "imageName": "Ironing_5"
     },
     {

@@ -80,10 +80,11 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 
     private func presentViewWithWarning() {
         let alert = CloAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        NSLayoutConstraint.activate([alert.view.heightAnchor.constraint(equalToConstant: 330)])
 
-        let cancelAction = UIAlertAction(title: "Maybe later", style: .cancel)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Maybe later", comment: ""), style: .cancel)
         alert.addAction(cancelAction)
-        let getAccessAction = UIAlertAction(title: "Get access", style: .default) { _ in
+        let getAccessAction = UIAlertAction(title: NSLocalizedString("Get access", comment: ""), style: .default) { _ in
             PhotoLibraryManager.getAccess { [weak self] result in
                 guard let self = self else { return }
                 switch result {
@@ -100,16 +101,17 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         present(alert, animated: true)
 
         alert.imageView.image   = Images.cameraIcon
-        alert.headLabel.text    = "Please note"
-        alert.messageLabel.text = "For the full application, you will need a smartphone camera. Please allow access"
+        alert.headLabel.text    = NSLocalizedString("Please note", comment: "")
+        alert.messageLabel.text = NSLocalizedString("For the full application, you will need a smartphone camera. Please allow access", comment: "")
     }
 
     private func presentViewWithError() {
         let alert = CloAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        NSLayoutConstraint.activate([alert.view.heightAnchor.constraint(equalToConstant: 330)])
 
-        let cancelAction = UIAlertAction(title: "Maybe later", style: .cancel)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Maybe later", comment: ""), style: .cancel)
         alert.addAction(cancelAction)
-        let openSettingsAction = UIAlertAction(title: "Open Settings", style: .default) { [weak self] _ in
+        let openSettingsAction = UIAlertAction(title: NSLocalizedString("Open Settings", comment: ""), style: .default) { [weak self] _ in
             guard let self = self else { return }
             self.openSettings()
         }
@@ -118,8 +120,8 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         present(alert, animated: true)
 
         alert.imageView.image   = Images.forbidden
-        alert.headLabel.text    = "Oops!"
-        alert.messageLabel.text = "Looks like you forgot to turn on the camera. To continue, you'll need to allow camera access in Settings"
+        alert.headLabel.text    = NSLocalizedString("Oops!", comment: "")
+        alert.messageLabel.text = NSLocalizedString("Looks like you forgot to turn on the camera. To continue, you'll need to allow camera access in Settings", comment: "")
     }
 
     private func openSettings() {

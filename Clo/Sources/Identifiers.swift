@@ -20,8 +20,12 @@ enum Identifiers {
     }
 
     enum PurchasesID: String, CaseIterable {
-        case espresso   = "Clo.espresso"
         case americano  = "Clo.americano"
         case cappuccino = "Clo.cappuccino"
+        case latte      = "Clo.latte"
+    }
+
+    enum Notifications {
+        static let productsGot = "ProductsGot"
     }
 }

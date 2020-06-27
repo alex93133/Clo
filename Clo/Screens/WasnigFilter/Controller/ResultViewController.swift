@@ -40,7 +40,7 @@ class ResultViewController: UIViewController {
     }
 
     private func setupNavigationBar() {
-        navigationItem.title             = "Your laundry"
+        navigationItem.title             = NSLocalizedString("Your laundry", comment: "")
         let backUIBarButtonItem          = UIBarButtonItem(image: Images.backIcon,
                                                            style: .plain,
                                                            target: self,

@@ -10,26 +10,30 @@ struct WashingManager {
 
     static func presentViewWithWarning(symbol: Symbol, target: UIViewController) {
         let alert = CloAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let cancelAction = UIAlertAction(title: "Ok", style: .cancel)
+        NSLayoutConstraint.activate([alert.view.heightAnchor.constraint(equalToConstant: 270)])
+
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .cancel)
         alert.addAction(cancelAction)
 
         target.present(alert, animated: true)
 
         alert.imageView.image   = symbol.image
-        alert.headLabel.text    = "Please note"
-        alert.messageLabel.text = "You should only wash your clothes by hand, so as not to damage it"
+        alert.headLabel.text    = NSLocalizedString("Please note", comment: "")
+        alert.messageLabel.text = NSLocalizedString("You should only wash your clothes by hand, so as not to damage it", comment: "")
     }
 
     static func presentViewWithError(symbol: Symbol, target: UIViewController) {
         let alert = CloAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        NSLayoutConstraint.activate([alert.view.heightAnchor.constraint(equalToConstant: 270)])
+
         let cancelAction = UIAlertAction(title: "Ok", style: .cancel)
         alert.addAction(cancelAction)
 
         target.present(alert, animated: true)
 
         alert.imageView.image   = symbol.image
-        alert.headLabel.text    = "Attention!"
-        alert.messageLabel.text = "This clothes is not allowed to be washed, so you will damage it"
+        alert.headLabel.text    = NSLocalizedString("Attention!", comment: "")
+        alert.messageLabel.text = NSLocalizedString("This clothes is not allowed to be washed, so you will damage it", comment: "")
     }
 
     static func getTemperature(clothes: Clothes) -> Int? {

@@ -35,7 +35,7 @@ class MenuView: UIView {
         versionLabel.font = .systemFont(ofSize: Constants.Fonts.smallTextSize, weight: .regular)
 
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-            versionLabel.text =  "Version " + version
+            versionLabel.text =  NSLocalizedString("Version", comment: "") + " " + version
         }
         setupVersionLabelConstraints()
     }

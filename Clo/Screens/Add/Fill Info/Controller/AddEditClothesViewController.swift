@@ -23,7 +23,7 @@ class AddEditClothesViewController: UIViewController {
         clothesPhoto              = editableClothes.photo
         selectedType              = editableClothes.type
         selectedColor             = editableClothes.color
-        setButtonTitle(clothes.type.rawValue)
+        setButtonTitle(NSLocalizedString(clothes.type.rawValue, comment: ""))
 
         if let info = editableClothes.info {
             view().inputFieldsView.descriptionTextField.text = info
@@ -38,11 +38,11 @@ class AddEditClothesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setupNavigationBar()
     }
 
     override func viewWillAppear(_: Bool) {
         super.viewWillAppear(true)
+        setupNavigationBar()
         checkFields()
     }
 
@@ -61,7 +61,7 @@ class AddEditClothesViewController: UIViewController {
     }
 
     private func setupNavigationBar() {
-        let title                        = editableClothes == nil ? "Add new item" : "Edit your clothes"
+        let title  = editableClothes == nil ? NSLocalizedString("Add new item", comment: "") : NSLocalizedString("Edit your clothes", comment: "")
         navigationItem.title             = title
         let backUIBarButtonItem          = UIBarButtonItem(image: Images.backIcon,
                                                            style: .plain,
@@ -161,10 +161,10 @@ extension AddEditClothesViewController: UICollectionViewDelegate, UICollectionVi
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.clothesColorCellIdentifier, for: indexPath) as? ColorTypeCollectionViewCell {
             cell.colorTypeImageView.image = clothingColors[indexPath.item].image
 
-            if selectedColor != nil, clothingColors[indexPath.item].type != selectedColor {
-                cell.colorTypeImageView.alpha = 1
-            } else {
+            if clothingColors[indexPath.item].type == selectedColor {
                 cell.colorTypeImageView.alpha = 0.3
+            } else {
+                cell.colorTypeImageView.alpha = 1
             }
             return cell
         }
@@ -196,9 +196,10 @@ extension AddEditClothesViewController: UITextFieldDelegate {
 
 extension AddEditClothesViewController: ItemViewControllerDelegate {
     func applySelectedItem(with item: String) {
+        view().inputFieldsView.selectTypeButton.dropDownIcon.rotate()
         guard let type = ClothingType(rawValue: item) else { return }
         selectedType = type
-        let buttonTitle = type.rawValue
+        let buttonTitle = NSLocalizedString(type.rawValue, comment: "")
         setButtonTitle(buttonTitle)
         checkFields()
     }

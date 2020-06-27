@@ -39,7 +39,7 @@ class WashingFilterView: UIView {
     // MARK: - HeadLabel
     private func setupHeadLabel() {
         headLabel               = UILabel()
-        headLabel.text          = "Collect the wash"
+        headLabel.text          = NSLocalizedString("Collect the wash", comment: "")
         headLabel.textColor     = Colors.accent
         headLabel.font          = .systemFont(ofSize: Constants.Fonts.headTextSize, weight: .bold)
         headLabel.textAlignment = .center
@@ -65,10 +65,10 @@ class WashingFilterView: UIView {
     }
 
     private func setupFieldDescriptionLabel() {
-        let label1 = createFieldDescriptionLabel(text: "Color")
-        let label2 = createFieldDescriptionLabel(text: "Temperature")
-        let label3 = createFieldDescriptionLabel(text: "Washing mode")
-        let label4 = createFieldDescriptionLabel(text: "Co-wash")
+        let label1 = createFieldDescriptionLabel(text: NSLocalizedString("Color ", comment: ""))
+        let label2 = createFieldDescriptionLabel(text: NSLocalizedString("Temperature", comment: ""))
+        let label3 = createFieldDescriptionLabel(text: NSLocalizedString("Washing mode", comment: ""))
+        let label4 = createFieldDescriptionLabel(text: NSLocalizedString("Co-wash", comment: ""))
         NSLayoutConstraint.activate([
             label1.topAnchor.constraint(equalTo: headLabel.bottomAnchor, constant: 24),
             label2.topAnchor.constraint(equalTo: label1.bottomAnchor, constant: 76),
@@ -79,9 +79,9 @@ class WashingFilterView: UIView {
 
     // MARK: - FieldButtons
     private func setupFieldButtons() {
-        colorButton       = CloFieldButton(title: "Select color", action: #selector(colorButtonPressed), addTo: self)
-        temperatureButton = CloFieldButton(title: "Select temperature", action: #selector(temperatureButtonPressed), addTo: self)
-        washingModeButton = CloFieldButton(title: "Select washing mode", action: #selector(washingModeButtonPressed), addTo: self)
+        colorButton       = CloFieldButton(title: NSLocalizedString("Select color", comment: ""), action: #selector(colorButtonPressed), addTo: self)
+        temperatureButton = CloFieldButton(title: NSLocalizedString("Select temperature", comment: ""), action: #selector(temperatureButtonPressed), addTo: self)
+        washingModeButton = CloFieldButton(title: NSLocalizedString("Select washing mode", comment: ""), action: #selector(washingModeButtonPressed), addTo: self)
 
         NSLayoutConstraint.activate([
             colorButton.topAnchor.constraint(equalTo: headLabel.bottomAnchor, constant: 50),
@@ -93,7 +93,7 @@ class WashingFilterView: UIView {
     // MARK: - CoincidenceLabel
     private func setupCoincidenceLabel() {
         coincidenceLabel           = UILabel()
-        coincidenceLabel.text      = "Ideal coincidence"
+        coincidenceLabel.text      = NSLocalizedString("Ideal coincidence", comment: "")
         coincidenceLabel.textColor = Colors.accent
         coincidenceLabel.font      = .systemFont(ofSize: Constants.Fonts.mediumTextSize, weight: .regular)
         setupCoincidenceLabelConstraints()
@@ -108,7 +108,7 @@ class WashingFilterView: UIView {
 
     // MARK: - NextButton
     private func setupNextButton() {
-        nextButton = CloNextButton(title: "Collect",
+        nextButton = CloNextButton(title: NSLocalizedString("Collect", comment: ""),
                                    action: #selector(nextButtonPressed),
                                    addTo: self)
         NSLayoutConstraint.activate([
@@ -119,14 +119,17 @@ class WashingFilterView: UIView {
     // MARK: - Actions
     @objc
     func colorButtonPressed() {
+        colorButton.dropDownIcon.rotate()
         delegate?.colorButtonPressed()
     }
     @objc
     func temperatureButtonPressed() {
+        colorButton.dropDownIcon.rotate()
         delegate?.temperatureButtonPressed()
     }
     @objc
     func washingModeButtonPressed() {
+        colorButton.dropDownIcon.rotate()
         delegate?.washingModeButtonPressed()
     }
 

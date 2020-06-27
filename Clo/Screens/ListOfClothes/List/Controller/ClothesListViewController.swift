@@ -30,11 +30,11 @@ class ClothesListViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setupNavigationBar()
         gestureRecognizer()
     }
 
     override func viewWillAppear(_: Bool) {
+        setupNavigationBar()
         super.viewWillAppear(true)
         clothes = CoreDataManager.shared.fetch { [weak self] result in
             guard let self = self else { return }
@@ -89,7 +89,7 @@ class ClothesListViewController: UIViewController, UIGestureRecognizerDelegate {
         navigationController?.navigationBar.barTintColor = Colors.mainBG
         settingsUIBarButtonItem.tintColor                = Colors.mint
         navigationItem.rightBarButtonItem                = settingsUIBarButtonItem
-        navigationItem.title                             = "My clothes"
+        navigationItem.title                             = NSLocalizedString("My clothes", comment: "")
     }
 
     private func presentDetailViewController(with clothes: Clothes) {

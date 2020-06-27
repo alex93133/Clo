@@ -31,7 +31,7 @@ class LaundrySymbolsViewController: UIViewController {
         view                                             = customView
         view().collectionView.dataSource                 = self
         view().collectionView.delegate                   = self
-        navigationItem.title                             = "Information"
+        navigationItem.title                             = NSLocalizedString("Information", comment: "")
         navigationController?.navigationBar.barTintColor = Colors.additionalBG
     }
 }
@@ -67,7 +67,7 @@ extension LaundrySymbolsViewController: UICollectionViewDelegate, UICollectionVi
                         at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Identifiers.symbolHeaderIdentifier, for: indexPath) as! LaundrySymbolsHeader
-            headerView.headerLabel.text = symbolSections[indexPath.section].title
+            headerView.headerLabel.text = NSLocalizedString(symbolSections[indexPath.section].title, comment: "")
             return headerView
         }
         return UICollectionReusableView()

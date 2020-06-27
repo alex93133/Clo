@@ -8,13 +8,15 @@ class CloAlertController: UIAlertController {
     var imageView: UIImageView!
     var messageLabel: UILabel!
     var stackView: UIStackView!
-    var symbol: Symbol? {
+    var symbol: Symbol! {
         didSet {
             NSLayoutConstraint.activate([view.heightAnchor.constraint(equalToConstant: 220)])
-            headLabel.text        = symbol?.description
+            headLabel.text        = NSLocalizedString(symbol!.description, comment: "")
             imageView.image       = symbol?.image
             messageLabel.isHidden = true
-            let cancelAction      = UIAlertAction(title: "Ok", style: .cancel)
+            let cancelAction      = UIAlertAction(title: NSLocalizedString("Ok",
+                                                                           comment: ""),
+                                                  style: .cancel)
             addAction(cancelAction)
         }
     }
@@ -34,7 +36,6 @@ class CloAlertController: UIAlertController {
     private func setupView() {
         view.tintColor = Colors.mint
         view.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([view.heightAnchor.constraint(equalToConstant: 320)])
     }
 
     // MARK: - SymbolImage

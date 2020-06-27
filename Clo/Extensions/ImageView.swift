@@ -7,6 +7,7 @@ extension UIImageView {
         rotation.duration     = Constants.animationTimeInterval
         rotation.isCumulative = true
         rotation.repeatCount  = 1
-        self.layer.add(rotation, forKey: "rotationAnimation")
+        layer.add(rotation, forKey: "rotationAnimation")
+        transform             = transform.rotated(by: .pi)
     }
 }

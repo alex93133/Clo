@@ -36,7 +36,7 @@ class DetailViewController: UIViewController {
     }
 
     private func setupNavigationBar() {
-        navigationItem.title              = "About"
+        navigationItem.title              = NSLocalizedString("About", comment: "")
         let settingsUIBarButtonItem       = UIBarButtonItem(image: Images.editIcon,
                                                             style: .plain,
                                                             target: self,
@@ -49,16 +49,16 @@ class DetailViewController: UIViewController {
         alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alertController.view.tintColor = Colors.mint
 
-        let editAction = UIAlertAction(title: "Edit", style: .default) { [weak self] _ in
+        let editAction = UIAlertAction(title: NSLocalizedString("Edit", comment: ""), style: .default) { [weak self] _ in
             guard let self = self else { return }
             let editViewController = AddEditClothesViewController(clothes: self.clothes)
             self.navigationController?.pushViewController(editViewController, animated: true)
         }
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
+        let deleteAction = UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive) { [weak self] _ in
             guard let self = self else { return }
             self.deleteClothes()
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel)
 
         deleteAction.setValue(Images.deleteIcon, forKey: "image")
         editAction.setValue(Images.editIcon, forKey: "image")
@@ -116,7 +116,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
 
         case 1:
             if let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.DetailCells.typeWithInfoCellIdentifier) as? DetailTypeAndInfoTableViewCell {
-                cell.typeLabel.text = clothes.type.rawValue
+                cell.typeLabel.text = NSLocalizedString(clothes.type.rawValue, comment: "")
                 if let info = clothes.info {
                     cell.infoLabel.text = info
                 } else {
@@ -130,10 +130,10 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
                 if indexPath.row == 0 {
                     let insets = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
                     cell.symbolImageView.image = UIImage(named: clothes.color.rawValue)?.withAlignmentRectInsets(insets)
-                    cell.descriptionLabel.text = clothes.color.rawValue
+                    cell.descriptionLabel.text = NSLocalizedString(clothes.color.rawValue, comment: "")
                 } else {
                     let symbol = clothes.symbols[indexPath.row - 1]
-                    cell.descriptionLabel.text = symbol.description
+                    cell.descriptionLabel.text = NSLocalizedString(symbol.description, comment: "")
                     cell.symbolImageView.image = symbol.image?.withRenderingMode(.alwaysTemplate)
                 }
                 return cell

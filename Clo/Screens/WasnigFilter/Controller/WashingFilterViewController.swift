@@ -4,11 +4,6 @@ class WashingFilterViewController: UIViewController {
 
     // MARK: - Properties
     private let customView = WashingFilterView(frame: UIScreen.main.bounds)
-    private let descriptionText = [
-        "Color",
-        "Temperature",
-        "Washing mode"
-    ]
     private var color: ColorType!
     private var temperature: Int!
     private var washingMode: WashingMode!
@@ -38,7 +33,7 @@ class WashingFilterViewController: UIViewController {
         view().nextButton.enableButton(isOn: true)
 
         color = clothes.color
-        let attributedTitleForColor = view().colorButton.createAttributes(text: color.rawValue, textColor: Colors.accent)
+        let attributedTitleForColor = view().colorButton.createAttributes(text: NSLocalizedString(color.rawValue, comment: ""), textColor: Colors.accent)
         view().colorButton.setAttributedTitle(attributedTitleForColor, for: .normal)
 
         if let clothesWashingTemperature = WashingManager.getTemperature(clothes: clothes) {
@@ -49,7 +44,7 @@ class WashingFilterViewController: UIViewController {
 
         if let clothesWashingMode = WashingManager.getWashingMode(clothes: clothes) {
             washingMode = clothesWashingMode
-            let attributedTitleForWashingMode = view().washingModeButton.createAttributes(text: washingMode.rawValue, textColor: Colors.accent)
+            let attributedTitleForWashingMode = view().washingModeButton.createAttributes(text: NSLocalizedString(washingMode.rawValue, comment: ""), textColor: Colors.accent)
             view().washingModeButton.setAttributedTitle(attributedTitleForWashingMode, for: .normal)
         }
     }
@@ -107,17 +102,21 @@ extension WashingFilterViewController: WashingFilterViewDelegate {
 
 extension WashingFilterViewController: ItemViewControllerDelegate {
     func applySelectedItem(with item: String) {
-        let attributedTitle = view().colorButton.createAttributes(text: item, textColor: Colors.accent)
+        let attributedTitle = view().colorButton.createAttributes(text: NSLocalizedString(item, comment: ""),
+                                                                  textColor: Colors.accent)
         if let color = ColorType(rawValue: item) {
             view().colorButton.setAttributedTitle(attributedTitle, for: .normal)
+            view().colorButton.dropDownIcon.rotate()
             self.color = color
         }
         if let temperature = Int(item) {
             view().temperatureButton.setAttributedTitle(attributedTitle, for: .normal)
+            view().colorButton.dropDownIcon.rotate()
             self.temperature = temperature
         }
         if let washingMode = WashingMode(rawValue: item) {
             view().washingModeButton.setAttributedTitle(attributedTitle, for: .normal)
+            view().colorButton.dropDownIcon.rotate()
             self.washingMode = washingMode
         }
         checkFields()

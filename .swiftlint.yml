@@ -43,8 +43,6 @@ opt_in_rules:
 - override_in_extension
 - overridden_super_call
 - optional_enum_case_matching
-- nslocalizedstring_require_bundle
-- nslocalizedstring_key
 - no_extension_access_modifier
 - nimble_operator
 - multiline_parameters

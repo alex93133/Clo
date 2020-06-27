@@ -20,7 +20,9 @@ class SelectSymbolsView: UIView {
 
     // MARK: - NextButton
     private func setupNextButton() {
-        nextButton = CloNextButton(title: "Save", action: #selector(nextButtonPressed), addTo: self)
+        nextButton = CloNextButton(title: NSLocalizedString("Save", comment: ""),
+                                   action: #selector(nextButtonPressed),
+                                   addTo: self)
         NSLayoutConstraint.activate([nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -8)])
     }
 

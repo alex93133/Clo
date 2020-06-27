@@ -24,9 +24,12 @@ enum Images {
     }
 
     enum Menu {
-        static let star     = UIImage(named: "StarIcon")
-        static let coffee   = UIImage(named: "CoffeeIcon")
-        static let feedback = UIImage(named: "FeedbackIcon")
-        static let chevron  = UIImage(systemName: "chevron.right")
+        static let star       = UIImage(named: "StarIcon")
+        static let coffee     = UIImage(named: "CoffeeIcon")
+        static let feedback   = UIImage(named: "FeedbackIcon")
+        static let chevron    = UIImage(systemName: "chevron.right")
+        static let americano  = UIImage(named: "AmericanoIcon")
+        static let cappuccino = UIImage(named: "CappuccinoIcon")
+        static let latte      = UIImage(named: "LatteIcon")
     }
 }

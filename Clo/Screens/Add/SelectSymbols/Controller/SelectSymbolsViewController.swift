@@ -22,12 +22,17 @@ class SelectSymbolsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setupNavigationBar()
     }
 
     override func viewWillAppear(_: Bool) {
         super.viewWillAppear(true)
+        setupNavigationBar()
         hideCategoriesWhenAppear()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        navigationController?.navigationBar.barTintColor = Colors.mainBG
     }
 
     // MARK: - Functions
@@ -48,7 +53,7 @@ class SelectSymbolsViewController: UIViewController {
     }
 
     private func setupNavigationBar() {
-        let title = editableClothes == nil ? "Add your icons" : "Edit your icons"
+        let title = editableClothes == nil ? NSLocalizedString("Add your icons", comment: "") : NSLocalizedString("Edit your icons", comment: "")
         navigationItem.title = title
         navigationController?.navigationBar.barTintColor = Colors.additionalBG
     }

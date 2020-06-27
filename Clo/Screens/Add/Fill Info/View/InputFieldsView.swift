@@ -39,7 +39,8 @@ class InputFieldsView: UIView {
 
     // MARK: - DescriptionTextField
     private func setupDescriptionTextField() {
-        descriptionTextField                           = CloTextField(placeholder: "Enter the short description", addTo: self)
+        descriptionTextField = CloTextField(placeholder: NSLocalizedString("Enter the short description", comment: ""),
+                                            addTo: self)
         descriptionTextField.adjustsFontSizeToFitWidth = true
         descriptionTextField.minimumFontSize           = 10
         descriptionTextField.autocapitalizationType    = .sentences
@@ -50,7 +51,7 @@ class InputFieldsView: UIView {
 
     // MARK: - SelectTypeButton
     private func setupSelectTypeButton() {
-        selectTypeButton = CloFieldButton(title: "Select type",
+        selectTypeButton = CloFieldButton(title: NSLocalizedString("Select type", comment: ""),
                                           action: #selector(selectTypeButtonPressed),
                                           addTo: self)
         NSLayoutConstraint.activate([selectTypeButton.topAnchor.constraint(equalTo: topAnchor, constant: 40)])
@@ -69,9 +70,9 @@ class InputFieldsView: UIView {
     }
 
     private func placeLabels() {
-        let label1 = createInputLabels(text: "Clothing type")
-        let label2 = createInputLabels(text: "Description")
-        let label3 = createInputLabels(text: "Select color")
+        let label1 = createInputLabels(text: NSLocalizedString("Clothing type", comment: ""))
+        let label2 = createInputLabels(text: NSLocalizedString("Description (optional)", comment: ""))
+        let label3 = createInputLabels(text: NSLocalizedString("Select color", comment: ""))
         NSLayoutConstraint.activate([
             label1.topAnchor.constraint(equalTo: topAnchor, constant: 12),
             label2.topAnchor.constraint(equalTo: selectTypeButton.bottomAnchor, constant: 24),
@@ -82,6 +83,7 @@ class InputFieldsView: UIView {
     // MARK: - Actions
     @objc
     func selectTypeButtonPressed() {
+        selectTypeButton.dropDownIcon.rotate()
         selectTypeButtonHandler?()
     }
 }
