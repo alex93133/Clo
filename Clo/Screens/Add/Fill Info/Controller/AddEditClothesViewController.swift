@@ -80,6 +80,10 @@ class AddEditClothesViewController: UIViewController {
             typeSheet.itemViewController.selectedItem = selectedType.rawValue
         }
         present(typeSheet.sheet, animated: false)
+        typeSheet.sheet.willDismiss = { [weak self] _ in
+            guard let self = self else { return }
+            self.view().inputFieldsView.selectTypeButton.dropDownIcon.rotate()
+        }
     }
 
     private func presentGallerySheet() {
@@ -196,7 +200,6 @@ extension AddEditClothesViewController: UITextFieldDelegate {
 
 extension AddEditClothesViewController: ItemViewControllerDelegate {
     func applySelectedItem(with item: String) {
-        view().inputFieldsView.selectTypeButton.dropDownIcon.rotate()
         guard let type = ClothingType(rawValue: item) else { return }
         selectedType = type
         let buttonTitle = NSLocalizedString(type.rawValue, comment: "")

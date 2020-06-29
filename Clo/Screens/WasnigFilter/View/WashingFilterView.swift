@@ -124,12 +124,12 @@ class WashingFilterView: UIView {
     }
     @objc
     func temperatureButtonPressed() {
-        colorButton.dropDownIcon.rotate()
+        temperatureButton.dropDownIcon.rotate()
         delegate?.temperatureButtonPressed()
     }
     @objc
     func washingModeButtonPressed() {
-        colorButton.dropDownIcon.rotate()
+        washingModeButton.dropDownIcon.rotate()
         delegate?.washingModeButtonPressed()
     }
 

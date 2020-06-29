@@ -78,21 +78,48 @@ extension WashingFilterViewController: WashingFilterViewDelegate {
         let colorsString = ClothingColor.getAllClothingColors().map { $0.type.rawValue }
         let colorsSheet = ItemSheet(items: colorsString)
         colorsSheet.itemViewController.delegate = self
+
+        if let color = color {
+            colorsSheet.itemViewController.selectedItem = color.rawValue
+        }
+
         present(colorsSheet.sheet, animated: false)
+        colorsSheet.sheet.willDismiss = { [weak self] _ in
+            guard let self = self else { return }
+            self.view().colorButton.dropDownIcon.rotate()
+        }
     }
 
     func temperatureButtonPressed() {
         let temperatures = [ "30", "40", "50", "60", "70", "95"]
         let temperatureSheet = ItemSheet(items: temperatures)
         temperatureSheet.itemViewController.delegate = self
+
+        if let temperature = temperature {
+            temperatureSheet.itemViewController.selectedItem = String(temperature)
+        }
+
         present(temperatureSheet.sheet, animated: false)
+        temperatureSheet.sheet.willDismiss = { [weak self] _ in
+            guard let self = self else { return }
+            self.view().temperatureButton.dropDownIcon.rotate()
+        }
     }
 
     func washingModeButtonPressed() {
         let washingModes = WashingMode.allCases.map { $0.rawValue }
         let washingModesSheet = ItemSheet(items: washingModes)
         washingModesSheet.itemViewController.delegate = self
+
+        if let washingMode = washingMode {
+            washingModesSheet.itemViewController.selectedItem = washingMode.rawValue
+        }
+
         present(washingModesSheet.sheet, animated: false)
+        washingModesSheet.sheet.willDismiss = { [weak self] _ in
+            guard let self = self else { return }
+            self.view().washingModeButton.dropDownIcon.rotate()
+        }
     }
 
     func nextButtonPressed() {
@@ -106,17 +133,14 @@ extension WashingFilterViewController: ItemViewControllerDelegate {
                                                                   textColor: Colors.accent)
         if let color = ColorType(rawValue: item) {
             view().colorButton.setAttributedTitle(attributedTitle, for: .normal)
-            view().colorButton.dropDownIcon.rotate()
             self.color = color
         }
         if let temperature = Int(item) {
             view().temperatureButton.setAttributedTitle(attributedTitle, for: .normal)
-            view().colorButton.dropDownIcon.rotate()
             self.temperature = temperature
         }
         if let washingMode = WashingMode(rawValue: item) {
             view().washingModeButton.setAttributedTitle(attributedTitle, for: .normal)
-            view().colorButton.dropDownIcon.rotate()
             self.washingMode = washingMode
         }
         checkFields()
