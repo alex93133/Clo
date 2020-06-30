@@ -9,7 +9,7 @@ enum Constants {
 
     enum Fonts {
         static let headTextSize: CGFloat      = 22
-        static let largeTypeTextSize: CGFloat = 20
+        static let largeTextSize: CGFloat     = 20
         static let mediumTextSize: CGFloat    = 17
         static let smallTextSize: CGFloat     = 13
     }

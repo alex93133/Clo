@@ -10,7 +10,7 @@ protocol WashingFilterViewDelegate: class {
 class WashingFilterView: UIView {
 
     // MARK: - Properties
-    private var headLabel: UILabel!
+    var headLabel: UILabel!
     var colorButton: CloFieldButton!
     var temperatureButton: CloFieldButton!
     var washingModeButton: CloFieldButton!
@@ -70,10 +70,10 @@ class WashingFilterView: UIView {
         let label3 = createFieldDescriptionLabel(text: NSLocalizedString("Washing mode", comment: ""))
         let label4 = createFieldDescriptionLabel(text: NSLocalizedString("Co-wash", comment: ""))
         NSLayoutConstraint.activate([
-            label1.topAnchor.constraint(equalTo: headLabel.bottomAnchor, constant: 24),
+            label1.topAnchor.constraint(equalTo: topAnchor, constant: 44),
             label2.topAnchor.constraint(equalTo: label1.bottomAnchor, constant: 76),
             label3.topAnchor.constraint(equalTo: label2.bottomAnchor, constant: 76),
-            label4.topAnchor.constraint(equalTo: label3.bottomAnchor, constant: 95)
+            label4.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -150)
         ])
     }
 
@@ -84,7 +84,7 @@ class WashingFilterView: UIView {
         washingModeButton = CloFieldButton(title: NSLocalizedString("Select washing mode", comment: ""), action: #selector(washingModeButtonPressed), addTo: self)
 
         NSLayoutConstraint.activate([
-            colorButton.topAnchor.constraint(equalTo: headLabel.bottomAnchor, constant: 50),
+            colorButton.topAnchor.constraint(equalTo: topAnchor, constant: 74),
             temperatureButton.topAnchor.constraint(equalTo: colorButton.bottomAnchor, constant: 50),
             washingModeButton.topAnchor.constraint(equalTo: temperatureButton.bottomAnchor, constant: 50)
         ])
@@ -167,7 +167,7 @@ class WashingFilterView: UIView {
             line.heightAnchor.constraint(equalToConstant: 0.5),
             line.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
             line.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
-            line.topAnchor.constraint(equalTo: headLabel.bottomAnchor, constant: 324)
+            line.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -186)
         ])
     }
 
@@ -178,7 +178,7 @@ class WashingFilterView: UIView {
             coincidenceLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
             coincidenceLabel.heightAnchor.constraint(equalToConstant: 22),
             coincidenceLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -75),
-            coincidenceLabel.topAnchor.constraint(equalTo: headLabel.bottomAnchor, constant: 355)
+            coincidenceLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -115)
         ])
     }
 

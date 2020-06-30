@@ -1,11 +1,6 @@
 import CoreData
 import UIKit
 
-protocol ClothesListViewControllerDelegate: class {
-    func presentPhotoSheet()
-    func presentWashingFilterSheet(with clothes: Clothes)
-}
-
 class ClothesListViewController: UIViewController, UIGestureRecognizerDelegate {
 
     // MARK: - Properties
@@ -13,7 +8,6 @@ class ClothesListViewController: UIViewController, UIGestureRecognizerDelegate {
     private var washingFilterSheet: WashingFilterSheet!
     private var itemHandler: ((CloAlertController) -> Void)!
     private var currentCategory: ClothingType!
-    weak var delegate: ClothesListViewControllerDelegate!
     private var clothes: [Clothes]!
     private var visibleClothes: [Clothes]! {
         guard let clothes = clothes else { return [] }
@@ -25,6 +19,7 @@ class ClothesListViewController: UIViewController, UIGestureRecognizerDelegate {
             return filteredClothes
         }
     }
+    var presentPhotoSheet: (() -> Void)!
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -33,19 +28,11 @@ class ClothesListViewController: UIViewController, UIGestureRecognizerDelegate {
         gestureRecognizer()
     }
 
-    override func viewWillAppear(_: Bool) {
-        setupNavigationBar()
-        super.viewWillAppear(true)
-        clothes = CoreDataManager.shared.fetch { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success:
-                self.view().collectionView.reloadData()
 
-            case let .failure(error):
-                print(error.localizedDescription)
-            }
-        }
+    override func viewWillAppear(_: Bool) {
+        super.viewWillAppear(true)
+        setupNavigationBar()
+        getClothes()
     }
 
     // MARK: - Functions
@@ -73,6 +60,19 @@ class ClothesListViewController: UIViewController, UIGestureRecognizerDelegate {
         view().collectionView.addGestureRecognizer(longPress)
     }
 
+    private func getClothes() {
+        clothes = CoreDataManager.shared.fetch { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.view().collectionView.reloadData()
+
+            case let .failure(error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+
     private func smoothReloadData() {
         UIView.transition(with: view().collectionView,
                           duration: Constants.animationTimeInterval,
@@ -86,10 +86,9 @@ class ClothesListViewController: UIViewController, UIGestureRecognizerDelegate {
                                                       style: .plain,
                                                       target: self,
                                                       action: #selector(sortItemPressed))
-        navigationController?.navigationBar.barTintColor = Colors.mainBG
-        settingsUIBarButtonItem.tintColor                = Colors.mint
-        navigationItem.rightBarButtonItem                = settingsUIBarButtonItem
-        navigationItem.title                             = NSLocalizedString("My clothes", comment: "")
+        settingsUIBarButtonItem.tintColor = Colors.mint
+        navigationItem.rightBarButtonItem = settingsUIBarButtonItem
+        navigationItem.title              = NSLocalizedString("My clothes", comment: "")
     }
 
     private func presentDetailViewController(with clothes: Clothes) {
@@ -107,6 +106,22 @@ class ClothesListViewController: UIViewController, UIGestureRecognizerDelegate {
         present(typeSheet.sheet, animated: false)
     }
 
+    private func presentWashingFilter(with clothes: Clothes?) {
+        let washingFilterSheet = WashingFilterSheet()
+        if let clothes = clothes {
+            if clothes.symbols.contains(where: { $0.id ==  4 }) {
+                guard let symbol = clothes.symbols.first(where: { $0.id ==  4 }) else { return }
+                WashingManager.presentViewWithWarning(symbol: symbol, target: self)
+            }
+            if clothes.symbols.contains(where: { $0.id ==  5 }) {
+                guard let symbol = clothes.symbols.first(where: { $0.id ==  5 }) else { return }
+                WashingManager.presentViewWithError(symbol: symbol, target: self)
+            }
+        }
+        washingFilterSheet.washingFilter.referenceClothes = clothes
+        present(washingFilterSheet.sheet, animated: false)
+    }
+    
     // MARK: - Actions
     @objc
     func sortItemPressed() {
@@ -119,7 +134,7 @@ class ClothesListViewController: UIViewController, UIGestureRecognizerDelegate {
         FeedbackManager.heavy()
         let point = gesture.location(in: view().collectionView)
         if let indexPath = view().collectionView.indexPathForItem(at: point) {
-            delegate.presentWashingFilterSheet(with: visibleClothes[indexPath.item])
+            presentWashingFilter(with: visibleClothes[indexPath.item])
         }
     }
 }
@@ -154,7 +169,7 @@ extension ClothesListViewController: UICollectionViewDelegate, UICollectionViewD
 
     func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if visibleClothes.isEmpty {
-            delegate.presentPhotoSheet()
+            presentPhotoSheet()
         } else {
             let selectedClothes = visibleClothes[indexPath.item]
             presentDetailViewController(with: selectedClothes)

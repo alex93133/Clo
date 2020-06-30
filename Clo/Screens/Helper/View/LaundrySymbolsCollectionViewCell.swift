@@ -25,11 +25,11 @@ class LaundrySymbolsCollectionViewCell: UICollectionViewCell {
     private func setupView(itemSize: CGFloat) {
         contentView.center              = CGPoint(x: itemSize / 2, y: itemSize / 2)
         contentView.layer.cornerRadius  = Constants.defaultCornerRadius
-        contentView.backgroundColor     = Colors.mainBG
+        contentView.backgroundColor     = Colors.additionalBG
 
-        contentView.layer.shadowColor   = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        contentView.layer.shadowColor   = Colors.shadow.cgColor
         contentView.layer.shadowOpacity = 1
-        contentView.layer.shadowOffset  = CGSize(width: 0, height: 4)
+        contentView.layer.shadowOffset  = CGSize(width: 0, height: 3)
         contentView.layer.shadowRadius  = Constants.shadowRadius
     }
 

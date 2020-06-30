@@ -6,6 +6,10 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 
     // MARK: - Properties
     private var imageToPass: UIImage?
+    private var laundrySymbolsViewController: LaundrySymbolsViewController!
+    private var laundryListViewController: LaundryListViewController!
+    private var clothesListViewController: ClothesListViewController!
+    private var menuViewController: MenuViewController!
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -20,22 +24,24 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         tabBar.tintColor               = Colors.mint
         tabBar.unselectedItemTintColor = Colors.icon
         tabBar.isTranslucent           = false
-        selectedIndex                  = 2
+        selectedIndex                  = 1
         tabBar.layer.borderColor       = UIColor.lightGray.cgColor
         delegate                       = self
     }
 
     private func createTabs() {
-        let item1        = UINavigationController(rootViewController: LaundrySymbolsViewController())
+        laundrySymbolsViewController = LaundrySymbolsViewController()
+        laundryListViewController    = LaundryListViewController()
+        clothesListViewController    = ClothesListViewController()
+        menuViewController           = MenuViewController()
+
+        let item1        = UINavigationController(rootViewController: laundrySymbolsViewController)
         let icon1        = UITabBarItem(title: "", image: Images.questionIcon, tag: 1)
         item1.tabBarItem = icon1
 
-        let item2        = UIViewController()
+        let item2        = UINavigationController(rootViewController: laundryListViewController)
         let icon2        = UITabBarItem(title: "", image: Images.machineIcon, tag: 2)
         item2.tabBarItem = icon2
-
-        let clothesListViewController      = ClothesListViewController()
-        clothesListViewController.delegate = self
 
         let item3        = UINavigationController(rootViewController: clothesListViewController)
         let icon3        = UITabBarItem(title: "", image: Images.clothesIcon, tag: 3)
@@ -45,7 +51,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         let icon4        = UITabBarItem(title: "", image: Images.addIcon, tag: 4)
         item4.tabBarItem = icon4
 
-        let item5        = MenuViewController()
+        let item5        = menuViewController!
         let icon5        = UITabBarItem(title: "", image: Images.menuIcon, tag: 5)
         item5.tabBarItem = icon5
 
@@ -53,7 +59,14 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         viewControllers  = controllers
     }
 
-    private func presentSheetViewController() {
+    private func setupDependencies() {
+        clothesListViewController.presentPhotoSheet = { [weak self] in
+            guard let self = self else { return }
+            self.presentPhotoSheet()
+        }
+    }
+
+    private func presentPhotoSheet() {
         let gallerySheet = GallerySheet(height: view.frame.size.height * 2 / 3)
 
         gallerySheet.gallery.cropViewControllerHandler = { [weak self] image in
@@ -133,29 +146,10 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         }
     }
 
-    private func presentWashingFilter(with clothes: Clothes?) {
-        let washingFilterSheet = WashingFilterSheet()
-        if let clothes = clothes {
-            if clothes.symbols.contains(where: { $0.id ==  4 }) {
-                guard let symbol = clothes.symbols.first(where: { $0.id ==  4 }) else { return }
-                WashingManager.presentViewWithWarning(symbol: symbol, target: self)
-            }
-            if clothes.symbols.contains(where: { $0.id ==  5 }) {
-                guard let symbol = clothes.symbols.first(where: { $0.id ==  5 }) else { return }
-                WashingManager.presentViewWithError(symbol: symbol, target: self)
-            }
-        }
-        washingFilterSheet.washingFilter.referenceClothes = clothes
-        present(washingFilterSheet.sheet, animated: false)
-    }
+
 
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         switch tabBarController.customizableViewControllers?.firstIndex(of: viewController) {
-        case 1:
-            FeedbackManager.light()
-            presentWashingFilter(with: nil)
-            return false
-
         case 3:
             PhotoLibraryManager.checkAccessStatus { [weak self] result in
                 guard let self = self else { return }
@@ -178,15 +172,5 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         default:
             return true
         }
-    }
-}
-
-extension MainTabBarController: ClothesListViewControllerDelegate {
-    func presentWashingFilterSheet(with clothes: Clothes) {
-        presentWashingFilter(with: clothes)
-    }
-
-    func presentPhotoSheet() {
-        presentSheetViewController()
     }
 }

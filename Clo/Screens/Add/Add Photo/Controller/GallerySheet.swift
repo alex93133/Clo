@@ -19,5 +19,6 @@ class GallerySheet {
         sheet.blurBottomSafeArea           = false
         sheet.topCornersRadius             = 15
         sheet.overlay                      = Colors.overlay
+        sheet.handleSize                   = CGSize(width: 31, height: 3)
     }
 }

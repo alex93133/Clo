@@ -8,7 +8,7 @@ class LaundrySymbolsView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupCollectionView()
-        backgroundColor = Colors.additionalBG
+        backgroundColor = Colors.mainBG
     }
 
     required init?(coder: NSCoder) {
@@ -31,7 +31,7 @@ class LaundrySymbolsView: UIView {
         layout.minimumInteritemSpacing              = spacing
 
         collectionView                              = UICollectionView(frame: frame, collectionViewLayout: layout)
-        collectionView.backgroundColor              = Colors.additionalBG
+        collectionView.backgroundColor              = Colors.mainBG
         collectionView.showsVerticalScrollIndicator = false
 
         collectionView.register(LaundrySymbolsCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.symbolCellIdentifier)

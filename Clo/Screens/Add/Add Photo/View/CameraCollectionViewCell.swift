@@ -7,7 +7,7 @@ class CameraCollectionViewCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        setupTakePhotoIcon(frame: frame)
+        setupTakePhotoIcon()
         backgroundColor = .gray
     }
 
@@ -16,17 +16,25 @@ class CameraCollectionViewCell: UICollectionViewCell {
     }
 
     // MARK: - PhotoImageView
-    private func setupTakePhotoIcon(frame: CGRect) {
-        let size                          = frame.height * 2 / 3
-        takePhotoIcon                     = UIImageView(frame: CGRect(x: 0,
-                                                                      y: 0,
-                                                                      width: size,
-                                                                      height: size))
-        takePhotoIcon.center              = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
+    private func setupTakePhotoIcon() {
+        takePhotoIcon                     = UIImageView()
+        takePhotoIcon.center              = CGPoint(x: bounds.size.width / 2, y: bounds.size.height / 2)
         takePhotoIcon.contentMode         = .scaleAspectFit
         takePhotoIcon.layer.masksToBounds = true
         takePhotoIcon.image               = Images.cameraIcon
         takePhotoIcon.tintColor           = .white
+        setupTakePhotoIconConstraints()
+    }
+
+    // MARK: - Constraints
+    private func setupTakePhotoIconConstraints() {
         addSubview(takePhotoIcon)
+        takePhotoIcon.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            takePhotoIcon.widthAnchor.constraint(equalToConstant: 46),
+            takePhotoIcon.heightAnchor.constraint(equalToConstant: 46),
+            takePhotoIcon.centerYAnchor.constraint(equalTo: centerYAnchor),
+            takePhotoIcon.centerXAnchor.constraint(equalTo: centerXAnchor)
+        ])
     }
 }

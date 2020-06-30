@@ -41,7 +41,7 @@ class ResultViewController: UIViewController {
 
     private func setupNavigationBar() {
         navigationItem.title             = NSLocalizedString("Your laundry", comment: "")
-        let backUIBarButtonItem          = UIBarButtonItem(image: Images.backIcon,
+        let backUIBarButtonItem          = UIBarButtonItem(image: Images.crossIcon,
                                                            style: .plain,
                                                            target: self,
                                                            action: #selector(backButtonPressed))

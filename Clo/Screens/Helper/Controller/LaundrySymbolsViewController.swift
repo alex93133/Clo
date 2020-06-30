@@ -12,27 +12,16 @@ class LaundrySymbolsViewController: UIViewController {
         setupView()
     }
 
-    override func viewWillAppear(_: Bool) {
-        super.viewWillAppear(true)
-        tabBarController?.tabBar.barTintColor = Colors.additionalBG
-    }
-
-    override func viewDidDisappear(_: Bool) {
-        super.viewDidDisappear(true)
-        tabBarController?.tabBar.barTintColor = Colors.mainBG
-    }
-
     // MARK: - Functions
     private func view() -> LaundrySymbolsView {
         return view as! LaundrySymbolsView
     }
 
     private func setupView() {
-        view                                             = customView
-        view().collectionView.dataSource                 = self
-        view().collectionView.delegate                   = self
-        navigationItem.title                             = NSLocalizedString("Information", comment: "")
-        navigationController?.navigationBar.barTintColor = Colors.additionalBG
+        view                             = customView
+        view().collectionView.dataSource = self
+        view().collectionView.delegate   = self
+        navigationItem.title             = NSLocalizedString("Information", comment: "")
     }
 }
 

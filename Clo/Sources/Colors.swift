@@ -6,6 +6,7 @@ enum Colors {
     static let mint     = UIColor(red: 0, green: 0.741, blue: 0.749, alpha: 1)
     static let overlay  = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
     static let textGray = UIColor(red: 0.506, green: 0.549, blue: 0.6, alpha: 1)
+    static let shadow   = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15)
 
     static let mainBG = UIColor { traitCollection -> UIColor in
         switch traitCollection.userInterfaceStyle {

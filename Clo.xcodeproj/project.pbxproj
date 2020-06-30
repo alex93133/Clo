@@ -50,6 +50,10 @@
 		33B5923924A498AB0079E57A /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B5923824A498AB0079E57A /* MenuItemTableViewCell.swift */; };
 		33C5172B24A4A6ED00128C4B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C5172A24A4A6ED00128C4B /* StoreKit.framework */; };
 		33C5172D24A4AA2000128C4B /* InAppPurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C5172C24A4AA2000128C4B /* InAppPurchaseManager.swift */; };
+		33DD507224AA36C3009CDC01 /* LaundryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD507124AA36C3009CDC01 /* LaundryListViewController.swift */; };
+		33DD507424AA3711009CDC01 /* LaundryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD507324AA3711009CDC01 /* LaundryListView.swift */; };
+		33DD507624AB3811009CDC01 /* CloNewItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD507524AB3811009CDC01 /* CloNewItemButton.swift */; };
+		33DD508024AB55DC009CDC01 /* NewLaundryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD507F24AB55DC009CDC01 /* NewLaundryView.swift */; };
 		33DFEB03248D0AF200B802F4 /* Clothes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33DFEB01248D0AF200B802F4 /* Clothes.xcdatamodeld */; };
 		33E61A1224A47DE100B6D1FD /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E61A1124A47DE100B6D1FD /* ResultViewController.swift */; };
 		33E7DCF0247F92CF00BD3F41 /* AddEditClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCEF247F92CF00BD3F41 /* AddEditClothesViewController.swift */; };
@@ -135,6 +139,10 @@
 		33B5923824A498AB0079E57A /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
 		33C5172A24A4A6ED00128C4B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		33C5172C24A4AA2000128C4B /* InAppPurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseManager.swift; sourceTree = "<group>"; };
+		33DD507124AA36C3009CDC01 /* LaundryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundryListViewController.swift; sourceTree = "<group>"; };
+		33DD507324AA3711009CDC01 /* LaundryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundryListView.swift; sourceTree = "<group>"; };
+		33DD507524AB3811009CDC01 /* CloNewItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloNewItemButton.swift; sourceTree = "<group>"; };
+		33DD507F24AB55DC009CDC01 /* NewLaundryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLaundryView.swift; sourceTree = "<group>"; };
 		33DFEB02248D0AF200B802F4 /* Clothes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Clothes.xcdatamodel; sourceTree = "<group>"; };
 		33E61A1124A47DE100B6D1FD /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		33E7DCEF247F92CF00BD3F41 /* AddEditClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditClothesViewController.swift; sourceTree = "<group>"; };
@@ -244,6 +252,7 @@
 				3357478F247FCABD008172FB /* CloTextField.swift */,
 				33F1A4E0248F94B800857FE9 /* CloAlertController.swift */,
 				3392C5EA249CEF290066D5DD /* CloFieldButton.swift */,
+				33DD507524AB3811009CDC01 /* CloNewItemButton.swift */,
 			);
 			path = CustomUIElements;
 			sourceTree = "<group>";
@@ -372,11 +381,46 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		33FEB3AA249F8F6B00D2B037 /* WasnigFilter */ = {
+		33DD507924AB550F009CDC01 /* LaundryList */ = {
+			isa = PBXGroup;
+			children = (
+				33DD507C24AB554A009CDC01 /* View */,
+				33DD507B24AB5542009CDC01 /* Controller */,
+			);
+			path = LaundryList;
+			sourceTree = "<group>";
+		};
+		33DD507A24AB552A009CDC01 /* LaundryWithClothes */ = {
 			isa = PBXGroup;
 			children = (
 				33FEB3AC249F8F9100D2B037 /* View */,
 				33FEB3AB249F8F8A00D2B037 /* Controller */,
+			);
+			path = LaundryWithClothes;
+			sourceTree = "<group>";
+		};
+		33DD507B24AB5542009CDC01 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				33DD507124AA36C3009CDC01 /* LaundryListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		33DD507C24AB554A009CDC01 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				33DD507324AA3711009CDC01 /* LaundryListView.swift */,
+				33DD507F24AB55DC009CDC01 /* NewLaundryView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		33FEB3AA249F8F6B00D2B037 /* WasnigFilter */ = {
+			isa = PBXGroup;
+			children = (
+				33DD507924AB550F009CDC01 /* LaundryList */,
+				33DD507A24AB552A009CDC01 /* LaundryWithClothes */,
 			);
 			path = WasnigFilter;
 			sourceTree = "<group>";
@@ -541,11 +585,11 @@
 			children = (
 				A8BC7483245C95CF00106097 /* MainTabBarController.swift */,
 				A8644DA924641758007ABAA8 /* Helper */,
-				A8644DA824641729007ABAA8 /* Add */,
-				A8644DA72464171A007ABAA8 /* ListOfClothes */,
-				3392C5EE249D04A10066D5DD /* ItemList */,
 				33FEB3AA249F8F6B00D2B037 /* WasnigFilter */,
+				A8644DA72464171A007ABAA8 /* ListOfClothes */,
+				A8644DA824641729007ABAA8 /* Add */,
 				33B5923124A492830079E57A /* Menu */,
+				3392C5EE249D04A10066D5DD /* ItemList */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -747,6 +791,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33B5923724A492FE0079E57A /* MenuView.swift in Sources */,
+				33DD508024AB55DC009CDC01 /* NewLaundryView.swift in Sources */,
 				33574789247FBB89008172FB /* ColorTypeCollectionView.swift in Sources */,
 				33E7DCF0247F92CF00BD3F41 /* AddEditClothesViewController.swift in Sources */,
 				33EFBD25249FA62C0031942A /* ImageView.swift in Sources */,
@@ -788,6 +833,7 @@
 				33DFEB03248D0AF200B802F4 /* Clothes.xcdatamodeld in Sources */,
 				33B5923524A492F00079E57A /* MenuViewController.swift in Sources */,
 				3306B4482496210400A42C85 /* Image.swift in Sources */,
+				33DD507224AA36C3009CDC01 /* LaundryListViewController.swift in Sources */,
 				A886AFCF24606301007FAEF2 /* SymbolsSections.swift in Sources */,
 				A8BC747B245C429300106097 /* Colors.swift in Sources */,
 				3303FE872497778800724FAB /* ItemSheet.swift in Sources */,
@@ -806,12 +852,14 @@
 				33041F9D247C113800721E63 /* Identifiers.swift in Sources */,
 				33FEB3AE249F8FCB00D2B037 /* WashingFilterViewController.swift in Sources */,
 				3308ECB3248E0CC0008C7B61 /* DetailTypeAndInfoTableViewCell.swift in Sources */,
+				33DD507424AA3711009CDC01 /* LaundryListView.swift in Sources */,
 				338F2280248A70A7001C40D1 /* Clothes.swift in Sources */,
 				A8BC7479245C427400106097 /* Images.swift in Sources */,
 				33E61A1224A47DE100B6D1FD /* ResultViewController.swift in Sources */,
 				A8204D5F2463189D005E30A0 /* GalleryCollectionViewCell.swift in Sources */,
 				33E7DCFA247FB1D900BD3F41 /* ClothingType.swift in Sources */,
 				3308ECA7248D5C2F008C7B61 /* Result.swift in Sources */,
+				33DD507624AB3811009CDC01 /* CloNewItemButton.swift in Sources */,
 				33270511249F684500E50B98 /* Symbol.swift in Sources */,
 				A8C9034824602EE9004294D9 /* Symbols.swift in Sources */,
 				A82AC9802458404F00C0DC3D /* SceneDelegate.swift in Sources */,

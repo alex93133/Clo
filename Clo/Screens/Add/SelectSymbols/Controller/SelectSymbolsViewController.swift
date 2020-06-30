@@ -6,7 +6,7 @@ class SelectSymbolsViewController: UIViewController {
     private let customView = SelectSymbolsView(frame: UIScreen.main.bounds)
     var clothesInfo: (type: ClothingType, color: ColorType, info: String?, photo: UIImage)!
     var editableClothes: Clothes?
-    private let selectionSectionTitle = "Your choice"
+    private let selectionSectionTitle = NSLocalizedString("Your choice", comment: "")
     private var sections = SymbolsSections.getSections().sorted { $0.index < $1.index }
     private var selectedSymbols = [Symbol]() {
         willSet {
@@ -30,11 +30,6 @@ class SelectSymbolsViewController: UIViewController {
         hideCategoriesWhenAppear()
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-        navigationController?.navigationBar.barTintColor = Colors.mainBG
-    }
-
     // MARK: - Functions
     private func view() -> SelectSymbolsView {
         return view as! SelectSymbolsView
@@ -55,7 +50,6 @@ class SelectSymbolsViewController: UIViewController {
     private func setupNavigationBar() {
         let title = editableClothes == nil ? NSLocalizedString("Add your icons", comment: "") : NSLocalizedString("Edit your icons", comment: "")
         navigationItem.title = title
-        navigationController?.navigationBar.barTintColor = Colors.additionalBG
     }
 
     private func createSelectedSymbolsSection() {
@@ -213,7 +207,7 @@ extension SelectSymbolsViewController: UICollectionViewDelegate, UICollectionVie
                         at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Identifiers.symbolHeaderIdentifier, for: indexPath) as! LaundrySymbolsHeader
-            headerView.headerLabel.text = sections[indexPath.section].title
+            headerView.headerLabel.text = NSLocalizedString(sections[indexPath.section].title, comment: "")
             return headerView
         }
         return UICollectionReusableView()

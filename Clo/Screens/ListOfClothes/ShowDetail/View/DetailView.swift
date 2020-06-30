@@ -38,7 +38,7 @@ class DetailView: UIView {
         NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tableView.topAnchor.constraint(equalTo: topAnchor),
+            tableView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }

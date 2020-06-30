@@ -34,24 +34,33 @@ class ClothesListCollectionViewCell: UICollectionViewCell {
         super.init(frame: .zero)
     }
 
+    override func layoutSubviews() {
+        dropShadow()
+    }
+
     // MARK: - View
     private func setupView() {
-        contentView.layer.cornerRadius  = Constants.defaultCornerRadius
-        contentView.backgroundColor     = Colors.mainBG
+        contentView.layer.cornerRadius = Constants.defaultCornerRadius
+        contentView.backgroundColor    = Colors.mainBG
+        contentView.clipsToBounds      = true
+    }
 
-        contentView.layer.shadowColor   = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-        contentView.layer.shadowOpacity = 1
-        contentView.layer.shadowOffset  = CGSize(width: 0, height: 2)
-        contentView.layer.shadowRadius  = Constants.shadowRadius
+    private func dropShadow() {
+        let shadowLayer           = CAShapeLayer()
+        shadowLayer.path          = UIBezierPath(roundedRect: contentView.bounds, cornerRadius: Constants.defaultCornerRadius).cgPath
+        shadowLayer.fillColor     = Colors.mainBG.cgColor
+        shadowLayer.shadowColor   = Colors.shadow.cgColor
+        shadowLayer.shadowPath    = shadowLayer.path
+        shadowLayer.shadowOffset  = CGSize(width: 0, height: 3)
+        shadowLayer.shadowOpacity = 1
+        shadowLayer.shadowRadius  = Constants.shadowRadius
+        layer.insertSublayer(shadowLayer, at: 0)
     }
 
     // MARK: - ClothesImageView
     private func setupClothesImageView() {
-        clothesImageView                     = UIImageView()
-        clothesImageView.contentMode         = .scaleAspectFill
-        clothesImageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        clothesImageView.layer.cornerRadius  = Constants.defaultCornerRadius
-        clothesImageView.layer.masksToBounds = true
+        clothesImageView             = UIImageView()
+        clothesImageView.contentMode = .scaleAspectFill
         setupClothesImageConstraints()
     }
 
@@ -91,7 +100,7 @@ class ClothesListCollectionViewCell: UICollectionViewCell {
     }
 
     private func setupCollectionViewConstraints() {
-        addSubview(collectionView)
+        contentView.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),

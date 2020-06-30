@@ -18,7 +18,7 @@ class ClothesListView: UIView {
     // MARK: - CollectionView
     private func setupCollectionView() {
         let layout                                  = UICollectionViewFlowLayout()
-        layout.sectionInset                         = UIEdgeInsets(top: 0, left: 16, bottom: 16, right: 16)
+        layout.sectionInset                         = UIEdgeInsets(top: 8, left: 16, bottom: 16, right: 16)
 
         let spacing: CGFloat                        = 24
         let itemWidth: CGFloat                      = frame.size.width - layout.sectionInset.left - layout.sectionInset.right

@@ -98,7 +98,9 @@ class MenuViewController: UIViewController {
             guard let self = self else { return }
             self.manager.purchase(product: product)
         }
+        action.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
         action.setValue(image.withRenderingMode(.alwaysOriginal), forKey: "image")
+    
         productsList.addAction(action)
     }
 }
