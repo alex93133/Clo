@@ -100,7 +100,7 @@ class MenuViewController: UIViewController {
         }
         action.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
         action.setValue(image.withRenderingMode(.alwaysOriginal), forKey: "image")
-    
+
         productsList.addAction(action)
     }
 }

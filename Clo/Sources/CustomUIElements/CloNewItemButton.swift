@@ -25,7 +25,6 @@ class CloNewItemButton: UIButton {
         layer.masksToBounds =  true
     }
 
-
     private func createAttributes(text: String) -> NSMutableAttributedString {
         let attributedString = NSMutableAttributedString(string: text)
         attributedString.addAttribute(NSAttributedString.Key.font,

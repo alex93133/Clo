@@ -8,12 +8,12 @@ class WashingFilterSheet {
     var washingFilter: WashingFilterViewController!
 
     init() {
+        washingFilter = WashingFilterViewController()
         setup()
     }
 
     // MARK: - Functions
     private func setup() {
-        washingFilter                      = WashingFilterViewController()
         sheet                              = SheetViewController(controller: washingFilter, sizes: [.fixed(560)])
         sheet.extendBackgroundBehindHandle = true
         sheet.blurBottomSafeArea           = false

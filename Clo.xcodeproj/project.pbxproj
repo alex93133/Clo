@@ -53,7 +53,6 @@
 		33DD507224AA36C3009CDC01 /* LaundryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD507124AA36C3009CDC01 /* LaundryListViewController.swift */; };
 		33DD507424AA3711009CDC01 /* LaundryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD507324AA3711009CDC01 /* LaundryListView.swift */; };
 		33DD507624AB3811009CDC01 /* CloNewItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD507524AB3811009CDC01 /* CloNewItemButton.swift */; };
-		33DD508024AB55DC009CDC01 /* NewLaundryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD507F24AB55DC009CDC01 /* NewLaundryView.swift */; };
 		33DFEB03248D0AF200B802F4 /* Clothes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33DFEB01248D0AF200B802F4 /* Clothes.xcdatamodeld */; };
 		33E61A1224A47DE100B6D1FD /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E61A1124A47DE100B6D1FD /* ResultViewController.swift */; };
 		33E7DCF0247F92CF00BD3F41 /* AddEditClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCEF247F92CF00BD3F41 /* AddEditClothesViewController.swift */; };
@@ -142,7 +141,6 @@
 		33DD507124AA36C3009CDC01 /* LaundryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundryListViewController.swift; sourceTree = "<group>"; };
 		33DD507324AA3711009CDC01 /* LaundryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundryListView.swift; sourceTree = "<group>"; };
 		33DD507524AB3811009CDC01 /* CloNewItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloNewItemButton.swift; sourceTree = "<group>"; };
-		33DD507F24AB55DC009CDC01 /* NewLaundryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLaundryView.swift; sourceTree = "<group>"; };
 		33DFEB02248D0AF200B802F4 /* Clothes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Clothes.xcdatamodel; sourceTree = "<group>"; };
 		33E61A1124A47DE100B6D1FD /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		33E7DCEF247F92CF00BD3F41 /* AddEditClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditClothesViewController.swift; sourceTree = "<group>"; };
@@ -411,7 +409,6 @@
 			isa = PBXGroup;
 			children = (
 				33DD507324AA3711009CDC01 /* LaundryListView.swift */,
-				33DD507F24AB55DC009CDC01 /* NewLaundryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -742,7 +739,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#if which swiftlint >/dev/null; then\n# swiftlint\n#else\n#  echo \"warning: SwiftLint not installed, download from #https://github.com/realm/SwiftLint\"\n#fi\n#\n";
+			shellScript = "#if which swiftlint >/dev/null; then\n# swiftlint\n#else\n#  echo \"warning: SwiftLint not installed, download from #https://github.com/realm/SwiftLint\"\n#fi\n\n";
 		};
 		D35DC622A32C90C46EBBCC27 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -791,7 +788,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				33B5923724A492FE0079E57A /* MenuView.swift in Sources */,
-				33DD508024AB55DC009CDC01 /* NewLaundryView.swift in Sources */,
 				33574789247FBB89008172FB /* ColorTypeCollectionView.swift in Sources */,
 				33E7DCF0247F92CF00BD3F41 /* AddEditClothesViewController.swift in Sources */,
 				33EFBD25249FA62C0031942A /* ImageView.swift in Sources */,

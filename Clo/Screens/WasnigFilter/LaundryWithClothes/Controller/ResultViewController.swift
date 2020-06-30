@@ -7,7 +7,7 @@ class ResultViewController: UIViewController {
     private var itemHandler: ((CloAlertController) -> Void)!
     var clothes: [Clothes]?
 
-    init(clothes: [Clothes]?) {
+    init(clothes: [Clothes]?, laundryName: String? = nil) {
         self.clothes = clothes
         super.init(nibName: nil, bundle: nil)
     }
@@ -40,7 +40,8 @@ class ResultViewController: UIViewController {
     }
 
     private func setupNavigationBar() {
-        navigationItem.title             = NSLocalizedString("Your laundry", comment: "")
+        let title                        = NSLocalizedString("Your laundry", comment: "")
+        navigationItem.title             = title
         let backUIBarButtonItem          = UIBarButtonItem(image: Images.crossIcon,
                                                            style: .plain,
                                                            target: self,
@@ -49,12 +50,21 @@ class ResultViewController: UIViewController {
         navigationItem.leftBarButtonItem = backUIBarButtonItem
     }
 
+    private func enableSavingLaundry() {
+    }
+
+    // MARK: - Actions
     @objc
     private func backButtonPressed() {
         dismiss(animated: true)
     }
+
+    @objc
+    private func saveButtonPressed() {
+    }
 }
 
+// MARK: - Delegates
 extension ResultViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         clothes?.count ?? 0

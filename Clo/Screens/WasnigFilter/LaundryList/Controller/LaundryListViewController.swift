@@ -26,10 +26,5 @@ class LaundryListViewController: UIViewController {
     }
 
     private func presentNewLaundry() {
-        let washingFilterViewController = WashingFilterViewController()
-        washingFilterViewController.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(washingFilterViewController, animated: true)
     }
-
-    
 }

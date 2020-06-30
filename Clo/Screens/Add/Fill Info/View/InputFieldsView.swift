@@ -41,12 +41,8 @@ class InputFieldsView: UIView {
     private func setupDescriptionTextField() {
         descriptionTextField = CloTextField(placeholder: NSLocalizedString("Enter the short description", comment: ""),
                                             addTo: self)
-        descriptionTextField.adjustsFontSizeToFitWidth = true
-        descriptionTextField.minimumFontSize           = 10
-        descriptionTextField.autocapitalizationType    = .sentences
-        descriptionTextField.layer.borderWidth         = 0.5
-        descriptionTextField.layer.borderColor         = Colors.border.cgColor
-        setupDescriptionFieldConstraints()
+
+        NSLayoutConstraint.activate([descriptionTextField.topAnchor.constraint(equalTo: topAnchor, constant: 136)])
     }
 
     // MARK: - SelectTypeButton
@@ -58,17 +54,6 @@ class InputFieldsView: UIView {
     }
 
     // MARK: - Constraints
-    private func setupDescriptionFieldConstraints() {
-        addSubview(descriptionTextField)
-        descriptionTextField.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            descriptionTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
-            descriptionTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
-            descriptionTextField.heightAnchor.constraint(equalToConstant: 44),
-            descriptionTextField.topAnchor.constraint(equalTo: topAnchor, constant: 136)
-        ])
-    }
-
     private func placeLabels() {
         let label1 = createInputLabels(text: NSLocalizedString("Clothing type", comment: ""))
         let label2 = createInputLabels(text: NSLocalizedString("Description (optional)", comment: ""))

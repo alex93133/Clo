@@ -10,14 +10,20 @@ protocol WashingFilterViewDelegate: class {
 class WashingFilterView: UIView {
 
     // MARK: - Properties
-    var headLabel: UILabel!
-    var colorButton: CloFieldButton!
-    var temperatureButton: CloFieldButton!
-    var washingModeButton: CloFieldButton!
-    private var line: UIView!
     private var coincidenceLabel: UILabel!
+    private var line: UIView!
+    var coWashLabel: UILabel!
+    var colorButton: CloFieldButton!
+    var colorLabel: UILabel!
+    var headLabel: UILabel!
+    var laundryNameLabel: UILabel!
+    var nameTextField: CloTextField!
     var nextButton: CloNextButton!
     var switcher: UISwitch!
+    var temperatureButton: CloFieldButton!
+    var temperatureLabel: UILabel!
+    var washingModeButton: CloFieldButton!
+    var washingModeLabel: UILabel!
     weak var delegate: WashingFilterViewDelegate?
 
     override init(frame: CGRect) {
@@ -25,6 +31,7 @@ class WashingFilterView: UIView {
         setupHeadLabel()
         setupFieldDescriptionLabel()
         setupFieldButtons()
+        setupNameTextField()
         setupLine()
         setupCoincidenceLabel()
         setupSwitcher()
@@ -65,29 +72,51 @@ class WashingFilterView: UIView {
     }
 
     private func setupFieldDescriptionLabel() {
-        let label1 = createFieldDescriptionLabel(text: NSLocalizedString("Color ", comment: ""))
-        let label2 = createFieldDescriptionLabel(text: NSLocalizedString("Temperature", comment: ""))
-        let label3 = createFieldDescriptionLabel(text: NSLocalizedString("Washing mode", comment: ""))
-        let label4 = createFieldDescriptionLabel(text: NSLocalizedString("Co-wash", comment: ""))
+        colorLabel       = createFieldDescriptionLabel(text: NSLocalizedString("Color ", comment: ""))
+        temperatureLabel = createFieldDescriptionLabel(text: NSLocalizedString("Temperature", comment: ""))
+        washingModeLabel = createFieldDescriptionLabel(text: NSLocalizedString("Washing mode", comment: ""))
+        coWashLabel      = createFieldDescriptionLabel(text: NSLocalizedString("Co-wash", comment: ""))
+        laundryNameLabel = createFieldDescriptionLabel(text: NSLocalizedString("Laundry name", comment: ""))
+
+        laundryNameLabel.isHidden = true
+
         NSLayoutConstraint.activate([
-            label1.topAnchor.constraint(equalTo: topAnchor, constant: 44),
-            label2.topAnchor.constraint(equalTo: label1.bottomAnchor, constant: 76),
-            label3.topAnchor.constraint(equalTo: label2.bottomAnchor, constant: 76),
-            label4.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -150)
+            colorLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 44),
+            temperatureLabel.topAnchor.constraint(equalTo: colorLabel.bottomAnchor, constant: 76),
+            washingModeLabel.topAnchor.constraint(equalTo: temperatureLabel.bottomAnchor, constant: 76),
+            laundryNameLabel.topAnchor.constraint(equalTo: washingModeLabel.bottomAnchor, constant: 76),
+            coWashLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -150)
         ])
     }
 
     // MARK: - FieldButtons
     private func setupFieldButtons() {
-        colorButton       = CloFieldButton(title: NSLocalizedString("Select color", comment: ""), action: #selector(colorButtonPressed), addTo: self)
-        temperatureButton = CloFieldButton(title: NSLocalizedString("Select temperature", comment: ""), action: #selector(temperatureButtonPressed), addTo: self)
-        washingModeButton = CloFieldButton(title: NSLocalizedString("Select washing mode", comment: ""), action: #selector(washingModeButtonPressed), addTo: self)
-
+        colorButton       = CloFieldButton(title: NSLocalizedString("Select color",
+                                                                    comment: ""),
+                                           action: #selector(colorButtonPressed),
+                                           addTo: self)
+        temperatureButton = CloFieldButton(title: NSLocalizedString("Select temperature",
+                                                                    comment: ""),
+                                           action: #selector(temperatureButtonPressed),
+                                           addTo: self)
+        washingModeButton = CloFieldButton(title: NSLocalizedString("Select washing mode",
+                                                                    comment: ""),
+                                           action: #selector(washingModeButtonPressed),
+                                           addTo: self)
         NSLayoutConstraint.activate([
-            colorButton.topAnchor.constraint(equalTo: topAnchor, constant: 74),
+            colorButton.topAnchor.constraint(equalTo: colorLabel.bottomAnchor, constant: 8),
             temperatureButton.topAnchor.constraint(equalTo: colorButton.bottomAnchor, constant: 50),
             washingModeButton.topAnchor.constraint(equalTo: temperatureButton.bottomAnchor, constant: 50)
         ])
+    }
+
+    // MARK: - NameTextField
+    private func setupNameTextField() {
+        nameTextField = CloTextField(placeholder: NSLocalizedString("Enter name", comment: ""), addTo: self)
+        NSLayoutConstraint.activate([
+            nameTextField.topAnchor.constraint(equalTo: washingModeButton.bottomAnchor, constant: 50)
+        ])
+        nameTextField.isHidden = true
     }
 
     // MARK: - CoincidenceLabel

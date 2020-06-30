@@ -23,28 +23,34 @@ class WashingFilterViewController: UIViewController {
     private func setupView() {
         view = customView
         view().delegate = self
+        view().nameTextField.delegate = self
         view().nextButton.enableButton(isOn: false)
         fillInfoAtButtons()
     }
 
     private func fillInfoAtButtons() {
         guard let clothes = referenceClothes else { return }
-
         view().nextButton.enableButton(isOn: true)
+        setButtonTitles(clothes)
+    }
 
+    private func setButtonTitles(_ clothes: Clothes) {
         color = clothes.color
-        let attributedTitleForColor = view().colorButton.createAttributes(text: NSLocalizedString(color.rawValue, comment: ""), textColor: Colors.accent)
+        let attributedTitleForColor = view().colorButton.createAttributes(text: NSLocalizedString(color.rawValue, comment: ""),
+                                                                          textColor: Colors.accent)
         view().colorButton.setAttributedTitle(attributedTitleForColor, for: .normal)
 
         if let clothesWashingTemperature = WashingManager.getTemperature(clothes: clothes) {
             temperature = clothesWashingTemperature
-            let attributedTitleForTemperature = view().temperatureButton.createAttributes(text: String(temperature), textColor: Colors.accent)
+            let attributedTitleForTemperature = view().temperatureButton.createAttributes(text: String(temperature),
+                                                                                          textColor: Colors.accent)
             view().temperatureButton.setAttributedTitle(attributedTitleForTemperature, for: .normal)
         }
 
         if let clothesWashingMode = WashingManager.getWashingMode(clothes: clothes) {
             washingMode = clothesWashingMode
-            let attributedTitleForWashingMode = view().washingModeButton.createAttributes(text: NSLocalizedString(washingMode.rawValue, comment: ""), textColor: Colors.accent)
+            let attributedTitleForWashingMode = view().washingModeButton.createAttributes(text: NSLocalizedString(washingMode.rawValue, comment: ""),
+                                                                                          textColor: Colors.accent)
             view().washingModeButton.setAttributedTitle(attributedTitleForWashingMode, for: .normal)
         }
     }
@@ -56,6 +62,12 @@ class WashingFilterViewController: UIViewController {
         view().nextButton.enableButton(isOn: true)
     }
 
+    private func enableButtons(_ enable: Bool) {
+        view().colorButton.isEnabled       = enable
+        view().temperatureButton.isEnabled = enable
+        view().washingModeButton.isEnabled = enable
+    }
+
     private func collectClothes() {
         let clothes = CoreDataManager.shared.fetch { _ in }
         var washingManager = WashingManager(clothes: clothes,
@@ -63,16 +75,19 @@ class WashingFilterViewController: UIViewController {
                                             color: color,
                                             washingMode: washingMode,
                                             coincidence: view().switcher.isOn)
+
         presentResult(clothes: washingManager.filterClothes())
     }
 
     private func presentResult(clothes: [Clothes]?) {
-        let navigationController = UINavigationController(rootViewController: ResultViewController(clothes: clothes))
+        let resultViewController                    = ResultViewController(clothes: clothes)
+        let navigationController                    = UINavigationController(rootViewController: resultViewController)
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true)
     }
 }
 
+// MARK: - Delegates
 extension WashingFilterViewController: WashingFilterViewDelegate {
     func colorButtonPressed() {
         let colorsString = ClothingColor.getAllClothingColors().map { $0.type.rawValue }
@@ -143,6 +158,22 @@ extension WashingFilterViewController: ItemViewControllerDelegate {
             view().washingModeButton.setAttributedTitle(attributedTitle, for: .normal)
             self.washingMode = washingMode
         }
+        checkFields()
+    }
+}
+
+extension WashingFilterViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_: UITextField) -> Bool {
+        view().nameTextField.resignFirstResponder()
+        return true
+    }
+
+    func textFieldDidBeginEditing(_: UITextField) {
+        enableButtons(false)
+    }
+
+    func textFieldDidEndEditing(_: UITextField) {
+        enableButtons(true)
         checkFields()
     }
 }

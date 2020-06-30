@@ -28,7 +28,6 @@ class ClothesListViewController: UIViewController, UIGestureRecognizerDelegate {
         gestureRecognizer()
     }
 
-
     override func viewWillAppear(_: Bool) {
         super.viewWillAppear(true)
         setupNavigationBar()
@@ -121,7 +120,7 @@ class ClothesListViewController: UIViewController, UIGestureRecognizerDelegate {
         washingFilterSheet.washingFilter.referenceClothes = clothes
         present(washingFilterSheet.sheet, animated: false)
     }
-    
+
     // MARK: - Actions
     @objc
     func sortItemPressed() {

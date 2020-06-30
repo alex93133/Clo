@@ -63,7 +63,7 @@ class AddEditClothesViewController: UIViewController {
     private func setupNavigationBar() {
         let title  = editableClothes == nil ? NSLocalizedString("Add new item", comment: "") : NSLocalizedString("Edit your clothes", comment: "")
         navigationItem.title             = title
-        let backUIBarButtonItem          = UIBarButtonItem(image: Images.backIcon,
+        let backUIBarButtonItem          = UIBarButtonItem(image: Images.crossIcon,
                                                            style: .plain,
                                                            target: self,
                                                            action: #selector(backButtonPressed))

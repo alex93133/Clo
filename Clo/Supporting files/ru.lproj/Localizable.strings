@@ -21,6 +21,7 @@
 "Edit your clothes" = "Редактирование";
 "Edit your icons" = "Измените символы";
 "Edit" = "Редактировать";
+"Enter name" = "Введите название";
 "Enter the short description" = "Введите небольшое описание";
 "Feedback" = "Обратная связь";
 "For the full application, you will need a smartphone camera. Please allow access" = "Для добавления вещи необходимо предоставить доступ к камере";
@@ -30,6 +31,7 @@
 "Information" = "Информация";
 "Ironing" = "Глажка";
 "Laundry" = "Собранные стирки";
+"Laundry name" = "Название стирки";
 "Looks like you forgot to turn on the camera. To continue, you'll need to allow camera access in Settings" = "Похоже вы не предоставили доступ к камере. Чтобы продолжить, необходимо предоставить доступ в Настройках";
 "Maybe later" = "В другой раз";
 "My clothes" = "Мои вещи";

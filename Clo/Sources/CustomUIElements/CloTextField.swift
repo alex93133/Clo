@@ -25,10 +25,15 @@ class CloTextField: UITextField {
 
     // MARK: - Properties
     private func setup() {
-        backgroundColor        = Colors.additionalBG
-        textColor              = Colors.accent
-        layer.cornerRadius     = Constants.defaultCornerRadius
-        autocapitalizationType = .none
+        backgroundColor           = Colors.additionalBG
+        textColor                 = Colors.accent
+        adjustsFontSizeToFitWidth = true
+        minimumFontSize           = 10
+        autocapitalizationType    = .sentences
+        layer.cornerRadius        = Constants.defaultCornerRadius
+        layer.borderWidth         = 0.5
+        layer.borderColor         = Colors.border.cgColor
+
         setLeftPaddingPoints(Constants.textFieldPadding)
     }
 
@@ -36,9 +41,9 @@ class CloTextField: UITextField {
         view.addSubview(self)
         translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 64),
-            leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+            heightAnchor.constraint(equalToConstant: 44),
+            leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
     }
 }

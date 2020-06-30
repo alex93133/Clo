@@ -146,8 +146,6 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         }
     }
 
-
-
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         switch tabBarController.customizableViewControllers?.firstIndex(of: viewController) {
         case 3:
