@@ -75,6 +75,9 @@ class MenuViewController: UIViewController {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
 
+            if let cell = self.view().tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? MenuItemTableViewCell {
+                cell.isProcessing = false
+            }
             self.productsList = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             self.productsList.view.tintColor = Colors.mint
 
@@ -98,7 +101,6 @@ class MenuViewController: UIViewController {
             guard let self = self else { return }
             self.manager.purchase(product: product)
         }
-        action.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
         action.setValue(image.withRenderingMode(.alwaysOriginal), forKey: "image")
 
         productsList.addAction(action)
@@ -126,18 +128,22 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
-            buyCoffee()
+        if let cell = tableView.cellForRow(at: indexPath) as? MenuItemTableViewCell {
+            switch indexPath.row {
+            case 0:
+                buyCoffee()
+                guard manager.products.isEmpty else { return }
+                cell.isProcessing = true
 
-        case 1:
-            rateUs()
+            case 1:
+                rateUs()
 
-        case 2:
-            sendEmail()
+            case 2:
+                sendEmail()
 
-        default:
-            return
+            default:
+                return
+            }
         }
     }
 }

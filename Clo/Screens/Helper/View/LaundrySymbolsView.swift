@@ -33,6 +33,7 @@ class LaundrySymbolsView: UIView {
         collectionView                              = UICollectionView(frame: frame, collectionViewLayout: layout)
         collectionView.backgroundColor              = Colors.mainBG
         collectionView.showsVerticalScrollIndicator = false
+        collectionView.delaysContentTouches         = false
 
         collectionView.register(LaundrySymbolsCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.symbolCellIdentifier)
         collectionView.register(LaundrySymbolsHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Identifiers.symbolHeaderIdentifier)

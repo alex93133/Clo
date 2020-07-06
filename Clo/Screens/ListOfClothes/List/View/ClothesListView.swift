@@ -30,6 +30,7 @@ class ClothesListView: UIView {
         collectionView                              = UICollectionView(frame: frame, collectionViewLayout: layout)
         collectionView.backgroundColor              = Colors.mainBG
         collectionView.showsVerticalScrollIndicator = false
+        collectionView.delaysContentTouches         = false
 
         collectionView.register(ClothesListCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.clothesCellIdentifier)
         collectionView.register(AddNewItemCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.addNewItemCellIdentifier)
