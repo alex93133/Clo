@@ -7,7 +7,7 @@ class ResultViewController: UIViewController {
     private var itemHandler: ((CloAlertController) -> Void)!
     var clothes: [Clothes]?
 
-    init(clothes: [Clothes]?, laundryName: String? = nil) {
+    init(clothes: [Clothes]?) {
         self.clothes = clothes
         super.init(nibName: nil, bundle: nil)
     }
@@ -48,9 +48,6 @@ class ResultViewController: UIViewController {
                                                            action: #selector(backButtonPressed))
         backUIBarButtonItem.tintColor    = Colors.mint
         navigationItem.leftBarButtonItem = backUIBarButtonItem
-    }
-
-    private func enableSavingLaundry() {
     }
 
     // MARK: - Actions

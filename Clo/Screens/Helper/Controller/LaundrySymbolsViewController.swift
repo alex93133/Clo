@@ -28,12 +28,12 @@ class LaundrySymbolsViewController: UIViewController {
 // MARK: - Delegates
 extension LaundrySymbolsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.symbolCellIdentifier, for: indexPath) as! LaundrySymbolsCollectionViewCell
-
-        let section = symbolSections[indexPath.section]
-        cell.laundryImage.image = section.items[indexPath.item].image
-
-        return cell
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.symbolCellIdentifier, for: indexPath) as? LaundrySymbolsCollectionViewCell {
+            let section = symbolSections[indexPath.section]
+            cell.laundryImage.image = section.items[indexPath.item].image
+            return cell
+        }
+        return UICollectionViewCell()
     }
 
     func collectionView(_: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -55,9 +55,11 @@ extension LaundrySymbolsViewController: UICollectionViewDelegate, UICollectionVi
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Identifiers.symbolHeaderIdentifier, for: indexPath) as! LaundrySymbolsHeader
-            headerView.headerLabel.text = NSLocalizedString(symbolSections[indexPath.section].title, comment: "")
-            return headerView
+            if let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Identifiers.symbolHeaderIdentifier, for: indexPath) as? LaundrySymbolsHeader {
+                headerView.headerLabel.text = NSLocalizedString(symbolSections[indexPath.section].title, comment: "")
+                return headerView
+            }
+            return UICollectionReusableView()
         }
         return UICollectionReusableView()
     }

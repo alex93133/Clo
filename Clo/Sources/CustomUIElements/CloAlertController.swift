@@ -3,7 +3,7 @@ import UIKit
 class CloAlertController: UIAlertController {
 
     // MARK: - Properties
-    private var overlayView: UIView!
+    private var shadowView: CloShadowView!
     var headLabel: UILabel!
     var imageView: UIImageView!
     var messageLabel: UILabel!
@@ -46,14 +46,8 @@ class CloAlertController: UIAlertController {
 
     // MARK: - OverLayView
     private func setupOverlayView() {
-        overlayView                     = UIView()
-        overlayView.layer.cornerRadius  = Constants.defaultCornerRadius
-        overlayView.backgroundColor     = Colors.mainBG
-        overlayView.layer.shadowColor   = Colors.shadow.cgColor
-        overlayView.layer.shadowOpacity = 1
-        overlayView.layer.shadowOffset  = CGSize(width: 0, height: 1)
-        overlayView.layer.shadowRadius  = Constants.shadowRadius
-        overlayView.addSubview(imageView)
+        shadowView = CloShadowView()
+        shadowView.containerView.addSubview(imageView)
     }
 
     // MARK: - HeadLabel
@@ -83,12 +77,12 @@ class CloAlertController: UIAlertController {
         stackView.spacing      = 8
         stackView.axis         = .vertical
 
-        stackView.addArrangedSubview(overlayView)
+        stackView.addArrangedSubview(shadowView)
         stackView.addArrangedSubview(headLabel)
         stackView.addArrangedSubview(messageLabel)
 
         setupStackViewConstraints()
-        setupOverlayViewConstraints()
+        setupShadowViewConstraints()
         setupHeadLabelConstraints()
         setupMessageLabelConstraints()
     }
@@ -104,11 +98,11 @@ class CloAlertController: UIAlertController {
         ])
     }
 
-    private func setupOverlayViewConstraints() {
-        overlayView.translatesAutoresizingMaskIntoConstraints = false
+    private func setupShadowViewConstraints() {
+        shadowView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            overlayView.heightAnchor.constraint(equalToConstant: 70),
-            overlayView.widthAnchor.constraint(equalToConstant: 70)
+            shadowView.heightAnchor.constraint(equalToConstant: 70),
+            shadowView.widthAnchor.constraint(equalToConstant: 70)
         ])
         setupImageViewConstraints()
     }
@@ -116,10 +110,10 @@ class CloAlertController: UIAlertController {
     private func setupImageViewConstraints() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            imageView.leadingAnchor.constraint(equalTo: overlayView.leadingAnchor, constant: 16),
-            imageView.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor, constant: -16),
-            imageView.topAnchor.constraint(equalTo: overlayView.topAnchor, constant: 16),
-            imageView.bottomAnchor.constraint(equalTo: overlayView.bottomAnchor, constant: -16)
+            imageView.leadingAnchor.constraint(equalTo: shadowView.leadingAnchor, constant: 16),
+            imageView.trailingAnchor.constraint(equalTo: shadowView.trailingAnchor, constant: -16),
+            imageView.topAnchor.constraint(equalTo: shadowView.topAnchor, constant: 16),
+            imageView.bottomAnchor.constraint(equalTo: shadowView.bottomAnchor, constant: -16)
         ])
     }
 

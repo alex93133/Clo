@@ -16,6 +16,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
         createTabs()
         setupView()
+        setupDependencies()
     }
 
     // MARK: - Functions
@@ -24,7 +25,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         tabBar.tintColor               = Colors.mint
         tabBar.unselectedItemTintColor = Colors.icon
         tabBar.isTranslucent           = false
-        selectedIndex                  = 1
+        selectedIndex                  = 0
         tabBar.layer.borderColor       = UIColor.lightGray.cgColor
         delegate                       = self
     }

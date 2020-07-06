@@ -106,7 +106,7 @@ class ClothesListViewController: UIViewController, UIGestureRecognizerDelegate {
     }
 
     private func presentWashingFilter(with clothes: Clothes?) {
-        let washingFilterSheet = WashingFilterSheet()
+        washingFilterSheet = WashingFilterSheet()
         if let clothes = clothes {
             if clothes.symbols.contains(where: { $0.id ==  4 }) {
                 guard let symbol = clothes.symbols.first(where: { $0.id ==  4 }) else { return }

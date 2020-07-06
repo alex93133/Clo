@@ -4,6 +4,7 @@ class LaundrySymbolsCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Properties
     var laundryImage: UIImageView!
+    private var shadowView: CloShadowView!
 
     override var isHighlighted: Bool {
         didSet {
@@ -13,8 +14,8 @@ class LaundrySymbolsCollectionViewCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        setupView(itemSize: frame.size.height)
-        setupLaundryImage(itemSize: frame.size.height)
+        setupContainerView()
+        setupLaundryImage()
     }
 
     required init?(coder _: NSCoder) {
@@ -22,25 +23,28 @@ class LaundrySymbolsCollectionViewCell: UICollectionViewCell {
     }
 
     // MARK: - View
-    private func setupView(itemSize: CGFloat) {
-        contentView.center              = CGPoint(x: itemSize / 2, y: itemSize / 2)
-        contentView.layer.cornerRadius  = Constants.defaultCornerRadius
-        contentView.backgroundColor     = Colors.additionalBG
-
-        contentView.layer.shadowColor   = Colors.shadow.cgColor
-        contentView.layer.shadowOpacity = 1
-        contentView.layer.shadowOffset  = CGSize(width: 0, height: 3)
-        contentView.layer.shadowRadius  = Constants.shadowRadius
+    private func setupContainerView() {
+        shadowView = CloShadowView()
+        shadowView.addTo(view: self)
     }
 
     // MARK: - LaundryImage
-    private func setupLaundryImage(itemSize: CGFloat) {
-        let spacing: CGFloat     = itemSize / 2
-        laundryImage             = UIImageView(frame: CGRect(x: 0, y: 0, width: itemSize - spacing, height: itemSize - spacing))
-        laundryImage.center      = CGPoint(x: itemSize / 2, y: itemSize / 2)
+    private func setupLaundryImage() {
+        laundryImage             = UIImageView()
         laundryImage.contentMode = .scaleAspectFit
         laundryImage.tintColor   = Colors.accent
+        setupLaundryImageViewConstraints()
+    }
 
-        addSubview(laundryImage)
+    // MARK: - Constraints
+    private func setupLaundryImageViewConstraints() {
+        shadowView.containerView.addSubview(laundryImage)
+        laundryImage.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            laundryImage.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5),
+            laundryImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5),
+            laundryImage.centerYAnchor.constraint(equalTo: centerYAnchor),
+            laundryImage.centerXAnchor.constraint(equalTo: centerXAnchor)
+        ])
     }
 }

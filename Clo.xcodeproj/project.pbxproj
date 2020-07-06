@@ -48,11 +48,11 @@
 		33B5923524A492F00079E57A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B5923424A492F00079E57A /* MenuViewController.swift */; };
 		33B5923724A492FE0079E57A /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B5923624A492FE0079E57A /* MenuView.swift */; };
 		33B5923924A498AB0079E57A /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B5923824A498AB0079E57A /* MenuItemTableViewCell.swift */; };
+		33BACFF324B32F630041D852 /* CloShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BACFF224B32F630041D852 /* CloShadowView.swift */; };
 		33C5172B24A4A6ED00128C4B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C5172A24A4A6ED00128C4B /* StoreKit.framework */; };
 		33C5172D24A4AA2000128C4B /* InAppPurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C5172C24A4AA2000128C4B /* InAppPurchaseManager.swift */; };
 		33DD507224AA36C3009CDC01 /* LaundryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD507124AA36C3009CDC01 /* LaundryListViewController.swift */; };
 		33DD507424AA3711009CDC01 /* LaundryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD507324AA3711009CDC01 /* LaundryListView.swift */; };
-		33DD507624AB3811009CDC01 /* CloNewItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD507524AB3811009CDC01 /* CloNewItemButton.swift */; };
 		33DFEB03248D0AF200B802F4 /* Clothes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33DFEB01248D0AF200B802F4 /* Clothes.xcdatamodeld */; };
 		33E61A1224A47DE100B6D1FD /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E61A1124A47DE100B6D1FD /* ResultViewController.swift */; };
 		33E7DCF0247F92CF00BD3F41 /* AddEditClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCEF247F92CF00BD3F41 /* AddEditClothesViewController.swift */; };
@@ -136,11 +136,11 @@
 		33B5923424A492F00079E57A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		33B5923624A492FE0079E57A /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		33B5923824A498AB0079E57A /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
+		33BACFF224B32F630041D852 /* CloShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloShadowView.swift; sourceTree = "<group>"; };
 		33C5172A24A4A6ED00128C4B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		33C5172C24A4AA2000128C4B /* InAppPurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseManager.swift; sourceTree = "<group>"; };
 		33DD507124AA36C3009CDC01 /* LaundryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundryListViewController.swift; sourceTree = "<group>"; };
 		33DD507324AA3711009CDC01 /* LaundryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundryListView.swift; sourceTree = "<group>"; };
-		33DD507524AB3811009CDC01 /* CloNewItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloNewItemButton.swift; sourceTree = "<group>"; };
 		33DFEB02248D0AF200B802F4 /* Clothes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Clothes.xcdatamodel; sourceTree = "<group>"; };
 		33E61A1124A47DE100B6D1FD /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		33E7DCEF247F92CF00BD3F41 /* AddEditClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditClothesViewController.swift; sourceTree = "<group>"; };
@@ -250,7 +250,7 @@
 				3357478F247FCABD008172FB /* CloTextField.swift */,
 				33F1A4E0248F94B800857FE9 /* CloAlertController.swift */,
 				3392C5EA249CEF290066D5DD /* CloFieldButton.swift */,
-				33DD507524AB3811009CDC01 /* CloNewItemButton.swift */,
+				33BACFF224B32F630041D852 /* CloShadowView.swift */,
 			);
 			path = CustomUIElements;
 			sourceTree = "<group>";
@@ -739,7 +739,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#if which swiftlint >/dev/null; then\n# swiftlint\n#else\n#  echo \"warning: SwiftLint not installed, download from #https://github.com/realm/SwiftLint\"\n#fi\n\n";
+			shellScript = "#exit\nif which swiftlint >/dev/null; then\n swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from #https://github.com/realm/SwiftLint\"\nfi\n\n";
 		};
 		D35DC622A32C90C46EBBCC27 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -845,6 +845,7 @@
 				A8DA1A992465A0370077F0ED /* CameraCollectionViewCell.swift in Sources */,
 				3315B134248118A400BA354B /* ItemViewController.swift in Sources */,
 				A8BC7484245C95CF00106097 /* MainTabBarController.swift in Sources */,
+				33BACFF324B32F630041D852 /* CloShadowView.swift in Sources */,
 				33041F9D247C113800721E63 /* Identifiers.swift in Sources */,
 				33FEB3AE249F8FCB00D2B037 /* WashingFilterViewController.swift in Sources */,
 				3308ECB3248E0CC0008C7B61 /* DetailTypeAndInfoTableViewCell.swift in Sources */,
@@ -855,7 +856,6 @@
 				A8204D5F2463189D005E30A0 /* GalleryCollectionViewCell.swift in Sources */,
 				33E7DCFA247FB1D900BD3F41 /* ClothingType.swift in Sources */,
 				3308ECA7248D5C2F008C7B61 /* Result.swift in Sources */,
-				33DD507624AB3811009CDC01 /* CloNewItemButton.swift in Sources */,
 				33270511249F684500E50B98 /* Symbol.swift in Sources */,
 				A8C9034824602EE9004294D9 /* Symbols.swift in Sources */,
 				A82AC9802458404F00C0DC3D /* SceneDelegate.swift in Sources */,

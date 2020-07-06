@@ -4,32 +4,39 @@ class ColorTypeCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Properties
     var colorTypeImageView: UIImageView!
+    private var shadowView: CloShadowView!
 
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        setupColorTypeImageView(itemSize: frame.height)
+        setupShadowView()
+        setupColorTypeImageView()
     }
 
     required init?(coder _: NSCoder) {
         super.init(frame: .zero)
     }
 
+    private func setupShadowView() {
+        shadowView = CloShadowView()
+        shadowView.addTo(view: self)
+    }
+
     // MARK: - TypeImageView
-    private func setupColorTypeImageView(itemSize: CGFloat) {
-        colorTypeImageView                     = UIImageView(frame: CGRect(x: 0, y: 0, width: itemSize, height: itemSize))
-        colorTypeImageView.center              = CGPoint(x: itemSize / 2, y: itemSize / 2)
-        colorTypeImageView.contentMode         = .scaleAspectFill
+    private func setupColorTypeImageView() {
+        colorTypeImageView              = UIImageView()
+        colorTypeImageView.contentMode  = .scaleAspectFill
+        setupColorTypeImageViewConstraints()
+    }
 
-        colorTypeImageView.layer.borderWidth   = 5
-        colorTypeImageView.layer.borderColor   = UIColor.clear.cgColor
-        colorTypeImageView.layer.cornerRadius  = Constants.defaultCornerRadius
-        colorTypeImageView.layer.masksToBounds = true
-
-        colorTypeImageView.layer.shadowColor   = Colors.shadow.cgColor
-        colorTypeImageView.layer.shadowOpacity = 1
-        colorTypeImageView.layer.shadowOffset  = CGSize(width: 0, height: 3)
-        colorTypeImageView.layer.shadowRadius  = Constants.shadowRadius
-
-        addSubview(colorTypeImageView)
+    // MARK: - Constraints
+    private func setupColorTypeImageViewConstraints() {
+        shadowView.containerView.addSubview(colorTypeImageView)
+        colorTypeImageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            colorTypeImageView.trailingAnchor.constraint(equalTo: shadowView.trailingAnchor),
+            colorTypeImageView.topAnchor.constraint(equalTo: shadowView.topAnchor),
+            colorTypeImageView.leadingAnchor.constraint(equalTo: shadowView.leadingAnchor),
+            colorTypeImageView.bottomAnchor.constraint(equalTo: shadowView.bottomAnchor)
+        ])
     }
 }

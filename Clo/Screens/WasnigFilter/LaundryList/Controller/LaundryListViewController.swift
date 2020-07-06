@@ -26,5 +26,6 @@ class LaundryListViewController: UIViewController {
     }
 
     private func presentNewLaundry() {
+        print("Hello")
     }
 }

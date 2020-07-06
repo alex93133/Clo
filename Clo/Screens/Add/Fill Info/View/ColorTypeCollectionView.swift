@@ -19,7 +19,7 @@ class ColorTypeCollectionView: UIView {
         let layout                                  = UICollectionViewFlowLayout()
         layout.sectionInset                         = UIEdgeInsets(top: 16, left: 12, bottom: 16, right: 12)
 
-        let spacing: CGFloat                        = 0
+        let spacing: CGFloat                        = 16
         let itemSize: CGFloat                       = 62
 
         layout.itemSize                             = CGSize(width: itemSize, height: itemSize)

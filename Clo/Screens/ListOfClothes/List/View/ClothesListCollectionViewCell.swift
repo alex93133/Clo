@@ -5,6 +5,7 @@ class ClothesListCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
     var clothesImageView: UIImageView!
     var collectionView: UICollectionView!
+    private var shadowView: CloShadowView!
     var symbols: [Symbol]! {
         didSet {
             collectionView.reloadData()
@@ -34,27 +35,10 @@ class ClothesListCollectionViewCell: UICollectionViewCell {
         super.init(frame: .zero)
     }
 
-    override func layoutSubviews() {
-        dropShadow()
-    }
-
     // MARK: - View
     private func setupView() {
-        contentView.layer.cornerRadius = Constants.defaultCornerRadius
-        contentView.backgroundColor    = Colors.mainBG
-        contentView.clipsToBounds      = true
-    }
-
-    private func dropShadow() {
-        let shadowLayer           = CAShapeLayer()
-        shadowLayer.path          = UIBezierPath(roundedRect: contentView.bounds, cornerRadius: Constants.defaultCornerRadius).cgPath
-        shadowLayer.fillColor     = Colors.mainBG.cgColor
-        shadowLayer.shadowColor   = Colors.shadow.cgColor
-        shadowLayer.shadowPath    = shadowLayer.path
-        shadowLayer.shadowOffset  = CGSize(width: 0, height: 3)
-        shadowLayer.shadowOpacity = 1
-        shadowLayer.shadowRadius  = Constants.shadowRadius
-        layer.insertSublayer(shadowLayer, at: 0)
+        shadowView = CloShadowView()
+        shadowView.addTo(view: self)
     }
 
     // MARK: - ClothesImageView
@@ -89,23 +73,23 @@ class ClothesListCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Constraints
     private func setupClothesImageConstraints() {
-        contentView.addSubview(clothesImageView)
+        shadowView.containerView.addSubview(clothesImageView)
         clothesImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            clothesImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            clothesImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            clothesImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            clothesImageView.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 9 / 16)
+            clothesImageView.topAnchor.constraint(equalTo: shadowView.topAnchor),
+            clothesImageView.leadingAnchor.constraint(equalTo: shadowView.leadingAnchor),
+            clothesImageView.trailingAnchor.constraint(equalTo: shadowView.trailingAnchor),
+            clothesImageView.heightAnchor.constraint(equalTo: shadowView.widthAnchor, multiplier: 9 / 16)
         ])
     }
 
     private func setupCollectionViewConstraints() {
-        contentView.addSubview(collectionView)
+        shadowView.containerView.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: shadowView.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: shadowView.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: shadowView.bottomAnchor),
             collectionView.heightAnchor.constraint(equalToConstant: 70)
         ])
     }
