@@ -47,6 +47,7 @@ class MenuView: UIView {
         tableView.backgroundColor = Colors.mainBG
         tableView.separatorColor  = Colors.border
         tableView.rowHeight       = UITableView.automaticDimension
+        tableView.isScrollEnabled = false
         tableView.register(MenuItemTableViewCell.self, forCellReuseIdentifier: Identifiers.menuItemCellIdentifier)
         setupTableViewConstraints()
     }

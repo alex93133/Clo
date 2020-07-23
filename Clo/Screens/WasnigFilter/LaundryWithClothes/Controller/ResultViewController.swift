@@ -24,11 +24,11 @@ class ResultViewController: UIViewController {
     }
 
     // MARK: - Functions
-    private func view() -> ClothesListView {
+    func view() -> ClothesListView {
         return view as! ClothesListView
     }
 
-    private func setupView() {
+    func setupView() {
         view                             = customView
         view().collectionView.delegate   = self
         view().collectionView.dataSource = self
@@ -39,7 +39,7 @@ class ResultViewController: UIViewController {
         }
     }
 
-    private func setupNavigationBar() {
+    func setupNavigationBar() {
         let title                        = NSLocalizedString("Your laundry", comment: "")
         navigationItem.title             = title
         let backUIBarButtonItem          = UIBarButtonItem(image: Images.crossIcon,
@@ -54,10 +54,6 @@ class ResultViewController: UIViewController {
     @objc
     private func backButtonPressed() {
         dismiss(animated: true)
-    }
-
-    @objc
-    private func saveButtonPressed() {
     }
 }
 

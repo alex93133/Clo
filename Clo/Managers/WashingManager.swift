@@ -36,11 +36,33 @@ struct WashingManager {
         alert.messageLabel.text = NSLocalizedString("This clothes is not allowed to be washed, so you will damage it", comment: "")
     }
 
-    static func getTemperature(clothes: Clothes) -> Int? {
-        let washingSymbol = clothes.symbols.filter { $0.category == .washing }
-        guard let symbol = washingSymbol.first else { return nil }
+    enum DataFrom {
+        case symbol(Symbol)
+        case clothes(Clothes)
+        case parameters (WashingMode, Int)
+    }
 
-        switch symbol.id {
+    static func getWashingSymbol(data: DataFrom) -> Symbol {
+        switch data {
+        case .symbol(let symbol):
+            return symbol
+
+        case .clothes(let clothes):
+            let washingSymbols = clothes.symbols.filter { $0.category == .washing }
+            return washingSymbols.first!
+
+        case .parameters(let washingMode, let temperature):
+            let washingSymbols = Symbols.allSymbols()?.filter { $0.category == .washing }
+            let filteredByTemperature = washingSymbols?.filter { WashingManager.getTemperature(data: .symbol($0)) == temperature }
+            let filteredByWashingMode = filteredByTemperature?.filter { WashingManager.getWashingMode(data: .symbol($0)) == washingMode }
+            return (filteredByWashingMode?.last)!
+        }
+    }
+
+    static func getTemperature(data: DataFrom) -> Int? {
+        let washingSymbol = WashingManager.getWashingSymbol(data: data)
+
+        switch washingSymbol.id {
         case 1...3, 6, 11, 16, 21, 26, 31:
             return 30
 
@@ -61,11 +83,10 @@ struct WashingManager {
         }
     }
 
-    static func getWashingMode(clothes: Clothes) -> WashingMode? {
-        let washingSymbol = clothes.symbols.filter { $0.category == .washing }
-        guard let symbol = washingSymbol.first else { return nil }
+    static func getWashingMode(data: DataFrom) -> WashingMode? {
+        let washingSymbol = WashingManager.getWashingSymbol(data: data)
 
-        switch symbol.id {
+        switch washingSymbol.id {
         case 1, 6..<11, 21..<26:
             return .regular
 
@@ -89,10 +110,10 @@ struct WashingManager {
     private mutating func filterByTemperature() {
         guard let clothes = clothes else { return }
         if coincidence {
-            self.clothes = clothes.filter { WashingManager.getTemperature(clothes: $0) == temperature }
+            self.clothes = clothes.filter { WashingManager.getTemperature(data: .clothes($0)) == temperature }
         } else {
             self.clothes = clothes.filter {
-                guard let clothesTemperature = WashingManager.getTemperature(clothes: $0) else { return false }
+                guard let clothesTemperature = WashingManager.getTemperature(data: .clothes($0)) else { return false }
                 return clothesTemperature >= temperature
             }
         }
@@ -101,14 +122,14 @@ struct WashingManager {
     private mutating func filterByWashingMode() {
         guard let clothes = clothes else { return }
         if coincidence {
-            self.clothes = clothes.filter { WashingManager.getWashingMode(clothes: $0) == washingMode }
+            self.clothes = clothes.filter { WashingManager.getWashingMode(data: .clothes($0)) == washingMode }
         } else {
             switch washingMode {
             case .regular:
-                self.clothes = clothes.filter { WashingManager.getWashingMode(clothes: $0) == WashingMode.regular }
+                self.clothes = clothes.filter { WashingManager.getWashingMode(data: .clothes($0)) == WashingMode.regular }
 
             case .gentle:
-                self.clothes = clothes.filter { WashingManager.getWashingMode(clothes: $0) != WashingMode.veryGentle }
+                self.clothes = clothes.filter { WashingManager.getWashingMode(data: .clothes($0)) != WashingMode.veryGentle }
 
             case .veryGentle:
                 return

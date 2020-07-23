@@ -27,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Fonts.headTextSize, weight: .bold)
         ]
         UINavigationBar.appearance().barTintColor                     = Colors.mainBG
+
+        Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")?.load()
+
         return true
     }
 

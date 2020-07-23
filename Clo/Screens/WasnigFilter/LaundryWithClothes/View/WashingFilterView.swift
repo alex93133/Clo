@@ -11,19 +11,16 @@ class WashingFilterView: UIView {
 
     // MARK: - Properties
     private var coincidenceLabel: UILabel!
+    var topConstraint: NSLayoutConstraint!
     private var line: UIView!
-    var coWashLabel: UILabel!
     var colorButton: CloFieldButton!
-    var colorLabel: UILabel!
     var headLabel: UILabel!
-    var laundryNameLabel: UILabel!
     var nameTextField: CloTextField!
     var nextButton: CloNextButton!
     var switcher: UISwitch!
+    var laundryNameLabel: UILabel!
     var temperatureButton: CloFieldButton!
-    var temperatureLabel: UILabel!
     var washingModeButton: CloFieldButton!
-    var washingModeLabel: UILabel!
     weak var delegate: WashingFilterViewDelegate?
 
     override init(frame: CGRect) {
@@ -72,16 +69,16 @@ class WashingFilterView: UIView {
     }
 
     private func setupFieldDescriptionLabel() {
-        colorLabel       = createFieldDescriptionLabel(text: NSLocalizedString("Color ", comment: ""))
-        temperatureLabel = createFieldDescriptionLabel(text: NSLocalizedString("Temperature", comment: ""))
-        washingModeLabel = createFieldDescriptionLabel(text: NSLocalizedString("Washing mode", comment: ""))
-        coWashLabel      = createFieldDescriptionLabel(text: NSLocalizedString("Co-wash", comment: ""))
+        let colorLabel       = createFieldDescriptionLabel(text: NSLocalizedString("Color ", comment: ""))
+        let temperatureLabel = createFieldDescriptionLabel(text: NSLocalizedString("Temperature", comment: ""))
+        let washingModeLabel = createFieldDescriptionLabel(text: NSLocalizedString("Washing mode", comment: ""))
+        let coWashLabel      = createFieldDescriptionLabel(text: NSLocalizedString("Co-wash", comment: ""))
         laundryNameLabel = createFieldDescriptionLabel(text: NSLocalizedString("Laundry name", comment: ""))
 
         laundryNameLabel.isHidden = true
 
         NSLayoutConstraint.activate([
-            colorLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 44),
+            colorLabel.topAnchor.constraint(equalTo: headLabel.bottomAnchor, constant: 8),
             temperatureLabel.topAnchor.constraint(equalTo: colorLabel.bottomAnchor, constant: 76),
             washingModeLabel.topAnchor.constraint(equalTo: temperatureLabel.bottomAnchor, constant: 76),
             laundryNameLabel.topAnchor.constraint(equalTo: washingModeLabel.bottomAnchor, constant: 76),
@@ -104,7 +101,7 @@ class WashingFilterView: UIView {
                                            action: #selector(washingModeButtonPressed),
                                            addTo: self)
         NSLayoutConstraint.activate([
-            colorButton.topAnchor.constraint(equalTo: colorLabel.bottomAnchor, constant: 8),
+            colorButton.topAnchor.constraint(equalTo: headLabel.bottomAnchor, constant: 34),
             temperatureButton.topAnchor.constraint(equalTo: colorButton.bottomAnchor, constant: 50),
             washingModeButton.topAnchor.constraint(equalTo: temperatureButton.bottomAnchor, constant: 50)
         ])
@@ -138,8 +135,8 @@ class WashingFilterView: UIView {
     // MARK: - NextButton
     private func setupNextButton() {
         nextButton = CloNextButton(title: NSLocalizedString("Collect", comment: ""),
-                                   action: #selector(nextButtonPressed),
                                    addTo: self)
+        nextButton.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
         NSLayoutConstraint.activate([
             nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -8)
         ])
@@ -171,8 +168,9 @@ class WashingFilterView: UIView {
     private func setupHeadLabelConstraints() {
         addSubview(headLabel)
         headLabel.translatesAutoresizingMaskIntoConstraints = false
+        topConstraint = headLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10)
         NSLayoutConstraint.activate([
-            headLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            topConstraint,
             headLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
             headLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
             headLabel.heightAnchor.constraint(equalToConstant: 28)

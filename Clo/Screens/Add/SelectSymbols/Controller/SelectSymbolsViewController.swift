@@ -123,7 +123,7 @@ class SelectSymbolsViewController: UIViewController {
                               info: clothesInfo.info,
                               photo: clothesInfo.photo,
                               symbols: selectedSymbols)
-        CoreDataManager.shared.saveData(clothes: clothes) { [weak self] result in
+        CoreDataManager.shared.saveClothes(clothes: clothes) { [weak self] result in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 self.view().nextButton.isProcessing = false
@@ -148,7 +148,7 @@ class SelectSymbolsViewController: UIViewController {
         editableClothes.info      = clothesInfo.info
         editableClothes.symbols   = selectedSymbols
 
-        CoreDataManager.shared.update(editableClothes: editableClothes) { [weak self] result in
+        CoreDataManager.shared.updateClothes(editableClothes: editableClothes) { [weak self] result in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 self.view().nextButton.isProcessing = false

@@ -60,7 +60,7 @@ class ClothesListViewController: UIViewController, UIGestureRecognizerDelegate {
     }
 
     private func getClothes() {
-        clothes = CoreDataManager.shared.fetch { [weak self] result in
+        clothes = CoreDataManager.shared.fetchClothes { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success:

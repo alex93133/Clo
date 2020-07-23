@@ -69,7 +69,7 @@ class DetailViewController: UIViewController {
     }
 
     private func deleteClothes() {
-        CoreDataManager.shared.delete(clothes: clothes) { [weak self] result in
+        CoreDataManager.shared.deleteClothes(clothes: clothes) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success:

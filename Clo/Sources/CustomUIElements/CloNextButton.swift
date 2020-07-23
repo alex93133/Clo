@@ -31,10 +31,9 @@ class CloNextButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
 
-    convenience init(title: String, action: Selector, addTo view: UIView) {
+    convenience init(title: String, addTo view: UIView) {
         self.init(frame: .zero)
         setTitle(title, for: .normal)
-        addTarget(view, action: action, for: .touchUpInside)
         addToView(view)
     }
 

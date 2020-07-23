@@ -25,7 +25,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         tabBar.tintColor               = Colors.mint
         tabBar.unselectedItemTintColor = Colors.icon
         tabBar.isTranslucent           = false
-        selectedIndex                  = 4
+        selectedIndex                  = 1
         tabBar.layer.borderColor       = UIColor.lightGray.cgColor
         delegate                       = self
     }

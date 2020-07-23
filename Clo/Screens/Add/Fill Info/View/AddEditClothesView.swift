@@ -56,8 +56,8 @@ class AddEditClothesView: UIView {
     // MARK: - NextButton
     private func setupNextButton() {
         nextButton = CloNextButton(title: NSLocalizedString("Next", comment: ""),
-                                   action: #selector(nextButtonPressed),
                                    addTo: self)
+        nextButton.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
         NSLayoutConstraint.activate([nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -8)])
     }
 

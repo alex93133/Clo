@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G73" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="ClothesInfo" representedClassName="ClothesInfo" syncable="YES">
         <attribute name="color" optional="YES" attributeType="String"/>
         <attribute name="info" optional="YES" attributeType="String" valueTransformerName="" customClassName="[Clothes]"/>
@@ -8,7 +8,15 @@
         <attribute name="type" optional="YES" attributeType="String"/>
         <attribute name="uID" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Laundries" representedClassName="Laundries" syncable="YES" codeGenerationType="class">
+        <attribute name="coincidence" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="temperature" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="washingMode" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="ClothesInfo" positionX="-54" positionY="-9" width="128" height="133"/>
+        <element name="Laundries" positionX="-54" positionY="36" width="128" height="118"/>
     </elements>
 </model>

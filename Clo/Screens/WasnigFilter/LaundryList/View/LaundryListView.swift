@@ -3,72 +3,48 @@ import UIKit
 class LaundryListView: UIView {
 
     // MARK: - Properties
-    private var addButton: UIButton!
-    var addButtonHandler: (() -> Void)!
-    private var shadowView: CloShadowView!
+    var collectionView: UICollectionView!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupContainerView()
-        setupAddButton()
-        backgroundColor = Colors.mainBG
+        setupCollectionView()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
 
-    // MARK: - ContainerView
-    private func setupContainerView() {
-        shadowView = CloShadowView()
-        setupShadowViewConstraints()
+    private func setupView() {
     }
 
-    // MARK: - AddButton
-    private func setupAddButton() {
-        addButton = UIButton()
+    private func setupCollectionView() {
+        let layout                                  = UICollectionViewFlowLayout()
+        layout.sectionInset                         = UIEdgeInsets(top: 8, left: 16, bottom: 32, right: 16)
 
-        let attributedString = NSMutableAttributedString(string: NSLocalizedString("Add new item", comment: ""))
-        attributedString.addAttribute(NSAttributedString.Key.font,
-                                      value: UIFont.systemFont(ofSize: Constants.Fonts.largeTextSize, weight: .medium),
-                                      range: NSRange(location: 0, length: attributedString.length))
-        attributedString.addAttribute(NSAttributedString.Key.foregroundColor,
-                                      value: UIColor.white,
-                                      range: NSRange(location: 0, length: attributedString.length))
+        let spacing: CGFloat                        = 24
+        layout.minimumLineSpacing                   = spacing
+        layout.minimumInteritemSpacing              = spacing
 
-        addButton.setAttributedTitle(attributedString, for: .normal)
-        addButton.addTarget(self, action: #selector(addButtonPressed), for: .touchUpInside)
-        addButton.setBackgroundImage(Images.addNewLaundry, for: .normal)
+        collectionView                              = UICollectionView(frame: frame, collectionViewLayout: layout)
+        collectionView.backgroundColor              = Colors.mainBG
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.delaysContentTouches         = false
 
-        setupAddButtonConstraints()
-    }
+        collectionView.register(NewLaundryCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.newLaundryCellIdentifier)
+        collectionView.register(LaundryListCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.laundryCellIdentifier)
 
-    // MARK: - Actions
-    @objc
-    private func addButtonPressed() {
-        addButtonHandler()
+        setupCollectionViewConstraints()
     }
 
     // MARK: - Constraints
-    private func setupShadowViewConstraints() {
-        addSubview(shadowView)
-        shadowView.translatesAutoresizingMaskIntoConstraints = false
+    private func setupCollectionViewConstraints() {
+        addSubview(collectionView)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            shadowView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
-            shadowView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
-            shadowView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            shadowView.heightAnchor.constraint(equalTo: shadowView.widthAnchor, multiplier: 2 / 9)
-        ])
-    }
-
-    private func setupAddButtonConstraints() {
-        shadowView.containerView.addSubview(addButton)
-        addButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            addButton.leadingAnchor.constraint(equalTo: shadowView.leadingAnchor),
-            addButton.topAnchor.constraint(equalTo: shadowView.topAnchor),
-            addButton.trailingAnchor.constraint(equalTo: shadowView.trailingAnchor),
-            addButton.bottomAnchor.constraint(equalTo: shadowView.bottomAnchor)
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            collectionView.topAnchor.constraint(equalTo: topAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
