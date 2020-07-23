@@ -8,12 +8,11 @@ enum Identifiers {
     static let clothesSymbolsCellIdentifier = "ClothesSymbols"
     static let colorTypeCellIdentifier      = "ColorType"
     static let jsonFileName                 = "Symbols"
+    static let laundryCellIdentifier        = "Laundry"
     static let menuItemCellIdentifier       = "MenuItem"
     static let photoCellIdentifier          = "PhotoFromGallery"
     static let symbolCellIdentifier         = "LaundrySymbol"
     static let symbolHeaderIdentifier       = "LaundryHeader"
-    static let laundryCellIdentifier        = "Laundry"
-    static let newLaundryCellIdentifier     = "NewLaundry"
 
     enum DetailCells {
         static let photoCellIdentifier        = "SelectedPhoto"

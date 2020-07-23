@@ -21,10 +21,6 @@ class ClothesListView: UIView {
         layout.sectionInset                         = UIEdgeInsets(top: 8, left: 16, bottom: 16, right: 16)
 
         let spacing: CGFloat                        = 24
-        let itemWidth: CGFloat                      = frame.size.width - layout.sectionInset.left - layout.sectionInset.right
-        let itemHeight: CGFloat                     = itemWidth / 1.3
-
-        layout.itemSize                             = CGSize(width: itemWidth, height: itemHeight)
         layout.minimumLineSpacing                   = spacing
 
         collectionView                              = UICollectionView(frame: frame, collectionViewLayout: layout)
@@ -32,8 +28,8 @@ class ClothesListView: UIView {
         collectionView.showsVerticalScrollIndicator = false
         collectionView.delaysContentTouches         = false
 
-        collectionView.register(ClothesListCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.clothesCellIdentifier)
         collectionView.register(AddNewItemCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.addNewItemCellIdentifier)
+        collectionView.register(ClothesListCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.clothesCellIdentifier)
 
         setupCollectionViewConstraints()
     }

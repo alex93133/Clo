@@ -30,7 +30,7 @@ class LaundryListView: UIView {
         collectionView.showsVerticalScrollIndicator = false
         collectionView.delaysContentTouches         = false
 
-        collectionView.register(NewLaundryCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.newLaundryCellIdentifier)
+        collectionView.register(AddNewItemCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.addNewItemCellIdentifier)
         collectionView.register(LaundryListCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.laundryCellIdentifier)
 
         setupCollectionViewConstraints()

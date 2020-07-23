@@ -15,7 +15,6 @@
 		33041FA1247CF64300721E63 /* ClothesSymbolsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33041FA0247CF64300721E63 /* ClothesSymbolsCollectionViewCell.swift */; };
 		33041FA3247D061700721E63 /* ClothesListCollectionViewCellDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33041FA2247D061700721E63 /* ClothesListCollectionViewCellDelegates.swift */; };
 		3306B4482496210400A42C85 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3306B4472496210400A42C85 /* Image.swift */; };
-		3306B44A2496557B00A42C85 /* AddNewItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3306B4492496557B00A42C85 /* AddNewItemCollectionViewCell.swift */; };
 		3308ECA7248D5C2F008C7B61 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308ECA6248D5C2F008C7B61 /* Result.swift */; };
 		3308ECAD248E09D5008C7B61 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308ECAC248E09D5008C7B61 /* DetailViewController.swift */; };
 		3308ECAF248E0A50008C7B61 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308ECAE248E0A50008C7B61 /* DetailView.swift */; };
@@ -31,7 +30,7 @@
 		33270513249F688E00E50B98 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33270512249F688E00E50B98 /* ColorType.swift */; };
 		332AC388249FBB3C0081EC50 /* WashingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332AC387249FBB3C0081EC50 /* WashingMode.swift */; };
 		332AC38A249FBBD30081EC50 /* WashingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332AC389249FBBD30081EC50 /* WashingManager.swift */; };
-		335439A924C6CD52009B41EE /* NewLaundryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335439A824C6CD52009B41EE /* NewLaundryCollectionViewCell.swift */; };
+		335439A924C6CD52009B41EE /* AddNewItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335439A824C6CD52009B41EE /* AddNewItemCollectionViewCell.swift */; };
 		33574789247FBB89008172FB /* ColorTypeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33574788247FBB89008172FB /* ColorTypeCollectionView.swift */; };
 		3357478B247FBC03008172FB /* ColorTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357478A247FBC03008172FB /* ColorTypeCollectionViewCell.swift */; };
 		3357478E247FC77D008172FB /* CloNextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357478D247FC77D008172FB /* CloNextButton.swift */; };
@@ -108,7 +107,6 @@
 		33041FA0247CF64300721E63 /* ClothesSymbolsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesSymbolsCollectionViewCell.swift; sourceTree = "<group>"; };
 		33041FA2247D061700721E63 /* ClothesListCollectionViewCellDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesListCollectionViewCellDelegates.swift; sourceTree = "<group>"; };
 		3306B4472496210400A42C85 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		3306B4492496557B00A42C85 /* AddNewItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		3308ECA6248D5C2F008C7B61 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		3308ECAC248E09D5008C7B61 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3308ECAE248E0A50008C7B61 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -124,7 +122,7 @@
 		33270512249F688E00E50B98 /* ColorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorType.swift; sourceTree = "<group>"; };
 		332AC387249FBB3C0081EC50 /* WashingMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashingMode.swift; sourceTree = "<group>"; };
 		332AC389249FBBD30081EC50 /* WashingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashingManager.swift; sourceTree = "<group>"; };
-		335439A824C6CD52009B41EE /* NewLaundryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLaundryCollectionViewCell.swift; sourceTree = "<group>"; };
+		335439A824C6CD52009B41EE /* AddNewItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		33574788247FBB89008172FB /* ColorTypeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTypeCollectionView.swift; sourceTree = "<group>"; };
 		3357478A247FBC03008172FB /* ColorTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		3357478D247FC77D008172FB /* CloNextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloNextButton.swift; sourceTree = "<group>"; };
@@ -426,7 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				33DD507324AA3711009CDC01 /* LaundryListView.swift */,
-				335439A824C6CD52009B41EE /* NewLaundryCollectionViewCell.swift */,
+				335439A824C6CD52009B41EE /* AddNewItemCollectionViewCell.swift */,
 				33BD5D8A24BC341C000D5356 /* LaundryListCollectionViewCell.swift */,
 				3313592B24C9712100D42CCE /* LaundryListCollectionViewCellDelegates.swift */,
 			);
@@ -664,7 +662,6 @@
 				33041F9E247C122900721E63 /* ClothesListCollectionViewCell.swift */,
 				33041FA2247D061700721E63 /* ClothesListCollectionViewCellDelegates.swift */,
 				33041FA0247CF64300721E63 /* ClothesSymbolsCollectionViewCell.swift */,
-				3306B4492496557B00A42C85 /* AddNewItemCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -830,7 +827,7 @@
 				A8A2D877245B019300C265F3 /* TextField.swift in Sources */,
 				3308ECAF248E0A50008C7B61 /* DetailView.swift in Sources */,
 				3367E76B2481545C00459AA4 /* PhotoLibraryManager.swift in Sources */,
-				335439A924C6CD52009B41EE /* NewLaundryCollectionViewCell.swift in Sources */,
+				335439A924C6CD52009B41EE /* AddNewItemCollectionViewCell.swift in Sources */,
 				A8C9034A24602FE3004294D9 /* Categories.swift in Sources */,
 				A8204D5D24631881005E30A0 /* GalleryView.swift in Sources */,
 				33F1A4E1248F94B800857FE9 /* CloAlertController.swift in Sources */,
@@ -838,7 +835,6 @@
 				3308ECB7248E0CD4008C7B61 /* DetailSymbolsTableViewCell.swift in Sources */,
 				A8751F14245FFA7300B62589 /* LaundrySymbolsHeader.swift in Sources */,
 				3357478B247FBC03008172FB /* ColorTypeCollectionViewCell.swift in Sources */,
-				3306B44A2496557B00A42C85 /* AddNewItemCollectionViewCell.swift in Sources */,
 				A8204D5B2463183B005E30A0 /* GalleryViewController.swift in Sources */,
 				A84ADDF7245F3AF0008F3425 /* ClothesListViewController.swift in Sources */,
 				33E7DCF2247F92E800BD3F41 /* AddEditClothesView.swift in Sources */,
@@ -1039,7 +1035,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Clo/Supporting files/Clo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = AQL4937GS7;
 				INFOPLIST_FILE = "$(SRCROOT)/Clo/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1061,7 +1057,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Clo/Supporting files/Clo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = AQL4937GS7;
 				INFOPLIST_FILE = "$(SRCROOT)/Clo/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

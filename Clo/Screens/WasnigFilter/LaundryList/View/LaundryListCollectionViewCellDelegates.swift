@@ -7,7 +7,7 @@ extension LaundryListCollectionViewCell: UICollectionViewDelegate, UICollectionV
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.clothesSymbolsCellIdentifier, for: indexPath) as? ClothesSymbolsCollectionViewCell {
-            cell.backgroundColor = Colors.border
+            cell.backgroundColor = UIColor(red: 0.667, green: 0.667, blue: 0.667, alpha: 0.1)
             switch indexPath.item {
             // Mirrored collection view
             case 0:

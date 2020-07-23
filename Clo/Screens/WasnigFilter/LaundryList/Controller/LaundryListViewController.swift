@@ -64,7 +64,9 @@ extension LaundryListViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.item {
         case 0:
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.newLaundryCellIdentifier, for: indexPath) as? NewLaundryCollectionViewCell {
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.addNewItemCellIdentifier, for: indexPath) as? AddNewItemCollectionViewCell {
+                cell.addLabel.text         = NSLocalizedString("Collect the wash", comment: "")
+                cell.backgroundImage.image = Images.addNewLaundry
                 return cell
             }
 

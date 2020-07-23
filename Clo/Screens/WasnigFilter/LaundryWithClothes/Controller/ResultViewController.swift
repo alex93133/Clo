@@ -58,7 +58,7 @@ class ResultViewController: UIViewController {
 }
 
 // MARK: - Delegates
-extension ResultViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ResultViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         clothes?.count ?? 0
     }
@@ -75,4 +75,11 @@ extension ResultViewController: UICollectionViewDelegate, UICollectionViewDataSo
         }
         return UICollectionViewCell()
     }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+           guard let layout = collectionViewLayout as? UICollectionViewFlowLayout else { return CGSize() }
+           let itemWidth: CGFloat = view.frame.size.width - layout.sectionInset.left - layout.sectionInset.right
+           let itemHeight: CGFloat = itemWidth / 1.3
+           return CGSize(width: itemWidth, height: itemHeight)
+       }
 }

@@ -151,7 +151,9 @@ extension ClothesListViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if clothes.isEmpty {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.addNewItemCellIdentifier, for: indexPath) as? AddNewItemCollectionViewCell {
-                return cell
+            cell.addLabel.text         = NSLocalizedString("Add new item", comment: "")
+            cell.backgroundImage.image = Images.AddNewItem
+            return cell
             }
         } else {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.clothesCellIdentifier, for: indexPath) as? ClothesListCollectionViewCell {
@@ -173,6 +175,13 @@ extension ClothesListViewController: UICollectionViewDelegate, UICollectionViewD
             let selectedClothes = visibleClothes[indexPath.item]
             presentDetailViewController(with: selectedClothes)
         }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        guard let layout = collectionViewLayout as? UICollectionViewFlowLayout else { return CGSize() }
+        let itemWidth: CGFloat = view.frame.size.width - layout.sectionInset.left - layout.sectionInset.right
+        let itemHeight: CGFloat = visibleClothes.isEmpty && clothes.isEmpty ? 78 : itemWidth / 1.3
+        return CGSize(width: itemWidth, height: itemHeight)
     }
 }
 

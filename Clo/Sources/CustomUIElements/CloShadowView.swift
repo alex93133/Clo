@@ -15,7 +15,7 @@ class CloShadowView: UIView {
     }
 
     // MARK: - Functions
-    func layoutView() {
+    private func layoutView() {
         layer.backgroundColor = UIColor.clear.cgColor
         layer.shadowColor     = Colors.shadow.cgColor
         layer.shadowOffset    = CGSize(width: 0, height: 3)
@@ -38,6 +38,11 @@ class CloShadowView: UIView {
             trailingAnchor.constraint(equalTo: view.trailingAnchor),
             bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+
+    func addBorderToContainer() {
+        containerView.layer.borderWidth = 0.5
+        containerView.layer.borderColor = Colors.border.cgColor
     }
 
     // MARK: - Constraints

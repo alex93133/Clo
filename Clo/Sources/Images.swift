@@ -2,7 +2,7 @@ import UIKit
 
 enum Images {
     static let addIcon         = UIImage(named: "AddIcon")
-    static let addNewIcon      = UIImage(named: "AddNewItem")
+    static let AddNewItem      = UIImage(named: "AddNewItem")
     static let addNewLaundry   = UIImage(named: "AddNewLaundry")
     static let backIcon        = UIImage(named: "BackIcon")
     static let cameraIcon      = UIImage(systemName: "camera")
