@@ -11,6 +11,7 @@ class LaundryListCollectionViewCell: UICollectionViewCell {
             collectionView.reloadData()
         }
     }
+    var itemSelected: (() -> Void)!
 
     override var isHighlighted: Bool {
         didSet {
@@ -21,8 +22,8 @@ class LaundryListCollectionViewCell: UICollectionViewCell {
     override init(frame _: CGRect) {
         super.init(frame: .zero)
         setupView()
-        setupLaundryNameLabel()
         setupCollectionView()
+        setupLaundryNameLabel()
     }
 
     required init?(coder _: NSCoder) {
@@ -33,15 +34,6 @@ class LaundryListCollectionViewCell: UICollectionViewCell {
     private func setupView() {
         shadowView = CloShadowView()
         shadowView.addTo(view: self)
-    }
-
-    // MARK: - LaundryNameLabel
-    private func setupLaundryNameLabel() {
-        laundryNameLabel           = UILabel()
-        laundryNameLabel.textColor = Colors.accent
-        laundryNameLabel.font      = .systemFont(ofSize: Constants.Fonts.largeTextSize, weight: .semibold)
-        laundryNameLabel.text      = "Privat"
-        setupLaundryNameLabelConstraints()
     }
 
     // MARK: - CollectionView
@@ -70,7 +62,28 @@ class LaundryListCollectionViewCell: UICollectionViewCell {
         setupCollectionViewConstraints()
     }
 
+    // MARK: - LaundryNameLabel
+    private func setupLaundryNameLabel() {
+        laundryNameLabel           = UILabel()
+        laundryNameLabel.textColor = Colors.accent
+        laundryNameLabel.font      = .systemFont(ofSize: Constants.Fonts.largeTextSize, weight: .semibold)
+        laundryNameLabel.text      = "Privat"
+        setupLaundryNameLabelConstraints()
+    }
+
+
     // MARK: - Constraints
+    private func setupCollectionViewConstraints() {
+        shadowView.containerView.addSubview(collectionView)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            collectionView.widthAnchor.constraint(equalToConstant: 174),
+            collectionView.topAnchor.constraint(equalTo: shadowView.topAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: shadowView.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: shadowView.bottomAnchor)
+        ])
+    }
+
     private func setupLaundryNameLabelConstraints() {
         shadowView.containerView.addSubview(laundryNameLabel)
         laundryNameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -78,18 +91,7 @@ class LaundryListCollectionViewCell: UICollectionViewCell {
             laundryNameLabel.leadingAnchor.constraint(equalTo: shadowView.leadingAnchor, constant: 16),
             laundryNameLabel.heightAnchor.constraint(equalToConstant: 24),
             laundryNameLabel.centerYAnchor.constraint(equalTo: shadowView.centerYAnchor),
-            laundryNameLabel.widthAnchor.constraint(equalTo: shadowView.widthAnchor, multiplier: 1 / 2)
-        ])
-    }
-
-    private func setupCollectionViewConstraints() {
-        shadowView.containerView.addSubview(collectionView)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            collectionView.leadingAnchor.constraint(equalTo: laundryNameLabel.trailingAnchor),
-            collectionView.topAnchor.constraint(equalTo: shadowView.topAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: shadowView.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: shadowView.bottomAnchor)
+            laundryNameLabel.trailingAnchor.constraint(equalTo: collectionView.leadingAnchor)
         ])
     }
 }

@@ -74,6 +74,10 @@ extension LaundryListViewController: UICollectionViewDelegate, UICollectionViewD
                 let laundry                = laundries[indexPath.item - 1]
                 cell.laundryNameLabel.text = laundry.name
                 cell.laundry               = laundry
+                cell.itemSelected = { [weak self] in
+                    guard let self = self else { return } 
+                    self.presentDetail(laundry: laundry)
+                }
                 return cell
             }
         }

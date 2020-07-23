@@ -30,4 +30,8 @@ extension LaundryListCollectionViewCell: UICollectionViewDelegate, UICollectionV
         }
         return UICollectionViewCell()
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        itemSelected()
+    }
 }

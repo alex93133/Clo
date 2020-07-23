@@ -19,13 +19,17 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         setupDependencies()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        selectedIndex = 2
+    }
+
     // MARK: - Functions
     private func setupView() {
         tabBar.barTintColor            = Colors.mainBG
         tabBar.tintColor               = Colors.mint
         tabBar.unselectedItemTintColor = Colors.icon
         tabBar.isTranslucent           = false
-        selectedIndex                  = 1
         tabBar.layer.borderColor       = UIColor.lightGray.cgColor
         delegate                       = self
     }

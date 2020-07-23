@@ -4,6 +4,7 @@ class LaundryDetailViewController: ResultViewController {
 
     // MARK: - Properties
     var laundry: Laundry
+    var alertController: UIAlertController!
 
     init(laundry: Laundry) {
         self.laundry = laundry
@@ -31,6 +32,24 @@ class LaundryDetailViewController: ResultViewController {
         navigationItem.rightBarButtonItem = deleteUIBarButtonItem
     }
 
+    private func presentActionSheet() {
+        alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alertController.view.tintColor = Colors.mint
+
+        let deleteAction = UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive) { [weak self] _ in
+            guard let self = self else { return }
+            self.deleteLaundry()
+        }
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel)
+
+        deleteAction.setValue(Images.deleteIcon, forKey: "image")
+
+        alertController.addAction(deleteAction)
+        alertController.addAction(cancelAction)
+
+        present(alertController, animated: true)
+    }
+
     private func deleteLaundry() {
         CoreDataManager.shared.deleteLaundry(laundry: laundry) { [weak self] result in
             guard let self = self else { return }
@@ -49,6 +68,6 @@ class LaundryDetailViewController: ResultViewController {
     // MARK: - Actions
     @objc
     private func deleteButtonPressed() {
-        deleteLaundry()
+        presentActionSheet()
     }
 }

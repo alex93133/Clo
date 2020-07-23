@@ -52,7 +52,6 @@ class CreatedLaundryViewController: ResultViewController {
     }
 
     private func saveLaundry() {
-        guard let laundryClothes = clothes, !laundryClothes.isEmpty else { return }
         let laundry = Laundry(name: laundryName,
                               color: color,
                               temperature: temperature,

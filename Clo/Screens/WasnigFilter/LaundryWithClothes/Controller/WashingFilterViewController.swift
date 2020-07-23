@@ -115,7 +115,7 @@ extension WashingFilterViewController: WashingFilterViewDelegate {
     }
 
     func temperatureButtonPressed() {
-        let temperatures = [ "30", "40", "50", "60", "70", "95"]
+        let temperatures = [ "30", "40", "60", "70", "95"]
         let temperatureSheet = ItemSheet(items: temperatures)
         temperatureSheet.itemViewController.delegate = self
 
