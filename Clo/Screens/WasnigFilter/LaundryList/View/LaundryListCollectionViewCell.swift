@@ -71,7 +71,6 @@ class LaundryListCollectionViewCell: UICollectionViewCell {
         setupLaundryNameLabelConstraints()
     }
 
-
     // MARK: - Constraints
     private func setupCollectionViewConstraints() {
         shadowView.containerView.addSubview(collectionView)

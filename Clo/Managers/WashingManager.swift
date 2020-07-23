@@ -2,12 +2,14 @@ import UIKit
 
 struct WashingManager {
 
+    // MARK: - Properties
     var clothes: [Clothes]?
     let temperature: Int
     let color: ColorType
     let washingMode: WashingMode
     let coincidence: Bool
 
+    // MARK: - Access checking
     static func presentViewWithWarning(symbol: Symbol, target: UIViewController) {
         let alert = CloAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         NSLayoutConstraint.activate([alert.view.heightAnchor.constraint(equalToConstant: 270)])
@@ -36,6 +38,7 @@ struct WashingManager {
         alert.messageLabel.text = NSLocalizedString("This clothes is not allowed to be washed, so you will damage it", comment: "")
     }
 
+    // MARK: - Data decoding
     enum DataFrom {
         case symbol(Symbol)
         case clothes(Clothes)
@@ -51,7 +54,7 @@ struct WashingManager {
             let washingSymbols = clothes.symbols.filter { $0.category == .washing }
             return washingSymbols.first!
 
-        case .parameters(let washingMode, let temperature):
+        case let .parameters (washingMode, temperature):
             let washingSymbols = Symbols.allSymbols()?.filter { $0.category == .washing }
             let filteredByTemperature = washingSymbols?.filter { WashingManager.getTemperature(data: .symbol($0)) == temperature }
             let filteredByWashingMode = filteredByTemperature?.filter { WashingManager.getWashingMode(data: .symbol($0)) == washingMode }
@@ -101,6 +104,7 @@ struct WashingManager {
         }
     }
 
+    // MARK: - Filtering
     private mutating func filterByColor() {
         if coincidence || temperature >= 40 {
             self.clothes = clothes?.filter { $0.color == color }

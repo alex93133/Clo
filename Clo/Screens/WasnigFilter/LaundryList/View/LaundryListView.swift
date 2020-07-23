@@ -14,9 +14,7 @@ class LaundryListView: UIView {
         super.init(coder: coder)
     }
 
-    private func setupView() {
-    }
-
+    // MARK: - CollectionView
     private func setupCollectionView() {
         let layout                                  = UICollectionViewFlowLayout()
         layout.sectionInset                         = UIEdgeInsets(top: 8, left: 16, bottom: 32, right: 16)
