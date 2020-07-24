@@ -53,6 +53,7 @@ class LaundryListCollectionViewCell: UICollectionViewCell {
         collectionView.backgroundColor                = .clear
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.isScrollEnabled                = false
+        collectionView.isUserInteractionEnabled       = false
         collectionView.delegate                       = self
         collectionView.dataSource                     = self
         collectionView.semanticContentAttribute       = .forceRightToLeft
