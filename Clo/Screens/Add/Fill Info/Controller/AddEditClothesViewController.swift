@@ -162,7 +162,8 @@ extension AddEditClothesViewController: UICollectionViewDelegate, UICollectionVi
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.clothesColorCellIdentifier, for: indexPath) as? ColorTypeCollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.clothesColorCellIdentifier,
+                                                         for: indexPath) as? ColorTypeCollectionViewCell {
             cell.colorTypeImageView.image = clothingColors[indexPath.item].image
 
             if clothingColors[indexPath.item].type == selectedColor {

@@ -139,7 +139,9 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 
         alert.imageView.image   = Images.forbidden
         alert.headLabel.text    = NSLocalizedString("Oops!", comment: "")
-        alert.messageLabel.text = NSLocalizedString("Looks like you forgot to turn on the camera. To continue, you'll need to allow camera access in Settings", comment: "")
+        alert.messageLabel.text = NSLocalizedString("""
+Looks like you forgot to turn on the camera. To continue, you'll need to allow camera access in Settings
+""", comment: "")
     }
 
     private func openSettings() {

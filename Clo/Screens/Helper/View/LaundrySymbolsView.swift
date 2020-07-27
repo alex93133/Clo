@@ -35,8 +35,11 @@ class LaundrySymbolsView: UIView {
         collectionView.showsVerticalScrollIndicator = false
         collectionView.delaysContentTouches         = false
 
-        collectionView.register(LaundrySymbolsCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.symbolCellIdentifier)
-        collectionView.register(LaundrySymbolsHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Identifiers.symbolHeaderIdentifier)
+        collectionView.register(LaundrySymbolsCollectionViewCell.self,
+                                forCellWithReuseIdentifier: Identifiers.symbolCellIdentifier)
+        collectionView.register(LaundrySymbolsHeader.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: Identifiers.symbolHeaderIdentifier)
 
         setupCollectionViewConstraints()
     }

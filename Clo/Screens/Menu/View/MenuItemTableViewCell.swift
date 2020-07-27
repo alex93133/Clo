@@ -33,6 +33,7 @@ class MenuItemTableViewCell: UITableViewCell {
         super.init(coder: aDecoder)
     }
 
+    // MARK: - View
     private func setupView() {
         backgroundColor = Colors.mainBG
         selectionStyle  = .none

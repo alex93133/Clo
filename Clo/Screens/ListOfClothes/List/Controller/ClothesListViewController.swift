@@ -150,13 +150,15 @@ extension ClothesListViewController: UICollectionViewDelegate, UICollectionViewD
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if clothes.isEmpty {
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.addNewItemCellIdentifier, for: indexPath) as? AddNewItemCollectionViewCell {
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.addNewItemCellIdentifier,
+                                                             for: indexPath) as? AddNewItemCollectionViewCell {
                 cell.addLabel.text         = NSLocalizedString("Add new item", comment: "")
                 cell.backgroundImage.image = Images.AddNewItem
                 return cell
             }
         } else {
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.clothesCellIdentifier, for: indexPath) as? ClothesListCollectionViewCell {
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.clothesCellIdentifier,
+                                                             for: indexPath) as? ClothesListCollectionViewCell {
                 let currentClothes          = visibleClothes[indexPath.item]
                 cell.clothesImageView.image = currentClothes.photo
                 cell.symbols                = currentClothes.symbols

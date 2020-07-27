@@ -14,7 +14,7 @@ class LaundrySymbolsCollectionViewCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        setupContainerView()
+        setupView()
         setupLaundryImage()
     }
 
@@ -23,7 +23,7 @@ class LaundrySymbolsCollectionViewCell: UICollectionViewCell {
     }
 
     // MARK: - View
-    private func setupContainerView() {
+    private func setupView() {
         shadowView = CloShadowView()
         shadowView.addTo(view: self)
     }

@@ -1,12 +1,14 @@
 import UIKit
 
+// MARK: - Delegates
 extension LaundryListCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return laundry.coincidence ? 3 : 2
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.clothesSymbolsCellIdentifier, for: indexPath) as? ClothesSymbolsCollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.clothesSymbolsCellIdentifier,
+                                                         for: indexPath) as? ClothesSymbolsCollectionViewCell {
             cell.backgroundColor = UIColor(red: 0.667, green: 0.667, blue: 0.667, alpha: 0.1)
             switch indexPath.item {
             // Mirrored collection view

@@ -33,7 +33,6 @@ class InputFieldsView: UIView {
             label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
             label.heightAnchor.constraint(equalToConstant: 18)
         ])
-
         return label
     }
 

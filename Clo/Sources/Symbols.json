@@ -430,7 +430,7 @@
     {
       "id": 72,
       "category": "Professional cleaning",
-      "description": "Dry clean, tetrachloroethylene (PCE) only",
+      "description": "Dry clean tetrachloroethylene (PCE) only",
       "imageName": "ProfessionalCleaning_3"
     },
     {
@@ -448,7 +448,7 @@
     {
       "id": 75,
       "category": "Professional cleaning",
-      "description": "Dry clean, hydrocarbon solvent only (HCS)",
+      "description": "Dry clean hydrocarbon solvent only (HCS)",
       "imageName": "ProfessionalCleaning_6"
     },
     {

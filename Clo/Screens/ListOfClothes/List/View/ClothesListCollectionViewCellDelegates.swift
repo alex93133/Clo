@@ -7,7 +7,8 @@ extension ClothesListCollectionViewCell: UICollectionViewDelegate, UICollectionV
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.clothesSymbolsCellIdentifier, for: indexPath) as? ClothesSymbolsCollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.clothesSymbolsCellIdentifier,
+                                                         for: indexPath) as? ClothesSymbolsCollectionViewCell {
             switch indexPath.item {
             case 0:
                 let insets = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)

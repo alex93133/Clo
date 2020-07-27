@@ -64,7 +64,8 @@ extension ResultViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.clothesCellIdentifier, for: indexPath) as? ClothesListCollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.clothesCellIdentifier,
+                                                         for: indexPath) as? ClothesListCollectionViewCell {
             guard let clothes = clothes else { return UICollectionViewCell() }
             let currentClothes          = clothes[indexPath.item]
             cell.clothesImageView.image = currentClothes.photo

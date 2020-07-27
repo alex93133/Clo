@@ -4,7 +4,10 @@ class SelectSymbolsViewController: UIViewController {
 
     // MARK: - Properties
     private let customView = SelectSymbolsView(frame: UIScreen.main.bounds)
-    var clothesInfo: (type: ClothingType, color: ColorType, info: String?, photo: UIImage)!
+    var clothesInfo: (type: ClothingType,
+    color: ColorType,
+    info: String?,
+    photo: UIImage)!
     var editableClothes: Clothes?
     private let selectionSectionTitle = NSLocalizedString("Your choice", comment: "")
     private var sections = SymbolsSections.getSections().sorted { $0.index < $1.index }
@@ -171,7 +174,8 @@ extension SelectSymbolsViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
 
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.symbolCellIdentifier, for: indexPath) as? LaundrySymbolsCollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.symbolCellIdentifier,
+                                                         for: indexPath) as? LaundrySymbolsCollectionViewCell {
             let section = sections[indexPath.section]
             cell.laundryImage.image = section.items[indexPath.item].image?.withRenderingMode(.alwaysTemplate)
 
@@ -206,7 +210,9 @@ extension SelectSymbolsViewController: UICollectionViewDelegate, UICollectionVie
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Identifiers.symbolHeaderIdentifier, for: indexPath) as! LaundrySymbolsHeader
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                             withReuseIdentifier: Identifiers.symbolHeaderIdentifier,
+                                                                             for: indexPath) as! LaundrySymbolsHeader
             headerView.headerLabel.text = NSLocalizedString(sections[indexPath.section].title, comment: "")
             return headerView
         }

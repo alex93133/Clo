@@ -27,8 +27,10 @@ class LaundrySymbolsViewController: UIViewController {
 
 // MARK: - Delegates
 extension LaundrySymbolsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.symbolCellIdentifier, for: indexPath) as? LaundrySymbolsCollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.symbolCellIdentifier,
+                                                         for: indexPath) as? LaundrySymbolsCollectionViewCell {
             let section = symbolSections[indexPath.section]
             cell.laundryImage.image = section.items[indexPath.item].image
             return cell
@@ -55,7 +57,9 @@ extension LaundrySymbolsViewController: UICollectionViewDelegate, UICollectionVi
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
-            if let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Identifiers.symbolHeaderIdentifier, for: indexPath) as? LaundrySymbolsHeader {
+            if let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                                withReuseIdentifier: Identifiers.symbolHeaderIdentifier,
+                                                                                for: indexPath) as? LaundrySymbolsHeader {
                 headerView.headerLabel.text = NSLocalizedString(symbolSections[indexPath.section].title, comment: "")
                 return headerView
             }
@@ -64,7 +68,9 @@ extension LaundrySymbolsViewController: UICollectionViewDelegate, UICollectionVi
         return UICollectionReusableView()
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout _: UICollectionViewLayout, referenceSizeForHeaderInSection _: Int) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout _: UICollectionViewLayout,
+                        referenceSizeForHeaderInSection _: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 80.0)
     }
 }

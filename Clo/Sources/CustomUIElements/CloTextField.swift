@@ -13,11 +13,12 @@ class CloTextField: UITextField {
 
     convenience init(placeholder: String, addTo view: UIView) {
         self.init(frame: .zero)
+        let attributes = [
+            NSAttributedString.Key.foregroundColor: Colors.textGray,
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Fonts.mediumTextSize, weight: .regular)
+        ]
         attributedPlaceholder = NSAttributedString(string: placeholder,
-                                                   attributes: [
-                                                    NSAttributedString.Key.foregroundColor: Colors.textGray,
-                                                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Fonts.mediumTextSize, weight: .regular)
-        ])
+                                                   attributes: attributes)
         layer.borderWidth = 0.5
         layer.borderColor = Colors.border.cgColor
         addToView(view)

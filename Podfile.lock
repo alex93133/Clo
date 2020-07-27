@@ -1,5 +1,5 @@
 PODS:
-  - CropViewController (2.5.3)
+  - CropViewController (2.5.4)
   - FittedSheets (1.4.6)
   - IQKeyboardManagerSwift (6.5.5)
 
@@ -15,10 +15,10 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
 
 SPEC CHECKSUMS:
-  CropViewController: a5c143548a0fabcd6cc25f2d26e40460cfb8c78c
+  CropViewController: 980df34ffc499db89755b2f307f20eca00cd40c6
   FittedSheets: 7f37fee2567d15dcde391f31eccbffb660ddebf0
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
 
-PODFILE CHECKSUM: fa3ed39e0b7102dae01454564672f79022ba6136
+PODFILE CHECKSUM: 4ffddb158ad34f819d989f9b25275402d37e3205
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0.beta.1

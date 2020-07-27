@@ -115,7 +115,8 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             }
 
         case 1:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.DetailCells.typeWithInfoCellIdentifier) as? DetailTypeAndInfoTableViewCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.DetailCells.typeWithInfoCellIdentifier,
+                                                        for: indexPath) as? DetailTypeAndInfoTableViewCell {
                 cell.typeLabel.text = NSLocalizedString(clothes.type.rawValue, comment: "")
                 if let info = clothes.info {
                     cell.infoLabel.text = info
@@ -126,7 +127,8 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             }
 
         case 2:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.DetailCells.symbolsCellIdentifier) as? DetailSymbolsTableViewCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.DetailCells.symbolsCellIdentifier,
+                                                        for: indexPath) as? DetailSymbolsTableViewCell {
                 if indexPath.row == 0 {
                     let insets = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
                     cell.symbolImageView.image = UIImage(named: clothes.color.rawValue)?.withAlignmentRectInsets(insets)

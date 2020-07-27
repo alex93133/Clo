@@ -8,7 +8,7 @@ class ColorTypeCollectionViewCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        setupShadowView()
+        setupView()
         setupColorTypeImageView()
     }
 
@@ -16,7 +16,8 @@ class ColorTypeCollectionViewCell: UICollectionViewCell {
         super.init(frame: .zero)
     }
 
-    private func setupShadowView() {
+    // MARK: - ShadowView
+    private func setupView() {
         shadowView = CloShadowView()
         shadowView.addTo(view: self)
     }
