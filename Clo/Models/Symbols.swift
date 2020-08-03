@@ -11,7 +11,7 @@ struct Symbols: Codable {
                 let jsonData = try decoder.decode(Symbols.self, from: data)
                 return jsonData.symbols
             } catch {
-                print("Error: \(error.localizedDescription)")
+                print("error.localizedDescription")
             }
         }
         return nil

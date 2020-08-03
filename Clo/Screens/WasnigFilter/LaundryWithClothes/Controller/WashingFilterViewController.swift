@@ -7,7 +7,7 @@ class WashingFilterViewController: UIViewController {
     var color: ColorType!
     var temperature: Int!
     var washingMode: WashingMode!
-    var laundryName: String!
+    var washingName: String!
     var referenceClothes: Clothes?
 
     // MARK: - Lifecycle
@@ -65,7 +65,7 @@ class WashingFilterViewController: UIViewController {
             guard let name = view().nameTextField.text, !name.isEmpty else {
                 view().nextButton.enableButton(isOn: false)
                 return }
-            laundryName = name
+            washingName = name
         }
 
         view().nextButton.enableButton(isOn: true)

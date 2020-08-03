@@ -3,12 +3,12 @@ import UIKit
 class ClothesSymbolsCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Properties
-    var laundryImageView: UIImageView!
+    var washingImageView: UIImageView!
 
     override init(frame _: CGRect) {
         super.init(frame: .zero)
         setupView()
-        setupLaundryImageView()
+        setupWashingImageView()
     }
 
     required init?(coder _: NSCoder) {
@@ -23,23 +23,23 @@ class ClothesSymbolsCollectionViewCell: UICollectionViewCell {
         backgroundColor     = Colors.additionalBG
     }
 
-    // MARK: - LaundryImageView
-    private func setupLaundryImageView() {
-        laundryImageView             = UIImageView()
-        laundryImageView.contentMode = .scaleAspectFill
-        laundryImageView.tintColor   = Colors.accent
-        setupLaundryImageViewConstraints()
+    // MARK: - WashingImageView
+    private func setupWashingImageView() {
+        washingImageView             = UIImageView()
+        washingImageView.contentMode = .scaleAspectFill
+        washingImageView.tintColor   = Colors.accent
+        setupWashingImageViewConstraints()
     }
 
     // MARK: - Constraints
-    private func setupLaundryImageViewConstraints() {
-        addSubview(laundryImageView)
-        laundryImageView.translatesAutoresizingMaskIntoConstraints = false
+    private func setupWashingImageViewConstraints() {
+        addSubview(washingImageView)
+        washingImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            laundryImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 6),
-            laundryImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -6),
-            laundryImageView.topAnchor.constraint(equalTo: topAnchor, constant: 6),
-            laundryImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6)
+            washingImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 6),
+            washingImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -6),
+            washingImageView.topAnchor.constraint(equalTo: topAnchor, constant: 6),
+            washingImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6)
         ])
     }
 }

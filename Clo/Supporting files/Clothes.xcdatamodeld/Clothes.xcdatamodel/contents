@@ -2,21 +2,22 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G73" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="ClothesInfo" representedClassName="ClothesInfo" syncable="YES">
         <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="info" optional="YES" attributeType="String" valueTransformerName="" customClassName="[Clothes]"/>
         <attribute name="photo" optional="YES" attributeType="Binary"/>
         <attribute name="symbolsIDs" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="[Int]"/>
         <attribute name="type" optional="YES" attributeType="String"/>
-        <attribute name="uID" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="Laundries" representedClassName="Laundries" syncable="YES" codeGenerationType="class">
+    <entity name="WashingInfo" representedClassName="WashingInfo" syncable="YES" codeGenerationType="class">
         <attribute name="coincidence" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="temperature" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="washingMode" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="ClothesInfo" positionX="-54" positionY="-9" width="128" height="133"/>
-        <element name="Laundries" positionX="-54" positionY="36" width="128" height="118"/>
+        <element name="WashingInfo" positionX="-54" positionY="36" width="128" height="133"/>
     </elements>
 </model>

@@ -90,6 +90,8 @@ opt_in_rules:
 excluded:
 - Carthage
 - Pods
+- fastlane
+- CloUITests
 
 
 line_length:
@@ -106,6 +108,5 @@ identifier_name:
     excluded:
        - id
        - URL
-
 
 

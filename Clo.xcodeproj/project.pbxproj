@@ -21,11 +21,12 @@
 		3308ECB1248E0CA8008C7B61 /* DetailPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308ECB0248E0CA8008C7B61 /* DetailPhotoTableViewCell.swift */; };
 		3308ECB3248E0CC0008C7B61 /* DetailTypeAndInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308ECB2248E0CC0008C7B61 /* DetailTypeAndInfoTableViewCell.swift */; };
 		3308ECB7248E0CD4008C7B61 /* DetailSymbolsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308ECB6248E0CD4008C7B61 /* DetailSymbolsTableViewCell.swift */; };
-		3313592C24C9712100D42CCE /* LaundryListCollectionViewCellDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3313592B24C9712100D42CCE /* LaundryListCollectionViewCellDelegates.swift */; };
+		331345A224D1785400BD59AB /* CloUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331345A124D1785400BD59AB /* CloUITests.swift */; };
+		3313592C24C9712100D42CCE /* WashingListCollectionViewCellDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3313592B24C9712100D42CCE /* WashingListCollectionViewCellDelegates.swift */; };
 		33148695247FF279007BAA43 /* InputFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33148694247FF279007BAA43 /* InputFieldsView.swift */; };
 		3314D60A249FE72400F69DF4 /* FeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3314D609249FE72400F69DF4 /* FeedbackManager.swift */; };
 		3315B134248118A400BA354B /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3315B133248118A400BA354B /* ItemViewController.swift */; };
-		331EE79124C962B9001730BD /* LaundryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331EE79024C962B9001730BD /* LaundryDetailViewController.swift */; };
+		331EE79124C962B9001730BD /* WashingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331EE79024C962B9001730BD /* WashingDetailViewController.swift */; };
 		33270511249F684500E50B98 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33270510249F684500E50B98 /* Symbol.swift */; };
 		33270513249F688E00E50B98 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33270512249F688E00E50B98 /* ColorType.swift */; };
 		332AC388249FBB3C0081EC50 /* WashingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332AC387249FBB3C0081EC50 /* WashingMode.swift */; };
@@ -51,20 +52,21 @@
 		33B5923724A492FE0079E57A /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B5923624A492FE0079E57A /* MenuView.swift */; };
 		33B5923924A498AB0079E57A /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B5923824A498AB0079E57A /* MenuItemTableViewCell.swift */; };
 		33BACFF324B32F630041D852 /* CloShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BACFF224B32F630041D852 /* CloShadowView.swift */; };
-		33BD5D8B24BC341C000D5356 /* LaundryListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BD5D8A24BC341C000D5356 /* LaundryListCollectionViewCell.swift */; };
+		33BD5D8B24BC341C000D5356 /* WashingListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BD5D8A24BC341C000D5356 /* WashingListCollectionViewCell.swift */; };
 		33C5172B24A4A6ED00128C4B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C5172A24A4A6ED00128C4B /* StoreKit.framework */; };
 		33C5172D24A4AA2000128C4B /* InAppPurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C5172C24A4AA2000128C4B /* InAppPurchaseManager.swift */; };
-		33DD507224AA36C3009CDC01 /* LaundryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD507124AA36C3009CDC01 /* LaundryListViewController.swift */; };
-		33DD507424AA3711009CDC01 /* LaundryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD507324AA3711009CDC01 /* LaundryListView.swift */; };
+		33CCA3E124D178AA0008D208 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3313457A24D175B800BD59AB /* SnapshotHelper.swift */; };
+		33DD507224AA36C3009CDC01 /* WashingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD507124AA36C3009CDC01 /* WashingListViewController.swift */; };
+		33DD507424AA3711009CDC01 /* WashingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD507324AA3711009CDC01 /* WashingListView.swift */; };
 		33DFEB03248D0AF200B802F4 /* Clothes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33DFEB01248D0AF200B802F4 /* Clothes.xcdatamodeld */; };
 		33E61A1224A47DE100B6D1FD /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E61A1124A47DE100B6D1FD /* ResultViewController.swift */; };
 		33E7DCF0247F92CF00BD3F41 /* AddEditClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCEF247F92CF00BD3F41 /* AddEditClothesViewController.swift */; };
 		33E7DCF2247F92E800BD3F41 /* AddEditClothesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCF1247F92E800BD3F41 /* AddEditClothesView.swift */; };
 		33E7DCFA247FB1D900BD3F41 /* ClothingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7DCF9247FB1D900BD3F41 /* ClothingType.swift */; };
 		33E95F212493C66E00102199 /* GallerySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E95F202493C66E00102199 /* GallerySheet.swift */; };
-		33EF08F724B5A9D300F1A352 /* NewLaundryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF08F624B5A9D300F1A352 /* NewLaundryViewController.swift */; };
-		33EF08F924B5B40200F1A352 /* CreatedLaundryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF08F824B5B40200F1A352 /* CreatedLaundryViewController.swift */; };
-		33EF08FB24B5D5B200F1A352 /* Laundry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF08FA24B5D5B200F1A352 /* Laundry.swift */; };
+		33EF08F724B5A9D300F1A352 /* NewWashingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF08F624B5A9D300F1A352 /* NewWashingViewController.swift */; };
+		33EF08F924B5B40200F1A352 /* CreatedWashingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF08F824B5B40200F1A352 /* CreatedWashingViewController.swift */; };
+		33EF08FB24B5D5B200F1A352 /* Washing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF08FA24B5D5B200F1A352 /* Washing.swift */; };
 		33EFBD25249FA62C0031942A /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EFBD24249FA62C0031942A /* ImageView.swift */; };
 		33F1A4E1248F94B800857FE9 /* CloAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F1A4E0248F94B800857FE9 /* CloAlertController.swift */; };
 		33FEB3AE249F8FCB00D2B037 /* WashingFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FEB3AD249F8FCB00D2B037 /* WashingFilterViewController.swift */; };
@@ -97,6 +99,16 @@
 		A8DA1A992465A0370077F0ED /* CameraCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DA1A982465A0370077F0ED /* CameraCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		331345A424D1785400BD59AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A82AC9722458404F00C0DC3D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A82AC9792458404F00C0DC3D;
+			remoteInfo = Clo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1A228FC09CAD5AF1927CF95B /* Pods_Clo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E5A39CE76BE4E7124AF2DCB /* Pods-Clo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clo.release.xcconfig"; path = "Target Support Files/Pods-Clo/Pods-Clo.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,11 +125,15 @@
 		3308ECB0248E0CA8008C7B61 /* DetailPhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPhotoTableViewCell.swift; sourceTree = "<group>"; };
 		3308ECB2248E0CC0008C7B61 /* DetailTypeAndInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTypeAndInfoTableViewCell.swift; sourceTree = "<group>"; };
 		3308ECB6248E0CD4008C7B61 /* DetailSymbolsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSymbolsTableViewCell.swift; sourceTree = "<group>"; };
-		3313592B24C9712100D42CCE /* LaundryListCollectionViewCellDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundryListCollectionViewCellDelegates.swift; sourceTree = "<group>"; };
+		3313457A24D175B800BD59AB /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		3313459F24D1785400BD59AB /* CloUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		331345A124D1785400BD59AB /* CloUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloUITests.swift; sourceTree = "<group>"; };
+		331345A324D1785400BD59AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3313592B24C9712100D42CCE /* WashingListCollectionViewCellDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashingListCollectionViewCellDelegates.swift; sourceTree = "<group>"; };
 		33148694247FF279007BAA43 /* InputFieldsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldsView.swift; sourceTree = "<group>"; };
 		3314D609249FE72400F69DF4 /* FeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackManager.swift; sourceTree = "<group>"; };
 		3315B133248118A400BA354B /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
-		331EE79024C962B9001730BD /* LaundryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundryDetailViewController.swift; sourceTree = "<group>"; };
+		331EE79024C962B9001730BD /* WashingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashingDetailViewController.swift; sourceTree = "<group>"; };
 		33270510249F684500E50B98 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		33270512249F688E00E50B98 /* ColorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorType.swift; sourceTree = "<group>"; };
 		332AC387249FBB3C0081EC50 /* WashingMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashingMode.swift; sourceTree = "<group>"; };
@@ -145,20 +161,20 @@
 		33B5923624A492FE0079E57A /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		33B5923824A498AB0079E57A /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
 		33BACFF224B32F630041D852 /* CloShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloShadowView.swift; sourceTree = "<group>"; };
-		33BD5D8A24BC341C000D5356 /* LaundryListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundryListCollectionViewCell.swift; sourceTree = "<group>"; };
+		33BD5D8A24BC341C000D5356 /* WashingListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashingListCollectionViewCell.swift; sourceTree = "<group>"; };
 		33C5172A24A4A6ED00128C4B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		33C5172C24A4AA2000128C4B /* InAppPurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseManager.swift; sourceTree = "<group>"; };
-		33DD507124AA36C3009CDC01 /* LaundryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundryListViewController.swift; sourceTree = "<group>"; };
-		33DD507324AA3711009CDC01 /* LaundryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundryListView.swift; sourceTree = "<group>"; };
+		33DD507124AA36C3009CDC01 /* WashingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashingListViewController.swift; sourceTree = "<group>"; };
+		33DD507324AA3711009CDC01 /* WashingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashingListView.swift; sourceTree = "<group>"; };
 		33DFEB02248D0AF200B802F4 /* Clothes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Clothes.xcdatamodel; sourceTree = "<group>"; };
 		33E61A1124A47DE100B6D1FD /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		33E7DCEF247F92CF00BD3F41 /* AddEditClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditClothesViewController.swift; sourceTree = "<group>"; };
 		33E7DCF1247F92E800BD3F41 /* AddEditClothesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditClothesView.swift; sourceTree = "<group>"; };
 		33E7DCF9247FB1D900BD3F41 /* ClothingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingType.swift; sourceTree = "<group>"; };
 		33E95F202493C66E00102199 /* GallerySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallerySheet.swift; sourceTree = "<group>"; };
-		33EF08F624B5A9D300F1A352 /* NewLaundryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLaundryViewController.swift; sourceTree = "<group>"; };
-		33EF08F824B5B40200F1A352 /* CreatedLaundryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatedLaundryViewController.swift; sourceTree = "<group>"; };
-		33EF08FA24B5D5B200F1A352 /* Laundry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Laundry.swift; sourceTree = "<group>"; };
+		33EF08F624B5A9D300F1A352 /* NewWashingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWashingViewController.swift; sourceTree = "<group>"; };
+		33EF08F824B5B40200F1A352 /* CreatedWashingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatedWashingViewController.swift; sourceTree = "<group>"; };
+		33EF08FA24B5D5B200F1A352 /* Washing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Washing.swift; sourceTree = "<group>"; };
 		33EFBD24249FA62C0031942A /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		33F1A4E0248F94B800857FE9 /* CloAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloAlertController.swift; sourceTree = "<group>"; };
 		33FEB3AD249F8FCB00D2B037 /* WashingFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashingFilterViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +211,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3313459C24D1785400BD59AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A82AC9772458404F00C0DC3D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -253,6 +276,15 @@
 				3308ECB6248E0CD4008C7B61 /* DetailSymbolsTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		331345A024D1785400BD59AB /* CloUITests */ = {
+			isa = PBXGroup;
+			children = (
+				331345A124D1785400BD59AB /* CloUITests.swift */,
+				331345A324D1785400BD59AB /* Info.plist */,
+			);
+			path = CloUITests;
 			sourceTree = "<group>";
 		};
 		3357478C247FC74A008172FB /* CustomUIElements */ = {
@@ -412,10 +444,10 @@
 		33DD507B24AB5542009CDC01 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				33DD507124AA36C3009CDC01 /* LaundryListViewController.swift */,
-				331EE79024C962B9001730BD /* LaundryDetailViewController.swift */,
-				33EF08F624B5A9D300F1A352 /* NewLaundryViewController.swift */,
-				33EF08F824B5B40200F1A352 /* CreatedLaundryViewController.swift */,
+				33DD507124AA36C3009CDC01 /* WashingListViewController.swift */,
+				331EE79024C962B9001730BD /* WashingDetailViewController.swift */,
+				33EF08F624B5A9D300F1A352 /* NewWashingViewController.swift */,
+				33EF08F824B5B40200F1A352 /* CreatedWashingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -423,10 +455,10 @@
 		33DD507C24AB554A009CDC01 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				33DD507324AA3711009CDC01 /* LaundryListView.swift */,
+				33DD507324AA3711009CDC01 /* WashingListView.swift */,
 				335439A824C6CD52009B41EE /* AddNewItemCollectionViewCell.swift */,
-				33BD5D8A24BC341C000D5356 /* LaundryListCollectionViewCell.swift */,
-				3313592B24C9712100D42CCE /* LaundryListCollectionViewCellDelegates.swift */,
+				33BD5D8A24BC341C000D5356 /* WashingListCollectionViewCell.swift */,
+				3313592B24C9712100D42CCE /* WashingListCollectionViewCellDelegates.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -474,6 +506,7 @@
 			isa = PBXGroup;
 			children = (
 				A82AC97C2458404F00C0DC3D /* Clo */,
+				331345A024D1785400BD59AB /* CloUITests */,
 				A82AC97B2458404F00C0DC3D /* Products */,
 				3364A24BA881E1640BD3D581 /* Pods */,
 				27AE5B08AC8FCA322E5EAB3A /* Frameworks */,
@@ -484,6 +517,7 @@
 			isa = PBXGroup;
 			children = (
 				A82AC97A2458404F00C0DC3D /* Clo.app */,
+				3313459F24D1785400BD59AB /* CloUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -510,7 +544,7 @@
 				A8C9034924602FE3004294D9 /* Categories.swift */,
 				A886AFCE24606301007FAEF2 /* SymbolsSections.swift */,
 				338F227F248A70A7001C40D1 /* Clothes.swift */,
-				33EF08FA24B5D5B200F1A352 /* Laundry.swift */,
+				33EF08FA24B5D5B200F1A352 /* Washing.swift */,
 				332AC387249FBB3C0081EC50 /* WashingMode.swift */,
 				33E7DCF9247FB1D900BD3F41 /* ClothingType.swift */,
 				33574791247FE40C008172FB /* ClothingColor.swift */,
@@ -542,6 +576,7 @@
 				A876C52E2458701E00B08C94 /* Podfile */,
 				A85B37DE24584723001833FD /* .gitignore */,
 				A807DB962459A317006BE209 /* .swiftlint.yml */,
+				3313457A24D175B800BD59AB /* SnapshotHelper.swift */,
 				3367BA6524A617EB0099BB43 /* Localizable.strings */,
 			);
 			path = "Supporting files";
@@ -669,6 +704,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3313459E24D1785400BD59AB /* CloUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 331345A624D1785400BD59AB /* Build configuration list for PBXNativeTarget "CloUITests" */;
+			buildPhases = (
+				3313459B24D1785400BD59AB /* Sources */,
+				3313459C24D1785400BD59AB /* Frameworks */,
+				3313459D24D1785400BD59AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				331345A524D1785400BD59AB /* PBXTargetDependency */,
+			);
+			name = CloUITests;
+			productName = CloUITests;
+			productReference = 3313459F24D1785400BD59AB /* CloUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		A82AC9792458404F00C0DC3D /* Clo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A82AC98E2458405100C0DC3D /* Build configuration list for PBXNativeTarget "Clo" */;
@@ -695,10 +748,14 @@
 		A82AC9722458404F00C0DC3D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 1160;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Alexandr Lazarev";
 				TargetAttributes = {
+					3313459E24D1785400BD59AB = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = A82AC9792458404F00C0DC3D;
+					};
 					A82AC9792458404F00C0DC3D = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
@@ -719,11 +776,19 @@
 			projectRoot = "";
 			targets = (
 				A82AC9792458404F00C0DC3D /* Clo */,
+				3313459E24D1785400BD59AB /* CloUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3313459D24D1785400BD59AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A82AC9782458404F00C0DC3D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -757,7 +822,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#exit\nif which swiftlint >/dev/null; then\n swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from #https://github.com/realm/SwiftLint\"\nfi\n\n";
+			shellScript = "exit\nif which swiftlint >/dev/null; then\n swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from #https://github.com/realm/SwiftLint\"\nfi\n\n";
 		};
 		D35DC622A32C90C46EBBCC27 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -801,6 +866,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3313459B24D1785400BD59AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				331345A224D1785400BD59AB /* CloUITests.swift in Sources */,
+				33CCA3E124D178AA0008D208 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A82AC9762458404F00C0DC3D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -810,7 +884,7 @@
 				33E7DCF0247F92CF00BD3F41 /* AddEditClothesViewController.swift in Sources */,
 				33EFBD25249FA62C0031942A /* ImageView.swift in Sources */,
 				33A8432E2482BF620083339D /* SelectSymbolsViewController.swift in Sources */,
-				33EF08F924B5B40200F1A352 /* CreatedLaundryViewController.swift in Sources */,
+				33EF08F924B5B40200F1A352 /* CreatedWashingViewController.swift in Sources */,
 				33FEB3B2249F902400D2B037 /* WashingFilterSheet.swift in Sources */,
 				A84ADDF5245F3851008F3425 /* LaundrySymbolsViewController.swift in Sources */,
 				3396FCC9247BFEA800D8B759 /* ClothesListView.swift in Sources */,
@@ -841,16 +915,16 @@
 				33C5172D24A4AA2000128C4B /* InAppPurchaseManager.swift in Sources */,
 				33A843302482BF7B0083339D /* SelectSymbolsView.swift in Sources */,
 				3392C5EB249CEF290066D5DD /* CloFieldButton.swift in Sources */,
-				33BD5D8B24BC341C000D5356 /* LaundryListCollectionViewCell.swift in Sources */,
+				33BD5D8B24BC341C000D5356 /* WashingListCollectionViewCell.swift in Sources */,
 				3308ECAD248E09D5008C7B61 /* DetailViewController.swift in Sources */,
 				33574792247FE40C008172FB /* ClothingColor.swift in Sources */,
 				332AC388249FBB3C0081EC50 /* WashingMode.swift in Sources */,
-				33EF08F724B5A9D300F1A352 /* NewLaundryViewController.swift in Sources */,
+				33EF08F724B5A9D300F1A352 /* NewWashingViewController.swift in Sources */,
 				3367E76924811CA600459AA4 /* ItemTableViewCell.swift in Sources */,
 				33DFEB03248D0AF200B802F4 /* Clothes.xcdatamodeld in Sources */,
 				33B5923524A492F00079E57A /* MenuViewController.swift in Sources */,
 				3306B4482496210400A42C85 /* Image.swift in Sources */,
-				33DD507224AA36C3009CDC01 /* LaundryListViewController.swift in Sources */,
+				33DD507224AA36C3009CDC01 /* WashingListViewController.swift in Sources */,
 				A886AFCF24606301007FAEF2 /* SymbolsSections.swift in Sources */,
 				A8BC747B245C429300106097 /* Colors.swift in Sources */,
 				3303FE872497778800724FAB /* ItemSheet.swift in Sources */,
@@ -870,15 +944,15 @@
 				33041F9D247C113800721E63 /* Identifiers.swift in Sources */,
 				33FEB3AE249F8FCB00D2B037 /* WashingFilterViewController.swift in Sources */,
 				3308ECB3248E0CC0008C7B61 /* DetailTypeAndInfoTableViewCell.swift in Sources */,
-				33DD507424AA3711009CDC01 /* LaundryListView.swift in Sources */,
-				33EF08FB24B5D5B200F1A352 /* Laundry.swift in Sources */,
+				33DD507424AA3711009CDC01 /* WashingListView.swift in Sources */,
+				33EF08FB24B5D5B200F1A352 /* Washing.swift in Sources */,
 				338F2280248A70A7001C40D1 /* Clothes.swift in Sources */,
 				A8BC7479245C427400106097 /* Images.swift in Sources */,
-				3313592C24C9712100D42CCE /* LaundryListCollectionViewCellDelegates.swift in Sources */,
+				3313592C24C9712100D42CCE /* WashingListCollectionViewCellDelegates.swift in Sources */,
 				33E61A1224A47DE100B6D1FD /* ResultViewController.swift in Sources */,
 				A8204D5F2463189D005E30A0 /* GalleryCollectionViewCell.swift in Sources */,
 				33E7DCFA247FB1D900BD3F41 /* ClothingType.swift in Sources */,
-				331EE79124C962B9001730BD /* LaundryDetailViewController.swift in Sources */,
+				331EE79124C962B9001730BD /* WashingDetailViewController.swift in Sources */,
 				3308ECA7248D5C2F008C7B61 /* Result.swift in Sources */,
 				33270511249F684500E50B98 /* Symbol.swift in Sources */,
 				A8C9034824602EE9004294D9 /* Symbols.swift in Sources */,
@@ -887,6 +961,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		331345A524D1785400BD59AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A82AC9792458404F00C0DC3D /* Clo */;
+			targetProxy = 331345A424D1785400BD59AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3367BA6524A617EB0099BB43 /* Localizable.strings */ = {
@@ -910,6 +992,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		331345A724D1785400BD59AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AQL4937GS7;
+				INFOPLIST_FILE = CloUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Alexandr-Lazarev.CloUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Clo;
+			};
+			name = Debug;
+		};
+		331345A824D1785400BD59AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AQL4937GS7;
+				INFOPLIST_FILE = CloUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Alexandr-Lazarev.CloUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Clo;
+			};
+			name = Release;
+		};
 		A82AC98C2458405100C0DC3D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1035,7 +1157,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Clo/Supporting files/Clo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = AQL4937GS7;
 				INFOPLIST_FILE = "$(SRCROOT)/Clo/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1057,7 +1179,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Clo/Supporting files/Clo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = AQL4937GS7;
 				INFOPLIST_FILE = "$(SRCROOT)/Clo/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1075,6 +1197,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		331345A624D1785400BD59AB /* Build configuration list for PBXNativeTarget "CloUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				331345A724D1785400BD59AB /* Debug */,
+				331345A824D1785400BD59AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A82AC9752458404F00C0DC3D /* Build configuration list for PBXProject "Clo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

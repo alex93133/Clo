@@ -120,7 +120,7 @@ class SelectSymbolsViewController: UIViewController {
     }
 
     private func saveClothes() {
-        let clothes = Clothes(uID: UUID().uuidString,
+        let clothes = Clothes(creationDate: Date(),
                               type: clothesInfo.type,
                               color: clothesInfo.color,
                               info: clothesInfo.info,

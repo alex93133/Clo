@@ -7,7 +7,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     // MARK: - Properties
     private var imageToPass: UIImage?
     private var laundrySymbolsViewController: LaundrySymbolsViewController!
-    private var laundryListViewController: LaundryListViewController!
+    private var washingListViewController: WashingListViewController!
     private var clothesListViewController: ClothesListViewController!
     private var menuViewController: MenuViewController!
 
@@ -36,7 +36,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 
     private func createTabs() {
         laundrySymbolsViewController = LaundrySymbolsViewController()
-        laundryListViewController    = LaundryListViewController()
+        washingListViewController    = WashingListViewController()
         clothesListViewController    = ClothesListViewController()
         menuViewController           = MenuViewController()
 
@@ -44,7 +44,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         let icon1        = UITabBarItem(title: "", image: Images.questionIcon, tag: 1)
         item1.tabBarItem = icon1
 
-        let item2        = UINavigationController(rootViewController: laundryListViewController)
+        let item2        = UINavigationController(rootViewController: washingListViewController)
         let icon2        = UITabBarItem(title: "", image: Images.machineIcon, tag: 2)
         item2.tabBarItem = icon2
 

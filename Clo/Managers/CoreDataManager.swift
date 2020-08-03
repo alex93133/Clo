@@ -14,7 +14,7 @@ class CoreDataManager {
 
     // MARK: - Fetch clothes
     func fetchClothes(handler: @escaping (Result<Error>) -> Void) -> [Clothes] {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ClothesInfo")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Identifiers.CoreDataEntitiesName.clothesInfo)
         request.returnsObjectsAsFaults = false
 
         var allClothes = [Clothes]()
@@ -22,15 +22,15 @@ class CoreDataManager {
         do {
             let result = try context.fetch(request)
             for data in result as! [NSManagedObject] {
-                guard let uID       = data.value(forKey: "uID") as? String,
-                    let typeString  = data.value(forKey: "type") as? String,
-                    let colorString = data.value(forKey: "color") as? String,
-                    let info        = data.value(forKey: "info") as? String?,
-                    let photoData   = data.value(forKey: "photo") as? Data,
-                    let symbolsIDs  = data.value(forKey: "symbolsIDs") as? [Int]
+                guard let creationDate = data.value(forKey: "creationDate") as? Date,
+                    let typeString     = data.value(forKey: "type") as? String,
+                    let colorString    = data.value(forKey: "color") as? String,
+                    let info           = data.value(forKey: "info") as? String?,
+                    let photoData      = data.value(forKey: "photo") as? Data,
+                    let symbolsIDs     = data.value(forKey: "symbolsIDs") as? [Int]
                     else { return allClothes }
 
-                let clothes = Clothes(uID: uID,
+                let clothes = Clothes(creationDate: creationDate,
                                       typeString: typeString,
                                       colorString: colorString,
                                       info: info,
@@ -42,18 +42,19 @@ class CoreDataManager {
             handler(.failure(error))
         }
         handler(.success)
-        return allClothes.reversed()
+        return allClothes.sorted { $0.creationDate > $1.creationDate }
     }
 
     // MARK: - Save clothes
     func saveClothes(clothes: Clothes, handler: @escaping (Result<Error>) -> Void) {
-        guard let entity = NSEntityDescription.entity(forEntityName: "ClothesInfo", in: context) else { return }
+        guard let entity = NSEntityDescription.entity(forEntityName: Identifiers.CoreDataEntitiesName.clothesInfo,
+                                                      in: context) else { return }
 
         guard let photoData = clothes.photo.pngData() else { return }
         let arrayOfID       = clothes.symbols.map { $0.id }
         let newClothes      = NSManagedObject(entity: entity, insertInto: context)
 
-        newClothes.setValue(clothes.uID, forKey: "uID")
+        newClothes.setValue(clothes.creationDate, forKey: "creationDate")
         newClothes.setValue(clothes.type.rawValue, forKey: "type")
         newClothes.setValue(clothes.color.rawValue, forKey: "color")
         newClothes.setValue(clothes.info, forKey: "info")
@@ -64,13 +65,13 @@ class CoreDataManager {
 
     // MARK: - Delete clothes
     func deleteClothes(clothes: Clothes, handler: @escaping (Result<Error>) -> Void) {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ClothesInfo")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Identifiers.CoreDataEntitiesName.clothesInfo)
 
         do {
             let result = try context.fetch(request)
             for object in result as! [NSManagedObject] {
-                guard let uID = object.value(forKey: "uID") as? String else { return }
-                if uID == clothes.uID {
+                guard let creationDate = object.value(forKey: "creationDate") as? Date else { return }
+                if creationDate == clothes.creationDate {
                     context.delete(object)
                 }
             }
@@ -82,13 +83,13 @@ class CoreDataManager {
 
     // MARK: - Update clothes
     func updateClothes(editableClothes: Clothes, handler: @escaping (Result<Error>) -> Void) {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ClothesInfo")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Identifiers.CoreDataEntitiesName.clothesInfo)
         do {
             let result = try context.fetch(request)
             for object in result as! [NSManagedObject] {
-                guard let uID = object.value(forKey: "uID") as? String else { return }
+                guard let creationDate = object.value(forKey: "creationDate") as? Date else { return }
                 guard let photoData = editableClothes.photo.pngData() else { return }
-                if uID == editableClothes.uID {
+                if creationDate == editableClothes.creationDate {
                     let arrayOfID = editableClothes.symbols.map { $0.id }
                     object.setValue(photoData, forKey: "photo")
                     object.setValue(editableClothes.type.rawValue, forKey: "type")
@@ -103,26 +104,28 @@ class CoreDataManager {
         handler(appDelegate!.saveContext())
     }
 
-    // MARK: - Save laundry
-    func saveLaundry(laundry: Laundry, handler: @escaping (Result<Error>) -> Void) {
-        guard let entity = NSEntityDescription.entity(forEntityName: "Laundries", in: context) else { return }
+    // MARK: - Save washing
+    func saveWashing(washing: Washing, handler: @escaping (Result<Error>) -> Void) {
+        guard let entity = NSEntityDescription.entity(forEntityName: Identifiers.CoreDataEntitiesName.washingInfo,
+                                                      in: context) else { return }
 
-        let newLaundry  = NSManagedObject(entity: entity, insertInto: context)
+        let newWashing  = NSManagedObject(entity: entity, insertInto: context)
 
-        newLaundry.setValue(laundry.name, forKey: "name")
-        newLaundry.setValue(laundry.color.rawValue, forKey: "color")
-        newLaundry.setValue(laundry.temperature, forKey: "temperature")
-        newLaundry.setValue(laundry.washingMode.rawValue, forKey: "washingMode")
-        newLaundry.setValue(laundry.coincidence, forKey: "coincidence")
+        newWashing.setValue(washing.name, forKey: "name")
+        newWashing.setValue(washing.color.rawValue, forKey: "color")
+        newWashing.setValue(washing.temperature, forKey: "temperature")
+        newWashing.setValue(washing.washingMode.rawValue, forKey: "washingMode")
+        newWashing.setValue(washing.coincidence, forKey: "coincidence")
+        newWashing.setValue(washing.creationDate, forKey: "creationDate")
         handler(appDelegate!.saveContext())
     }
 
-    // MARK: - Fetch laundries
-    func fetchLaundries(handler: @escaping (Result<Error>) -> Void) -> [Laundry] {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Laundries")
+    // MARK: - Fetch washing
+    func fetchWashing(handler: @escaping (Result<Error>) -> Void) -> [Washing] {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Identifiers.CoreDataEntitiesName.washingInfo)
         request.returnsObjectsAsFaults = false
 
-        var allLaundries = [Laundry]()
+        var allLaundries = [Washing]()
 
         do {
             let result = try context.fetch(request)
@@ -131,17 +134,19 @@ class CoreDataManager {
                     let color       = data.value(forKey: "color") as? String,
                     let temperature = data.value(forKey: "temperature") as? Int64,
                     let washingMode = data.value(forKey: "washingMode") as? String,
-                    let coincidence = data.value(forKey: "coincidence") as? Bool
+                    let coincidence = data.value(forKey: "coincidence") as? Bool,
+                    let creationDate = data.value(forKey: "creationDate") as? Date
 
                     else { return allLaundries }
 
-                let laundry = Laundry(name: name,
+                let washing = Washing(name: name,
                                       color: color,
                                       temperature: temperature,
                                       washingMode: washingMode,
-                                      coincidence: coincidence)
+                                      coincidence: coincidence,
+                                      creationDate: creationDate)
 
-                allLaundries.append(laundry)
+                allLaundries.append(washing)
             }
         } catch {
             handler(.failure(error))
@@ -150,15 +155,15 @@ class CoreDataManager {
         return allLaundries.reversed()
     }
 
-    // MARK: - Delete laundry
-    func deleteLaundry(laundry: Laundry, handler: @escaping (Result<Error>) -> Void) {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Laundries")
+    // MARK: - Delete washing
+    func deleteWashing(washing: Washing, handler: @escaping (Result<Error>) -> Void) {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Identifiers.CoreDataEntitiesName.washingInfo)
 
         do {
             let result = try context.fetch(request)
             for object in result as! [NSManagedObject] {
-                guard let name = object.value(forKey: "name") as? String else { return }
-                if name == laundry.name {
+                guard let creationDate = object.value(forKey: "creationDate") as? Date else { return }
+                if creationDate == washing.creationDate {
                     context.delete(object)
                 }
             }

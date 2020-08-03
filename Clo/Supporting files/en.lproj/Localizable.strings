@@ -30,8 +30,6 @@
 "Ideal coincidence" = "Ideal coincidence";
 "Information" = "Information";
 "Ironing" = "Ironing";
-"Laundry" = "Laundry";
-"Laundry name" = "Laundry name";
 "Looks like you forgot to turn on the camera. To continue, you'll need to allow camera access in Settings" = "Looks like you forgot to turn on the camera. To continue, you'll need to allow camera access in Settings";
 "Maybe later" = "Maybe later";
 "My clothes" = "My clothes";
@@ -59,11 +57,13 @@
 "Version" = "Version";
 "Very gentle" = "Very gentle";
 "Washing mode" = "Washing mode";
+"Washing name" = "Washing name";
+"Washing" = "Washing";
 "Washing" = "Washing";
 "White" = "White";
-"Your choice" = "Your choice";
 "You should only wash your clothes by hand, so as not to damage it" = "You should only wash your clothes by hand, so as not to damage it";
-"Your laundry" = "Your laundry";
+"Your choice" = "Your choice";
+"Your washing" = "Your washing";
 
 "Machine wash" = "Machine wash";
 "Gentle wash" = "Gentle wash";
@@ -148,3 +148,6 @@
 "Professional wet cleaning" = "Professional wet cleaning";
 "Gentle wet cleaning" = "Gentle wet cleaning";
 "Very gentle wet cleaning" = "Very gentle wet cleaning";
+
+"White shirt" = "White shirt";
+"Daily" = "Daily";

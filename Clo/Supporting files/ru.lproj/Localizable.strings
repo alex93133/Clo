@@ -6,7 +6,7 @@
 "Baby clothes" = "Детская одежда";
 "Bed linen" = "Постельное белье";
 "Black" = "Черное";
-"Bleaching" = "Глажка";
+"Bleaching" = "Отбеливание";
 "Buy coffee for developers" = "Купить кофе разработчикам";
 "Cancel" = "Отменить";
 "Casual wear" = "Повседневная одежда";
@@ -30,8 +30,6 @@
 "Ideal coincidence" = "Идеальное совпадение";
 "Information" = "Информация";
 "Ironing" = "Глажка";
-"Laundry" = "Собранные стирки";
-"Laundry name" = "Название стирки";
 "Looks like you forgot to turn on the camera. To continue, you'll need to allow camera access in Settings" = "Похоже вы не предоставили доступ к камере. Чтобы продолжить, необходимо предоставить доступ в Настройках";
 "Maybe later" = "В другой раз";
 "My clothes" = "Мои вещи";
@@ -59,11 +57,13 @@
 "Version" = "Версия";
 "Very gentle" = "Очень деликатная";
 "Washing mode" = "Режим стирки";
+"Washing name" = "Название стирки";
+"Washing" = "Мои стирки";
 "Washing" = "Стирка";
 "White" = "Белое";
 "You should only wash your clothes by hand, so as not to damage it" = "Используйте только ручную стирку, чтобы не повредить вещь";
 "Your choice" = "Выбранные";
-"Your laundry" = "Ваша стрика";
+"Your washing" = "Ваша стрика";
 
 "Machine wash" = "Можно стирать";
 "Gentle wash" = "Щадящая стирка";
@@ -148,3 +148,7 @@
 "Professional wet cleaning" = "Профессиональная мокрая чистка (аквачистка)";
 "Gentle wet cleaning" = "Щадящая профессиональная мокрая чистка (аквачистка)";
 "Very gentle wet cleaning" = "Деликатная профессиональная мокрая чистка (аквачистка)";
+
+
+"White shirt" = "Белые рубашки";
+"Daily" = "Ежедневная";

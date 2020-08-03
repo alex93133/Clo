@@ -153,7 +153,7 @@ extension ClothesListViewController: UICollectionViewDelegate, UICollectionViewD
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.addNewItemCellIdentifier,
                                                              for: indexPath) as? AddNewItemCollectionViewCell {
                 cell.addLabel.text         = NSLocalizedString("Add new item", comment: "")
-                cell.backgroundImage.image = Images.AddNewItem
+                cell.backgroundImage.image = Images.addNewItem
                 return cell
             }
         } else {

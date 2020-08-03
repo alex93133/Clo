@@ -1,0 +1,16 @@
+# A list of devices you want to take the screenshots from
+ devices([
+   "iPhone 8 Plus",
+   "iPhone 11 Pro Max"
+ ])
+
+ languages([
+   "en-US",
+   "ru-RU"
+ ])
+
+# remove the '#' to clear all previously generated screenshots before creating new ones
+ clear_previous_screenshots(true)
+
+# Where should the resulting screenshots be stored?
+output_directory "./fastlane/screenshots"

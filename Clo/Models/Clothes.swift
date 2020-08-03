@@ -2,7 +2,7 @@ import CoreData
 import UIKit
 
 struct Clothes {
-    let uID: String
+    let creationDate: Date
     var type: ClothingType
     var color: ColorType
     var info: String?
@@ -11,10 +11,10 @@ struct Clothes {
 }
 
 extension Clothes {
-    init(uID: String, typeString: String, colorString: String, info: String?, photoData: Data, symbolsIDs: [Int]) {
+    init(creationDate: Date, typeString: String, colorString: String, info: String?, photoData: Data, symbolsIDs: [Int]) {
         let symbols         = Symbols.allSymbols()
         let selectedSymbols = symbols!.filter { symbolsIDs.contains($0.id) }
-        self.uID            = uID
+        self.creationDate   = creationDate
         type                = ClothingType(rawValue: typeString)!
         color               = ColorType(rawValue: colorString)!
         photo               = UIImage(data: photoData)!

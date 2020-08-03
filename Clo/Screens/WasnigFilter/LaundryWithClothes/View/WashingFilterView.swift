@@ -18,7 +18,7 @@ class WashingFilterView: UIView {
     var nameTextField: CloTextField!
     var nextButton: CloNextButton!
     var switcher: UISwitch!
-    var laundryNameLabel: UILabel!
+    var washingNameLabel: UILabel!
     var temperatureButton: CloFieldButton!
     var washingModeButton: CloFieldButton!
     weak var delegate: WashingFilterViewDelegate?
@@ -73,15 +73,15 @@ class WashingFilterView: UIView {
         let temperatureLabel = createFieldDescriptionLabel(text: NSLocalizedString("Temperature", comment: ""))
         let washingModeLabel = createFieldDescriptionLabel(text: NSLocalizedString("Washing mode", comment: ""))
         let coWashLabel      = createFieldDescriptionLabel(text: NSLocalizedString("Co-wash", comment: ""))
-        laundryNameLabel = createFieldDescriptionLabel(text: NSLocalizedString("Laundry name", comment: ""))
+        washingNameLabel = createFieldDescriptionLabel(text: NSLocalizedString("Washing name", comment: ""))
 
-        laundryNameLabel.isHidden = true
+        washingNameLabel.isHidden = true
 
         NSLayoutConstraint.activate([
             colorLabel.topAnchor.constraint(equalTo: headLabel.bottomAnchor, constant: 8),
             temperatureLabel.topAnchor.constraint(equalTo: colorLabel.bottomAnchor, constant: 76),
             washingModeLabel.topAnchor.constraint(equalTo: temperatureLabel.bottomAnchor, constant: 76),
-            laundryNameLabel.topAnchor.constraint(equalTo: washingModeLabel.bottomAnchor, constant: 76),
+            washingNameLabel.topAnchor.constraint(equalTo: washingModeLabel.bottomAnchor, constant: 76),
             coWashLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -150)
         ])
     }

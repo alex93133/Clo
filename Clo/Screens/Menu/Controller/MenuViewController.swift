@@ -55,7 +55,9 @@ class MenuViewController: UIViewController {
     }
 
     private func rateUs() {
-        SKStoreReviewController.requestReview()
+        DispatchQueue.main.async {
+            SKStoreReviewController.requestReview()
+        }
     }
 
     private func productTitle(product: SKProduct) -> String {
