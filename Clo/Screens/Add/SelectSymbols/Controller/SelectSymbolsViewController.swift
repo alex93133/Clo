@@ -177,7 +177,7 @@ extension SelectSymbolsViewController: UICollectionViewDelegate, UICollectionVie
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.symbolCellIdentifier,
                                                          for: indexPath) as? LaundrySymbolsCollectionViewCell {
             let section = sections[indexPath.section]
-            cell.laundryImage.image = section.items[indexPath.item].image?.withRenderingMode(.alwaysTemplate)
+            cell.laundryImage.image = section.items[indexPath.item].image
 
             if section.title == selectionSectionTitle {
                 cell.laundryImage.tintColor = Colors.mint

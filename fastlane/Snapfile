@@ -14,3 +14,5 @@
 
 # Where should the resulting screenshots be stored?
 output_directory "./fastlane/screenshots"
+
+override_status_bar(true)

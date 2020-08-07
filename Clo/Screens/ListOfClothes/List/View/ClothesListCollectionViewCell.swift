@@ -39,7 +39,7 @@ class ClothesListCollectionViewCell: UICollectionViewCell {
     private func setupView() {
         shadowView                               = CloShadowView()
         shadowView.containerView.backgroundColor = Colors.mainBG
-        shadowView.addBorderToContainer()
+        shadowView.containerView.addBorder()
         shadowView.addTo(view: self)
     }
 

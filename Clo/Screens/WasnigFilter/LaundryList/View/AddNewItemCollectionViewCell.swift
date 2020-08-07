@@ -27,7 +27,7 @@ class AddNewItemCollectionViewCell: UICollectionViewCell {
     // MARK: - View
     private func setupView() {
         shadowView = CloShadowView()
-        shadowView.addBorderToContainer()
+        shadowView.addBorder()
         shadowView.addTo(view: self)
     }
 

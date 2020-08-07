@@ -11,12 +11,12 @@ extension ClothesListCollectionViewCell: UICollectionViewDelegate, UICollectionV
                                                          for: indexPath) as? ClothesSymbolsCollectionViewCell {
             switch indexPath.item {
             case 0:
-                let insets = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
+                let insets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
                 cell.washingImageView.image = UIImage(named: color.rawValue)?.withAlignmentRectInsets(insets)
 
             default:
                 let symbol = symbols[indexPath.item - 1]
-                cell.washingImageView.image = symbol.image?.withRenderingMode(.alwaysTemplate)
+                cell.washingImageView.image = symbol.image
             }
             return cell
         }

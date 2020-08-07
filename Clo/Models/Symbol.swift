@@ -6,6 +6,6 @@ struct Symbol: Codable {
     let description: String
     let imageName: String
     var image: UIImage? {
-        return UIImage(named: imageName)?.withRenderingMode(.alwaysTemplate)
+        return UIImage(named: imageName)
     }
 }

@@ -130,13 +130,13 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             if let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.DetailCells.symbolsCellIdentifier,
                                                         for: indexPath) as? DetailSymbolsTableViewCell {
                 if indexPath.row == 0 {
-                    let insets = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
+                    let insets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
                     cell.symbolImageView.image = UIImage(named: clothes.color.rawValue)?.withAlignmentRectInsets(insets)
                     cell.descriptionLabel.text = NSLocalizedString(clothes.color.rawValue, comment: "")
                 } else {
                     let symbol = clothes.symbols[indexPath.row - 1]
                     cell.descriptionLabel.text = NSLocalizedString(symbol.description, comment: "")
-                    cell.symbolImageView.image = symbol.image?.withRenderingMode(.alwaysTemplate)
+                    cell.symbolImageView.image = symbol.image
                 }
                 return cell
             }

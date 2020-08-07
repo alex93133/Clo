@@ -76,7 +76,6 @@ extension WashingListViewController: UICollectionViewDelegate, UICollectionViewD
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.washingCellIdentifier,
                                                              for: indexPath) as? WashingListCollectionViewCell {
                 let currentWashing         = washing[indexPath.item - 1]
-                #warning("Убрать при релизе!!!")
                 cell.washingNameLabel.text = NSLocalizedString(currentWashing.name, comment: "")
                 cell.washing               = currentWashing
                 cell.itemSelected = { [weak self] in

@@ -4,7 +4,7 @@ class ColorTypeCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Properties
     var colorTypeImageView: UIImageView!
-    private var shadowView: CloShadowView!
+    var shadowView: CloShadowView!
 
     override init(frame: CGRect) {
         super.init(frame: .zero)
