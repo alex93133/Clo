@@ -18,14 +18,13 @@ class AddEditClothesViewController: UIViewController {
 
     convenience init(clothes: Clothes) {
         self.init()
-        self.editableClothes      = clothes
-        guard let editableClothes = self.editableClothes else { return }
-        clothesPhoto              = editableClothes.photo
-        selectedType              = editableClothes.type
-        selectedColor             = editableClothes.color
+        self.editableClothes = clothes
+        clothesPhoto         = clothes.photo
+        selectedType         = clothes.type
+        selectedColor        = clothes.color
         setButtonTitle(NSLocalizedString(clothes.type.rawValue, comment: ""))
 
-        if let info = editableClothes.info {
+        if let info = clothes.info {
             view().inputFieldsView.descriptionTextField.text = info
         }
     }
@@ -164,6 +163,7 @@ extension AddEditClothesViewController: UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.clothesColorCellIdentifier,
                                                          for: indexPath) as? ColorTypeCollectionViewCell {
+
             cell.colorTypeImageView.image = clothingColors[indexPath.item].image
 
             if clothingColors[indexPath.item].type == selectedColor {

@@ -13,7 +13,7 @@ extension WashingListCollectionViewCell: UICollectionViewDelegate, UICollectionV
             switch indexPath.item {
             // Mirrored collection view
             case 0:
-                let insets = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
+                let insets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
                 let colorName = washing.color.rawValue
                 cell.washingImageView.image = UIImage(named: colorName)?.withAlignmentRectInsets(insets)
 

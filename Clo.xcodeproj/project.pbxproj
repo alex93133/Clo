@@ -37,6 +37,7 @@
 		3357478E247FC77D008172FB /* CloNextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357478D247FC77D008172FB /* CloNextButton.swift */; };
 		33574790247FCABD008172FB /* CloTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357478F247FCABD008172FB /* CloTextField.swift */; };
 		33574792247FE40C008172FB /* ClothingColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33574791247FE40C008172FB /* ClothingColor.swift */; };
+		3359B7C824DD1ABA00A2D4D5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3359B7C724DD1ABA00A2D4D5 /* .gitignore */; };
 		3367BA6324A617EB0099BB43 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3367BA6524A617EB0099BB43 /* Localizable.strings */; };
 		3367E76724811B3C00459AA4 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3367E76624811B3C00459AA4 /* ItemView.swift */; };
 		3367E76924811CA600459AA4 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3367E76824811CA600459AA4 /* ItemTableViewCell.swift */; };
@@ -67,6 +68,7 @@
 		33EF08F724B5A9D300F1A352 /* NewWashingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF08F624B5A9D300F1A352 /* NewWashingViewController.swift */; };
 		33EF08F924B5B40200F1A352 /* CreatedWashingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF08F824B5B40200F1A352 /* CreatedWashingViewController.swift */; };
 		33EF08FB24B5D5B200F1A352 /* Washing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EF08FA24B5D5B200F1A352 /* Washing.swift */; };
+		33EFA27F24D81FE200AB6E0B /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EFA27E24D81FE200AB6E0B /* View.swift */; };
 		33EFBD25249FA62C0031942A /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EFBD24249FA62C0031942A /* ImageView.swift */; };
 		33F1A4E1248F94B800857FE9 /* CloAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F1A4E0248F94B800857FE9 /* CloAlertController.swift */; };
 		33FEB3AE249F8FCB00D2B037 /* WashingFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FEB3AD249F8FCB00D2B037 /* WashingFilterViewController.swift */; };
@@ -84,7 +86,6 @@
 		A84ADDF7245F3AF0008F3425 /* ClothesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84ADDF6245F3AF0008F3425 /* ClothesListViewController.swift */; };
 		A84ADDFB245F5143008F3425 /* LaundrySymbolsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84ADDFA245F5143008F3425 /* LaundrySymbolsCollectionViewCell.swift */; };
 		A84DB6FF245AC8F200A101B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84DB6FE245AC8F200A101B1 /* Constants.swift */; };
-		A85B37DF24584723001833FD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A85B37DE24584723001833FD /* .gitignore */; };
 		A8751F14245FFA7300B62589 /* LaundrySymbolsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8751F13245FFA7300B62589 /* LaundrySymbolsHeader.swift */; };
 		A8751F1624601E5B00B62589 /* LaundrySymbolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8751F1524601E5B00B62589 /* LaundrySymbolsView.swift */; };
 		A876C52F2458701E00B08C94 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A876C52E2458701E00B08C94 /* Podfile */; };
@@ -144,6 +145,7 @@
 		3357478D247FC77D008172FB /* CloNextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloNextButton.swift; sourceTree = "<group>"; };
 		3357478F247FCABD008172FB /* CloTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloTextField.swift; sourceTree = "<group>"; };
 		33574791247FE40C008172FB /* ClothingColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingColor.swift; sourceTree = "<group>"; };
+		3359B7C724DD1ABA00A2D4D5 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		3367BA6024A6179A0099BB43 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		3367BA6424A617EB0099BB43 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3367BA6624A617F90099BB43 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		33EF08F624B5A9D300F1A352 /* NewWashingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWashingViewController.swift; sourceTree = "<group>"; };
 		33EF08F824B5B40200F1A352 /* CreatedWashingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatedWashingViewController.swift; sourceTree = "<group>"; };
 		33EF08FA24B5D5B200F1A352 /* Washing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Washing.swift; sourceTree = "<group>"; };
+		33EFA27E24D81FE200AB6E0B /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		33EFBD24249FA62C0031942A /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		33F1A4E0248F94B800857FE9 /* CloAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloAlertController.swift; sourceTree = "<group>"; };
 		33FEB3AD249F8FCB00D2B037 /* WashingFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashingFilterViewController.swift; sourceTree = "<group>"; };
@@ -195,7 +198,6 @@
 		A84ADDF6245F3AF0008F3425 /* ClothesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesListViewController.swift; sourceTree = "<group>"; };
 		A84ADDFA245F5143008F3425 /* LaundrySymbolsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundrySymbolsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A84DB6FE245AC8F200A101B1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		A85B37DE24584723001833FD /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A8751F13245FFA7300B62589 /* LaundrySymbolsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundrySymbolsHeader.swift; sourceTree = "<group>"; };
 		A8751F1524601E5B00B62589 /* LaundrySymbolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaundrySymbolsView.swift; sourceTree = "<group>"; };
 		A876C52E2458701E00B08C94 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -561,6 +563,7 @@
 				3306B4472496210400A42C85 /* Image.swift */,
 				3303FE8424975B2F00724FAB /* CollectionViewCell.swift */,
 				33EFBD24249FA62C0031942A /* ImageView.swift */,
+				33EFA27E24D81FE200AB6E0B /* View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -574,8 +577,8 @@
 				A82AC9862458405100C0DC3D /* Assets.xcassets */,
 				A82AC98B2458405100C0DC3D /* Info.plist */,
 				A876C52E2458701E00B08C94 /* Podfile */,
-				A85B37DE24584723001833FD /* .gitignore */,
 				A807DB962459A317006BE209 /* .swiftlint.yml */,
+				3359B7C724DD1ABA00A2D4D5 /* .gitignore */,
 				3313457A24D175B800BD59AB /* SnapshotHelper.swift */,
 				3367BA6524A617EB0099BB43 /* Localizable.strings */,
 			);
@@ -794,8 +797,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A876C52F2458701E00B08C94 /* Podfile in Resources */,
+				3359B7C824DD1ABA00A2D4D5 /* .gitignore in Resources */,
 				A8C9034C24603A6C004294D9 /* Symbols.json in Resources */,
-				A85B37DF24584723001833FD /* .gitignore in Resources */,
 				3367BA6324A617EB0099BB43 /* Localizable.strings in Resources */,
 				A82AC98A2458405100C0DC3D /* LaunchScreen.storyboard in Resources */,
 				A807DB972459A317006BE209 /* .swiftlint.yml in Resources */,
@@ -822,7 +825,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "exit\nif which swiftlint >/dev/null; then\n swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from #https://github.com/realm/SwiftLint\"\nfi\n\n";
+			shellScript = "#exit\nif which swiftlint >/dev/null; then\n swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from #https://github.com/realm/SwiftLint\"\nfi\n\n";
 		};
 		D35DC622A32C90C46EBBCC27 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -944,6 +947,7 @@
 				33041F9D247C113800721E63 /* Identifiers.swift in Sources */,
 				33FEB3AE249F8FCB00D2B037 /* WashingFilterViewController.swift in Sources */,
 				3308ECB3248E0CC0008C7B61 /* DetailTypeAndInfoTableViewCell.swift in Sources */,
+				33EFA27F24D81FE200AB6E0B /* View.swift in Sources */,
 				33DD507424AA3711009CDC01 /* WashingListView.swift in Sources */,
 				33EF08FB24B5D5B200F1A352 /* Washing.swift in Sources */,
 				338F2280248A70A7001C40D1 /* Clothes.swift in Sources */,
@@ -1157,7 +1161,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Clo/Supporting files/Clo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = AQL4937GS7;
 				INFOPLIST_FILE = "$(SRCROOT)/Clo/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1179,7 +1183,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Clo/Supporting files/Clo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = AQL4937GS7;
 				INFOPLIST_FILE = "$(SRCROOT)/Clo/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

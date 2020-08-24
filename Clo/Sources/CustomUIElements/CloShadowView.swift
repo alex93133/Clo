@@ -40,11 +40,6 @@ class CloShadowView: UIView {
         ])
     }
 
-    func addBorderToContainer() {
-        containerView.layer.borderWidth = 0.5
-        containerView.layer.borderColor = Colors.border.cgColor
-    }
-
     // MARK: - Constraints
     private func setupContainerViewConstraints() {
         addSubview(containerView)
